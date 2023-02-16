@@ -21,8 +21,8 @@ export class BlogNewsletter {
     const xhr = new XMLHttpRequest();
     const url = [
       'https://api.hsforms.com/submissions/v3/integration/submit',
-      '3776657',
-      '76e5f69f-85fd-4579-afce-a1892d48bb32',
+      '24052635',
+      '9657ca9c-eb86-41f9-8a96-895eee92942f',
     ].join('/');
     xhr.open('POST', url);
     xhr.setRequestHeader('Content-Type', 'application/json;charset=UTF-8');
@@ -54,7 +54,7 @@ export class BlogNewsletter {
           },
           {
             name: 'first_campaign_conversion',
-            value: 'Ionic Newsletter',
+            value: 'Install Doctor Newsletter',
           },
         ],
         context: {

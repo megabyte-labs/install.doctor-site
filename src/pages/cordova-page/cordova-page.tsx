@@ -79,7 +79,7 @@ git checkout -b cap-migration
       <article class="step">
         <sup class="ui-heading-6">02</sup>
         <div class="heading-group">
-          <Heading level={3}>Install Capacitor.</Heading>
+          <Heading level={3}>Run Install Doctor.</Heading>
           <Paragraph>
             Create the Capacitor app using the Cordova app's name and id found
             in `config.xml`.

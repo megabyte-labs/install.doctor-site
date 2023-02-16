@@ -36,8 +36,9 @@ export class NewsletterSignup {
 
   createForm = () => {
     window.hbspt.forms.create({
-      portalId: '3776657',
-      formId: 'c8d355e3-a5ad-4f91-a2c0-c9dc93e10658',
+      region: 'na1',
+      portalId: '24052635',
+      formId: '9657ca9c-eb86-41f9-8a96-895eee92942f',
       cssClass: '',
       target: `#${this.uniqueFormId}`,
     });
@@ -50,8 +51,8 @@ export class NewsletterSignup {
           <div class="heading-group">
             <Heading>The latest updates. Delivered monthly.</Heading>
             <Paragraph>
-              Capacitor is getting better every day. Sign up for a monthly email
-              on the latest updates, releases, articles, and news!
+              Install Doctor is getting better every day. Sign up for a monthly email
+              on the latest updates, releases, articles, news, and exclusive beta features!
             </Paragraph>
           </div>
           <div class="form-group" id={this.uniqueFormId}></div>

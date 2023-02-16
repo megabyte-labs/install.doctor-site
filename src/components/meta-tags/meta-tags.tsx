@@ -5,13 +5,13 @@ import Helmet from '@stencil/helmet';
   tag: 'meta-tags',
 })
 export class MetaTags {
-  site = 'https://capacitorjs.com';
+  site = 'https://install.doctor';
   @Prop() pageTitle =
-    'Capacitor by Ionic - Cross-platform apps with web technology';
+    'Install Doctor - Cross-OS provisioning technology';
   @Prop() description =
-    'Build iOS, Android, and Progressive Web Apps with HTML, CSS, and JavaScript';
+    'Provision productivity-enhancing environments with a single-line of code';
   @Prop() image = 'https://capacitorjs.com/assets/img/og.png';
-  @Prop() authorTwitter = '@capacitorjs';
+  @Prop() authorTwitter = '@installdoc';
   @Prop() ogType = 'website';
   @Prop() canonicalUrl = `${this.site}${location.pathname}`;
 
@@ -20,7 +20,7 @@ export class MetaTags {
   render() {
     const prettyTitle =
       this.pageTitle ===
-      'Capacitor by Ionic - Cross-platform apps with web technology'
+      'Install Doctor - Cross-OS provisioning technology'
         ? this.pageTitle
         : `${this.pageTitle} - Capacitor`;
 

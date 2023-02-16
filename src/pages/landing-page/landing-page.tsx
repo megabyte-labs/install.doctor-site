@@ -80,13 +80,13 @@ export class LandingPage {
                 kind="round"
                 variation="light"
                 anchor
-                href="/docs/plugins"
+                href="/docs/software"
                 class="secondary"
               >
                 {secondary}
               </Button>
             </div>
-            <a class="link | ui-paragraph-4" {...href('/cordova')}>
+            <a class="link | ui-paragraph-4" {...href('/docs/customization')}>
               {top__link}
               <span class="arrow"> -&gt;</span>
             </a>
@@ -194,69 +194,60 @@ export class LandingPage {
     const panels = [
       <code-snippet
         language="shell-session"
-        code={`npm install @capacitor/cli @capacitor/core\nnpx cap init`}
+        code={`bash <(curl -sSL https://install.doctor/start)`}
       />,
       <code-snippet
         language="shell-session"
-        code={`npm install @capacitor/ios @capacitor/android\nnpx cap add ios\nnpx cap add android`}
+        code={`
+export START_REPO=my-gh-user/my-fork-name
+bash <(curl -sSL https://install.doctor/start)
+`}
+      />,
+      <code-snippet
+        language="shell-session"
+        code={`bash <(curl -sSL https://install.doctor/vagrant)`}
       />,
       <code-tabs
         data={{
-          tabs: ['Notifications', 'Geolocation', 'Camera', 'Custom'],
-          languages: ['typescript'],
+          tabs: ['Headless', 'Windows', 'Qubes', 'Chezmoi'],
+          languages: ['shell-session'],
           code: [
             `
-import { LocalNotifications } from '@capacitor/local-notifications';
-
-LocalNotifications.schedule({
-  notifications: [
-    {
-      title: "On sale",
-      body: "Widgets are 10% off. Act fast!",
-      id: 1,
-      schedule: { at: new Date(Date.now() + 1000 * 5) },
-      sound: null,
-      attachments: null,
-      actionTypeId: "",
-      extra: null
-    }
-  ]
-});`, //-----------------------------------
-            `
-import { Geolocation } from '@capacitor/geolocation';
-
-// get the users current position
-const position = await Geolocation.getCurrentPosition();
-
-// grab latitude & longitude
-const latitude = position.coords.latitude;
-const longitude = position.coords.longitude;
-`,
-            `
-import { Camera, CameraResultType } from '@capacitor/camera';
-
-// Take a picture or video, or load from the library
-const picture = await Camera.getPicture({
-  resultType: CameraResultType.Uri
-});
+echo "Headlessly provisioning a Linux / macOS / Unix machine"
+export HEADLESS_INSTALL=true
+export SOFTWARE_GROUP=Standard-Desktop
+export FULL_NAME="Joe Shmoe"
+export PRIMARY_EMAIL="help@megabyte.space"
+export PUBLIC_SERVICES_DOMAIN="megabyte.space"
+export CLOUDFLARE_API_TOKEN="cf-pat-xXP999kUu888777"
+export TAILSCALE_AUTH_KEY="tailscale-auth-key-xXP999kUu888777"
+export START_REPO=my-gh-user/my-fork-name
+bash <(curl -sSL https://install.doctor/start)
 `, //-----------------------------------
             `
-import Foundation
-import Capacitor
+Write-Host "Headlessly provisioning a Windows machine"
+$env:HEADLESS_INSTALL = true
+$env:SOFTWARE_GROUP = Standard-Desktop
+$env:FULL_NAME = 'Joe Shmoe'
+$env:PRIMARY_EMAIL = 'help@megabyte.space'
+$env:PUBLIC_SERVICES_DOMAIN = 'megabyte.space'
+$env:CLOUDFLARE_API_TOKEN = 'cf-pat-xXP999kUu888777'
+$env:TAILSCALE_AUTH_KEY = 'tailscale-auth-key-xXP999kUu888777'
+$env:START_REPO = 'my-gh-user/my-fork-name'
+iex ((New-Object System.Net.WebClient).DownloadString('https://install.doctor/windows'))
 
-// Custom platform code, easily exposed to your web app
-// through Capacitor plugin APIs. Build APIs that work
-// across iOS, Android, and the web!
-@objc(MyAwesomePlugin)
-public class MyAwesomePlugin: CAPPlugin {
-
-  @objc public func doNative(_ call: CAPPluginCall) {
-  let alert = UIAlertController(title: "Title", message: "Please Select an Option", preferredStyle: .actionSheet)
-
-  // ....
-  }
-}
-`,
+`, //-----------------------------------
+            `
+echo "Provisioning Qubes machine from dom0 with interactive prompts"
+qvm-run --pass-io sys-firewall "curl -sSL https://install.doctor/qubes" > ~/setup.sh
+bash ~/setup.sh
+`, //-----------------------------------
+            `
+echo "Provisioning directly with Chezmoi (which should already be installed)"
+mkdir -p ~/.local/share && cd ~/.local/share
+git clone https://github.com/megabyte-labs/install.doctor.git chezmoi
+chezmoi apply
+`
           ],
         }}
       />,
@@ -308,7 +299,7 @@ public class MyAwesomePlugin: CAPPlugin {
             onModalClose={() => (this.ebookModalOpen = false)}
           >
             <Heading level={2}>
-              Building Cross-platform Apps with Capacitor
+            Open-Source, Cross-OS Workstations with Install Doctor
             </Heading>
             <hubspot-form formId="9151dc0b-42d9-479f-b7b8-649e0e7bd1bc" />
           </site-modal>
@@ -378,7 +369,7 @@ public class MyAwesomePlugin: CAPPlugin {
         <ResponsiveContainer>
           <div class="heading-group">
             <PrismicRichText richText={features} />
-            <a href="/docs/apis" class="link | ui-heading-4">
+            <a href="/docs/features" class="link | ui-heading-4">
               {features__link}
               <span class="arrow">-&gt;</span>
             </a>
@@ -551,13 +542,13 @@ public class MyAwesomePlugin: CAPPlugin {
     const { cta } = this.data;
     const { image, title, text, cta1 } = cta[0];
 
-    const { companies__list2 } = this.data;
+    //const { companies__list2 } = this.data;
 
     const { get_started2: get_started, get_started__ctas } = this.data;
     const { title: get_started_title, text: get_started_text } = get_started[0];
     const { primary, secondary } = get_started__ctas[0];
 
-    const dimensions = [
+    /*const dimensions = [
       '33x42',
       '31x42',
       '32x36',
@@ -566,7 +557,7 @@ public class MyAwesomePlugin: CAPPlugin {
       '35x35',
       '58x25',
       '35x35',
-    ];
+    ];*/
 
     return (
       <section id="multisection">
@@ -586,26 +577,6 @@ public class MyAwesomePlugin: CAPPlugin {
             </div>
           </div>
           <div id="companies">
-            <div class="wrapper">
-              <div class="image-group first">
-                {companies__list2.slice(0, 4).map(({ logo }, i) => (
-                  <PrismicResponsiveImage
-                    image={logo}
-                    width={dimensions[i].split('x')[0]}
-                    height={dimensions[i].split('x')[1]}
-                  />
-                ))}
-              </div>
-              <div class="image-group second">
-                {companies__list2.slice(4, 8).map(({ logo }, i) => (
-                  <PrismicResponsiveImage
-                    image={logo}
-                    width={dimensions[i + 4].split('x')[0]}
-                    height={dimensions[i + 4].split('x')[1]}
-                  />
-                ))}
-              </div>
-            </div>
           </div>
           <div id="get-started">
             <div class="heading-group">
@@ -624,7 +595,7 @@ public class MyAwesomePlugin: CAPPlugin {
                 <span class="arrow"> -&gt;</span>
               </Button>
               <Button
-                href="/docs/plugins"
+                href="/docs/customization"
                 anchor
                 kind="round"
                 variation="light"

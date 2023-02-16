@@ -22,7 +22,6 @@ export class EnterprisePage {
   render() {
     const {
       Top,
-      Companies,
       Native,
       Ebook,
       MicroFrontends,
@@ -40,7 +39,6 @@ export class EnterprisePage {
         <meta-tags />
         <enterprise-subnav />
         <Top />
-        <Companies />
         <Native />
         <Ebook />
         {/* <Approach /> */}
@@ -191,7 +189,7 @@ export class EnterprisePage {
             onModalClose={() => (this.ebookModalOpen = false)}
           >
             <Heading level={2}>
-              Building Cross-platform Apps with Capacitor
+              Open-Source, Cross-OS Workstations with Install Doctor
             </Heading>
             <hubspot-form formId="9151dc0b-42d9-479f-b7b8-649e0e7bd1bc" />
           </site-modal>

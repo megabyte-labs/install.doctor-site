@@ -3,7 +3,7 @@ import url from 'url';
 import path from 'path';
 
 export async function getGithubData(repoRootDir: string, filePath: string) {
-  const since = new Date('2018-06-01').toISOString();
+  const since = new Date('2022-01-01').toISOString();
 
   const results = {
     contributors: [] as string[],
@@ -17,7 +17,7 @@ export async function getGithubData(repoRootDir: string, filePath: string) {
 
     const githubUrl = new URL(
       results.repoFilePath,
-      `https://github.com/ionic-team/capacitor-site/blob/main/`,
+      `https://github.com/megabyte-labs/install.doctor/blob/main/`,
     );
     results.repoFileUrl = githubUrl.href;
 
@@ -43,7 +43,7 @@ async function fetchGithubCommits(
   const fetchUrl = url.format({
     protocol: 'https',
     hostname: 'api.github.com',
-    pathname: 'repos/ionic-team/capacitor-site/commits',
+    pathname: 'repos/megabyte-labs/install.doctor/commits',
     query: {
       access_token: process.env.GITHUB_TOKEN,
       since: since,

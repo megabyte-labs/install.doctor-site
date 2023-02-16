@@ -1,7 +1,7 @@
 export const trackClick = (
   eventId: string,
   event?: MouseEvent,
-  location: string = 'Capacitor Site',
+  location: string = 'Install Doctor Site',
 ) => {
   const timeForTrackingRequests = 150; // ms
   if (event) {

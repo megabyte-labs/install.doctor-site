@@ -9,7 +9,7 @@ const { state } = createStore<State>({
 });
 
 export const defaults = {
-  title: 'Capacitor',
+  title: 'Install Doctor',
   description: '',
   meta_image: '',
 };

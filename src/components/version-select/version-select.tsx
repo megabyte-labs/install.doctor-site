@@ -54,7 +54,7 @@ export class VersionSelect {
             {checkmark()}
           </a>
           <a
-            href="https://github.com/ionic-team/capacitor/releases"
+            href="https://github.com/megabyte-labs/install.doctor/releases"
             target="_blank"
             class="releases"
           >

@@ -35,7 +35,7 @@ export class PreFooter {
               Installation Guide <span class="arrow">-&gt;</span>
             </Heading>
             <Paragraph>
-              Install Capacitor and learn how to start building with it
+              Provision your operating system, learn how to customize it, and unlock integrations with free cloud services.
             </Paragraph>
           </a>
           <a href="/docs/apis">
@@ -61,10 +61,10 @@ export class PreFooter {
               />
             </svg>
             <Heading level={4}>
-              Explore Native Plugins <span class="arrow">-&gt;</span>
+              Explore Features <span class="arrow">-&gt;</span>
             </Heading>
             <Paragraph>
-              Explore Native Plugins that are available to all Capacitor apps
+              Explore the features and apps that are included with Install Doctor.
             </Paragraph>
           </a>
         </ResponsiveContainer>

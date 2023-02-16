@@ -14,13 +14,49 @@ export const config: Config = {
     {
       type: 'www',
       prerenderConfig: './prerender.config.ts',
-      baseUrl: 'https://capacitorjs.com/',
+      baseUrl: 'https://install.doctor/',
       serviceWorker: null,
       copy: [
         {
           src: '../node_modules/@ionic-internal/ionic-ds/www/assets/fonts',
-          dest: 'assets/fonts',
+          dest: 'assets/fonts'
         },
+        {
+          src: './android-chrome-192x192.png',
+          dest: 'android-chrome-192x192.png'
+        },
+        {
+          src: './android-chrome-512x512.png',
+          dest: 'android-chrome-512x512.png'
+        },
+        {
+          src: './apple-touch-icon.png',
+          dest: 'apple-touch-icon.png'
+        },
+        {
+          src: './browserconfig.xml',
+          dest: 'browserconfig.xml'
+        },
+        {
+          src: './favicon-16x16.png',
+          dest: 'favicon-16x16.png'
+        },
+        {
+          src: './favicon-32x32.png',
+          dest: 'favicon-32x32.png'
+        },
+        {
+          src: './favicon.ico',
+          dest: 'favicon.ico'
+        },
+        {
+          src: './mstile-150x150.png',
+          dest: 'mstile-150x150.png'
+        },
+        {
+          src: './safari-pinned-tab.svg',
+          dest: 'safari-pinned-tab.svg'
+        }
       ],
     },
   ],

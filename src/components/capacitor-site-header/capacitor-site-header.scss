@@ -26,8 +26,10 @@
 :host(.theme--dark) {
   --c-background: black;
   background: black;
-
   .capacitor-logo {
+    .st0{
+      fill:#FFFFFF;
+    }
     path:not(.logo) {
       fill: #fff;
     }

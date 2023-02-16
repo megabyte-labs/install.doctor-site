@@ -20,7 +20,7 @@ declare var window: any;
 export class HubspotForm {
   @Element() el?: HTMLElement;
   @Prop() formId?: string;
-  @Prop() portalId = '3776657';
+  @Prop() portalId = '24052635';
   @Prop() goToWebinarKey?: string;
   @Prop() ajax = false;
 
@@ -58,7 +58,7 @@ export class HubspotForm {
   handleScriptLoad = () => {
     requestAnimationFrame(() => {
       window.hbspt.forms.create({
-        portalId: '3776657',
+        portalId: '24052635',
         formId: this.formId,
         target: `#${this.getFormElementId()}`,
         goToWebinarWebinarKey: this.goToWebinarKey || '',

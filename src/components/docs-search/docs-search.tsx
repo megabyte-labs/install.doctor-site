@@ -89,9 +89,9 @@ export class DocsSearch implements ComponentInterface {
 
   setupSearch() {
     window.docsearch({
-      appId: '3IVALO5OU4',
-      apiKey: '5fdbbcbd186f2a1265494810dd0bf09c',
-      indexName: `capacitorjs`,
+      appId: 'S9NORH1KTE',
+      apiKey: 'e14004b94a1f75b3bb71fc63f070466c',
+      indexName: `installdoc`,
       inputSelector: `#input-${this.uniqueId}`,
       debug: false, // Set debug to true if you want to inspect the dropdown
       queryHook: () => {
@@ -109,7 +109,7 @@ export class DocsSearch implements ComponentInterface {
         }
       },
       handleSelected: (_, __, suggestion) => {
-        const url = suggestion.url.replace('https://capacitorjs.com', '');
+        const url = suggestion.url.replace('https://install.doctor', '');
         this.clearSearch();
         Router.push(url);
       },

@@ -18,16 +18,16 @@ export class BlogPage {
 
   Helmet = () => (
     <Helmet>
-      <title>Capacitor Blog</title>
-      <meta name="description" content={'Capacitor Blog'} />
-      <meta name="twitter:description" content={`Capacitor Blog`} />
+      <title>Install Doctor Blog</title>
+      <meta name="description" content={'Install Doctor Blog'} />
+      <meta name="twitter:description" content={`Install Doctor Blog`} />
       <meta
         name="twitter:image"
-        content="https://capacitorjs.com/assets/img/og.png"
+        content="https://install.doctor/assets/img/og.png"
       />
       <meta
         property="og:image"
-        content="https://capacitorjs.com/assets/img/og.png"
+        content="https://install.doctor/assets/img/og.png"
       />
     </Helmet>
   );
@@ -42,10 +42,10 @@ export class BlogPage {
         <ResponsiveContainer>
           <div class="heading-group">
             <Heading level={2} as="h1">
-              Capacitor Blog
+              Install Doctor Blog
             </Heading>
             <Paragraph level={2}>
-              Articles by the Capacitor team and community
+              Articles by the Install Doctor team and community
             </Paragraph>
           </div>
           <div class="content">

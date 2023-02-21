@@ -141,9 +141,9 @@ export class EnterprisePage {
     const { supertext, title, subtext } = native[0];
 
     const icons = [
-      ['three blocks with up arrow', '64x64'],
-      ['fingerprint icon with lock symbol', '76x64'],
-      ['clock icon with up arrow', '64x64'],
+      ['Three blocks with up arrow', '64x64'],
+      ['Fingerprint icon with lock symbol', '76x64'],
+      ['Clock icon with up arrow', '64x64'],
     ];
 
     return (
@@ -189,9 +189,12 @@ export class EnterprisePage {
             onModalClose={() => (this.ebookModalOpen = false)}
           >
             <Heading level={2}>
-              Open-Source, Cross-OS Workstations with Install Doctor
+              Free Install Doctor eBook
             </Heading>
-            <hubspot-form formId="9151dc0b-42d9-479f-b7b8-649e0e7bd1bc" />
+            <Paragraph>
+              Fill out and submit the form below to get your free copy of <strong>Open-Source, Cross-OS Workstations with Install Doctor</strong> sent to your e-mail.
+            </Paragraph>
+            <capacitor-hubspot-form formId="df7c28cd-d123-4ea2-aa2c-d7cb304fd398" />
           </site-modal>
           <div class="wrapper">
             <PrismicResponsiveImage image={background} class="background" />
@@ -407,7 +410,7 @@ export class EnterprisePage {
                 <sup>{supertext}</sup>
               </p>
               <PrismicRichText richText={title} />
-              <Paragraph level={2}>{subtext}</Paragraph>
+              <PrismicRichText richText={subtext} paragraphLevel={2} />
             </div>
             <ul>
               {features__list.map(({ icon, title, text }) => (
@@ -432,19 +435,7 @@ export class EnterprisePage {
 
   Editions = () => {
     const { editions } = this.data;
-    const { supertext, title, paragraph_1, paragraph_2, cta_1 } = editions[0];
-
-    const images = [
-      ['burger-king', '36x38'],
-      ['fidelity', '113x32'],
-      ['hr-block', '32x32'],
-      ['communo', '102x24'],
-      ['usaa', '27x32'],
-      ['ibm', '64x26'],
-      ['bcbs', '62x32'],
-      ['test-kitchen', '77x28'],
-      ['home-depot', '32x32'],
-    ];
+    const { supertext, title, paragraph_1, paragraph_2, cta_1, image } = editions[0];
 
     return (
       <section id="editions">
@@ -468,49 +459,8 @@ export class EnterprisePage {
                 </a> */}
               </div>
             </div>
-            <div class="logos">
-              <div class="row0">
-                {images.slice(0, 3).map((stats, i) => (
-                  <div class="image-wrapper">
-                    <img
-                      src={getAssetPath(
-                        `./assets-enterprise-page/editions/${i}@2x.png`,
-                      )}
-                      width={stats[1].split('x')[0]}
-                      height={stats[1].split('x')[1]}
-                      loading="lazy"
-                    />
-                  </div>
-                ))}
-              </div>
-              <div class="row1">
-                {images.slice(3, 6).map((stats, i) => (
-                  <div class="image-wrapper">
-                    <img
-                      src={getAssetPath(
-                        `./assets-enterprise-page/editions/${i + 3}@2x.png`,
-                      )}
-                      width={stats[1].split('x')[0]}
-                      height={stats[1].split('x')[1]}
-                      loading="lazy"
-                    />
-                  </div>
-                ))}
-              </div>
-              <div class="row2">
-                {images.slice(6, 9).map((stats, i) => (
-                  <div class="image-wrapper">
-                    <img
-                      src={getAssetPath(
-                        `./assets-enterprise-page/editions/${i + 6}@2x.png`,
-                      )}
-                      width={stats[1].split('x')[0]}
-                      height={stats[1].split('x')[1]}
-                      loading="lazy"
-                    />
-                  </div>
-                ))}
-              </div>
+            <div class="image-wrapper">
+              <PrismicResponsiveImage image={image} />
             </div>
           </div>
         </ResponsiveContainer>
@@ -531,7 +481,7 @@ export class EnterprisePage {
             </p>
             <Heading level={2}>{title}</Heading>
           </div>
-          <hubspot-form formId="d0019a78-110e-4d28-b356-56357b4abe4b" />
+          <capacitor-hubspot-form formId="b74a09f0-f963-47d2-b7d0-43d74dae366f" />
         </ResponsiveContainer>
       </section>
     );

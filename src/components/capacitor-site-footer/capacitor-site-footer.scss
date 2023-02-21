@@ -76,6 +76,17 @@ capacitor-site-footer {
     flex-basis: 479px;
   }
 
+  .form-message {
+    display: flex;
+    align-items: center;
+
+    ion-icon {
+      font-size: 32px;
+      color: #597eff;
+      margin-inline-end: var(--space-3);
+    }
+  }
+
   form.hs-form {
     display: flex;
     align-items: flex-start;

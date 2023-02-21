@@ -3,27 +3,47 @@ import { Client } from './prismic-configuration';
 import { PrismicDocsResponse } from './models';
 import Prismic from 'prismic-javascript';
 import { MapParamData } from '@stencil/router';
+import fs from 'fs'
 
 export const getPage: MapParamData = async (_params, url) => {
   let data: any = {};
 
   switch (url.pathname) {
     case '/':
-      data = {
-        ...(await queryPrismic('capacitor_homepage')),
-        whitepaper_ad: await queryPrismic('capacitor_whitepaper_ad'),
-        announcement: await queryPrismic('capacitor_homepage_announcement'),
-      };
+      const homeSync = fs.existsSync('./home.prismic.json')
+      if (homeSync) {
+        data = JSON.parse(fs.readFileSync('./home.prismic.json').toString())
+      } else {
+        data = {
+          ...(await queryPrismic('capacitor_homepage')),
+          whitepaper_ad: await queryPrismic('capacitor_whitepaper_ad'),
+          announcement: await queryPrismic('capacitor_homepage_announcement'),
+        };
+        data.announcement_bar = await queryPrismic('announcement_bar');
+        fs.writeFileSync('./home.prismic.json', JSON.stringify(data))
+      }
       break;
     case '/community':
-      data = await queryPrismic('capacitor_community');
+      const communitySync = fs.existsSync('./community.prismic.json')
+      if (communitySync) {
+        data = JSON.parse(fs.readFileSync('./community.prismic.json').toString())
+      } else {
+        data = await queryPrismic('capacitor_community');
+        data.announcement_bar = await queryPrismic('announcement_bar');
+        fs.writeFileSync('./community.prismic.json', JSON.stringify(data))
+      }
       break;
     case '/enterprise':
-      data = await queryPrismic('capacitor_enterprise');
+      const enterpriseSync = fs.existsSync('./enterprise.prismic.json')
+      if (enterpriseSync) {
+        data = JSON.parse(fs.readFileSync('./enterprise.prismic.json').toString())
+      } else {
+        data = await queryPrismic('capacitor_enterprise');
+        data.announcement_bar = await queryPrismic('announcement_bar');
+        fs.writeFileSync('./enterprise.prismic.json', JSON.stringify(data))
+      }
       break;
   }
-
-  data.announcement_bar = await queryPrismic('announcement_bar');
 
   return data;
 };

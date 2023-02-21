@@ -12,7 +12,7 @@ import Router, { docsVersionHref } from '../../router';
 import { Button } from '@ionic-internal/ionic-ds';
 import { JSXBase } from '@stencil/core/internal';
 import { DocsTemplate } from 'src/data.server/models';
-import { Translation } from '../../icons';
+//import { Translation } from '../../icons';
 
 @Component({
   tag: 'site-header',
@@ -156,7 +156,15 @@ export class SiteHeader implements ComponentInterface {
           <div class="docs-search-wrapper desktop-only">
             <docs-search theme={this.theme} />
           </div>
-
+          <a
+            {...href(docsVersionHref('/docs/features'))}
+            class={{
+              'ui-paragraph-4': true,
+              'active': template === 'cli',
+            }}
+          >
+            Features
+          </a>
           <a
             {...href(docsVersionHref('/docs'))}
             class={{
@@ -165,15 +173,6 @@ export class SiteHeader implements ComponentInterface {
             }}
           >
             Docs
-          </a>
-          <a
-            {...href(docsVersionHref('/docs/software'))}
-            class={{
-              'ui-paragraph-4': true,
-              'active': template === 'cli',
-            }}
-          >
-            Software
           </a>
 
           <div class="separator desktop-only"></div>
@@ -218,7 +217,7 @@ export class SiteHeader implements ComponentInterface {
               Community
             </a>
             <a
-              {...href('https://ionic.io/blog/tag/capacitor')}
+              {...href('/blog')}
               class="ui-paragraph-4"
               ref={el => (this.links.blog = el)}
             >
@@ -238,27 +237,10 @@ export class SiteHeader implements ComponentInterface {
           <more-button onClick={() => this.toggleExpanded()} />
 
           <div class="ctas">
-            <docs-dropdown
-              icon={Translation}
-              align="right"
-              class="label-sm-only"
-            >
-              <section>
-                <a href="https://install.doctor/" class="link-active">
-                  English
-                  <svg viewBox="0 0 512 512" width="14">
-                    <path d="M186.301 339.893L96 249.461l-32 30.507L186.301 402 448 140.506 416 110z"></path>
-                  </svg>
-                </a>
-                <a href="https://capacitorjs.jp/" target="_blank">
-                  日本語
-                </a>
-              </section>
-            </docs-dropdown>
-
             <a
               href="https://github.com/megabyte-labs/install.doctor"
               target="_blank"
+              title="Install Doctor's repository on GitHub"
               rel="noopener"
             >
               <svg
@@ -275,10 +257,10 @@ export class SiteHeader implements ComponentInterface {
               </svg>
             </a>
             <a
-              href="https://ionic.link/discord"
+              href="https://discord.com/channels/1077138419953713222/1077138479928049734"
               target="_blank"
               rel="noopener"
-              title="discord link"
+              title="Discord link"
             >
               <svg
                 class="social"
@@ -296,6 +278,7 @@ export class SiteHeader implements ComponentInterface {
             <a
               href="https://twitter.com/installdoc"
               target="_blank"
+              title="Twitter link"
               rel="noopener"
             >
               <svg
@@ -331,7 +314,7 @@ export class SiteHeader implements ComponentInterface {
                   fill-rule="evenodd"
                 ></path>
               </svg>
-              Install
+              Start
             </Button>
           </div>
         </header>

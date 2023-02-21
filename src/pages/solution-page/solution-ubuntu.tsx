@@ -15,7 +15,7 @@ export const SolutionUbuntu = () => {
               Provision Ubuntu.
             </Heading>
             <Paragraph>
-              Interactively provision Ubuntu with a feature-packed terminal, slick theme, and a configurable list of software (some of which comes pre-configured to save time micro-optimizing) from the terminal.
+              Interactively provision Ubuntu with a feature-packed terminal, slick theme, and a configurable list of software.
             </Paragraph>
           </div>
           <div class="code-panel">
@@ -32,15 +32,49 @@ bash <(curl -sSL https://install.doctor)
           <sup class="ui-heading-6">02</sup>
           <div class="heading-group">
             <Heading level={3}>Launch web services.</Heading>
+            <div class="platforms">
+              <img
+                loading="lazy"
+                src="/assets/img/landing/docker-swarm.png"
+                alt="Docker Swarm"
+                class="vm-icon"
+                width="37"
+                height="37"
+              />
+              <img
+                loading="lazy"
+                src="/assets/img/landing/kubesphere.png"
+                alt="KubeSphere"
+                class="vm-icon"
+                width="37"
+                height="37"
+              />
+              <img
+                loading="lazy"
+                src="/assets/img/landing/tailscale.png"
+                alt="Tailscale"
+                class="vm-icon"
+                width="37"
+                height="37"
+              />
+              <img
+                loading="lazy"
+                src="/assets/img/landing/cloudflare.png"
+                alt="CloudFlare"
+                class="vm-icon"
+                width="37"
+                height="37"
+              />
+            </div>
             <Paragraph>
-              After the provisioning is complete, launch a suite of web services via Docker Swarm and KubeSphere. This will host a configurable suite of web services that you can access across other devices you provision (via Tailscale) or even over the internet (hosted behind SSO-authenticated CloudFlare Teams endpoints).
+              Launch a suite of web services via Docker Swarm and KubeSphere. Access all your machines over a VPN subnet (via Tailscale) and host SSO-protected web apps (via CloudFlare Teams).
             </Paragraph>
           </div>
           <div class="code-panel">
             <code-snippet
               language="shell-session"
               code={`
-run local:web-services
+run setup:webapps
 `}
             />
           </div>
@@ -50,71 +84,59 @@ run local:web-services
           <sup class="ui-heading-6">03</sup>
           <div class="heading-group">
             <Heading level={3}>
-              Take it a step further and launch VMs that can be provisioned in the same way.
+              Launch and provision VMs.
             </Heading>
             <div class="platforms">
               <img
                 loading="lazy"
-                src="/assets/img/landing/apple.png"
-                alt="Apple"
-                class="apple"
-                width="22"
-                height="26"
+                src="/assets/img/landing/hyperv.png"
+                alt="Hyper-V"
+                class="vm-icon"
+                width="37"
+                height="37"
               />
               <img
                 loading="lazy"
-                src="/assets/img/landing/android.png"
-                alt="Android"
-                class="android"
-                width="27"
-                height="23"
+                src="/assets/img/landing/parallels.png"
+                alt="Parallels"
+                class="vm-icon"
+                width="37"
+                height="37"
+              />
+              <img
+                loading="lazy"
+                src="/assets/img/landing/qemu.png"
+                alt="QEMU"
+                class="vm-icon"
+                width="37"
+                height="37"
+              />
+              <img
+                loading="lazy"
+                src="/assets/img/landing/virtualbox.png"
+                alt="VirtualBox"
+                class="vm-icon"
+                width="37"
+                height="37"
+              />
+              <img
+                loading="lazy"
+                src="/assets/img/landing/vmware.png"
+                alt="VMWare"
+                class="vm-icon"
+                width="37"
+                height="37"
               />
             </div>
             <Paragraph>
-              Capacitor's native projects exist in their own top-level folders
-              and should be considered part of your app (check them into source
-              control).
+              Create Archlinux, CentOS, Debian, Fedora, macOS, Ubuntu, and Windows VMs using almost any virtualization platform. Create disposable environments, improve security, and run macOS / Windows.
             </Paragraph>
           </div>
           <div class="code-panel">
             <code-snippet
               language="shell-session"
               code={`
-npm i @capacitor/ios @capacitor/android
-npx cap add android
-npx cap add ios
-`}
-            />
-          </div>
-        </article>
-
-        <article class="step">
-          <sup class="ui-heading-6">04</sup>
-          <div class="heading-group">
-            <Heading level={3}>Adding calls to Native APIs</Heading>
-            <Paragraph>
-              With Capacitor installed, adding calls to native device features
-              is as straight forward as calling other JavaScript methods
-            </Paragraph>
-          </div>
-          <div class="code-panel">
-            <code-snippet
-              language="typescript"
-              code={`
-import { Component } from '@angular/core';
-import { Geolocation, GeolocationPosition } from '@capacitor/geolocation';
-@Component({
-  selector: 'app-geo-page',
-  templateUrl: 'geo.page.html',
-  styleUrls: ['geo.page.scss'],
-})
-export class GeolocationPage {
-  loc: GeolocationPosition;
-  constructor() {}
-  async getCurrentPosition() {
-    this.loc = await Geolocation.getCurrentPosition();
-  }
-}
+run setup:vms
 `}
             />
           </div>
@@ -122,16 +144,15 @@ export class GeolocationPage {
       </ResponsiveContainer>
       <section id="continue">
         <ResponsiveContainer>
-          <Heading level={3}>Continue your Capacitor Journey.</Heading>
+          <Heading level={3}>Continue your Install Doctor Journey.</Heading>
           <Paragraph>
             This is only the beginning. Learn more about the Install Doctor{' '}
-            <a href="/docs/basics/workflow" target="_blank">
+            <a href="/docs/customization">
               development workflow
             </a>{' '}
-            or using more{' '}
-            <a href="/docs/apis" target="_blank">
-              {' '}
-              native APIs
+            or leveraging the{' '}
+            <a href="/docs/features">
+              amazing features
             </a>{' '}
             .
           </Paragraph>

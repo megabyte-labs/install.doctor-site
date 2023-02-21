@@ -38,7 +38,7 @@ export class PreFooter {
               Provision your operating system, learn how to customize it, and unlock integrations with free cloud services.
             </Paragraph>
           </a>
-          <a href="/docs/apis">
+          <a href="/docs/features">
             <svg
               width="48"
               height="50"

@@ -1,0 +1,865 @@
+{
+    "top": [
+        {
+            "background": {
+                "dimensions": {
+                    "width": 1330,
+                    "height": 790
+                },
+                "alt": "Raised platforms with app and company icons",
+                "copyright": null,
+                "url": "https://install.doctor/assets/img/enterprise/platform-elevated-graphic.png",
+                "2x": {
+                    "dimensions": {
+                        "width": 2660,
+                        "height": 1580
+                    },
+                    "alt": "Raised platforms with app and company icons",
+                    "copyright": null,
+                    "url": "https://install.doctor/assets/img/enterprise/platform-elevated-graphic-2x.png"
+                }
+            },
+            "title": "Secure, reliable multi-OS provisioning for enterprise teams",
+            "text": "Increase your team's capacity by provisioning their devices with Install Doctor on any OS or virtualization platform.",
+            "cta_1": "Talk to sales",
+            "cta_2": "Talk to an expert"
+        }
+    ],
+    "companies": "powering incredible apps & dev teams",
+    "native": [
+        {
+            "supertext": "SUPERCHARGED EFFICIENCY",
+            "title": [
+                {
+                    "type": "heading2",
+                    "text": "Unlock enterprise-grade security and support",
+                    "spans": [
+                        {
+                            "start": 24,
+                            "end": 44,
+                            "type": "em"
+                        }
+                    ]
+                }
+            ],
+            "subtext": "Improve the efficiency of your team by providing them with the right enterprise-grade tools and services."
+        }
+    ],
+    "native__list": [
+        {
+            "title": "Build with confidence",
+            "text": "Enjoy peace of mind knowing your team has all the best open-source productivity tools available, pre-installed, pre-configured, and backed by mission-critical support."
+        },
+        {
+            "title": "Protect your users & data",
+            "text": "Ensure all security features are pre-configured on your team's devices. Everything sandboxed, everything firewalled."
+        },
+        {
+            "title": "Accelerate your projects",
+            "text": "Get to market faster by providing tools and services that will improve the efficiency and capabilities of your team."
+        }
+    ],
+    "ebook": [
+        {
+            "background": {
+                "dimensions": {
+                    "width": 1216,
+                    "height": 320
+                },
+                "alt": "See-through tiles",
+                "copyright": null,
+                "url": "https://install.doctor/assets/img/landing/see-thru-tiles.png",
+                "2x": {
+                    "dimensions": {
+                        "width": 2432,
+                        "height": 640
+                    },
+                    "alt": "See-through tiles",
+                    "copyright": null,
+                    "url": "https://install.doctor/assets/img/landing/see-thru-tiles-2x.png"
+                }
+            },
+            "book": {
+                "dimensions": {
+                    "width": 364,
+                    "height": 343
+                },
+                "alt": "Book cover with title reading \"Provisioning Operating Systems with Install Doctor\"",
+                "copyright": null,
+                "url": "https://install.doctor/assets/img/landing/ebook-text-box.png",
+                "2x": {
+                    "dimensions": {
+                        "width": 728,
+                        "height": 686
+                    },
+                    "alt": "Book cover with title reading \"Provisioning Operating Systems with Install Doctor\"",
+                    "copyright": null,
+                    "url": "https://install.doctor/assets/img/landing/ebook-text-box-2x.png"
+                }
+            },
+            "text": [
+                {
+                    "type": "paragraph",
+                    "text": "Provision your computing environments faster. Our free guide details the benefits of leveraging Install Doctor to define the state of your PCs.",
+                    "spans": [
+                        {
+                            "start": 0,
+                            "end": 45,
+                            "type": "em"
+                        }
+                    ]
+                }
+            ],
+            "cta": "Read the free eBook"
+        }
+    ],
+    "approach": [
+        {
+            "supertext": "Capacitor approach",
+            "title": [
+                {
+                    "type": "heading2",
+                    "text": "Build modern native apps without ever leaving the Web.",
+                    "spans": [
+                        {
+                            "start": 25,
+                            "end": 54,
+                            "type": "em"
+                        }
+                    ]
+                }
+            ]
+        }
+    ],
+    "approach_traditional": [
+        {
+            "image": {
+                "dimensions": {
+                    "width": 480,
+                    "height": 218
+                },
+                "alt": "android and apple platforms with blocks on top",
+                "copyright": null,
+                "url": "https://images.prismic.io/ionicframeworkcom/68b006a0-f96b-4d94-bc0d-b899f82d2bbd_capacitor-enterprise-traditional-0%402x.png?auto=compress,format&rect=0,0,960,436&w=480&h=218",
+                "2x": {
+                    "dimensions": {
+                        "width": 961,
+                        "height": 436
+                    },
+                    "alt": "android and apple platforms with blocks on top",
+                    "copyright": null,
+                    "url": "https://images.prismic.io/ionicframeworkcom/68b006a0-f96b-4d94-bc0d-b899f82d2bbd_capacitor-enterprise-traditional-0%402x.png?auto=compress,format&rect=0,0,961,436&w=961&h=436"
+                }
+            },
+            "title": "Traditional Native app architecture",
+            "text": "Native app experiences and functionality managed on a per application/platform basis.",
+            "subtitle": "Traditional native approach"
+        }
+    ],
+    "approach_traditional__list": [
+        {
+            "icon": {
+                "dimensions": {
+                    "width": 20,
+                    "height": 20
+                },
+                "alt": "exclamation mark icon",
+                "copyright": null,
+                "url": "https://images.prismic.io/ionicframeworkcom/3695aa92-5204-4831-9076-34a2287ffd0e_capacitor-enterprise-traditional-1%402x.png?auto=compress,format&rect=0,0,40,40&w=20&h=20",
+                "2x": {
+                    "dimensions": {
+                        "width": 40,
+                        "height": 40
+                    },
+                    "alt": "exclamation mark icon",
+                    "copyright": null,
+                    "url": "https://images.prismic.io/ionicframeworkcom/3695aa92-5204-4831-9076-34a2287ffd0e_capacitor-enterprise-traditional-1%402x.png?auto=compress,format&rect=0,0,40,40&w=40&h=40"
+                }
+            },
+            "text": "Separate codebase for each mobile platform"
+        },
+        {
+            "icon": {
+                "dimensions": {
+                    "width": 20,
+                    "height": 20
+                },
+                "alt": "exclamation mark icon",
+                "copyright": null,
+                "url": "https://images.prismic.io/ionicframeworkcom/3695aa92-5204-4831-9076-34a2287ffd0e_capacitor-enterprise-traditional-1%402x.png?auto=compress,format&rect=0,0,40,40&w=20&h=20",
+                "2x": {
+                    "dimensions": {
+                        "width": 40,
+                        "height": 40
+                    },
+                    "alt": "exclamation mark icon",
+                    "copyright": null,
+                    "url": "https://images.prismic.io/ionicframeworkcom/3695aa92-5204-4831-9076-34a2287ffd0e_capacitor-enterprise-traditional-1%402x.png?auto=compress,format&rect=0,0,40,40&w=40&h=40"
+                }
+            },
+            "text": "Specialized languages and dev environments"
+        },
+        {
+            "icon": {
+                "dimensions": {
+                    "width": 20,
+                    "height": 20
+                },
+                "alt": "exclamation mark icon",
+                "copyright": null,
+                "url": "https://images.prismic.io/ionicframeworkcom/3695aa92-5204-4831-9076-34a2287ffd0e_capacitor-enterprise-traditional-1%402x.png?auto=compress,format&rect=0,0,40,40&w=20&h=20",
+                "2x": {
+                    "dimensions": {
+                        "width": 40,
+                        "height": 40
+                    },
+                    "alt": "exclamation mark icon",
+                    "copyright": null,
+                    "url": "https://images.prismic.io/ionicframeworkcom/3695aa92-5204-4831-9076-34a2287ffd0e_capacitor-enterprise-traditional-1%402x.png?auto=compress,format&rect=0,0,40,40&w=40&h=40"
+                }
+            },
+            "text": "No ability to target web sites, web apps or PWAs"
+        },
+        {
+            "icon": {
+                "dimensions": {
+                    "width": 20,
+                    "height": 20
+                },
+                "alt": "exclamation mark icon",
+                "copyright": null,
+                "url": "https://images.prismic.io/ionicframeworkcom/3695aa92-5204-4831-9076-34a2287ffd0e_capacitor-enterprise-traditional-1%402x.png?auto=compress,format&rect=0,0,40,40&w=20&h=20",
+                "2x": {
+                    "dimensions": {
+                        "width": 40,
+                        "height": 40
+                    },
+                    "alt": "exclamation mark icon",
+                    "copyright": null,
+                    "url": "https://images.prismic.io/ionicframeworkcom/3695aa92-5204-4831-9076-34a2287ffd0e_capacitor-enterprise-traditional-1%402x.png?auto=compress,format&rect=0,0,40,40&w=40&h=40"
+                }
+            },
+            "text": "No web libraries, web UI components, or CSS styling"
+        },
+        {
+            "icon": {
+                "dimensions": {
+                    "width": 20,
+                    "height": 20
+                },
+                "alt": "exclamation mark icon",
+                "copyright": null,
+                "url": "https://images.prismic.io/ionicframeworkcom/3695aa92-5204-4831-9076-34a2287ffd0e_capacitor-enterprise-traditional-1%402x.png?auto=compress,format&rect=0,0,40,40&w=20&h=20",
+                "2x": {
+                    "dimensions": {
+                        "width": 40,
+                        "height": 40
+                    },
+                    "alt": "exclamation mark icon",
+                    "copyright": null,
+                    "url": "https://images.prismic.io/ionicframeworkcom/3695aa92-5204-4831-9076-34a2287ffd0e_capacitor-enterprise-traditional-1%402x.png?auto=compress,format&rect=0,0,40,40&w=40&h=40"
+                }
+            },
+            "text": "Access native functionality per each platform"
+        }
+    ],
+    "approach_web": [
+        {
+            "image": {
+                "dimensions": {
+                    "width": 493,
+                    "height": 326
+                },
+                "alt": "apple, android, and pwa platforms with capacitor on top",
+                "copyright": null,
+                "url": "https://images.prismic.io/ionicframeworkcom/77875dc7-d69e-4493-b04c-3e96e4a8cefd_capacitor-enterprise-traditional-2%402x.png?auto=compress,format&rect=0,0,987,653&w=493&h=326",
+                "2x": {
+                    "dimensions": {
+                        "width": 987,
+                        "height": 653
+                    },
+                    "alt": "apple, android, and pwa platforms with capacitor on top",
+                    "copyright": null,
+                    "url": "https://images.prismic.io/ionicframeworkcom/77875dc7-d69e-4493-b04c-3e96e4a8cefd_capacitor-enterprise-traditional-2%402x.png?auto=compress,format&rect=0,0,987,653&w=987&h=653"
+                }
+            },
+            "title": "Web Native app architecture",
+            "text": "Core native device APIs and experiences shared across multiple applications and platforms.",
+            "subtitle": "Capacitor Web Native approach"
+        }
+    ],
+    "approach_web__list": [
+        {
+            "icon": {
+                "dimensions": {
+                    "width": 20,
+                    "height": 20
+                },
+                "alt": null,
+                "copyright": null,
+                "url": "https://images.prismic.io/ionicframeworkcom/4d7dd4de-a530-43e2-a8cb-33da40eb7591_capacitor-enterprise-traditional-3%402x.png?auto=compress,format&rect=0,0,41,41&w=20&h=20",
+                "2x": {
+                    "dimensions": {
+                        "width": 40,
+                        "height": 40
+                    },
+                    "alt": null,
+                    "copyright": null,
+                    "url": "https://images.prismic.io/ionicframeworkcom/4d7dd4de-a530-43e2-a8cb-33da40eb7591_capacitor-enterprise-traditional-3%402x.png?auto=compress,format&rect=0,0,41,41&w=40&h=40"
+                }
+            },
+            "text": "One codebase for iOS, Android, and web (PWA)"
+        },
+        {
+            "icon": {
+                "dimensions": {
+                    "width": 20,
+                    "height": 20
+                },
+                "alt": "checkmark circle icon",
+                "copyright": null,
+                "url": "https://images.prismic.io/ionicframeworkcom/4d7dd4de-a530-43e2-a8cb-33da40eb7591_capacitor-enterprise-traditional-3%402x.png?auto=compress,format&rect=0,0,41,41&w=20&h=20",
+                "2x": {
+                    "dimensions": {
+                        "width": 40,
+                        "height": 40
+                    },
+                    "alt": "checkmark circle icon",
+                    "copyright": null,
+                    "url": "https://images.prismic.io/ionicframeworkcom/4d7dd4de-a530-43e2-a8cb-33da40eb7591_capacitor-enterprise-traditional-3%402x.png?auto=compress,format&rect=0,0,41,41&w=40&h=40"
+                }
+            },
+            "text": "Build with web standards: JavaScript, HTML, and CSS"
+        },
+        {
+            "icon": {
+                "dimensions": {
+                    "width": 20,
+                    "height": 20
+                },
+                "alt": "checkmark circle icon",
+                "copyright": null,
+                "url": "https://images.prismic.io/ionicframeworkcom/4d7dd4de-a530-43e2-a8cb-33da40eb7591_capacitor-enterprise-traditional-3%402x.png?auto=compress,format&rect=0,0,41,41&w=20&h=20",
+                "2x": {
+                    "dimensions": {
+                        "width": 40,
+                        "height": 40
+                    },
+                    "alt": "checkmark circle icon",
+                    "copyright": null,
+                    "url": "https://images.prismic.io/ionicframeworkcom/4d7dd4de-a530-43e2-a8cb-33da40eb7591_capacitor-enterprise-traditional-3%402x.png?auto=compress,format&rect=0,0,41,41&w=40&h=40"
+                }
+            },
+            "text": "Target the native app stores or desktop and mobile web"
+        },
+        {
+            "icon": {
+                "dimensions": {
+                    "width": 20,
+                    "height": 20
+                },
+                "alt": "checkmark circle icon",
+                "copyright": null,
+                "url": "https://images.prismic.io/ionicframeworkcom/4d7dd4de-a530-43e2-a8cb-33da40eb7591_capacitor-enterprise-traditional-3%402x.png?auto=compress,format&rect=0,0,41,41&w=20&h=20",
+                "2x": {
+                    "dimensions": {
+                        "width": 40,
+                        "height": 40
+                    },
+                    "alt": "checkmark circle icon",
+                    "copyright": null,
+                    "url": "https://images.prismic.io/ionicframeworkcom/4d7dd4de-a530-43e2-a8cb-33da40eb7591_capacitor-enterprise-traditional-3%402x.png?auto=compress,format&rect=0,0,41,41&w=40&h=40"
+                }
+            },
+            "text": "Use familiar web frameworks, UI libraries, and tooling"
+        },
+        {
+            "icon": {
+                "dimensions": {
+                    "width": 20,
+                    "height": 20
+                },
+                "alt": "checkmark circle icon",
+                "copyright": null,
+                "url": "https://images.prismic.io/ionicframeworkcom/4d7dd4de-a530-43e2-a8cb-33da40eb7591_capacitor-enterprise-traditional-3%402x.png?auto=compress,format&rect=0,0,41,41&w=20&h=20",
+                "2x": {
+                    "dimensions": {
+                        "width": 40,
+                        "height": 40
+                    },
+                    "alt": "checkmark circle icon",
+                    "copyright": null,
+                    "url": "https://images.prismic.io/ionicframeworkcom/4d7dd4de-a530-43e2-a8cb-33da40eb7591_capacitor-enterprise-traditional-3%402x.png?auto=compress,format&rect=0,0,41,41&w=40&h=40"
+                }
+            },
+            "text": "Access the same native functionality and APIs"
+        }
+    ],
+    "micro_frontends": [
+        {
+            "image": {
+                "dimensions": {
+                    "width": 1560,
+                    "height": 1440
+                },
+                "alt": "Graphic depicting system connections",
+                "copyright": null,
+                "url": "https://install.doctor/assets/img/enterprise/development-graphic.png"
+            },
+            "supertext": "SPEED UP DEVELOPMENT",
+            "title": [
+                {
+                    "type": "heading2",
+                    "text": "Development-ready VMs for large-scale dev",
+                    "spans": [
+                        {
+                            "start": 17,
+                            "end": 41,
+                            "type": "em"
+                        }
+                    ]
+                }
+            ],
+            "subtext": [
+                {
+                    "type": "paragraph",
+                    "text": "To give your developers access to the best set of tools, full device access is not necessarily required. With our Enterprise subscription, your developers can request pre-built, pre-configured, temporary VMs from a self-service portal. This model improves their time-to-code, saves on software licensing costs, and allows you to control the development machines from a single source.",
+                    "spans": [
+                        {
+                            "start": 215,
+                            "end": 235,
+                            "type": "hyperlink",
+                            "data": {
+                                "link_type": "Web",
+                                "url": "https://install.doctor/blog/self-service-portal",
+                                "target": "_blank"
+                            }
+                        }
+                    ]
+                }
+            ]
+        }
+    ],
+    "plugins": [
+        {
+            "image": {
+                "dimensions": {
+                    "width": 608,
+                    "height": 608
+                },
+                "alt": "Wheel of operating system icons around Install Doctor icon",
+                "copyright": null,
+                "url": "https://install.doctor/assets/img/enterprise/os-wheel.png",
+                "2x": {
+                    "dimensions": {
+                        "width": 1216,
+                        "height": 1216
+                    },
+                    "alt": "Wheel of operating system icons around Install Doctor icon",
+                    "copyright": null,
+                    "url": "https://install.doctor/assets/img/enterprise/os-wheel-2x.png"
+                }
+            },
+            "supertext": "OS-Independent",
+            "title": [
+                {
+                    "type": "heading2",
+                    "text": "Avoid lock-in, use any operating system",
+                    "spans": [
+                        {
+                            "start": 14,
+                            "end": 39,
+                            "type": "em"
+                        }
+                    ]
+                }
+            ],
+            "subtext": "Different operating systems are sometimes required for different jobs. But, your team should feel comfortable on any platform. That is why Install Doctor gives you the freedom to apply your system configuration on any operating system or virtualization platform from a single configuration."
+        }
+    ],
+    "security": [
+        {
+            "image": {
+                "dimensions": {
+                    "width": 608,
+                    "height": 600
+                },
+                "alt": "Security icons around Install Doctor icon",
+                "copyright": null,
+                "url": "https://install.doctor/assets/img/enterprise/security-wheel.png",
+                "2x": {
+                    "dimensions": {
+                        "width": 1216,
+                        "height": 1201
+                    },
+                    "alt": "Security icons around Install Doctor icon",
+                    "copyright": null,
+                    "url": "https://install.doctor/assets/img/enterprise/security-wheel-2x.png"
+                }
+            },
+            "supertext": "Enterprise-Grade Protection",
+            "title": [
+                {
+                    "type": "heading2",
+                    "text": "Zero-Trust, hardware-backed authentication",
+                    "spans": [
+                        {
+                            "start": 11,
+                            "end": 42,
+                            "type": "em"
+                        }
+                    ]
+                }
+            ],
+            "subtext": [
+                {
+                    "type": "paragraph",
+                    "text": "Utilize the best possible security practices by protecting all your web services with our Zero-Trust, hardware-backed authentication system. Authorize everything and require Multi-Factor Authentication (MFA) with support for hardware-based methods such as FIDO2.",
+                    "spans": [
+                        {
+                            "start": 118,
+                            "end": 139,
+                            "type": "hyperlink",
+                            "data": {
+                                "link_type": "Web",
+                                "url": "https://install.doctor/blog/single-sign-on"
+                            }
+                        }
+                    ]
+                }
+            ]
+        }
+    ],
+    "delivery": [
+        {
+            "image": {
+                "dimensions": {
+                    "width": 910,
+                    "height": 535
+                },
+                "alt": "Tablet connected to USB hard disk",
+                "copyright": null,
+                "url": "https://install.doctor/assets/img/enterprise/usb-drive-graphic.png",
+                "2x": {
+                    "dimensions": {
+                        "width": 1820,
+                        "height": 1070
+                    },
+                    "alt": "Tablet connected to USB hard disk",
+                    "copyright": null,
+                    "url": "https://install.doctor/assets/img/enterprise/usb-drive-graphic-2x.png"
+                }
+            },
+            "supertext": "ULTRA SECURE",
+            "title": [
+                {
+                    "type": "heading2",
+                    "text": "Reboot to reset, read-only disks",
+                    "spans": [
+                        {
+                            "start": 16,
+                            "end": 32,
+                            "type": "em"
+                        }
+                    ]
+                }
+            ],
+            "subtext": [
+                {
+                    "type": "paragraph",
+                    "text": "Most of the files on your system never change but, with traditional systems, those files still remain part of attack surface. With Install Doctor's Immutable Golden Image (IGI) feature, you can leverage a USB-C hard-drive with special firmware to store the majority of your system immutably while still leveraging traditional disks via a union file system. This gives you the capability of rebooting to clear ransomware while retaining stateful data on hard-disks, S3 buckets, and the like.",
+                    "spans": [
+                        {
+                            "start": 148,
+                            "end": 170,
+                            "type": "hyperlink",
+                            "data": {
+                                "link_type": "Web",
+                                "url": "https://install.doctor/blog/immutable-golden-image",
+                                "target": "_blank"
+                            }
+                        }
+                    ]
+                }
+            ]
+        }
+    ],
+    "support_guidance": [
+        {
+            "image": {
+                "dimensions": {
+                    "width": 256,
+                    "height": 160
+                },
+                "alt": "Message popup with timer",
+                "copyright": null,
+                "url": "https://install.doctor/assets/img/enterprise/support-icon.png",
+                "2x": {
+                    "dimensions": {
+                        "width": 512,
+                        "height": 321
+                    },
+                    "alt": "Message popup with timer",
+                    "copyright": null,
+                    "url": "https://install.doctor/assets/img/enterprise/support-icon-2x.png"
+                }
+            },
+            "title": "Mission-Critical Support",
+            "text": "Guaranteed response SLAs throughout the provisioning process. Our professional support team is on-hand to help you troubleshoot and address issues."
+        },
+        {
+            "image": {
+                "dimensions": {
+                    "width": 256,
+                    "height": 160
+                },
+                "alt": "Three person icons with sliders",
+                "copyright": null,
+                "url": "https://install.doctor/assets/img/enterprise/guidance-icon.png",
+                "2x": {
+                    "dimensions": {
+                        "width": 512,
+                        "height": 321
+                    },
+                    "alt": "Three person icons with sliders",
+                    "copyright": null,
+                    "url": "https://install.doctor/assets/img/enterprise/guidance-icon-2x.png"
+                }
+            },
+            "title": "Expert Guidance",
+            "text": "Our team of experienced provisioning experts will work with your teams to provide architecture recommendations and a strategy that fits your unique goals and challenges. We are here to help ensure your success."
+        }
+    ],
+    "features": [
+        {
+            "supertext": "Enterprise Key Features",
+            "title": [
+                {
+                    "type": "heading2",
+                    "text": "Everything you need. Exclusive features and SME-level support.",
+                    "spans": [
+                        {
+                            "start": 21,
+                            "end": 62,
+                            "type": "em"
+                        }
+                    ]
+                }
+            ],
+            "subtextAlt": "Install Doctor bundles free, open-source, power-user tools and services that improve your team. There are so many open-source projects integrated into Install Doctor's stack. It might be confusing to determine where to start.<br/>With an Enterprise agreement, you connect directly to a seasoned solutions architect who works with you to satisfy your needs using free, open-source projects. Exclusive Enterprise-only features include single sign-on integration, a self-service portal, and a write-protected, hardware-backed file-system implementation.",
+            "subtext": [
+                {
+                    "type": "paragraph",
+                    "text": "Install Doctor bundles free, open-source, power-user tools and services that can improve your team's efficiency. There are so many open-source projects integrated into Install Doctor's stack. It might be confusing to determine where to start.",
+                    "spans": []
+                },
+                {
+                    "type": "paragraph",
+                    "text": "With an Enterprise agreement, you connect directly with a subject matter expert (SME) who works with you to satisfy your needs using free, open-source projects. Exclusive Enterprise-only features include single sign-on integration, a self-service portal, and a hardware-backed, write-protected file-system implementation.",
+                    "spans": [
+                        {
+                            "start": 204,
+                            "end": 230,
+                            "type": "hyperlink",
+                            "data": {
+                                "link_type": "Web",
+                                "url": "https://install.doctor/blog/single-sign-on",
+                                "target": "_self"
+                            }
+                        },
+                        {
+                            "start": 234,
+                            "end": 253,
+                            "type": "hyperlink",
+                            "data": {
+                                "link_type": "Web",
+                                "url": "https://install.doctor/blog/self-service-portal",
+                                "target": "_self"
+                            }
+                        },
+                        {
+                            "start": 278,
+                            "end": 305,
+                            "type": "hyperlink",
+                            "data": {
+                                "link_type": "Web",
+                                "url": "https://install.doctor/blog/immutable-golden-image",
+                                "target": "_self"
+                            }
+                        }
+                    ]
+                }
+            ]
+        }
+    ],
+    "features__list": [
+        {
+            "icon": {
+                "dimensions": {
+                    "width": 56,
+                    "height": 56
+                },
+                "alt": "Open source sphere in cube icon",
+                "copyright": null,
+                "url": "https://install.doctor/assets/img/enterprise/open-source-icon.png",
+                "2x": {
+                    "dimensions": {
+                        "width": 112,
+                        "height": 112
+                    },
+                    "alt": "Open source sphere in cube icon",
+                    "copyright": null,
+                    "url": "https://install.doctor/assets/img/enterprise/open-source-icon-2x.png"
+                }
+            },
+            "title": "Enterprise + Open-Source Features",
+            "text": "With the addition to Enterprise-exclusive features, Install Doctor is a unique, robust offering. It is 1 OAK - 1 Of A Kind."
+        },
+        {
+            "icon": {
+                "dimensions": {
+                    "width": 56,
+                    "height": 56
+                },
+                "alt": "Paper icon",
+                "copyright": null,
+                "url": "https://install.doctor/assets/img/enterprise/paper-icon.png",
+                "2x": {
+                    "dimensions": {
+                        "width": 112,
+                        "height": 112
+                    },
+                    "alt": "Paper icon",
+                    "copyright": null,
+                    "url": "https://install.doctor/assets/img/enterprise/paper-icon-2x.png"
+                }
+            },
+            "title": "Guaranteed SLA",
+            "text": "Timely support and troubleshooting when you need it most. Get expert help directly from the Install Doctor team with guaranteed response times."
+        },
+        {
+            "icon": {
+                "dimensions": {
+                    "width": 56,
+                    "height": 56
+                },
+                "alt": "Calendar icon",
+                "copyright": null,
+                "url": "https://install.doctor/assets/img/enterprise/calendar-icon.png",
+                "2x": {
+                    "dimensions": {
+                        "width": 112,
+                        "height": 112
+                    },
+                    "alt": "Calendar icon",
+                    "copyright": null,
+                    "url": "https://install.doctor/assets/img/enterprise/calendar-icon-2x.png"
+                }
+            },
+            "title": "Regular Release Cycles",
+            "text": "A release timeline you can count on, as opposed to a community maintainers schedule. Think days instead of months or years."
+        },
+        {
+            "icon": {
+                "dimensions": {
+                    "width": 56,
+                    "height": 56
+                },
+                "alt": "Shield icon with checkmark",
+                "copyright": null,
+                "url": "https://install.doctor/assets/img/enterprise/shield-icon.png",
+                "2x": {
+                    "dimensions": {
+                        "width": 112,
+                        "height": 112
+                    },
+                    "alt": "Shield icon with checkmark",
+                    "copyright": null,
+                    "url": "https://install.doctor/assets/img/enterprise/shield-icon-2x.png"
+                }
+            },
+            "title": "Critical Security Updates & Fixes",
+            "text": "Keep your users protected with ongoing security notifications and fixes that keep pace with OS releases, patches, and known vulnerabilities."
+        },
+        {
+            "icon": {
+                "dimensions": {
+                    "width": 56,
+                    "height": 56
+                },
+                "alt": "Head icon with light bulb",
+                "copyright": null,
+                "url": "https://install.doctor/assets/img/enteprise/head-icon.png",
+                "2x": {
+                    "dimensions": {
+                        "width": 112,
+                        "height": 112
+                    },
+                    "alt": "Head icon with light bulb",
+                    "copyright": null,
+                    "url": "https://install.doctor/assets/img/enterprise/head-icon-2x.png"
+                }
+            },
+            "title": "Guidance & Expertise",
+            "text": "Our team is here to ensure you are using the best, open-source tools and provisioning practices, helping you to meet your deadlines while avoiding costly tech debt."
+        }
+    ],
+    "editions": [
+        {
+            "supertext": "READY FOR ENTERPRISE",
+            "title": [
+                {
+                    "type": "heading2",
+                    "text": "Slay requirements, leverage open-source",
+                    "spans": [
+                        {
+                            "start": 20,
+                            "end": 39,
+                            "type": "em"
+                        }
+                    ]
+                }
+            ],
+            "image": {
+                "dimensions": {
+                    "width": 408,
+                    "height": 408
+                },
+                "alt": "Open source icon graphic",
+                "copyright": null,
+                "url": "https://install.doctor/assets/img/enterprise/open-source-icon-graphic.png",
+                "2x": {
+                    "dimensions": {
+                        "width": 815,
+                        "height": 815
+                    },
+                    "alt": "Open source icon graphic",
+                    "copyright": null,
+                    "url": "https://install.doctor/assets/img/enterprise/open-source-icon-graphic-2x.png"
+                }
+            },
+            "paragraph_1": [
+                {
+                    "type": "paragraph",
+                    "text": "Many challenges can be solved via low-code or even no-code open-source based solutions.",
+                    "spans": []
+                }
+            ],
+            "paragraph_2": [
+                {
+                    "type": "paragraph",
+                    "text": "See how Install Doctor is using the power of freely available, open-source software to slash requirements and deliver secure, enterprise-grade solutions in less time.",
+                    "spans": []
+                }
+            ],
+            "cta_1": "Talk to sales",
+            "cta_2": "Talk to an expert"
+        }
+    ],
+    "demo": [
+        {
+            "supertext": "Talk to Sales",
+            "title": "Install Doctor for Enterprise"
+        }
+    ]
+}

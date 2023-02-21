@@ -1,4 +1,4 @@
-import { Component, Host, h } from '@stencil/core';
+import { Component, Host, State, h } from '@stencil/core';
 import {
   ResponsiveContainer,
   Grid,
@@ -6,7 +6,6 @@ import {
   Heading,
   Paragraph,
 } from '@ionic-internal/ionic-ds';
-import { importResource } from '../../utils/common';
 
 declare global {
   interface Window {
@@ -23,31 +22,77 @@ declare global {
   styleUrl: 'capacitor-site-footer.scss',
 })
 export class CapacitorSiteFooter {
-  private uniqueFormId = `id-${Math.random().toString().replace('.', '')}`;
-  private hubspotCdn = '//js.hsforms.net/forms/v2.js';
+  @State() email: string = '';
+  @State() isLoading: boolean = false;
+  @State() hasSubmitted: boolean = false;
+  @State() isValid: boolean = true;
+  @State() inlineMessage: string = '';
 
-  componentWillLoad() {
-    importResource(
-      { propertyName: 'hbspt', link: this.hubspotCdn },
-      this.createForm,
+  componentWillLoad() {}
+
+  handleNewsletterSubmit(e: Event) {
+    e.preventDefault();
+
+    this.isLoading = true;
+
+    const xhr = new XMLHttpRequest();
+    const url = [
+      'https://api.hsforms.com/submissions/v3/integration/submit',
+      '24052635',
+      'eb0d85ad-67a2-41fe-bebe-ca909073f286',
+    ].join('/');
+    xhr.open('POST', url);
+    xhr.setRequestHeader('Content-Type', 'application/json;charset=UTF-8');
+    xhr.onreadystatechange = () => {
+      if (xhr.readyState === 4 && xhr.status === 200) {
+        const json = JSON.parse(xhr.responseText);
+        this.inlineMessage = json.inlineMessage;
+        this.isLoading = false;
+        this.hasSubmitted = true;
+        this.isValid = true;
+      } else if (xhr.readyState == 4 && xhr.status == 400) {
+        this.inlineMessage = 'Please enter a valid e-mail address.';
+        this.isLoading = false;
+        this.isValid = false;
+      }
+    };
+
+    const hutkMatch =
+      document.cookie.match && document.cookie.match(/hubspotutk=(.*?);/);
+    const hutk = hutkMatch ? hutkMatch[1] : undefined;
+
+    xhr.send(
+      JSON.stringify({
+        submittedAt: new Date().getTime(),
+        fields: [
+          {
+            name: 'email',
+            value: this.email,
+          },
+          {
+            name: 'first_campaign_conversion',
+            value: 'Install Doctor Newsletter',
+          },
+        ],
+        context: {
+          hutk,
+          pageUri: window.location.href,
+          pageName: document.title,
+        },
+      }),
     );
   }
 
-  disconnectedCallback() {
-    const scripts = document.head.querySelectorAll('script');
-    scripts.forEach(script => {
-      if ((script.src = this.hubspotCdn)) script.remove();
-    });
+  handleEmailChange(ev: any) {
+    this.email = ev.target.value;
+    this.isValid = true;
   }
 
-  createForm = () => {
-    window.hbspt.forms.create({
-      portalId: '24052635',
-      formId: '9657ca9c-eb86-41f9-8a96-895eee92942f',
-      cssClass: '',
-      target: `#${this.uniqueFormId}`,
-    });
-  };
+  handleInlineMessage(returnMessage: string) {
+    const messageMatch =
+      returnMessage.match && returnMessage.match(/<p>(.*?)<\/p>/);
+    return messageMatch ? messageMatch[1] : undefined;
+  }
 
   render() {
     return (
@@ -61,7 +106,46 @@ export class CapacitorSiteFooter {
                   Keep up to date with all the latest Install Doctor news and updates
                 </Paragraph>
               </div>
-              <div class="form-group" id={this.uniqueFormId}></div>
+              <div class="form-group">
+              {this.hasSubmitted ? (
+                <div class="form-message">
+                  <ion-icon name="checkmark-circle"></ion-icon>
+                  <Paragraph>
+                    {this.handleInlineMessage(this.inlineMessage)}
+                  </Paragraph>
+                </div>
+                ) : (
+                <form class="hs-form" onSubmit={e => this.handleNewsletterSubmit(e)}>
+                  <div class="hs_email hs-email hs-fieldtype-text field hs-form-field">
+                    <div class="input">
+                      <input
+                        name="email"
+                        type="email"
+                        autocomplete="email"
+                        inputmode="email"
+                        value={this.email}
+                        onInput={() => this.handleEmailChange(event)}
+                        disabled={this.isLoading}
+                        placeholder="E-mail"
+                        class={{ 'error': this.isValid, 'ui-paragraph-4': true }}
+                        aria-label="Email"
+                        required
+                      />
+                    </div>
+                  </div>
+                  <div class="hs_submit hs-submit">
+                    <div class="actions">
+                      <input type="submit" class="hs-button primary large" value="Subscribe" />
+                    </div>
+                  </div>
+                  {!this.isValid && (
+                  <Paragraph level={5} class="error-message">
+                    {this.inlineMessage}
+                  </Paragraph>
+                )}
+                </form>
+                )}
+              </div>
             </div>
             <Grid>
               <Col md={6} sm={4} xs={12} cols={12} class="copyright">
@@ -75,7 +159,7 @@ export class CapacitorSiteFooter {
                 />
                 <p>© {new Date().getFullYear()} Megabyte LLC</p>
                 <p>
-                  <a href="https://megabyte.space">Megabyte Labs Open Source</a> | Released
+                  <a href="https://megabyte.space" target="_blank">Megabyte Labs Open Source</a> | Released
                   under <span id="mit">MIT License</span>
                 </p>
               </Col>
@@ -90,13 +174,18 @@ export class CapacitorSiteFooter {
                         </a>
                       </li>
                       <li>
+                        <a class="ui-paragraph-4" href="/docs/features">
+                          Features
+                        </a>
+                      </li>
+                      <li>
                         <a class="ui-paragraph-4" href="/docs/customization">
                           Customization
                         </a>
                       </li>
                       <li>
-                        <a class="ui-paragraph-4" href="/docs/software">
-                          Software
+                        <a class="ui-paragraph-4" href="/docs/contributing">
+                          Contributing
                         </a>
                       </li>
                     </ul>
@@ -104,6 +193,11 @@ export class CapacitorSiteFooter {
                   <div>
                     <Heading level={5}>Resources</Heading>
                     <ul class="routes">
+                      <li>
+                        <a class="ui-paragraph-4" href="/enterprise">
+                          Enterprise
+                        </a>
+                      </li>
                       <li>
                         <a class="ui-paragraph-4" href="/community">
                           Community
@@ -134,6 +228,7 @@ export class CapacitorSiteFooter {
                         <a
                           class="ui-paragraph-4"
                           href="https://github.com/megabyte-labs/install.doctor"
+                          target="_blank"
                         >
                           GitHub
                         </a>
@@ -141,13 +236,23 @@ export class CapacitorSiteFooter {
                       <li>
                         <a
                           class="ui-paragraph-4"
+                          href="https://facebook.com/InstallDoctor"
+                          target="_blank"
+                        >
+                          Facebook
+                        </a>
+                      </li>
+                      <li>
+                        <a
+                          class="ui-paragraph-4"
                           href="https://twitter.com/installdoc"
+                          target="_blank"
                         >
                           Twitter
                         </a>
                       </li>
                       <li>
-                        <a class="ui-paragraph-4" href="https://megabyte.space">
+                        <a class="ui-paragraph-4" href="https://megabyte.space" target="_blank">
                           Megabyte Labs
                         </a>
                       </li>

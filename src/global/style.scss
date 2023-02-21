@@ -74,3 +74,58 @@ li a {
     opacity: 0.7;
   }
 }
+
+landing-page {
+  #top .heading-group img.sc-landing-page {
+    width: 214px;
+  }
+
+  #top > .ui-container > .heading-group > .link {
+    margin-left: 5px;
+    margin-bottom: 14px;
+  }
+
+  .ui-col.ui-col-6.ui-col-sm-3.sc-landing-page:nth-child(1) {
+    background: #cfecfa;
+  }
+
+  .ui-col.ui-col-6.ui-col-sm-3.sc-landing-page:nth-child(2) {
+    background: #f5caeb;
+  }
+
+  .ui-col.ui-col-6.ui-col-sm-3.sc-landing-page:nth-child(3) {
+    background: #fdcbdd;
+  }
+
+  .ui-col.ui-col-6.ui-col-sm-3.sc-landing-page:nth-child(4) {
+    background: #b7d2fa
+  }
+
+  .ui-col.ui-col-6.ui-col-sm-3.sc-landing-page:nth-child(5) {
+    background: #cfcfcf;
+  }
+
+  .ui-col.ui-col-6.ui-col-sm-3.sc-landing-page:nth-child(6) {
+    background: #e1edff;
+  }
+
+  .ui-col.ui-col-6.ui-col-sm-3.sc-landing-page:nth-child(7) {
+    background: #fbdbd0;
+  }
+
+  .ui-col.ui-col-6.ui-col-sm-3.sc-landing-page:nth-child(8) {
+    background: #cceeff;
+  }
+
+  #features.sc-landing-page .heading-group.sc-landing-page .ui-heading.sc-landing-page {
+    max-width: 500px;
+  }
+
+  #native.sc-landing-page .heading-group.sc-landing-page {
+    max-width: 500px;
+  }
+
+  #cta.sc-landing-page .ui-heading-2.sc-landing-page {
+    max-width: 44rem;
+  }
+}

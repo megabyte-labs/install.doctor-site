@@ -22,7 +22,7 @@ export class BlogNewsletter {
     const url = [
       'https://api.hsforms.com/submissions/v3/integration/submit',
       '24052635',
-      '9657ca9c-eb86-41f9-8a96-895eee92942f',
+      'eb0d85ad-67a2-41fe-bebe-ca909073f286',
     ].join('/');
     xhr.open('POST', url);
     xhr.setRequestHeader('Content-Type', 'application/json;charset=UTF-8');

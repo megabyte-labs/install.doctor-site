@@ -80,7 +80,7 @@ export class LandingPage {
                 kind="round"
                 variation="light"
                 anchor
-                href="/docs/software"
+                href="/docs/features"
                 class="secondary"
               >
                 {secondary}
@@ -189,27 +189,63 @@ export class LandingPage {
   // };
 
   Started = () => {
-    const { started, started__list, started__icons } = this.data;
+    const { started, started__list } = this.data;
 
     const panels = [
-      <code-snippet
-        language="shell-session"
-        code={`bash <(curl -sSL https://install.doctor/start)`}
-      />,
-      <code-snippet
-        language="shell-session"
-        code={`
-export START_REPO=my-gh-user/my-fork-name
+      <code-tabs
+        data={{
+          tabs: ['Linux/macOS', 'Windows', 'Qubes'],
+          languages: ['shell-session'],
+          code: [
+            `
 bash <(curl -sSL https://install.doctor/start)
-`}
-      />,
-      <code-snippet
-        language="shell-session"
-        code={`bash <(curl -sSL https://install.doctor/vagrant)`}
+`, //-----------------------------------
+      `
+iex ((New-Object System.Net.WebClient).DownloadString('https://install.doctor/windows'))
+`, //-----------------------------------
+      `
+qvm-run --pass-io sys-firewall "curl -sSL https://install.doctor/qubes" > ~/setup.sh && bash ~/setup.sh
+`
+          ],
+        }}
       />,
       <code-tabs
         data={{
-          tabs: ['Headless', 'Windows', 'Qubes', 'Chezmoi'],
+          tabs: ['Linux/macOS', 'Windows', 'Qubes'],
+          languages: ['shell-session'],
+          code: [
+            `
+export START_REPO=my-gh-user/my-fork-name
+bash <(curl -sSL https://install.doctor/start)
+`, //-----------------------------------
+        `
+$env:START_REPO = 'my-gh-user/my-fork-name'
+iex ((New-Object System.Net.WebClient).DownloadString('https://install.doctor/windows'))
+`, //-----------------------------------
+        `
+export START_REPO=my-gh-user/my-fork-name
+qvm-run --pass-io sys-firewall "curl -sSL https://install.doctor/qubes" > ~/setup.sh && bash ~/setup.sh
+`
+          ],
+        }}
+      />,
+      <code-tabs
+        data={{
+          tabs: ['Linux/macOS', 'Windows'],
+          languages: ['shell-session'],
+          code: [
+            `
+bash <(curl -sSL https://install.doctor/vagrant)
+`, //-----------------------------------
+          `
+iex ((New-Object System.Net.WebClient).DownloadString('https://install.doctor/windows-vagrant'))
+`
+          ],
+        }}
+      />,
+      <code-tabs
+        data={{
+          tabs: ['Linux/macOS', 'Windows', 'Qubes'],
           languages: ['shell-session'],
           code: [
             `
@@ -238,22 +274,22 @@ iex ((New-Object System.Net.WebClient).DownloadString('https://install.doctor/wi
 
 `, //-----------------------------------
             `
-echo "Provisioning Qubes machine from dom0 with interactive prompts"
+echo "Headlessly provisioning Qubes from dom0"
+export HEADLESS_INSTALL=true
+export SOFTWARE_GROUP=Standard-Desktop
+export FULL_NAME="Joe Shmoe"
+export PRIMARY_EMAIL="help@megabyte.space"
+export PUBLIC_SERVICES_DOMAIN="megabyte.space"
+export CLOUDFLARE_API_TOKEN="cf-pat-xXP999kUu888777"
+export TAILSCALE_AUTH_KEY="tailscale-auth-key-xXP999kUu888777"
+export START_REPO=my-gh-user/my-fork-name
 qvm-run --pass-io sys-firewall "curl -sSL https://install.doctor/qubes" > ~/setup.sh
 bash ~/setup.sh
-`, //-----------------------------------
-            `
-echo "Provisioning directly with Chezmoi (which should already be installed)"
-mkdir -p ~/.local/share && cd ~/.local/share
-git clone https://github.com/megabyte-labs/install.doctor.git chezmoi
-chezmoi apply
 `
           ],
         }}
       />,
     ];
-
-    const dimensions = ['22x26', '27x23'];
 
     return (
       <ResponsiveContainer id="started" as="section">
@@ -266,17 +302,6 @@ chezmoi apply
             <div class="heading-panel-wrapper">
               <div class="heading-wrapper">
                 <Heading>{title}</Heading>
-                {i === 1 ? (
-                  <div class="platforms">
-                    {started__icons.map(({ icon }, i) => (
-                      <PrismicResponsiveImage
-                        image={icon}
-                        width={dimensions[i].split('x')[0]}
-                        height={dimensions[i].split('x')[1]}
-                      />
-                    ))}
-                  </div>
-                ) : null}
                 {text ? <Paragraph>{text}</Paragraph> : null}
               </div>
               <div class="panel">{panels[i]}</div>
@@ -299,9 +324,12 @@ chezmoi apply
             onModalClose={() => (this.ebookModalOpen = false)}
           >
             <Heading level={2}>
-            Open-Source, Cross-OS Workstations with Install Doctor
+              Free Install Doctor eBook
             </Heading>
-            <hubspot-form formId="9151dc0b-42d9-479f-b7b8-649e0e7bd1bc" />
+            <Paragraph>
+              Fill out and submit the form below to get your free copy of <strong>Open-Source, Cross-OS Workstations with Install Doctor</strong> sent to your e-mail.
+            </Paragraph>
+            <capacitor-hubspot-form formId="df7c28cd-d123-4ea2-aa2c-d7cb304fd398" />
           </site-modal>
           <div class="wrapper">
             <PrismicResponsiveImage image={background} class="background" />
@@ -595,7 +623,7 @@ chezmoi apply
                 <span class="arrow"> -&gt;</span>
               </Button>
               <Button
-                href="/docs/customization"
+                href="/docs/features"
                 anchor
                 kind="round"
                 variation="light"

@@ -6,13 +6,14 @@ import {
   Paragraph,
 } from '@ionic-internal/ionic-ds';
 
-import { SolutionAngular } from './solution-angular';
-import { SolutionReact } from './solution-react';
-import { SolutionPreact } from './solution-preact';
-import { SolutionVue } from './solution-vue';
-import { SolutionEmber } from './solution-ember';
-import { SolutionSvelte } from './solution-svelte';
-import { SolutionStencil } from './solution-stencil';
+import { SolutionUbuntu } from './solution-ubuntu';
+import { SolutionFedora } from './solution-fedora';
+import { SolutionCentOS } from './solution-centos';
+import { SolutionDebian } from './solution-debian';
+import { SolutionMacOS } from './solution-macos';
+import { SolutionArchlinux } from './solution-archlinux';
+import { SolutionQubes } from './solution-qubes';
+import { SolutionWindows } from './solution-windows';
 
 @Component({
   tag: 'solution-page',
@@ -34,29 +35,31 @@ export class SolutionPage implements ComponentInterface {
   }
   getComponent() {
     switch (this.solutionId) {
-      case 'angular':
-        return <SolutionAngular />;
-      case 'react':
-        return <SolutionReact />;
-      case 'preact':
-        return <SolutionPreact />;
-      case 'vue':
-        return <SolutionVue />;
-      case 'ember':
-        return <SolutionEmber />;
-      case 'svelte':
-        return <SolutionSvelte />;
-      case 'stencil':
-        return <SolutionStencil />;
+      case 'archlinux':
+        return <SolutionArchlinux />;
+      case 'centos':
+        return <SolutionCentOS />;
+      case 'debian':
+        return <SolutionDebian />;
+      case 'fedora':
+        return <SolutionFedora />;
+      case 'macos':
+        return <SolutionMacOS />;
+      case 'qubes':
+        return <SolutionQubes />;
+      case 'ubuntu':
+        return <SolutionUbuntu />;
+      case 'windows':
+        return <SolutionWindows />;
     }
   }
   render() {
     return (
       <Host>
         <meta-tags
-          page-title={'Using Capacitor with ' + this.framework.name}
+          page-title={'Provision ' + this.framework.name + ' with Install Doctor'}
           description={
-            'Build iOS, Android, and Progressive Web Apps with ' +
+            'Headlessly deploy a fully configured workstation on ' +
             this.framework.name
           }
         />
@@ -71,11 +74,13 @@ export class SolutionPage implements ComponentInterface {
               class="react"
             />
             <Heading level={2} as="h1">
-              {this.framework.name} &amp; Capacitor
+              {this.framework.name} &amp; Install Doctor
             </Heading>
             <Paragraph level={2}>
-              Build native mobile apps with web technology and{' '}
+              Get more out of{' '}
               {this.framework.name}
+              {' '}
+              by provisioning it with Install Doctor
             </Paragraph>
             {/* <Button
               anchor
@@ -103,52 +108,59 @@ export class SolutionPage implements ComponentInterface {
 
 const solutions = [
   {
-    id: 'react',
-    name: 'React',
-    theme: '#3DD3FF',
-    logo: '/assets/img/solutions/react.png',
+    id: 'archlinux',
+    name: 'Archlinux',
+    theme: '#1793d1',
+    logo: '/assets/img/solutions/archlinux.png',
     dimensions: '252x224',
   },
   {
-    id: 'vue',
-    name: 'Vue',
-    theme: '#42b983',
-    logo: '/assets/img/solutions/vue.png',
-    dimensions: '222x196',
+    id: 'centos',
+    name: 'CentOS',
+    theme: '#212078',
+    logo: '/assets/img/solutions/centos.png',
+    dimensions: '252x224',
   },
   {
-    id: 'preact',
-    name: 'Preact',
-    theme: '#673ab8',
-    logo: '/assets/img/solutions/preact.png',
-    dimensions: '256x256',
+    id: 'debian',
+    name: 'Debian',
+    theme: '#d70a53',
+    logo: '/assets/img/solutions/debian.png',
+    dimensions: '252x224',
   },
   {
-    id: 'angular',
-    name: 'Angular',
-    theme: '#DD002E',
-    logo: '/assets/img/solutions/angular.png',
-    dimensions: '276x276',
+    id: 'fedora',
+    name: 'Fedora',
+    theme: '#0B57A4',
+    logo: '/assets/img/solutions/fedora.png',
+    dimensions: '252x224',
   },
   {
-    id: 'svelte',
-    name: 'Svelte',
-    theme: '#FF3D00',
-    logo: '/assets/img/solutions/svelte.png',
-    dimensions: '228x212',
+    id: 'macos',
+    name: 'macOS',
+    theme: '#000000',
+    logo: '/assets/img/solutions/macos.png',
+    dimensions: '252x224',
   },
   {
-    id: 'stencil',
-    name: 'Stencil',
-    theme: '#4c48ff',
-    logo: '/assets/img/solutions/stencil.png',
-    dimensions: '228x172',
+    id: 'qubes',
+    name: 'Qubes',
+    theme: '#3874d8',
+    logo: '/assets/img/solutions/qubes.png',
+    dimensions: '252x224',
   },
   {
-    id: 'ember',
-    name: 'Ember',
-    theme: '#E04E39',
-    logo: '/assets/img/solutions/ember.png',
-    dimensions: '297x284',
+    id: 'ubuntu',
+    name: 'Ubuntu',
+    theme: '#dd4814',
+    logo: '/assets/img/solutions/ubuntu.png',
+    dimensions: '252x224',
+  },
+  {
+    id: 'windows',
+    name: 'Windows',
+    theme: '#00a1f1',
+    logo: '/assets/img/solutions/windows.png',
+    dimensions: '252x224',
   },
 ];

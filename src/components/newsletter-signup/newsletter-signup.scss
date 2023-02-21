@@ -8,6 +8,17 @@ newsletter-signup {
   padding-block-start: 64px;
   padding-block-end: 64px;
 
+  .form-message {
+    display: flex;
+    align-items: center;
+
+    ion-icon {
+      font-size: 32px;
+      color: #597eff;
+      margin-inline-end: var(--space-3);
+    }
+  }
+
   .wrapper {
     display: flex;
     flex-wrap: wrap;

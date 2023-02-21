@@ -266,7 +266,7 @@ rm -R plugins/
             This is only the beginning. Learn more about{' '}
             <a {...href('/docs/plugins/cordova')}>using Cordova plugins</a> in a
             Capacitor project, check out the Capacitor{' '}
-            <a {...href('/docs/basics/workflow')}>development workflow</a>, or
+            <a {...href('/docs/customization')}>development workflow</a>, or
             create your own <a {...href('/docs/plugins')}>native plugin</a>.
           </Paragraph>
         </div>

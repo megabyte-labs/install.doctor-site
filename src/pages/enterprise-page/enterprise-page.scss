@@ -1,7 +1,7 @@
 @use '../../global/vars' as *;
 
 //#region -------------------------------- VARIABLES ---------------------------------------
-$section-space: 12.5rem;
+$section-space: 6.25rem;
 
 :host {
   display: block;
@@ -75,9 +75,9 @@ ul {
     right: 0;
     top: -40px;
     z-index: 1;
+    opacity: 0.2;
 
     @media (max-width: $screen-lg) {
-      opacity: 0.2;
       right: calc((1330px - 100%) * -1 / 2);
     }
   }
@@ -506,7 +506,7 @@ ul {
     margin-inline-end: -3rem;
 
     img {
-      max-width: 100%;
+      max-width: 90%;
 
       @media (max-width: $screen-xs) {
         max-width: 75vw;

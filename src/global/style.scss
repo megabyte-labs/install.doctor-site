@@ -74,6 +74,17 @@ li a {
     opacity: 0.7;
   }
 }
+enterprise-page {
+  #top .background.sc-enterprise-page {
+    width: 100%;
+    height: 100%;
+  }
+
+  #editions image-wrapper > img.sc-enterprise-page {
+    max-width: 90%;
+    margin: 0 auto;
+  }
+}
 
 landing-page {
   #top .heading-group img.sc-landing-page {

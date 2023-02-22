@@ -822,16 +822,16 @@
             ],
             "image": {
                 "dimensions": {
-                    "width": 408,
-                    "height": 408
+                    "width": 370,
+                    "height": 370
                 },
                 "alt": "Open source icon graphic",
                 "copyright": null,
                 "url": "https://install.doctor/assets/img/enterprise/open-source-icon-graphic.png",
                 "2x": {
                     "dimensions": {
-                        "width": 815,
-                        "height": 815
+                        "width": 740,
+                        "height": 740
                     },
                     "alt": "Open source icon graphic",
                     "copyright": null,

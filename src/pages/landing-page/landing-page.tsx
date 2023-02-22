@@ -289,6 +289,40 @@ bash ~/setup.sh
           ],
         }}
       />,
+      <code-snippet
+        language="yaml"
+        code={`
+---
+softwarePackages:
+  imagemagick:
+    _bin: convert
+    apk: imagemagick
+    apt:
+      - imagemagick
+      - libx11-dev
+    brew: imagemagick
+    choco: imagemagick
+    dnf:fedora: imagemagick
+    scoop: imagemagick
+`}
+      />,
+      <code-snippet
+        language="yaml"
+        code={`
+---
+chromeExtensions:
+  - automa/infppggnoaenmfagbfknfkancpbljcca
+  - bitwarden-free-password-m/nngceckbapebfimnlniiiahkandclblb
+firefoxAddOns:
+  - automa
+  - bitwarden-password-manager
+  - chatgpt-for-google
+  - firefox-translations
+  - floccus
+  - ublock-origin
+
+`}
+      />,
     ];
 
     return (

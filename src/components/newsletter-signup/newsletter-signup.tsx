@@ -1,6 +1,5 @@
 import { Component, Host, State, h } from '@stencil/core';
 import { Heading, Paragraph } from '@ionic-internal/ionic-ds';
-import { importResource } from '../../utils/common';
 
 declare global {
   interface Window {

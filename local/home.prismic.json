@@ -7,8 +7,9 @@
         },
         {
             "type": "paragraph",
-            "text": "Install Doctor is an open-source provisioning tool (and one-liner) that is compatible with most popular operating systems. It can headlessly provision workstations and servers. By default, it installs an editor-curated collection of the most well-received projects on GitHub along with optimized settings. With it, you can re-format often, provision your workstation rapidly, define the state of your configurations, and learn about some really cool GitHub tools.",
-            "spans": []
+            "text": "Install Doctor is a free provisioning tool compatible with most operating systems that lets you define the state of your operating system. With it, you can re-format often and provision your devices rapidly. Without any customization, it provisions an expertly configured eco-system of popular, free, open-source GitHub projects. It also provides a framework for defining your ideal configurations with as little work as possible.",
+            "spans": [],
+            "note": "By default, it installs an editor-curated collection of the most well-received projects on GitHub along with optimized settings."
         }
     ],
     "top__hero": {
@@ -36,7 +37,7 @@
         },
         "alt": "Archlinux, CentOS, Debian, Fedora, macOS, Qubes, Ubuntu, and Windows icons",
         "copyright": null,
-        "url": "/assets/img/landing/supported-os-icon.png",
+        "url": "https://install.doctor/assets/img/landing/supported-os-icon.png",
         "2x": {
             "dimensions": {
                 "width": 385,
@@ -44,7 +45,7 @@
             },
             "alt": "Archlinux, CentOS, Debian, Fedora, macOS, Qubes, Ubuntu, and Windows icons",
             "copyright": null,
-            "url": "/assets/img/landing/supported-os-icon-2x.png"
+            "url": "https://install.doctor/assets/img/landing/supported-os-icon-2x.png"
         }
     },
     "top__ctas": [
@@ -71,12 +72,12 @@
         {
             "number": "01",
             "title": "Get started with a one-liner and guided prompts.",
-            "text": null
+            "text": "It is incredibly easy to get started with Install Doctor. Run the one-liner and you will be guided through interactive prompts where you can input any missing information."
         },
         {
             "number": "02",
             "title": "Customize the script with your own fork.",
-            "text": null
+            "text": "Fork the Install Doctor project on GitHub and use the same convienient script to provision your devices by defining an environment variable with your username/project-name."
         },
         {
             "number": "03",
@@ -87,32 +88,19 @@
             "number": "04",
             "title": "Automate everything.",
             "text": "Pass in your sensitive data as environment variables or include them as encrypted secrets stored in your fork for a completely automated one-line installation."
-        }
-    ],
-    "started__icons": [
-        {
-            "icon": {
-                "dimensions": {
-                    "width": 45,
-                    "height": 53
-                },
-                "alt": "apple icon",
-                "copyright": null,
-                "url": "https://images.prismic.io/ionicframeworkcom/c6924d12-09fa-46ac-b2fc-48142426428d_capacitor-homepage-started-0%402x.png?auto=compress,format"
-            }
         },
         {
-            "icon": {
-                "dimensions": {
-                    "width": 55,
-                    "height": 48
-                },
-                "alt": "android icon",
-                "copyright": null,
-                "url": "https://images.prismic.io/ionicframeworkcom/216793f2-1c11-490e-8463-622f87d593b6_capacitor-homepage-started-1%402x.png?auto=compress,format"
-            }
+            "number": "05",
+            "title": "Manage software across operating systems.",
+            "text": "Leverage our custom installer and define package requirements in a cross-OS way by defining the OS-specific package names software a YAML file."
+        },
+        {
+            "number": "06",
+            "title": "Pin all your plugins, packages, and extensions.",
+            "text": "Configure Install Doctor to install your favorite software while provisioning your device by defining them in YAML."
         }
     ],
+    "started__icons": [],
     "ebook": [
         {
             "background": {
@@ -122,7 +110,7 @@
                 },
                 "alt": "See-through tiles",
                 "copyright": null,
-                "url": "/assets/img/landing/see-thru-tiles.png",
+                "url": "https://install.doctor/assets/img/landing/see-thru-tiles.png",
                 "2x": {
                     "dimensions": {
                         "width": 2432,
@@ -130,7 +118,7 @@
                     },
                     "alt": "See-through tiles",
                     "copyright": null,
-                    "url": "/assets/img/landing/see-thru-tiles-2x.png"
+                    "url": "https://install.doctor/assets/img/landing/see-thru-tiles-2x.png"
                 }
             },
             "book": {
@@ -140,7 +128,7 @@
                 },
                 "alt": "Book cover with title reading \"Provisioning Operating Systems with Install Doctor\"",
                 "copyright": null,
-                "url": "https://images.prismic.io/ionicframeworkcom/3814b138-c048-42e6-bf55-4577ad0a7674_capacitor-enterprise-ebook-1%402x.png?auto=compress,format&rect=0,0,728,686&w=364&h=343",
+                "url": "https://install.doctor/assets/img/landing/ebook-text-box.png",
                 "2x": {
                     "dimensions": {
                         "width": 728,
@@ -148,7 +136,7 @@
                     },
                     "alt": "Book cover with title reading \"Provisioning Operating Systems with Install Doctor\"",
                     "copyright": null,
-                    "url": "https://images.prismic.io/ionicframeworkcom/3814b138-c048-42e6-bf55-4577ad0a7674_capacitor-enterprise-ebook-1%402x.png?auto=compress,format&rect=0,0,728,686&w=728&h=686"
+                    "url": "https://install.doctor/assets/img/landing/ebook-text-box-2x.png"
                 }
             },
             "text": [
@@ -170,11 +158,11 @@
     "native": [
         {
             "type": "heading2",
-            "text": "Automatically provision your devices",
+            "text": "Automatically provision your devices.",
             "spans": [
                 {
                     "start": 14,
-                    "end": 41,
+                    "end": 42,
                     "type": "em"
                 }
             ]
@@ -189,7 +177,7 @@
                 },
                 "alt": "Triple phone icon",
                 "copyright": null,
-                "url": "/assets/img/landing/triple-phone-icon.png"
+                "url": "https://install.doctor/assets/img/landing/triple-phone-icon.png"
             },
             "item": [
                 {
@@ -212,7 +200,7 @@
                 },
                 "alt": "Cube with sphere inside icon",
                 "copyright": null,
-                "url": "/assets/img/landing/cube-sphere-icon.png"
+                "url": "https://install.doctor/assets/img/landing/cube-sphere-icon.png"
             },
             "item": [
                 {
@@ -235,7 +223,7 @@
                 },
                 "alt": "Tripe stack layered icon",
                 "copyright": null,
-                "url": "/assets/img/landing/triple-stack-icon.png"
+                "url": "https://install.doctor/assets/img/landing/triple-stack-icon.png"
             },
             "item": [
                 {
@@ -254,11 +242,11 @@
     "features": [
         {
             "type": "heading2",
-            "text": "Consistent features,  any operating system.",
+            "text": "Consistent features, any operating system.",
             "spans": [
                 {
-                    "start": 17,
-                    "end": 37,
+                    "start": 21,
+                    "end": 44,
                     "type": "em"
                 }
             ]
@@ -272,24 +260,19 @@
                     "width": 84,
                     "height": 68
                 },
-                "alt": "camera icon",
+                "alt": "Camera icon",
                 "copyright": null,
-                "url": "https://images.prismic.io/ionicframeworkcom/10d8370b-8862-4e01-9de4-cdc968ba6290_capacitor-homepage-features-0%402x.png?auto=compress,format"
+                "url": "https://install.doctor/assets/img/landing/camera-icon.png"
             },
             "item": [
                 {
                     "type": "heading4",
-                    "text": "TODO - Feature",
+                    "text": "Stunning UI",
                     "spans": []
                 },
                 {
                     "type": "paragraph",
-                    "text": "Add text describing feature here. Should be a core feature of what Install Doctor configures along with a short description here.",
-                    "spans": []
-                },
-                {
-                    "type": "paragraph",
-                    "text": "",
+                    "text": "Both KDE and GNOME Linux systems are configured to use our stunning Sweet-based theme and boot screens are sleek, without useless log messages.",
                     "spans": []
                 }
             ]
@@ -302,7 +285,7 @@
                 },
                 "alt": "File system icon",
                 "copyright": null,
-                "url": "/assets/img/landing/file-system-icon.png"
+                "url": "https://install.doctor/assets/img/landing/file-system-icon.png"
             },
             "item": [
                 {
@@ -323,19 +306,19 @@
                     "width": 68,
                     "height": 68
                 },
-                "alt": "antenna icon",
+                "alt": "Antenna icon",
                 "copyright": null,
-                "url": "https://images.prismic.io/ionicframeworkcom/7cfc3a6a-b3ba-4be2-9b9e-c930a9ee8a87_capacitor-homepage-features-2%402x.png?auto=compress,format"
+                "url": "https://install.doctor/assets/img/landing/pin-icon.png"
             },
             "item": [
                 {
                     "type": "heading4",
-                    "text": "TODO - Feature",
+                    "text": "Pin Everything",
                     "spans": []
                 },
                 {
                     "type": "paragraph",
-                    "text": "Add text describing feature here. Should be a core feature of what Install Doctor configures along with a short description here.",
+                    "text": "Our system allows you to pin everything into your configuration. Keep track of your favorite addons / tools / extensions by pinning software packages, Chrome extensions, VSCode extensions, and more.",
                     "spans": []
                 }
             ]
@@ -346,19 +329,19 @@
                     "width": 72,
                     "height": 68
                 },
-                "alt": "spherical rings icon",
+                "alt": "Spherical rings icon",
                 "copyright": null,
-                "url": "https://images.prismic.io/ionicframeworkcom/5228d616-ee0d-45f0-b770-ef7fddf6b6d2_capacitor-homepage-features-3%402x.png?auto=compress,format"
+                "url": "https://install.doctor/assets/img/landing/sphere-icon.png"
             },
             "item": [
                 {
                     "type": "heading4",
-                    "text": "TODO - Feature",
+                    "text": "Developer-first",
                     "spans": []
                 },
                 {
                     "type": "paragraph",
-                    "text": "Add text describing feature here. Should be a core feature of what Install Doctor configures along with a short description here.",
+                    "text": "The default configuration is designed to accomodate the needs of developers by including development software and power-user tools like fully-enhanced terminal settings.",
                     "spans": []
                 }
             ]
@@ -371,7 +354,7 @@
                 },
                 "alt": "Bell icon",
                 "copyright": null,
-                "url": "/assets/img/landing/notifications-icon.png"
+                "url": "https://install.doctor/assets/img/landing/notifications-icon.png"
             },
             "item": [
                 {
@@ -394,7 +377,7 @@
                 },
                 "alt": "Person with circle around icon",
                 "copyright": null,
-                "url": "/assets/img/landing/network-icon.png"
+                "url": "https://install.doctor/assets/img/landing/network-icon.png"
             },
             "item": [
                 {
@@ -417,7 +400,7 @@
                 },
                 "alt": "Three encompassing circles icon",
                 "copyright": null,
-                "url": "/assets/img/landing/three-circles-icon.png"
+                "url": "https://install.doctor/assets/img/landing/three-circles-icon.png"
             },
             "item": [
                 {
@@ -440,7 +423,7 @@
                 },
                 "alt": "Slider adjustment icon",
                 "copyright": null,
-                "url": "/assets/img/landing/configure-icon.png"
+                "url": "https://install.doctor/assets/img/landing/configure-icon.png"
             },
             "item": [
                 {
@@ -459,22 +442,22 @@
     "framework": [
         {
             "type": "heading2",
-            "text": "Bring your own  web framework.",
+            "text": "Bring your own operating system.",
             "spans": [
                 {
-                    "start": 16,
-                    "end": 30,
+                    "start": 15,
+                    "end": 34,
                     "type": "em"
                 }
             ]
         },
         {
             "type": "paragraph",
-            "text": "Drop Capacitor into any existing web project, framework or library. Convert an existing React, Svelte, Vue (or your preferred Web Framework) project to native mobile.",
+            "text": "Use Install Doctor to provision a wide range of operating systems and virtualization platforms. The latest x86-64 releases of Archlinux, CentOS, Debian, Fedora, macOS, Qubes, Ubuntu, and Windows are officiallysupported. Support for other operating systems is also possible.",
             "spans": [
                 {
-                    "start": 88,
-                    "end": 93,
+                    "start": 126,
+                    "end": 135,
                     "type": "hyperlink",
                     "data": {
                         "link_type": "Web",
@@ -482,21 +465,66 @@
                     }
                 },
                 {
-                    "start": 95,
-                    "end": 101,
+                    "start": 137,
+                    "end": 143,
                     "type": "hyperlink",
                     "data": {
                         "link_type": "Web",
-                        "url": "https://install.doctor/solution/archlinux"
+                        "url": "https://install.doctor/solution/centos"
                     }
                 },
                 {
-                    "start": 103,
-                    "end": 106,
+                    "start": 145,
+                    "end": 151,
                     "type": "hyperlink",
                     "data": {
                         "link_type": "Web",
                         "url": "https://install.doctor/solution/debian"
+                    }
+                },
+                {
+                    "start": 153,
+                    "end": 159,
+                    "type": "hyperlink",
+                    "data": {
+                        "link_type": "Web",
+                        "url": "https://install.doctor/solution/fedora"
+                    }
+                },
+                {
+                    "start": 161,
+                    "end": 167,
+                    "type": "hyperlink",
+                    "data": {
+                        "link_type": "Web",
+                        "url": "https://install.doctor/solution/macos"
+                    }
+                },
+                {
+                    "start": 168,
+                    "end": 173,
+                    "type": "hyperlink",
+                    "data": {
+                        "link_type": "Web",
+                        "url": "https://install.doctor/solution/qubes"
+                    }
+                },
+                {
+                    "start": 175,
+                    "end": 181,
+                    "type": "hyperlink",
+                    "data": {
+                        "link_type": "Web",
+                        "url": "https://install.doctor/solution/ubuntu"
+                    }
+                },
+                {
+                    "start": 187,
+                    "end": 194,
+                    "type": "hyperlink",
+                    "data": {
+                        "link_type": "Web",
+                        "url": "https://install.doctor/solution/windows"
                     }
                 }
             ]
@@ -511,7 +539,7 @@
                 },
                 "alt": "Archlinux logo tile",
                 "copyright": null,
-                "url": "/assets/img/landing/archlinux-box.png",
+                "url": "https://install.doctor/assets/img/landing/archlinux-box.png",
                 "2x": {
                     "dimensions": {
                         "width": 544,
@@ -519,7 +547,7 @@
                     },
                     "alt": "Archlinux logo tile",
                     "copyright": null,
-                    "url": "/assets/img/landing/archlinux-box-2x.png"
+                    "url": "https://install.doctor/assets/img/landing/archlinux-box-2x.png"
                 }
             },
             "link": "/solution/archlinux"
@@ -532,7 +560,7 @@
                 },
                 "alt": "CentOS logo tile",
                 "copyright": null,
-                "url": "/assets/img/landing/centos-box.png",
+                "url": "https://install.doctor/assets/img/landing/centos-box.png",
                 "2x": {
                     "dimensions": {
                         "width": 544,
@@ -540,7 +568,7 @@
                     },
                     "alt": "CentOS logo tile",
                     "copyright": null,
-                    "url": "/assets/img/landing/centos-box-2x.png"
+                    "url": "https://install.doctor/assets/img/landing/centos-box-2x.png"
                 }
             },
             "link": "/solution/centos"
@@ -553,7 +581,7 @@
                 },
                 "alt": "Debian logo tile",
                 "copyright": null,
-                "url": "/assets/img/landing/debian-box.png",
+                "url": "https://install.doctor/assets/img/landing/debian-box.png",
                 "2x": {
                     "dimensions": {
                         "width": 544,
@@ -561,7 +589,7 @@
                     },
                     "alt": "Debian logo tile",
                     "copyright": null,
-                    "url": "/assets/img/landing/debian-box-2x.png"
+                    "url": "https://install.doctor/assets/img/landing/debian-box-2x.png"
                 }
             },
             "link": "/solution/debian"
@@ -574,7 +602,7 @@
                 },
                 "alt": "Fedora logo tile",
                 "copyright": null,
-                "url": "/assets/img/landing/fedora-box.png",
+                "url": "https://install.doctor/assets/img/landing/fedora-box.png",
                 "2x": {
                     "dimensions": {
                         "width": 544,
@@ -582,7 +610,7 @@
                     },
                     "alt": "Fedora logo tile",
                     "copyright": null,
-                    "url": "/assets/img/landing/fedora-box-2x.png"
+                    "url": "https://install.doctor/assets/img/landing/fedora-box-2x.png"
                 }
             },
             "link": "/solution/fedora"
@@ -595,7 +623,7 @@
                 },
                 "alt": "macOS logo tile",
                 "copyright": null,
-                "url": "/assets/img/landing/macos-box.png",
+                "url": "https://install.doctor/assets/img/landing/macos-box.png",
                 "2x": {
                     "dimensions": {
                         "width": 544,
@@ -603,10 +631,10 @@
                     },
                     "alt": "macOS logo tile",
                     "copyright": null,
-                    "url": "/assets/img/landing/macos-box-2x.png"
+                    "url": "https://install.doctor/assets/img/landing/macos-box-2x.png"
                 }
             },
-            "link": "/solution/windows"
+            "link": "/solution/macos"
         },
         {
             "logo": {
@@ -616,7 +644,7 @@
                 },
                 "alt": "Qubes logo tile",
                 "copyright": null,
-                "url": "/assets/img/landing/qubes-box.png",
+                "url": "https://install.doctor/assets/img/landing/qubes-box.png",
                 "2x": {
                     "dimensions": {
                         "width": 544,
@@ -624,10 +652,10 @@
                     },
                     "alt": "Qubes logo tile",
                     "copyright": null,
-                    "url": "/assets/img/landing/qubes-box-2x.png"
+                    "url": "https://install.doctor/assets/img/landing/qubes-box-2x.png"
                 }
             },
-            "link": null
+            "link": "/solution/qubes"
         },
         {
             "logo": {
@@ -637,7 +665,7 @@
                 },
                 "alt": "Ubuntu logo tile",
                 "copyright": null,
-                "url": "/assets/img/landing/ubuntu-box.png",
+                "url": "https://install.doctor/assets/img/landing/ubuntu-box.png",
                 "2x": {
                     "dimensions": {
                         "width": 544,
@@ -645,10 +673,10 @@
                     },
                     "alt": "Ubuntu logo tile",
                     "copyright": null,
-                    "url": "/assets/img/landing/ubuntu-box-2x.png"
+                    "url": "https://install.doctor/assets/img/landing/ubuntu-box-2x.png"
                 }
             },
-            "link": null
+            "link": "/solution/ubuntu"
         },
         {
             "logo": {
@@ -658,7 +686,7 @@
                 },
                 "alt": "Windows logo tile",
                 "copyright": null,
-                "url": "/assets/img/landing/windows-box.png",
+                "url": "https://install.doctor/assets/img/landing/windows-box.png",
                 "2x": {
                     "dimensions": {
                         "width": 544,
@@ -666,10 +694,10 @@
                     },
                     "alt": "Windows logo tile",
                     "copyright": null,
-                    "url": "/assets/img/landing/windows-box-2x.png"
+                    "url": "https://install.doctor/assets/img/landing/windows-box-2x.png"
                 }
             },
-            "link": null
+            "link": "/solution/windows"
         }
     ],
     "tweets": [
@@ -677,11 +705,11 @@
             "title": [
                 {
                     "type": "heading2",
-                    "text": "What people are saying  about Install Doctor.",
+                    "text": "What people are saying about Install Doctor.",
                     "spans": [
                         {
-                            "start": 24,
-                            "end": 40,
+                            "start": 23,
+                            "end": 46,
                             "type": "em"
                         }
                     ]
@@ -696,246 +724,33 @@
                     "width": 40,
                     "height": 40
                 },
-                "alt": "Austin Howard Twitter profile picture",
+                "alt": "Brian Zalewski Twitter profile picture",
                 "copyright": null,
-                "url": "https://images.prismic.io/ionicframeworkcom/fb85f7f6-bebf-41d7-8264-0ba3fed9c4d6_capacitor-homepage-tweets-0%402x.png?auto=compress,format&rect=0,0,80,80&w=40&h=40",
+                "url": "https://install.doctor/assets/img/landing/twitter-brian-zalewski.png",
                 "2x": {
                     "dimensions": {
                         "width": 80,
                         "height": 80
                     },
-                    "alt": "Austin Howard Twitter profile picture",
+                    "alt": "Brian Zalewski Twitter profile picture",
                     "copyright": null,
-                    "url": "https://images.prismic.io/ionicframeworkcom/fb85f7f6-bebf-41d7-8264-0ba3fed9c4d6_capacitor-homepage-tweets-0%402x.png?auto=compress,format&rect=0,0,80,80&w=80&h=80"
+                    "url": "https://install.doctor/assets/img/landing/twitter-brian-zalewski-2x.png"
                 }
             },
-            "name": "Austin Howard",
-            "handle": "@a_howard8",
+            "name": "Brian Zalewski",
+            "handle": "@HillBillyHack3r",
             "text": [
                 {
                     "type": "paragraph",
-                    "text": "I’m reallllyyyy digging capacitor 👀",
-                    "spans": []
-                }
-            ],
-            "verified": false
-        },
-        {
-            "image": {
-                "dimensions": {
-                    "width": 40,
-                    "height": 40
-                },
-                "alt": "Angular Twitter profile picture",
-                "copyright": null,
-                "url": "https://images.prismic.io/ionicframeworkcom/f8f66de5-0c84-438a-9be7-ccaf636ea445_capacitor-homepage-tweets-1%402x.png?auto=compress,format&rect=0,0,80,80&w=40&h=40",
-                "2x": {
-                    "dimensions": {
-                        "width": 80,
-                        "height": 80
-                    },
-                    "alt": "Angular Twitter profile picture",
-                    "copyright": null,
-                    "url": "https://images.prismic.io/ionicframeworkcom/f8f66de5-0c84-438a-9be7-ccaf636ea445_capacitor-homepage-tweets-1%402x.png?auto=compress,format&rect=0,0,80,80&w=80&h=80"
-                }
-            },
-            "name": "Angular",
-            "handle": "@angular",
-            "text": [
-                {
-                    "type": "paragraph",
-                    "text": "Did you know @capacitorjs shows how to give your #Angular app access to mobile APIs and a presence in app stores?",
+                    "text": "The default configuration of @InstallDoc is an educational tool that helps me learn about emerging open-source technologies.. Hopefully people find it as useful as I do",
                     "spans": [
                         {
-                            "start": 13,
-                            "end": 25,
+                            "start": 29,
+                            "end": 40,
                             "type": "hyperlink",
                             "data": {
                                 "link_type": "Web",
-                                "url": "https://twitter.com/capacitorjs",
-                                "target": "_blank"
-                            }
-                        },
-                        {
-                            "start": 49,
-                            "end": 57,
-                            "type": "hyperlink",
-                            "data": {
-                                "link_type": "Web",
-                                "url": "https://twitter.com/search?q=%23Angular&src=typeahead_click",
-                                "target": "_blank"
-                            }
-                        }
-                    ]
-                }
-            ],
-            "verified": false
-        },
-        {
-            "image": {
-                "dimensions": {
-                    "width": 40,
-                    "height": 40
-                },
-                "alt": "Scriptkitty Twitter profile image",
-                "copyright": null,
-                "url": "https://images.prismic.io/ionicframeworkcom/5bdb1bb4-cf8d-4efa-90e2-b35bd4a80a3b_capacitor-homepage-tweets-2%402x.png?auto=compress,format&rect=0,0,80,80&w=40&h=40",
-                "2x": {
-                    "dimensions": {
-                        "width": 80,
-                        "height": 80
-                    },
-                    "alt": "Scriptkitty Twitter profile image",
-                    "copyright": null,
-                    "url": "https://images.prismic.io/ionicframeworkcom/5bdb1bb4-cf8d-4efa-90e2-b35bd4a80a3b_capacitor-homepage-tweets-2%402x.png?auto=compress,format&rect=0,0,80,80&w=80&h=80"
-                }
-            },
-            "name": "scriptkitty",
-            "handle": "@thr0wsException",
-            "text": [
-                {
-                    "type": "paragraph",
-                    "text": "I'm pretty hyped to be honest, from what I've seen so far this will be another major step for establishing web technology as the go-to method for developing cross platform apps ♥",
-                    "spans": []
-                }
-            ],
-            "verified": false
-        },
-        {
-            "image": {
-                "dimensions": {
-                    "width": 40,
-                    "height": 40
-                },
-                "alt": "Adeniyi Tolulope Twitter profile image",
-                "copyright": null,
-                "url": "https://images.prismic.io/ionicframeworkcom/51fcbb2f-575a-46e3-af18-9a9d0710b3eb_capacitor-homepage-tweets-3%402x.png?auto=compress,format&rect=0,0,80,80&w=40&h=40",
-                "2x": {
-                    "dimensions": {
-                        "width": 80,
-                        "height": 80
-                    },
-                    "alt": "Adeniyi Tolulope Twitter profile image",
-                    "copyright": null,
-                    "url": "https://images.prismic.io/ionicframeworkcom/51fcbb2f-575a-46e3-af18-9a9d0710b3eb_capacitor-homepage-tweets-3%402x.png?auto=compress,format&rect=0,0,80,80&w=80&h=80"
-                }
-            },
-            "name": "Adeniyi Tolulope",
-            "handle": "@tolutronics",
-            "text": [
-                {
-                    "type": "paragraph",
-                    "text": "@capacitorjs has been a great companion this year... with realtime updates.",
-                    "spans": [
-                        {
-                            "start": 0,
-                            "end": 12,
-                            "type": "hyperlink",
-                            "data": {
-                                "link_type": "Web",
-                                "url": "https://twitter.com/capacitorjs",
-                                "target": "_blank"
-                            }
-                        }
-                    ]
-                }
-            ],
-            "verified": false
-        },
-        {
-            "image": {
-                "dimensions": {
-                    "width": 40,
-                    "height": 40
-                },
-                "alt": "Guillermo Rauch twitter profile image",
-                "copyright": null,
-                "url": "https://images.prismic.io/ionicframeworkcom/8d58919e-b174-46eb-990c-a87d4f02f5f4_capacitor-homepage-tweets-4%402x.png?auto=compress,format&rect=0,0,80,80&w=40&h=40",
-                "2x": {
-                    "dimensions": {
-                        "width": 80,
-                        "height": 80
-                    },
-                    "alt": "Guillermo Rauch twitter profile image",
-                    "copyright": null,
-                    "url": "https://images.prismic.io/ionicframeworkcom/8d58919e-b174-46eb-990c-a87d4f02f5f4_capacitor-homepage-tweets-4%402x.png?auto=compress,format&rect=0,0,80,80&w=80&h=80"
-                }
-            },
-            "name": "Guillermo Rauch",
-            "handle": "@rauchg",
-            "text": [
-                {
-                    "type": "paragraph",
-                    "text": "Amazing that this is @vercel Next.js + @tailwindcss + @capacitorjs 🤯",
-                    "spans": [
-                        {
-                            "start": 21,
-                            "end": 28,
-                            "type": "hyperlink",
-                            "data": {
-                                "link_type": "Web",
-                                "url": "https://twitter.com/vercel",
-                                "target": "_blank"
-                            }
-                        },
-                        {
-                            "start": 39,
-                            "end": 51,
-                            "type": "hyperlink",
-                            "data": {
-                                "link_type": "Web",
-                                "url": "https://twitter.com/tailwindcss",
-                                "target": "_blank"
-                            }
-                        },
-                        {
-                            "start": 54,
-                            "end": 66,
-                            "type": "hyperlink",
-                            "data": {
-                                "link_type": "Web",
-                                "url": "https://twitter.com/capacitorjs",
-                                "target": "_blank"
-                            }
-                        }
-                    ]
-                }
-            ],
-            "verified": true
-        },
-        {
-            "image": {
-                "dimensions": {
-                    "width": 40,
-                    "height": 40
-                },
-                "alt": "Carlos Martinez twitter profile image",
-                "copyright": null,
-                "url": "https://images.prismic.io/ionicframeworkcom/1b8cb46a-a104-4764-8a67-ec01ab184778_capacitor-homepage-tweets-5%402x.png?auto=compress,format&rect=0,0,80,80&w=40&h=40",
-                "2x": {
-                    "dimensions": {
-                        "width": 80,
-                        "height": 80
-                    },
-                    "alt": "Carlos Martinez twitter profile image",
-                    "copyright": null,
-                    "url": "https://images.prismic.io/ionicframeworkcom/1b8cb46a-a104-4764-8a67-ec01ab184778_capacitor-homepage-tweets-5%402x.png?auto=compress,format&rect=0,0,80,80&w=80&h=80"
-                }
-            },
-            "name": "Carlos Martinez",
-            "handle": "@cmartineztech",
-            "text": [
-                {
-                    "type": "paragraph",
-                    "text": "Yes, It works 😱 deep linking and google native authentication in iOS @capacitorjs",
-                    "spans": [
-                        {
-                            "start": 70,
-                            "end": 82,
-                            "type": "hyperlink",
-                            "data": {
-                                "link_type": "Web",
-                                "url": "https://twitter.com/capacitorjs",
+                                "url": "https://twitter.com/InstallDoc",
                                 "target": "_blank"
                             }
                         }
@@ -951,11 +766,11 @@
             "text": [
                 {
                     "type": "paragraph",
-                    "text": "The Install Doctor Community is growing. Connect with us and let us know what's good.",
+                    "text": "The Install Doctor Community is growing. Connect with us, your opinion matters.",
                     "spans": [
                         {
-                            "start": 36,
-                            "end": 66,
+                            "start": 40,
+                            "end": 79,
                             "type": "em"
                         }
                     ]
@@ -972,7 +787,7 @@
                 },
                 "alt": "Twitter icon",
                 "copyright": null,
-                "url": "/assets/img/landing/twitter-icon.png"
+                "url": "https://install.doctor/assets/img/landing/twitter-icon.png"
             },
             "link": {
                 "link_type": "Web",
@@ -989,7 +804,7 @@
                 },
                 "alt": "Github icon",
                 "copyright": null,
-                "url": "/assets/img/landing/github-icon.png"
+                "url": "https://install.doctor/assets/img/landing/github-icon.png"
             },
             "link": {
                 "link_type": "Web",
@@ -1006,7 +821,7 @@
                 },
                 "alt": "Chat bubble icon",
                 "copyright": null,
-                "url": "/assets/img/landing/chat-icon.png"
+                "url": "https://install.doctor/assets/img/landing/chat-icon.png"
             },
             "link": {
                 "link_type": "Web",
@@ -1025,7 +840,7 @@
                 },
                 "alt": "Raised platforms with app icons",
                 "copyright": null,
-                "url": "/assets/img/landing/cap-enterprise-cta.png",
+                "url": "https://install.doctor/assets/img/landing/cap-enterprise-cta.png",
                 "2x": {
                     "dimensions": {
                         "width": 2432,
@@ -1033,7 +848,7 @@
                     },
                     "alt": "Raised platforms with app icons",
                     "copyright": null,
-                    "url": "/assets/img/landing/cap-enterprise-cta-2x.png"
+                    "url": "https://install.doctor/assets/img/landing/cap-enterprise-cta-2x.png"
                 }
             },
             "title": [
@@ -1043,7 +858,7 @@
                     "spans": [
                         {
                             "start": 25,
-                            "end": 53,
+                            "end": 59,
                             "type": "em"
                         }
                     ]
@@ -1052,7 +867,7 @@
             "text": [
                 {
                     "type": "paragraph",
-                    "text": "Ready for enterprise. With an Install Doctor Enterprise subscription, get access advanced security features, SSO-integration, and a proprietary hardware-based feature that allows you to store your entire file-system on a read-only hard-drive.",
+                    "text": "Ready for enterprise. With Install Doctor Enterprise, access advanced security features, integrate SSO, and utilize a proprietary hardware-based, read-only file system.",
                     "spans": [
                         {
                             "start": 0,
@@ -1305,12 +1120,11 @@
     },
     "announcement": {
         "tag_text": "Blog",
-        "desktop_text": "Announcing Portals for Capacitor",
-        "mobile_text": "Portals for Capacitor",
+        "desktop_text": "The Switch from Gas Station to Install Doctor",
+        "mobile_text": "From Gas Station to Install Doctor",
         "link": {
             "link_type": "Web",
-            "url": "https://ionic.io/blog/introducing-portals-for-capacitor",
-            "target": "_blank"
+            "url": "/blog/gas-station-predecessor"
         }
     }
 }

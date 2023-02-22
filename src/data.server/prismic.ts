@@ -10,9 +10,9 @@ export const getPage: MapParamData = async (_params, url) => {
 
   switch (url.pathname) {
     case '/':
-      const homeSync = fs.existsSync('./home.prismic.json')
+      const homeSync = fs.existsSync('./local/home.prismic.json')
       if (homeSync) {
-        data = JSON.parse(fs.readFileSync('./home.prismic.json').toString())
+        data = JSON.parse(fs.readFileSync('./local/home.prismic.json').toString())
       } else {
         data = {
           ...(await queryPrismic('capacitor_homepage')),
@@ -20,27 +20,27 @@ export const getPage: MapParamData = async (_params, url) => {
           announcement: await queryPrismic('capacitor_homepage_announcement'),
         };
         data.announcement_bar = await queryPrismic('announcement_bar');
-        fs.writeFileSync('./home.prismic.json', JSON.stringify(data))
+        fs.writeFileSync('./local/home.prismic.json', JSON.stringify(data))
       }
       break;
     case '/community':
-      const communitySync = fs.existsSync('./community.prismic.json')
+      const communitySync = fs.existsSync('./local/community.prismic.json')
       if (communitySync) {
-        data = JSON.parse(fs.readFileSync('./community.prismic.json').toString())
+        data = JSON.parse(fs.readFileSync('./local/community.prismic.json').toString())
       } else {
         data = await queryPrismic('capacitor_community');
         data.announcement_bar = await queryPrismic('announcement_bar');
-        fs.writeFileSync('./community.prismic.json', JSON.stringify(data))
+        fs.writeFileSync('./local/community.prismic.json', JSON.stringify(data))
       }
       break;
     case '/enterprise':
-      const enterpriseSync = fs.existsSync('./enterprise.prismic.json')
+      const enterpriseSync = fs.existsSync('./local/enterprise.prismic.json')
       if (enterpriseSync) {
-        data = JSON.parse(fs.readFileSync('./enterprise.prismic.json').toString())
+        data = JSON.parse(fs.readFileSync('./local/enterprise.prismic.json').toString())
       } else {
         data = await queryPrismic('capacitor_enterprise');
         data.announcement_bar = await queryPrismic('announcement_bar');
-        fs.writeFileSync('./enterprise.prismic.json', JSON.stringify(data))
+        fs.writeFileSync('./local/enterprise.prismic.json', JSON.stringify(data))
       }
       break;
   }

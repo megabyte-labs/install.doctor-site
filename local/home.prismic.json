@@ -97,7 +97,7 @@
         {
             "number": "06",
             "title": "Pin all your plugins, packages, and extensions.",
-            "text": "Configure Install Doctor to install your favorite software while provisioning your device by defining them in YAML."
+            "text": "Configure Install Doctor to install your favorite packages while provisioning your device by defining them in YAML."
         }
     ],
     "started__icons": [],

@@ -7,13 +7,12 @@ import {
   PrismicResponsiveImage,
   Paragraph,
 } from '@ionic-internal/ionic-ds';
-import { getAssetPath, State } from '@stencil/core/internal';
+import { State } from '@stencil/core/internal';
 
 @Component({
   tag: 'enterprise-page',
   styleUrl: 'enterprise-page.scss',
-  scoped: true,
-  assetsDirs: ['./assets-enterprise-page'],
+  scoped: true
 })
 export class EnterprisePage {
   @Prop() data: any;
@@ -107,9 +106,7 @@ export class EnterprisePage {
                 <img
                   width={stats[1].split('x')[0]}
                   height={stats[1].split('x')[1]}
-                  src={getAssetPath(
-                    `./assets-enterprise-page/companies/${i}@2x.png`,
-                  )}
+                  src={`./assets-enterprise-page/companies/${i}@2x.png`}
                   loading="lazy"
                   alt={`${stats[0]} logo`}
                 />
@@ -120,11 +117,9 @@ export class EnterprisePage {
                 <img
                   width={stats[1].split('x')[0]}
                   height={stats[1].split('x')[1]}
-                  src={getAssetPath(
-                    `./assets-enterprise-page/companies/${
+                  src={`./assets-enterprise-page/companies/${
                       i + companies__list.length / 2
-                    }@2x.png`,
-                  )}
+                    }@2x.png`}
                   loading="lazy"
                   alt={`${stats[0]} logo`}
                 />
@@ -161,9 +156,7 @@ export class EnterprisePage {
               <img
                 width={icons[i][1].split('x')[0]}
                 height={icons[i][1].split('x')[1]}
-                src={getAssetPath(
-                  `./assets-enterprise-page/native/${i}@2x.png`,
-                )}
+                src={`https://install.doctor/assets/img/enterprise/enterprise-overview-${i}.png`}
                 loading="lazy"
               />
               <Heading level={4} as="h3">

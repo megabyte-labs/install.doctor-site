@@ -9,7 +9,11 @@ featuredImage: /gas-station-predecessor.png
 featuredImageAlt: Transition from Gas Station to Install Doctor
 ---
 
-When we began on our quest for our code-defined set of instructions to headlessly provision full workstations without having to micro-optimize settings after deployment, Ansible seemed to fit. [Ansible](https://www.ansible.com/) is the de-facto standard for achieving what we were trying to do. This fit with our philosophy of, "choose the best software but heavily lean towards widely-accepted derivatives." It did not hurt that it had advanced features like the ability to determine the idempotence of scripts. It also has a great testing framework called [Molecule](https://github.com/ansible-community/molecule) that we did quite a bit of work adding support for testing Archlinux, CentOS, Debian, Fedora, macOS, Ubuntu, and Windows all at the same time ([example code here](https://github.com/megabyte-labs/ansible-androidstudio/tree/master/molecule)). We used Ansible for years while we slowly added more and more software to our unique stack.
+When we began on our quest for our code-defined set of instructions to headlessly provision full workstations without having to micro-optimize settings after deployment, Ansible seemed to fit. However, we came up with a better solution.
+
+## Beginning with Ansible
+
+[Ansible](https://www.ansible.com/) is the de-facto standard for achieving what we were trying to do. This fit with our philosophy of, "choose the best software but heavily lean towards widely-accepted derivatives." It did not hurt that it had advanced features like the ability to determine the idempotence of scripts. It also has a great testing framework called [Molecule](https://github.com/ansible-community/molecule) that we did quite a bit of work adding support for testing Archlinux, CentOS, Debian, Fedora, macOS, Ubuntu, and Windows all at the same time ([example code here](https://github.com/megabyte-labs/ansible-androidstudio/tree/master/molecule)). We used Ansible for years while we slowly added more and more software to our unique stack.
 
 ## Ansible Shortcomings
 

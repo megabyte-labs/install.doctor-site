@@ -21,6 +21,12 @@
   margin-inline-end: auto;
 }
 
+.content > .sc-blog-page:last-child {
+  .post {
+    border-bottom: 0;
+  }
+}
+
 blog-post + blog-post {
   margin-block-start: 82px;
 }
@@ -35,4 +41,30 @@ blog-post + blog-post {
 blog-newsletter {
   margin-block-start: 97px;
   margin-block-end: 106px;
+}
+
+.blog-info-wrapper {
+  background-color: #f7f9fc;
+    width: 100%;
+    border-top: 2px solid var(--c-indigo-20);
+    position: relative;
+    margin-top: -2px;
+
+  .blog-info {
+    max-width: 736px;
+    margin: 0 auto;
+    padding-top: 69px;
+    padding-bottom: 69px;
+
+    h4 {
+      margin-top: 0;
+      opacity: 0.81;
+    }
+
+    p {
+      margin: 0;
+      opacity: 0.81;
+      font-size: 14px;
+    }
+  }
 }

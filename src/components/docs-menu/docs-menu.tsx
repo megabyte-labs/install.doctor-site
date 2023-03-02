@@ -9,11 +9,11 @@ import {
   State,
   Watch,
   h,
-} from '@stencil/core';
-import { href } from '@utils/common';
-import type { TableOfContents } from '@stencil/ssg';
-import { docsVersionHref } from '../../router';
-import type { DocsTemplate } from '../../data.server/models';
+} from '@stencil/core'
+import { href } from '@utils/common'
+import type { TableOfContents } from '@stencil/ssg'
+import { docsVersionHref } from '../../router'
+import type { DocsTemplate } from '../../data.server/models'
 
 @Component({
   tag: 'docs-menu',
@@ -21,9 +21,9 @@ import type { DocsTemplate } from '../../data.server/models';
   scoped: true,
 })
 export class SiteMenu implements ComponentInterface {
-  @Prop() template: DocsTemplate;
-  @Prop() toc: TableOfContents;
-  @Prop() activePath: string;
+  @Prop() template: DocsTemplate
+  @Prop() toc: TableOfContents
+  @Prop() activePath: string
 
   @State() expands: { [key: string]: number[] } = {
     docs: [],
@@ -33,20 +33,20 @@ export class SiteMenu implements ComponentInterface {
 
   @State() showOverlay = false;
 
-  @Event() menuToggled: EventEmitter;
+  @Event() menuToggled: EventEmitter
 
   @Method()
   async toggleOverlayMenu() {
-    this.showOverlay = !this.showOverlay;
+    this.showOverlay = !this.showOverlay
   }
 
   @Watch('showOverlay')
   showOverlayChange() {
-    this.menuToggled.emit(this.showOverlay);
+    this.menuToggled.emit(this.showOverlay)
   }
 
   componentWillLoad() {
-    this.expandActive();
+    this.expandActive()
   }
 
   @Watch('template')
@@ -55,7 +55,7 @@ export class SiteMenu implements ComponentInterface {
     if (this.toc?.root) {
       const activeIndex = this.toc.root.findIndex(
         t => t.children && t.children.some(c => c.url === this.activePath),
-      );
+      )
       if (
         activeIndex > -1 &&
         !this.expands[this.template].includes(activeIndex)
@@ -63,28 +63,28 @@ export class SiteMenu implements ComponentInterface {
         this.expands = {
           ...this.expands,
           [this.template]: [...this.expands[this.template], activeIndex],
-        };
+        }
       }
     }
   }
 
   toggleParent = (itemNumber: number) => {
     return (e: MouseEvent) => {
-      e.preventDefault();
+      e.preventDefault()
 
       if (this.expands[this.template].includes(itemNumber)) {
         this.expands[this.template].splice(
           this.expands[this.template].indexOf(itemNumber),
           1,
-        );
+        )
       } else {
         this.expands[this.template] = [
           ...this.expands[this.template],
           itemNumber,
-        ];
+        ]
       }
-      this.expands = { ...this.expands };
-    };
+      this.expands = { ...this.expands }
+    }
   };
 
   render() {
@@ -110,8 +110,8 @@ export class SiteMenu implements ComponentInterface {
             </div>
             <ul class="menu-list">
               {this.toc?.root.map((item, i) => {
-                const isActive = item.url === this.activePath;
-                const expanded = this.expands[this.template].includes(i);
+                const isActive = item.url === this.activePath
+                const expanded = this.expands[this.template].includes(i)
 
                 if (item.children && item.children.length > 0) {
                   return (
@@ -143,21 +143,21 @@ export class SiteMenu implements ComponentInterface {
                                   <span class="bump-up">{childItem.text}</span>
                                 </a>
                               ) : (
-                                <a
-                                  rel="noopener"
-                                  class="link--external"
-                                  target="_blank"
-                                  href="#"
-                                >
-                                  {childItem.text}
-                                </a>
-                              )}
+                                  <a
+                                    class="link--external"
+                                    target="_blank"
+                                    rel="noopener"
+                                    href="#"
+                                  >
+                                    {childItem.text}
+                                  </a>
+                                )}
                             </li>
-                          );
+                          )
                         })}
                       </ul>
                     </li>
-                  );
+                  )
                 }
 
                 return (
@@ -173,23 +173,23 @@ export class SiteMenu implements ComponentInterface {
                         <span class="section-label">{item.text}</span>
                       </a>
                     ) : (
-                      <a
-                        rel="noopener"
-                        class="link--external"
-                        target="_blank"
-                        href="#"
-                      >
-                        {item.text}
-                      </a>
-                    )}
+                        <a
+                          rel="noopener"
+                          class="link--external"
+                          target="_blank"
+                          href="#"
+                        >
+                          {item.text}
+                        </a>
+                      )}
                   </li>
-                );
+                )
               })}
             </ul>
           </div>
         </aside>
       </Host>
-    );
+    )
   }
 }
 
@@ -235,4 +235,4 @@ const capacitorLogo = () => (
       fill-opacity=".2"
     />
   </svg>
-);
+)

@@ -9,8 +9,28 @@
     ],
     "redirects": [
       {
-        "source": "/assets-enterprise-page/native/*",
-        "destination": "/build/assets-enterprise-page/native/*",
+        "source": "/start",
+        "destination": "https://gitlab.com/megabyte-labs/install.doctor/-/raw/master/local/provision.sh",
+        "type": 301
+      },
+      {
+        "source": "/windows",
+        "destination": "https://gitlab.com/megabyte-labs/install.doctor/-/raw/master/local/provision.ps1",
+        "type": 301
+      },
+      {
+        "source": "/vagrant",
+        "destination": "https://gitlab.com/megabyte-labs/install.doctor/-/raw/master/local/vagrant.sh",
+        "type": 301
+      },
+      {
+        "source": "/vagrant-windows",
+        "destination": "https://gitlab.com/megabyte-labs/install.doctor/-/raw/master/local/vagrant.ps1",
+        "type": 301
+      },
+      {
+        "source": "/opensearch.xml",
+        "destination": "/docs/opensearch.xml",
         "type": 301
       }
     ]

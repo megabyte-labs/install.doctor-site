@@ -1,12 +1,35 @@
-import { Fragment, h } from '@stencil/core';
+import { Fragment, h } from '@stencil/core'
 import {
   ResponsiveContainer,
   Heading,
   Paragraph,
-} from '@ionic-internal/ionic-ds';
+} from '@ionic-internal/ionic-ds'
 export const SolutionArchlinux = () => {
   return (
     <Fragment>
+      <ResponsiveContainer id="what-is" as="section">
+        <div class="ui-container">
+          <ion-icon class="what-is-info-icon" name="information-circle-outline"></ion-icon>
+          <Paragraph class="quote-summary">
+            <b>What is Archlinux and why should you provision it with Install Doctor?</b>
+          </Paragraph>
+          <Paragraph class="quote-summary">
+            Arch Linux is a lightweight and flexible Linux distribution that is known for its simplicity, elegance, and user-friendliness. It is designed to be fast, stable, and customizable, making it an ideal choice for users who want a minimalist and customizable Linux distribution. Arch Linux is a rolling-release distribution, which means that it is constantly updated with the latest software packages.
+        </Paragraph>
+          <Paragraph class="quote-summary">
+            If you are provisioning Arch Linux, you would want to do it properly with an installation framework like Install Doctor. This is because the installation process for any operating system can be time-consuming and complex, especially if you are provisioning multiple systems. An installation framework like Install Doctor can automate many of the tasks involved in installing and configuring the operating system, making the process faster and more efficient.
+        </Paragraph>
+          <Paragraph class="quote-summary">
+            Install Doctor is regularly tested on Arch Linux, which means that it is designed to work seamlessly with the operating system. It also handles many of the Arch Linux specific issues that people face while provisioning Arch Linux, such as package dependencies and kernel modules. This means that you can be confident that the installation process will be smooth and reliable, without any compatibility issues or other problems.
+        </Paragraph>
+          <Paragraph class="quote-summary">
+            Moreover, with Install Doctor, you can keep your configurations in YAML format saved to a git repository. This allows you to version control your configurations and easily track changes over time. It also makes it easier to share configurations between systems or with other users. This feature can save you time and effort by making it easier to maintain and manage your Arch Linux installations.
+        </Paragraph>
+          <Paragraph class="quote-summary">
+            In conclusion, Arch Linux is a lightweight and customizable Linux distribution that is known for its simplicity and elegance. If you are provisioning Arch Linux, you would want to do it properly with an installation framework like Install Doctor. Install Doctor is regularly tested on Arch Linux and handles many of the Arch Linux specific issues that people face while provisioning Arch Linux. Additionally, with Install Doctor, you can keep your configurations in YAML format saved to a git repository, which makes it easier to maintain and manage your installations.
+        </Paragraph>
+        </div>
+      </ResponsiveContainer>
       <ResponsiveContainer id="getting-started" as="section">
         <article class="step">
           <sup class="ui-heading-6">01</sup>
@@ -142,22 +165,6 @@ run setup:vms
           </div>
         </article>
       </ResponsiveContainer>
-      <section id="continue">
-        <ResponsiveContainer>
-          <Heading level={3}>Continue your Install Doctor Journey.</Heading>
-          <Paragraph>
-            This is only the beginning. Learn more about the Install Doctor{' '}
-            <a href="/docs/customization">
-              development workflow
-            </a>{' '}
-            or leveraging the{' '}
-            <a href="/docs/features">
-              amazing features
-            </a>{' '}
-            .
-          </Paragraph>
-        </ResponsiveContainer>
-      </section>
     </Fragment>
-  );
-};
+  )
+}

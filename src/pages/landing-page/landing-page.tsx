@@ -1,4 +1,4 @@
-import { Component, h, Host, Prop, State } from '@stencil/core';
+import { Component, h, Host, Prop, State } from '@stencil/core'
 import {
   ResponsiveContainer,
   Col,
@@ -9,8 +9,8 @@ import {
   PrismicRichText,
   PrismicResponsiveImage,
   Paragraph,
-} from '@ionic-internal/ionic-ds';
-import { href } from '@stencil/router';
+} from '@ionic-internal/ionic-ds'
+import { href } from '@stencil/router'
 
 @Component({
   tag: 'landing-page',
@@ -18,7 +18,7 @@ import { href } from '@stencil/router';
   scoped: true,
 })
 export class LandingPage {
-  @Prop() data: any;
+  @Prop() data: any
 
   @State() selectedCodeTab: string = 'notifications';
   @State() ebookModalOpen = false;
@@ -34,11 +34,14 @@ export class LandingPage {
       Cta,
       Ebook,
       // IoniconfCta,
-    } = this;
+    } = this
 
     return (
       <Host>
-        <meta-tags />
+        <meta-tags
+          page-title="Provision fully configured desktops automatically"
+          description="Setup your workstation automatically with the best, free open-source software using Install Doctor, an open-source, multi-OS provisioning system."
+        />
         <Top />
         {/* <IoniconfCta /> */}
         {/* <top-parallax /> */}
@@ -52,13 +55,13 @@ export class LandingPage {
         <pre-footer />
         <capacitor-site-footer />
       </Host>
-    );
+    )
   }
 
   Top = () => {
-    const { Announcement } = this;
-    const { top, top__ctas, top__link, top__hero, top__icons } = this.data;
-    const { primary, secondary } = top__ctas[0];
+    const { Announcement } = this
+    const { top, top__ctas, top__link, top__hero, top__icons } = this.data
+    const { primary, secondary } = top__ctas[0]
 
     return (
       <section id="top">
@@ -104,7 +107,7 @@ export class LandingPage {
           </div>
         </ResponsiveContainer>
       </section>
-    );
+    )
   };
 
   Announcement = () => {
@@ -113,10 +116,10 @@ export class LandingPage {
       desktop_text,
       mobile_text,
       link,
-    } = this.data.announcement;
-    const { target, url } = link;
+    } = this.data.announcement
+    const { target, url } = link
 
-    const newUrl = url.replace(window.location.origin, '');
+    const newUrl = url.replace(window.location.origin, '')
 
     return (
       <a
@@ -138,7 +141,7 @@ export class LandingPage {
           </span>
         </Breakpoint>
       </a>
-    );
+    )
   };
 
   // IoniconfCta = () => {
@@ -189,7 +192,7 @@ export class LandingPage {
   // };
 
   Started = () => {
-    const { started, started__list } = this.data;
+    const { started, started__list } = this.data
 
     const panels = [
       <code-tabs
@@ -200,10 +203,10 @@ export class LandingPage {
             `
 bash <(curl -sSL https://install.doctor/start)
 `, //-----------------------------------
-      `
+            `
 iex ((New-Object System.Net.WebClient).DownloadString('https://install.doctor/windows'))
 `, //-----------------------------------
-      `
+            `
 qvm-run --pass-io sys-firewall "curl -sSL https://install.doctor/qubes" > ~/setup.sh && bash ~/setup.sh
 `
           ],
@@ -218,11 +221,11 @@ qvm-run --pass-io sys-firewall "curl -sSL https://install.doctor/qubes" > ~/setu
 export START_REPO=my-gh-user/my-fork-name
 bash <(curl -sSL https://install.doctor/start)
 `, //-----------------------------------
-        `
+            `
 $env:START_REPO = 'my-gh-user/my-fork-name'
 iex ((New-Object System.Net.WebClient).DownloadString('https://install.doctor/windows'))
 `, //-----------------------------------
-        `
+            `
 export START_REPO=my-gh-user/my-fork-name
 qvm-run --pass-io sys-firewall "curl -sSL https://install.doctor/qubes" > ~/setup.sh && bash ~/setup.sh
 `
@@ -237,7 +240,7 @@ qvm-run --pass-io sys-firewall "curl -sSL https://install.doctor/qubes" > ~/setu
             `
 bash <(curl -sSL https://install.doctor/vagrant)
 `, //-----------------------------------
-          `
+            `
 iex ((New-Object System.Net.WebClient).DownloadString('https://install.doctor/windows-vagrant'))
 `
           ],
@@ -323,7 +326,7 @@ firefoxAddOns:
 
 `}
       />,
-    ];
+    ]
 
     return (
       <ResponsiveContainer id="started" as="section">
@@ -343,12 +346,12 @@ firefoxAddOns:
           </div>
         ))}
       </ResponsiveContainer>
-    );
+    )
   };
 
   Ebook = () => {
-    const { ebook } = this.data;
-    const { text, cta1: cta, background, book } = ebook[0];
+    const { ebook } = this.data
+    const { text, cta1: cta, background, book } = ebook[0]
 
     return (
       <section id="ebook">
@@ -385,12 +388,12 @@ firefoxAddOns:
           </div>
         </ResponsiveContainer>
       </section>
-    );
+    )
   };
 
   Native = () => {
-    const { native, native__list } = this.data;
-    const dimensions = ['48x64', '60x64', '60x64'];
+    const { native, native__list } = this.data
+    const dimensions = ['48x64', '60x64', '60x64']
 
     return (
       <ResponsiveContainer id="native" as="section">
@@ -410,21 +413,21 @@ firefoxAddOns:
           ))}
         </Grid>
       </ResponsiveContainer>
-    );
+    )
   };
 
   Features = () => {
-    const { features, features__list, features__link } = this.data;
+    const { features, features__list, features__link } = this.data
     const dimensions = [
-      '40x32',
-      '40x32',
-      '32x32',
-      '33x32',
-      '28x32',
-      '32x32',
-      '32x32',
-      '32x30',
-    ];
+      '48x48',
+      '48x48',
+      '48x48',
+      '48x48',
+      '48x48',
+      '48x48',
+      '48x48',
+      '48x48',
+    ]
 
     return (
       <section id="features">
@@ -450,15 +453,15 @@ firefoxAddOns:
           </Grid>
         </ResponsiveContainer>
       </section>
-    );
+    )
   };
 
   Framework = () => {
-    const { framework, framework__list } = this.data;
+    const { framework, framework__list } = this.data
 
     const logoTile = (logo: any) => (
       <PrismicResponsiveImage image={logo} width="272" height="200" />
-    );
+    )
 
     return (
       <ResponsiveContainer id="framework" as="section">
@@ -473,7 +476,7 @@ firefoxAddOns:
           ))}
         </Grid>
       </ResponsiveContainer>
-    );
+    )
   };
 
   Tweets = () => {
@@ -482,9 +485,9 @@ firefoxAddOns:
       tweets__list,
       tweets__bottom,
       tweets__bottom__list,
-    } = this.data;
-    const { title } = tweets[0];
-    const { emoji, text } = tweets__bottom[0];
+    } = this.data
+    const { title } = tweets[0]
+    const { emoji, text } = tweets__bottom[0]
 
     return (
       <section id="tweets">
@@ -552,7 +555,7 @@ firefoxAddOns:
           </div>
         </ResponsiveContainer>
       </section>
-    );
+    )
   };
 
   // Companies = () => {
@@ -601,14 +604,14 @@ firefoxAddOns:
   // };
 
   Cta = () => {
-    const { cta } = this.data;
-    const { image, title, text, cta1 } = cta[0];
+    const { cta } = this.data
+    const { image, title, text, cta1 } = cta[0]
 
     //const { companies__list2 } = this.data;
 
-    const { get_started2: get_started, get_started__ctas } = this.data;
-    const { title: get_started_title, text: get_started_text } = get_started[0];
-    const { primary, secondary } = get_started__ctas[0];
+    const { get_started2: get_started, get_started__ctas } = this.data
+    const { title: get_started_title, text: get_started_text } = get_started[0]
+    const { primary, secondary } = get_started__ctas[0]
 
     /*const dimensions = [
       '33x42',
@@ -671,6 +674,6 @@ firefoxAddOns:
           </div>
         </ResponsiveContainer>
       </section>
-    );
+    )
   };
 }

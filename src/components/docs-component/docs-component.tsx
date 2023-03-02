@@ -7,11 +7,11 @@ import {
   State,
   h,
   Fragment,
-} from '@stencil/core';
-import { RenderJsxAst } from '@stencil/ssg';
-import { DocsData } from '../../data.server/models';
-import Router, { docsVersionHref } from '../../router';
-import { href } from '@utils/common';
+} from '@stencil/core'
+import { RenderJsxAst } from '@stencil/ssg'
+import { DocsData } from '../../data.server/models'
+import Router, { docsVersionHref } from '../../router'
+import { href } from '@utils/common'
 
 @Component({
   tag: 'docs-component',
@@ -19,38 +19,38 @@ import { href } from '@utils/common';
   scoped: true,
 })
 export class DocsComponent implements ComponentInterface {
-  menuEl!: HTMLDocsMenuElement;
+  menuEl!: HTMLDocsMenuElement
 
-  @Prop() data: DocsData;
+  @Prop() data: DocsData
 
   @State() showBackdrop = false;
 
-  @Element() el;
+  @Element() el
 
   @Listen('menuToggleClick')
   toggleMenu() {
-    this.menuEl.toggleOverlayMenu();
+    this.menuEl.toggleOverlayMenu()
   }
 
   @Listen('menuToggled')
   menuToggled(ev: CustomEvent) {
-    const isOpen = ev.detail;
-    this.showBackdrop = isOpen;
+    const isOpen = ev.detail
+    this.showBackdrop = isOpen
   }
 
   backdropClicked = () => {
-    this.menuEl.toggleOverlayMenu();
+    this.menuEl.toggleOverlayMenu()
   };
 
   render() {
-    const { data, showBackdrop } = this;
+    const { data, showBackdrop } = this
 
     if (!data) {
       return (
         <div class="container">
           <strong>Page Not Found</strong>
         </div>
-      );
+      )
     }
 
     return (
@@ -58,7 +58,7 @@ export class DocsComponent implements ComponentInterface {
         <meta-tags
           canonicalUrl={this.data.canonicalUrl}
           page-title={this.data.title}
-          description={`${this.data.description} - Official Capacitor Documentation`}
+          description={`${this.data.description} | Install Doctor Documentation`}
         />
         {/* <capacitor-site-platform-bar
           containerClass="sc-docs-component docs-container"
@@ -109,14 +109,14 @@ export class DocsComponent implements ComponentInterface {
           </div>
         </div>
       </Fragment>
-    );
+    )
   }
 }
 
 const elementRouterHref = (tagName: string, props: any) => {
   if (tagName === 'a' && typeof props.href === 'string') {
-    const currentHost = new URL(document.baseURI).host;
-    const gotoHost = new URL(props.href, document.baseURI).host;
+    const currentHost = new URL(document.baseURI).host
+    const gotoHost = new URL(props.href, document.baseURI).host
 
     if (currentHost !== gotoHost) {
       return {
@@ -124,13 +124,13 @@ const elementRouterHref = (tagName: string, props: any) => {
         target: '_blank',
         class: props.class ? `${props.class} external-link` : 'external-link',
         rel: 'noopener',
-      };
+      }
     }
 
     return {
       ...props,
       ...href(docsVersionHref(props.href)),
-    };
+    }
   }
-  return props;
-};
+  return props
+}

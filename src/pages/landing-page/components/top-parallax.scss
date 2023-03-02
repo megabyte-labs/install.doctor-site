@@ -1,10 +1,7 @@
 @use '../../../global/vars' as *;
 
 #top {
-  background: #0f1c45;
-  background-image: 
-    // url('/assets/img/landing/bg-v3-boxes.png'),
-    radial-gradient(128.98% 148.15% at 50% 50%, #10183f 11.21%, #004489 100%);
+  background: transparent;
   background-size: cover, 100%;
   background-position: 50% 50%;
   color: white;
@@ -14,6 +11,8 @@
   margin-block-end: 200px;
   position: relative;
   overflow: hidden;
+  padding-bottom: 69px;
+    min-height: calc(100vh - 62px);
 
   @media screen and (max-width: $screen-xs-max) {
     padding-block-start: 72px;
@@ -318,4 +317,45 @@
       animation-delay: 1.7s;
     }
   }
+
+  .btns.sc-top-parallax .ui-button.reveal.sc-top-parallax {
+    height: 50px;
+    width: 180px;
+  }
+}
+
+#homing-particles {
+  background-color: black;
+}
+
+.section-overlay {
+  position: absolute;
+    top: 0;
+    height: calc(100vh - 62px);
+    min-height: 700px;
+    width: 100%;
+    z-index: 0;
+}
+
+.section-overlay.youtube {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  min-width: 100%;
+  min-height: 100%;
+  width: auto;
+  transform: translate(-50%, -50%);
+}
+
+.section-overlay.media {
+  z-index: -250;
+}
+
+.section-overlay img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  min-height: 100%;
+  min-width: 100%;
 }

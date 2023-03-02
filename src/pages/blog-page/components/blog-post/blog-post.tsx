@@ -1,19 +1,18 @@
-import { Component, Prop, h, Host, Element, State } from '@stencil/core';
+import { Component, Prop, h, Host, Element, State } from '@stencil/core'
 import {
   Heading,
   Paragraph,
   DateTime,
   ResponsiveContainer,
-} from '@ionic-internal/ionic-ds';
-import { Components as DS } from '@ionic-internal/ionic-ds/dist/types/components';
+} from '@ionic-internal/ionic-ds'
+import { Components as DS } from '@ionic-internal/ionic-ds/dist/types/components'
 
-import { href } from '@utils/common';
+import { href } from '@utils/common'
 
-import parseISO from 'date-fns/parseISO';
+import parseISO from 'date-fns/parseISO'
 
-import { BlogData } from 'src/data.server/blog';
-import Helmet from '@stencil/helmet';
-import ResponsiveImage from 'src/components/ResponsiveImage/ResponsiveImage';
+import { BlogData } from 'src/data.server/blog'
+import ResponsiveImage from 'src/components/ResponsiveImage/ResponsiveImage'
 
 @Component({
   tag: 'blog-post',
@@ -22,21 +21,96 @@ import ResponsiveImage from 'src/components/ResponsiveImage/ResponsiveImage';
 })
 export class BlogPost {
   @Prop() preview?: boolean = false;
-  @Prop() data: BlogData;
+  @Prop() data: BlogData
 
-  @State() ogAssetPath!: string;
+  @State() ogAssetPath!: string
   @State() moreResources: DS.MoreResources = {
     resources: [],
     routing: [],
   };
+  popupHeight = 0;
+  popupWidth = 0;
+  facebookAppId = '669135071652897';
 
-  @Element() el!: HTMLElement;
+  @Element() el!: HTMLElement
 
   componentWillLoad() {
     // const { slug, getRelatedResources, preview } = this;
     // this.data = (posts as RenderedBlog[]).find(p => p.slug === slug);
     // if (!this.data) console.error('Could not find blog post by slug.');
     // if (!preview) getRelatedResources();
+  }
+
+  scrubUrl(url) {
+    return url.replace(/http:\/\/localhost:\d\d\d\d/g, "https://install.doctor")
+  }
+
+  openPopup(url) {
+    this.calculatePopupSize()
+    let leftPosition
+    let topPosition
+    leftPosition = window.screen.width / 2 - (this.popupWidth / 2 + 10)
+    topPosition = window.screen.height / 2 - (this.popupHeight / 2 + 50)
+    window.open(
+      url,
+      "Window2",
+      "status=no,height=" +
+      this.popupHeight +
+      ",width=" +
+      this.popupWidth +
+      ",resizable=yes,left=" +
+      leftPosition +
+      ",top=" +
+      topPosition +
+      ",screenX=" +
+      leftPosition +
+      ",screenY=" +
+      topPosition +
+      ",toolbar=no,menubar=no,scrollbars=no,location=no,directories=no"
+    )
+  }
+
+  calculatePopupSize() {
+    if (window.screen.width > 630) {
+      this.popupHeight = 500
+      this.popupWidth = 600
+    } else {
+      this.popupHeight = 300
+      this.popupWidth = 450
+    }
+  }
+
+  shareFacebook() {
+    this.openPopup(
+      "https://www.facebook.com/dialog/share?app_id=" +
+      this.facebookAppId +
+      "&display=popup&href=" +
+      encodeURIComponent(this.scrubUrl(`${window.location.origin}${window.location.pathname}`))
+    )
+  }
+
+
+  shareTwitter() {
+    this.openPopup(
+      "https://twitter.com/intent/tweet?url=" +
+      encodeURIComponent(this.scrubUrl(`${window.location.origin}${window.location.pathname}`)) +
+      "&text=" +
+      encodeURIComponent('Cool open-source stuff:') +
+      "&via=InstallDoc&hashtags=opensource,GitHub,GitLab"
+    )
+  }
+
+  shareLinkedIn() {
+    this.openPopup(
+      'https://www.linkedin.com/shareArticle?mini=true&url=' +
+      encodeURIComponent(`${window.location.origin}${window.location.pathname}`) +
+      '&title=' +
+      encodeURIComponent(this.data!.title) +
+      '&summary=' +
+      encodeURIComponent('Cool open-source stuff:') +
+      '&source=' +
+      encodeURIComponent('pwa')
+    )
   }
 
   // getRelatedResources = async () => {
@@ -111,9 +185,9 @@ export class BlogPost {
   // }
 
   render() {
-    if (!this.data) return;
+    if (!this.data) return
 
-    const { PostDetail, PostPreview, preview } = this;
+    const { PostDetail, PostPreview, preview } = this
 
     return (
       <Host
@@ -125,37 +199,21 @@ export class BlogPost {
       >
         {preview ? <PostPreview /> : <PostDetail />}
       </Host>
-    );
+    )
   }
 
   PostHelmet = () => {
     const path = this.data!.featuredImage
       ? `${window.location.origin}/assets/img/blog${this.data!.featuredImage}`
-      : `https://capacitorjs.com/assets/img/og.png`;
+      : `https://install.doctor/assets/img/og.png`
 
     return (
-      <Helmet>
-        <title>Capacitor Blog - {this.data!.title}</title>
-        <meta property="twitter:title" content={this.data.title} />
-        <meta name="description" content={this.data!.description} />
-        <meta
-          name="twitter:description"
-          content={`${this.data!.description} - Capacitor Blog`}
-        />
-        <meta name="twitter:image" content={path} />
-        <meta
-          property="og:url"
-          content={`${window.location.origin}${window.location.pathname}`}
-        />
-        <meta property="og:title" content={this.data.title} />
-        <meta
-          property="og:description"
-          content={`${this.data.description} - Capacitor Blog`}
-        />
-        <meta property="og:image" content={path} />
-        {/* <meta property="og:url" content={router.url.href} /> */}
-      </Helmet>
-    );
+      <meta-tags
+        page-title={this.data.title}
+        description={this.data.description}
+        image={path}
+      />
+    )
   };
 
   PostDetail = () => {
@@ -166,7 +224,7 @@ export class BlogPost {
       MoreResources,
       PostHelmet,
       data,
-    } = this;
+    } = this
 
     return [
       <PostHelmet />,
@@ -198,19 +256,28 @@ export class BlogPost {
           {/* <disqus-comments url={`https://useappflow.com/blog/${post.slug}`} siteId="ionic"/> */}
         </article>
       </ResponsiveContainer>,
-    ];
+      <ResponsiveContainer id="footer-social-container">
+        <div class="blog-footer-social">
+          <h4><span>Obey</span> & Share:</h4>
+          <ion-icon class="footer-social facebook" name="logo-facebook" onClick={() => this.shareFacebook()}></ion-icon>
+          <ion-icon class="footer-social twitter" name="logo-twitter" onClick={() => this.shareTwitter()}></ion-icon>
+          <ion-icon class="footer-social linkedin" name="logo-linkedin" onClick={() => this.shareLinkedIn()}></ion-icon>
+        </div>
+      </ResponsiveContainer>,
+      <capacitor-site-footer />
+    ]
   };
 
   PostPreview = () => {
-    const { PostAuthor, PostFeaturedImage } = this;
+    const { PostAuthor, PostFeaturedImage } = this
 
     return (
       <article class="post">
         <Heading
           class="ui-theme--editorial"
-          level={1}
+          level={2}
           onClick={() => {
-            window.scrollTo(0, 0);
+            window.scrollTo(0, 0)
           }}
         >
           <a {...href(`/blog/${this.data.slug}`)}>{this.data!.title}</a>
@@ -229,12 +296,12 @@ export class BlogPost {
           </span>
         </a>
       </article>
-    );
+    )
   };
 
   PostAuthor = () => {
-    const { date, authorName, authorUrl } = this.data!;
-    const dateString = parseISO(date);
+    const { date, authorName, authorUrl } = this.data!
+    const dateString = parseISO(date)
     // const imageParts = authorImageName?.split('.');
     // if (!imageParts || !imageParts[0] || !imageParts[1])
     //   return console.error(
@@ -259,7 +326,7 @@ export class BlogPost {
         <Paragraph>
           By{' '}
           {authorUrl ? (
-            <a href={authorUrl} target="_blank">
+            <a href={authorUrl} target="_blank" rel="noopener">
               {authorName}
             </a>
           ) : (
@@ -268,7 +335,7 @@ export class BlogPost {
           on <DateTime date={dateString} />
         </Paragraph>
       </div>
-    );
+    )
   };
 
   PostAuthorLarge = () => {
@@ -277,11 +344,11 @@ export class BlogPost {
       authorName,
       authorUrl,
       authorDescription,
-    } = this.data!;
-    if (!authorImageName) return null;
+    } = this.data!
+    if (!authorImageName) return null
 
     return (
-      <a href={authorUrl} target="_blank" class="author-info">
+      <a href={authorUrl} target="_blank" rel="noopener" class="author-info">
         <img
           src={`/assets/blog/author/${authorImageName}`}
           alt={authorName}
@@ -295,7 +362,7 @@ export class BlogPost {
           ) : null}
         </div>
       </a>
-    );
+    )
   };
 
   MoreResources = () => {
@@ -303,38 +370,38 @@ export class BlogPost {
       !this.moreResources.resources ||
       this.moreResources.resources.length <= 0
     )
-      return;
+      return
 
     return [
       <Heading level={4} class="more-resources__title | ui-theme--editorial">
         You might also like...
       </Heading>,
       <more-resources {...this.moreResources} />,
-    ];
+    ]
   };
 
   PostFeaturedImage = ({
     post,
     preview,
   }: {
-    post: BlogData;
-    preview: boolean;
+    post: BlogData
+    preview: boolean
   }) => {
-    if (!post.featuredImage) return null;
+    if (!post.featuredImage) return null
 
-    const imageParts = post.featuredImage?.split('.');
+    const imageParts = post.featuredImage?.split('.')
     if (!imageParts || !imageParts[0] || !imageParts[1]) {
-      console.log(post);
+      console.log(post)
       return console.error(
         'Markdown Blog featured image name not formatted correctly.  It should look like: what-is-mobile-ci-cd.png',
-      );
+      )
     }
 
     const data = {
       name: imageParts[0],
       type: imageParts[1],
       alt: post.featuredImageAlt,
-    };
+    }
 
     return (
       <div class="featured-image-wrapper">
@@ -344,7 +411,7 @@ export class BlogPost {
               {...data}
               fallback
               onClick={() => {
-                window.scrollTo(0, 0);
+                window.scrollTo(0, 0)
               }}
               class="featured-image"
               dimensions="1600x840"
@@ -361,6 +428,6 @@ export class BlogPost {
           />
         )}
       </div>
-    );
+    )
   };
 }

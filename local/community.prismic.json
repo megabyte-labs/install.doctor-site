@@ -2,7 +2,7 @@
     "top": [
         {
             "type": "heading1",
-            "text": "Community",
+            "text": "Community Hub",
             "spans": []
         },
         {
@@ -108,18 +108,18 @@
             "text": [
                 {
                     "type": "heading4",
-                    "text": "Install Doctor Forum",
+                    "text": "Install Doctor Matrix",
                     "spans": []
                 },
                 {
                     "type": "paragraph",
-                    "text": "Join the Install Doctor community forum. Ask questions to the community or find answers to commonly asked questions.",
+                    "text": "Join the Install Doctor matrix chat room (i.e. gitter.im). Ask questions to the community or help other users with their questions.",
                     "spans": []
                 }
             ],
             "link": {
                 "link_type": "Web",
-                "url": "https://forum.megabyte.space/c/install-doctor",
+                "url": "https://app.gitter.im/#/room/#install.doctor:gitter.im",
                 "target": "_blank"
             }
         }
@@ -128,8 +128,8 @@
         {
             "icon": {
                 "dimensions": {
-                    "width": 84,
-                    "height": 69
+                    "width": 64,
+                    "height": 64
                 },
                 "alt": "Twitter icon",
                 "copyright": null,
@@ -150,7 +150,7 @@
             "link": [
                 {
                     "type": "paragraph",
-                    "text": "Learn More",
+                    "text": "Tweet",
                     "spans": [
                         {
                             "start": 0,
@@ -158,7 +158,7 @@
                             "type": "hyperlink",
                             "data": {
                                 "link_type": "Web",
-                                "url": "https://twitter.com/installdoc",
+                                "url": "https://twitter.com/InstallDoc",
                                 "target": "_blank"
                             }
                         }
@@ -169,8 +169,8 @@
         {
             "icon": {
                 "dimensions": {
-                    "width": 80,
-                    "height": 69
+                    "width": 64,
+                    "height": 64
                 },
                 "alt": "Reddit icon",
                 "copyright": null,
@@ -191,7 +191,7 @@
             "link": [
                 {
                     "type": "paragraph",
-                    "text": "Learn More",
+                    "text": "Post",
                     "spans": [
                         {
                             "start": 0,
@@ -199,7 +199,7 @@
                             "type": "hyperlink",
                             "data": {
                                 "link_type": "Web",
-                                "url": "https://www.reddit.com/r/installdoctor/",
+                                "url": "https://www.reddit.com/r/InstallDoctor/",
                                 "target": "_blank"
                             }
                         }
@@ -210,29 +210,29 @@
         {
             "icon": {
                 "dimensions": {
-                    "width": 68,
-                    "height": 80
+                    "width": 64,
+                    "height": 64
                 },
-                "alt": "Stack Overflow icon",
+                "alt": "Slack icon",
                 "copyright": null,
-                "url": "https://install.doctor/assets/img/community/stack-overflow-icon.png"
+                "url": "https://megabyte.space/assets/img/community/slack-icon.png"
             },
             "text": [
                 {
                     "type": "heading4",
-                    "text": "StackOverflow",
+                    "text": "Slack",
                     "spans": []
                 },
                 {
                     "type": "paragraph",
-                    "text": "Ask questions about Install Doctor, or find answers to questions posted by other users.",
+                    "text": "Connect with us on Slack to join the discussion, get help, or just hang out.",
                     "spans": []
                 }
             ],
             "link": [
                 {
                     "type": "paragraph",
-                    "text": "Learn More",
+                    "text": "Chat",
                     "spans": [
                         {
                             "start": 0,
@@ -240,7 +240,7 @@
                             "type": "hyperlink",
                             "data": {
                                 "link_type": "Web",
-                                "url": "https://stackoverflow.com/tags/installdoctor",
+                                "url": "https://megabyte-labs.slack.com",
                                 "target": "_blank"
                             }
                         }
@@ -251,8 +251,8 @@
         {
             "icon": {
                 "dimensions": {
-                    "width": 84,
-                    "height": 84
+                    "width": 64,
+                    "height": 64
                 },
                 "alt": "GitHub icon",
                 "copyright": null,
@@ -273,7 +273,7 @@
             "link": [
                 {
                     "type": "paragraph",
-                    "text": "Learn More",
+                    "text": "Fork",
                     "spans": [
                         {
                             "start": 0,

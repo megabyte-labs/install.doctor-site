@@ -1,12 +1,34 @@
-import { Fragment, h } from '@stencil/core';
+import { Fragment, h } from '@stencil/core'
 import {
   ResponsiveContainer,
   Heading,
   Paragraph,
-} from '@ionic-internal/ionic-ds';
+} from '@ionic-internal/ionic-ds'
 export const SolutionMacOS = () => {
   return (
     <Fragment>
+      <ResponsiveContainer id="what-is" as="section">
+        <div class="ui-container">
+          <ion-icon class="what-is-info-icon" name="information-circle-outline"></ion-icon>
+          <Paragraph class="quote-summary">
+            <b>What is macOS and why should you provision it with Install Doctor?</b>
+          </Paragraph>
+          <Paragraph class="quote-summary">
+            If you need to provision macOS, using an installation framework like Install Doctor can make the process faster, easier, and more reliable. Here are some of the main reasons why you would want to use Install Doctor to provision macOS:
+        </Paragraph>
+          <ul class="quote-summary quote-summary-list">
+            <li><b>Optimized configurations for thousands of programs</b>: Install Doctor comes with preconfigured settings for thousands of popular programs, which can help to ensure that your applications run optimally on your macOS system.</li>
+            <li><b>Advanced terminal settings</b>: Install Doctor includes terminal settings that use the best open-source projects available, providing a powerful and flexible command-line environment that you can customize to suit your needs. With these settings, you can take advantage of features and capabilities that you may not have even known were possible.</li>
+            <li><b>Automatic macOS-specific optimizations</b>: Install Doctor handles macOS-specific optimizations automatically, ensuring that your system is configured to run smoothly and efficiently. This includes things like optimizing your system preferences, adjusting kernel settings, and more.</li>
+            <li><b>Time-saving automation</b>: With Install Doctor, you can automate many of the tasks involved in provisioning macOS, which can save you time and effort. This includes tasks like installing software, configuring settings, and setting up user accounts.</li>
+            <li><b>Improved security</b>: By using Install Doctor to provision macOS, you can ensure that your system is configured securely from the outset. Install Doctor includes security-focused settings and configurations that can help to protect your system from common threats and vulnerabilities.</li>
+          </ul>
+
+          <Paragraph class="quote-summary">
+            Overall, if you need to provision macOS systems, using an installation framework like Install Doctor can make the process faster, easier, and more reliable. With optimized configurations for thousands of programs, advanced terminal settings, and automatic macOS-specific optimizations, Install Doctor can help you to configure your system to run optimally and securely. Additionally, the time-saving automation features can help to streamline the provisioning process, freeing up your time for other tasks.
+        </Paragraph>
+        </div>
+      </ResponsiveContainer>
       <ResponsiveContainer id="getting-started" as="section">
         <article class="step">
           <sup class="ui-heading-6">01</sup>
@@ -142,22 +164,6 @@ run setup:vms
           </div>
         </article>
       </ResponsiveContainer>
-      <section id="continue">
-        <ResponsiveContainer>
-          <Heading level={3}>Continue your Install Doctor Journey.</Heading>
-          <Paragraph>
-            This is only the beginning. Learn more about the Install Doctor{' '}
-            <a href="/docs/customization">
-              development workflow
-            </a>{' '}
-            or leveraging the{' '}
-            <a href="/docs/features">
-              amazing features
-            </a>{' '}
-            .
-          </Paragraph>
-        </ResponsiveContainer>
-      </section>
     </Fragment>
-  );
-};
+  )
+}

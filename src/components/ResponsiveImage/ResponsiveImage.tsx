@@ -1,18 +1,32 @@
-import { h } from '@stencil/core';
-import { JSXBase } from '@stencil/core/internal';
+import { h } from '@stencil/core'
+import { JSXBase } from '@stencil/core/internal'
 
 interface ResponsiveImgProps
   extends JSXBase.ImgHTMLAttributes<HTMLImageElement> {
-  path: string;
+  path: string
 
-  name: string;
+  name: string
 
-  type?: string;
+  type?: string
 
-  dimensions: string;
+  dimensions: string
 
-  fallback?: boolean;
+  fallback?: boolean
 }
+
+function supportWebp() {
+  var elem = document.createElement('canvas')
+  if (!!(elem.getContext && elem.getContext('2d'))) {
+    // was able or not to get WebP representation
+    return elem.toDataURL('image/webp').indexOf('data:image/webp') == 0
+  }
+  else {
+    // very old browser like IE 8, canvas not supported
+    return false
+  }
+}
+
+const supportsWebp = supportWebp()
 
 const ResponsiveImage = ({
   path,
@@ -23,7 +37,11 @@ const ResponsiveImage = ({
   fallback = false,
   ...props
 }: ResponsiveImgProps) => {
-  !props.loading ? (props.loading = 'lazy') : '';
+  !props.loading ? (props.loading = 'lazy') : ''
+
+  if (supportsWebp) {
+    type = 'webp'
+  }
 
   if (fallback) {
     return (
@@ -37,7 +55,7 @@ const ResponsiveImage = ({
           height={dimensions.split('x')[1]}
         />
       </picture>
-    );
+    )
   } else {
     return (
       <img
@@ -48,8 +66,8 @@ const ResponsiveImage = ({
         width={dimensions.split('x')[0]}
         height={dimensions.split('x')[1]}
       />
-    );
+    )
   }
-};
+}
 
-export default ResponsiveImage;
+export default ResponsiveImage

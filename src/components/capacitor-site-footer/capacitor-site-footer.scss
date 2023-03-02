@@ -10,19 +10,79 @@ capacitor-site-footer {
   background: #fff;
   border-block-start: 1px solid var(--c-indigo-20);
 
+  .footer-social {
+    margin-top: 5px;
+    margin-bottom: 5px;
+    font-size: 21px;
+    margin-left: 4px;
+    margin-right: 4px;
+    transition: all 0.2s ease-in-out;
+    color: var(--c-indigo-70)
+  }
+
+  .footer-social.github:hover {
+    color: #171515;
+  }
+
+  .footer-social.gitlab:hover {
+    color: #fca326;
+  }
+
+  .footer-social.slack:hover {
+    color: #E01E5A;
+  }
+
+  .footer-social.discord:hover {
+    color: #7289da;
+  }
+
+  .footer-social.facebook:hover {
+    color: #3b5998
+  }
+
+  .footer-social.twitter:hover {
+    color: #00acee;
+  }
+
+  .footer-social.linkedin:hover {
+    color: #0072b1;
+  }
+
+  .footer-social:active {
+    opacity: 0.7;
+  }
+
+  .footer-social:nth-child(1) {
+    margin-left: 0
+  }
+
+  .footer-social:last-child {
+    margin-right: 0;
+  }
+
   ul {
     padding: 0;
+  }
+
+  .footer-social-wrapper {
+    min-width: 240px;
   }
 
   .newsletter {
     display: flex;
     flex-wrap: wrap;
-    justify-content: space-between;
     margin-block-end: 4rem;
     margin-block-start: -1rem;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
 
     @media (max-width: $screen-xs-max) {
       margin-block-end: 2rem;
+    }
+    @media (min-width: 1024px) {
+      text-align: left;
+      justify-content: space-between;
     }
 
     --h4-color: var(--c-carbon-100);
@@ -55,8 +115,9 @@ capacitor-site-footer {
   }
 
   img.logo {
-    width: 106px;
+    width: 200px;
     margin-bottom: 7px;
+    filter: invert(55%) sepia(5%) saturate(1382%) hue-rotate(178deg) brightness(92%) contrast(88%);
   }
 
   .ui-heading {
@@ -74,11 +135,15 @@ capacitor-site-footer {
 
   .form-group {
     flex-basis: 479px;
+    height: 48px;
   }
 
   .form-message {
     display: flex;
     align-items: center;
+    text-align: left;
+    padding-left: 14px;
+    padding-right: 14px;
 
     ion-icon {
       font-size: 32px;
@@ -89,10 +154,11 @@ capacitor-site-footer {
 
   form.hs-form {
     display: flex;
-    align-items: flex-start;
     flex-wrap: wrap;
     position: relative;
     margin-block-start: -16px;
+    align-items: center;
+    justify-content: center;
 
     > * {
       margin-block-start: 16px;
@@ -184,5 +250,14 @@ capacitor-site-footer {
       color: var(--c-red-100);
       margin-block-start: 4px;
     }
+  }
+
+  p > ion-icon {
+    font-size: 24px;
+    margin-right: 8px;
+  }
+
+  .form-message {
+    margin-top: 2px;
   }
 }

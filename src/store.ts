@@ -10,7 +10,7 @@ const { state } = createStore<State>({
 
 export const defaults = {
   title: 'Install Doctor',
-  description: 'Setup your workstation automatically with the best, free open-source software',
+  description: 'Setup your workstation automatically with the best, free open-source software using Install Doctor, an open-source, multi-OS provisioning system.',
   meta_image: 'https://install.doctor/assets/img/og.png',
 };
 

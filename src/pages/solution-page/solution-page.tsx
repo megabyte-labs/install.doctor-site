@@ -1,19 +1,19 @@
-import { Component, Host, h, Prop, ComponentInterface } from '@stencil/core';
+import { Component, Host, h, Prop, ComponentInterface } from '@stencil/core'
 
 import {
   ResponsiveContainer,
   Heading,
   Paragraph,
-} from '@ionic-internal/ionic-ds';
+} from '@ionic-internal/ionic-ds'
 
-import { SolutionUbuntu } from './solution-ubuntu';
-import { SolutionFedora } from './solution-fedora';
-import { SolutionCentOS } from './solution-centos';
-import { SolutionDebian } from './solution-debian';
-import { SolutionMacOS } from './solution-macos';
-import { SolutionArchlinux } from './solution-archlinux';
-import { SolutionQubes } from './solution-qubes';
-import { SolutionWindows } from './solution-windows';
+import { SolutionUbuntu } from './solution-ubuntu'
+import { SolutionFedora } from './solution-fedora'
+import { SolutionCentOS } from './solution-centos'
+import { SolutionDebian } from './solution-debian'
+import { SolutionMacOS } from './solution-macos'
+import { SolutionArchlinux } from './solution-archlinux'
+import { SolutionQubes } from './solution-qubes'
+import { SolutionWindows } from './solution-windows'
 
 @Component({
   tag: 'solution-page',
@@ -21,46 +21,64 @@ import { SolutionWindows } from './solution-windows';
   scoped: true,
 })
 export class SolutionPage implements ComponentInterface {
-  @Prop() solutionId: string;
+  @Prop() solutionId: string
 
   framework: {
-    id: string;
-    name: string;
-    theme: string;
-    logo: string;
-    dimensions: string;
-  };
+    id: string
+    name: string
+    theme: string
+    logo: string
+    dimensions: string
+  }
   componentWillLoad() {
-    this.framework = solutions.find(entry => entry.id === this.solutionId);
+    this.framework = solutions.find(entry => entry.id === this.solutionId)
   }
   getComponent() {
     switch (this.solutionId) {
       case 'archlinux':
-        return <SolutionArchlinux />;
+        return <SolutionArchlinux />
       case 'centos':
-        return <SolutionCentOS />;
+        return <SolutionCentOS />
       case 'debian':
-        return <SolutionDebian />;
+        return <SolutionDebian />
       case 'fedora':
-        return <SolutionFedora />;
+        return <SolutionFedora />
       case 'macos':
-        return <SolutionMacOS />;
+        return <SolutionMacOS />
       case 'qubes':
-        return <SolutionQubes />;
+        return <SolutionQubes />
       case 'ubuntu':
-        return <SolutionUbuntu />;
+        return <SolutionUbuntu />
       case 'windows':
-        return <SolutionWindows />;
+        return <SolutionWindows />
     }
   }
+
+  Demo = () => {
+    return (
+      <section id="demo">
+        <ResponsiveContainer>
+          <div class="heading-group">
+            <Heading id="demo-heading" level={2}>Install Doctor Enterprise Support</Heading>
+            <Paragraph>Get it done the easy way by leveraging our team of <b>{this.framework.name} experts</b>.</Paragraph>
+            <Paragraph>Guaranteed response SLAs to support your business needs. Our professional support team is on-hand to help you troubleshoot and address issues.</Paragraph>
+            <Paragraph>Our team of experts will work with your teams to provide open-source based recommendations, strategies, and custom solutions that fits your unique goals and challenges. We are here to help ensure your success.</Paragraph>
+            <Paragraph>Use the form below to send us a message or ask questions about how Install Doctor can help you with your specific needs.</Paragraph>
+          </div>
+          <capacitor-hubspot-form formId="b74a09f0-f963-47d2-b7d0-43d74dae366f" />
+        </ResponsiveContainer>
+      </section>
+    )
+  };
+
   render() {
     return (
       <Host>
         <meta-tags
-          page-title={'Provision ' + this.framework.name + ' with Install Doctor'}
+          page-title={'Provision ' + this.framework.name + ' using a powerful, customizable one-liner'}
           description={
             'Headlessly deploy a fully configured workstation on ' +
-            this.framework.name
+            this.framework.name + ' using Install Doctor, an intuitive, well-designed provisioning system compatible with most operating systems.'
           }
         />
         <ResponsiveContainer id="top" as="section">
@@ -92,17 +110,28 @@ export class SolutionPage implements ComponentInterface {
             </Button> */}
           </div>
         </ResponsiveContainer>
-
         {this.getComponent()}
-
-        <ResponsiveContainer id="newsletter">
-          <newsletter-signup />
-        </ResponsiveContainer>
-
+        <section id="continue">
+          <ResponsiveContainer>
+            <Heading level={3}>Continue your Install Doctor journey.</Heading>
+            <Paragraph>
+              This is only the beginning. Browse through the Install Doctor{' '}
+              <a href="https://github.com/megabyte-labs/install.doctor" target="_blank" rel="noopener">
+                GitHub repository
+            </a>{' '}
+            or get started with your own configuration by checking out the{' '}
+              <a href="/docs">
+                documentation
+            </a>{' '}
+            .
+          </Paragraph>
+          </ResponsiveContainer>
+        </section>
+        {this.Demo()}
         <pre-footer />
         <capacitor-site-footer />
       </Host>
-    );
+    )
   }
 }
 
@@ -163,4 +192,4 @@ const solutions = [
     logo: '/assets/img/solutions/windows.png',
     dimensions: '252x224',
   },
-];
+]

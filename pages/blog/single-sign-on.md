@@ -4,7 +4,7 @@ slug: single-sign-on
 date: 2023-02-19 14:00:00
 author: Brian Zalewski <brian@megabyte.space>
 authorUrl: https://twitter.com/HillBillyHack3r
-description: A comparison between the Install Doctor CloudFlare Teams and Ory.sh integrations
+description: A comparison between the Install Doctor CloudFlare Teams and Ory.sh integrations and a run-down of when you should choose one over the other.
 featuredImage: /single-sign-on.png
 featuredImageAlt: Single sign-on graphic
 ---

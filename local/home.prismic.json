@@ -14,20 +14,20 @@
     ],
     "top__hero": {
         "dimensions": {
-            "width": 545,
-            "height": 610
+            "width": 608,
+            "height": 608
         },
-        "alt": "layered stack of phone app showing capacitor in the middle",
+        "alt": "Install Doctor connected to Archlinux, CentOS, Debian, Fedora, macOS, Ubuntu, Qubes, and Windows as a mind map",
         "copyright": null,
-        "url": "https://images.prismic.io/ionicframeworkcom/ffa25bb6-a032-44e4-b2f6-b83c5a73226f_capacitor-homepage-top-0%402x.png?auto=compress,format&rect=0,0,1089,1219&w=545&h=610",
+        "url": "https://install.doctor/assets/img/enterprise/os-wheel.png",
         "2x": {
             "dimensions": {
-                "width": 1089,
-                "height": 1220
+                "width": 1216,
+                "height": 1216
             },
-            "alt": "layered stack of phone app showing capacitor in the middle",
+            "alt": "Install Doctor connected to Archlinux, CentOS, Debian, Fedora, macOS, Ubuntu, Qubes, and Windows as a mind map",
             "copyright": null,
-            "url": "https://images.prismic.io/ionicframeworkcom/ffa25bb6-a032-44e4-b2f6-b83c5a73226f_capacitor-homepage-top-0%402x.png?auto=compress,format&rect=0,0,1089,1220&w=1089&h=1220"
+            "url": "https://install.doctor/assets/img/enterprise/os-wheel.png"
         }
     },
     "top__icons": {
@@ -172,8 +172,8 @@
         {
             "icon": {
                 "dimensions": {
-                    "width": 100,
-                    "height": 132
+                    "width": 64,
+                    "height": 64
                 },
                 "alt": "Triple phone icon",
                 "copyright": null,
@@ -195,8 +195,8 @@
         {
             "icon": {
                 "dimensions": {
-                    "width": 124,
-                    "height": 132
+                    "width": 64,
+                    "height": 64
                 },
                 "alt": "Cube with sphere inside icon",
                 "copyright": null,
@@ -218,8 +218,8 @@
         {
             "icon": {
                 "dimensions": {
-                    "width": 120,
-                    "height": 128
+                    "width": 64,
+                    "height": 64
                 },
                 "alt": "Tripe stack layered icon",
                 "copyright": null,
@@ -762,7 +762,7 @@
     ],
     "tweets__bottom": [
         {
-            "emoji": "👋",
+            "emoji": "",
             "text": [
                 {
                     "type": "paragraph",
@@ -828,7 +828,7 @@
                 "url": "https://forum.megabyte.space/c/install-doctor",
                 "target": "_blank"
             },
-            "text": "Join the Forum"
+            "text": "Connect on Slack"
         }
     ],
     "cta": [

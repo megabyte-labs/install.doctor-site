@@ -131,10 +131,15 @@ export namespace Components {
     }
     interface NewsletterSignup {
     }
+    interface NewsletterSignupParallax {
+    }
     interface PluginPlatforms {
         "platforms": string;
     }
     interface PreFooter {
+    }
+    interface PrivacyPolicyPage {
+        "data": any;
     }
     interface SiteHeader {
         "includeBurger": boolean;
@@ -147,6 +152,9 @@ export namespace Components {
         "solutionId": string;
     }
     interface TelemetryPage {
+        "data": any;
+    }
+    interface TermsServicePage {
         "data": any;
     }
     interface TopParallax {
@@ -347,6 +355,12 @@ declare global {
         prototype: HTMLNewsletterSignupElement;
         new (): HTMLNewsletterSignupElement;
     };
+    interface HTMLNewsletterSignupParallaxElement extends Components.NewsletterSignupParallax, HTMLStencilElement {
+    }
+    var HTMLNewsletterSignupParallaxElement: {
+        prototype: HTMLNewsletterSignupParallaxElement;
+        new (): HTMLNewsletterSignupParallaxElement;
+    };
     interface HTMLPluginPlatformsElement extends Components.PluginPlatforms, HTMLStencilElement {
     }
     var HTMLPluginPlatformsElement: {
@@ -358,6 +372,12 @@ declare global {
     var HTMLPreFooterElement: {
         prototype: HTMLPreFooterElement;
         new (): HTMLPreFooterElement;
+    };
+    interface HTMLPrivacyPolicyPageElement extends Components.PrivacyPolicyPage, HTMLStencilElement {
+    }
+    var HTMLPrivacyPolicyPageElement: {
+        prototype: HTMLPrivacyPolicyPageElement;
+        new (): HTMLPrivacyPolicyPageElement;
     };
     interface HTMLSiteHeaderElement extends Components.SiteHeader, HTMLStencilElement {
     }
@@ -376,6 +396,12 @@ declare global {
     var HTMLTelemetryPageElement: {
         prototype: HTMLTelemetryPageElement;
         new (): HTMLTelemetryPageElement;
+    };
+    interface HTMLTermsServicePageElement extends Components.TermsServicePage, HTMLStencilElement {
+    }
+    var HTMLTermsServicePageElement: {
+        prototype: HTMLTermsServicePageElement;
+        new (): HTMLTermsServicePageElement;
     };
     interface HTMLTopParallaxElement extends Components.TopParallax, HTMLStencilElement {
     }
@@ -422,11 +448,14 @@ declare global {
         "meta-tags": HTMLMetaTagsElement;
         "more-button": HTMLMoreButtonElement;
         "newsletter-signup": HTMLNewsletterSignupElement;
+        "newsletter-signup-parallax": HTMLNewsletterSignupParallaxElement;
         "plugin-platforms": HTMLPluginPlatformsElement;
         "pre-footer": HTMLPreFooterElement;
+        "privacy-policy-page": HTMLPrivacyPolicyPageElement;
         "site-header": HTMLSiteHeaderElement;
         "solution-page": HTMLSolutionPageElement;
         "telemetry-page": HTMLTelemetryPageElement;
+        "terms-service-page": HTMLTermsServicePageElement;
         "top-parallax": HTMLTopParallaxElement;
         "version-select": HTMLVersionSelectElement;
     }
@@ -550,10 +579,15 @@ declare namespace LocalJSX {
     }
     interface NewsletterSignup {
     }
+    interface NewsletterSignupParallax {
+    }
     interface PluginPlatforms {
         "platforms"?: string;
     }
     interface PreFooter {
+    }
+    interface PrivacyPolicyPage {
+        "data"?: any;
     }
     interface SiteHeader {
         "includeBurger"?: boolean;
@@ -566,6 +600,9 @@ declare namespace LocalJSX {
         "solutionId"?: string;
     }
     interface TelemetryPage {
+        "data"?: any;
+    }
+    interface TermsServicePage {
         "data"?: any;
     }
     interface TopParallax {
@@ -605,11 +642,14 @@ declare namespace LocalJSX {
         "meta-tags": MetaTags;
         "more-button": MoreButton;
         "newsletter-signup": NewsletterSignup;
+        "newsletter-signup-parallax": NewsletterSignupParallax;
         "plugin-platforms": PluginPlatforms;
         "pre-footer": PreFooter;
+        "privacy-policy-page": PrivacyPolicyPage;
         "site-header": SiteHeader;
         "solution-page": SolutionPage;
         "telemetry-page": TelemetryPage;
+        "terms-service-page": TermsServicePage;
         "top-parallax": TopParallax;
         "version-select": VersionSelect;
     }
@@ -650,11 +690,14 @@ declare module "@stencil/core" {
             "meta-tags": LocalJSX.MetaTags & JSXBase.HTMLAttributes<HTMLMetaTagsElement>;
             "more-button": LocalJSX.MoreButton & JSXBase.HTMLAttributes<HTMLMoreButtonElement>;
             "newsletter-signup": LocalJSX.NewsletterSignup & JSXBase.HTMLAttributes<HTMLNewsletterSignupElement>;
+            "newsletter-signup-parallax": LocalJSX.NewsletterSignupParallax & JSXBase.HTMLAttributes<HTMLNewsletterSignupParallaxElement>;
             "plugin-platforms": LocalJSX.PluginPlatforms & JSXBase.HTMLAttributes<HTMLPluginPlatformsElement>;
             "pre-footer": LocalJSX.PreFooter & JSXBase.HTMLAttributes<HTMLPreFooterElement>;
+            "privacy-policy-page": LocalJSX.PrivacyPolicyPage & JSXBase.HTMLAttributes<HTMLPrivacyPolicyPageElement>;
             "site-header": LocalJSX.SiteHeader & JSXBase.HTMLAttributes<HTMLSiteHeaderElement>;
             "solution-page": LocalJSX.SolutionPage & JSXBase.HTMLAttributes<HTMLSolutionPageElement>;
             "telemetry-page": LocalJSX.TelemetryPage & JSXBase.HTMLAttributes<HTMLTelemetryPageElement>;
+            "terms-service-page": LocalJSX.TermsServicePage & JSXBase.HTMLAttributes<HTMLTermsServicePageElement>;
             "top-parallax": LocalJSX.TopParallax & JSXBase.HTMLAttributes<HTMLTopParallaxElement>;
             "version-select": LocalJSX.VersionSelect & JSXBase.HTMLAttributes<HTMLVersionSelectElement>;
         }

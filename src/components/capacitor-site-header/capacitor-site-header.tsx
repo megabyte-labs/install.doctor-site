@@ -6,12 +6,12 @@ import {
   Prop,
   State,
   h,
-} from '@stencil/core';
-import { href } from '@utils/common';
-import Router, { docsVersionHref } from '../../router';
-import { Button } from '@ionic-internal/ionic-ds';
-import { JSXBase } from '@stencil/core/internal';
-import { DocsTemplate } from 'src/data.server/models';
+} from '@stencil/core'
+import { href } from '@utils/common'
+import Router, { docsVersionHref } from '../../router'
+import { Button } from '@ionic-internal/ionic-ds'
+import { JSXBase } from '@stencil/core/internal'
+import { DocsTemplate } from 'src/data.server/models'
 //import { Translation } from '../../icons';
 
 @Component({
@@ -20,8 +20,8 @@ import { DocsTemplate } from 'src/data.server/models';
   scoped: true,
 })
 export class SiteHeader implements ComponentInterface {
-  @Element() elm: HTMLElement;
-  @Prop() template: DocsTemplate;
+  @Element() elm: HTMLElement
+  @Prop() template: DocsTemplate
   @Prop() includeLogo = true;
   @Prop() includeBurger = false;
   @Prop() theme: 'light' | 'dark' = 'light';
@@ -37,8 +37,8 @@ export class SiteHeader implements ComponentInterface {
   private heightAboveBar = 72;
 
   componentWillLoad() {
-    this.createHeaderObserver();
-    this.createRouteListener();
+    this.createHeaderObserver()
+    this.createRouteListener()
   }
 
   createHeaderObserver() {
@@ -46,45 +46,45 @@ export class SiteHeader implements ComponentInterface {
       root: document.body,
       rootMargin: `-${this.heightAboveBar + 1}px 0px 0px 0px`,
       threshold: 1.0,
-    };
+    }
 
     const observer = new IntersectionObserver(entries => {
-      this.scrolled = !(entries[0].intersectionRatio < 1);
-    }, opts);
+      this.scrolled = !(entries[0].intersectionRatio < 1)
+    }, opts)
 
-    observer.observe(this.elm);
+    observer.observe(this.elm)
   }
 
   createRouteListener() {
-    if (window.hasOwnProperty(this.routeListener)) return;
+    if (window.hasOwnProperty(this.routeListener)) return
 
-    window[this.routeListener] = true;
-    Router.on('change', this.handleActive);
+    window[this.routeListener] = true
+    Router.on('change', this.handleActive)
   }
 
   handleActive = (url: URL) => {
-    const activeRoute = url.pathname.split('/')[1];
+    const activeRoute = url.pathname.split('/')[1]
 
     for (const [key, value] of Object.entries(this.links)) {
       if (key === activeRoute) {
-        value.classList.add('active');
+        value.classList.add('active')
       } else {
-        value.classList.remove('active');
+        value.classList.remove('active')
       }
     }
   };
 
   isActive(path: string): boolean {
-    const prefix = new RegExp('^' + path, 'gm');
-    const regexRes = prefix.test(Router.path);
+    const prefix = new RegExp('^' + path, 'gm')
+    const regexRes = prefix.test(Router.path)
 
-    return regexRes;
+    return regexRes
   }
 
   toggleExpanded = () => (this.expanded = !this.expanded);
 
   render() {
-    const { expanded, template, includeLogo, includeBurger } = this;
+    const { expanded, template, includeLogo, includeBurger } = this
 
     return (
       <Host
@@ -210,18 +210,18 @@ export class SiteHeader implements ComponentInterface {
               <docs-search />
             </div>
             <a
-              {...href('/community')}
-              class="ui-paragraph-4"
-              ref={el => (this.links.community = el)}
-            >
-              Community
-            </a>
-            <a
               {...href('/blog')}
               class="ui-paragraph-4"
               ref={el => (this.links.blog = el)}
             >
               Blog
+            </a>
+            <a
+              {...href('/community')}
+              class="ui-paragraph-4"
+              ref={el => (this.links.community = el)}
+            >
+              Community
             </a>
             <a
               {...href('/enterprise')}
@@ -276,7 +276,7 @@ export class SiteHeader implements ComponentInterface {
               </svg>
             </a>
             <a
-              href="https://twitter.com/installdoc"
+              href="https://twitter.com/InstallDoc"
               target="_blank"
               title="Twitter link"
               rel="noopener"
@@ -319,17 +319,16 @@ export class SiteHeader implements ComponentInterface {
           </div>
         </header>
       </Host>
-    );
+    )
   }
 }
 
 const capacitorLogo = (props?: JSXBase.SVGAttributes) => (
   <svg
-	  viewBox="149 350 1200 1"
+    viewBox="149 350 1200 1"
     class="capacitor-logo"
     fill="#000"
     height="24"
-    id="Layer_1"
     version="1.1"
     width="180"
     x="0px"
@@ -337,45 +336,45 @@ const capacitorLogo = (props?: JSXBase.SVGAttributes) => (
     y="0px"
     {...props}
   >
-<g>
-	<g>
-		<path d="M399.1,401.77V295.65h19.86v106.12H399.1z"/>
-		<path d="M491.42,401.77v-39.11c0-11.37-6.21-20.01-18.04-20.01c-11.37,0-19.1,9.55-19.1,20.92v38.2h-18.34v-74.89h16.52
+    <g>
+      <g>
+        <path d="M399.1,401.77V295.65h19.86v106.12H399.1z" />
+        <path d="M491.42,401.77v-39.11c0-11.37-6.21-20.01-18.04-20.01c-11.37,0-19.1,9.55-19.1,20.92v38.2h-18.34v-74.89h16.52
 			l1.21,10.16c7.58-7.43,15.16-11.22,24.56-11.22c17.58,0,31.68,13.19,31.68,36.69v39.26H491.42z"/>
-		<path d="M574.64,346.89c-5.31-5-11.37-6.67-18.5-6.67c-8.79,0-13.64,2.73-13.64,7.43c0,4.85,4.4,7.58,13.95,8.19
+        <path d="M574.64,346.89c-5.31-5-11.37-6.67-18.5-6.67c-8.79,0-13.64,2.73-13.64,7.43c0,4.85,4.4,7.58,13.95,8.19
 			c14.1,0.91,31.99,4.09,31.99,23.95c0,13.19-10.76,24.56-32.14,24.56c-11.82,0-23.65-1.97-34.56-13.34l9.1-13.19
 			c5.31,5.91,17.43,10.31,25.77,10.46c6.97,0.15,13.49-3.49,13.49-8.94c0-5.15-4.24-7.28-14.86-7.88
 			c-14.1-1.06-30.93-6.22-30.93-23.19c0-17.28,17.89-23.35,31.53-23.35c11.67,0,20.46,2.27,29.11,9.85L574.64,346.89z"/>
-		<path d="M626.33,305.96v21.22h20.62v15.92h-20.77v32.29c0,7.13,3.94,10.61,9.7,10.61c2.88,0,6.22-0.91,8.94-2.27l5.15,15.77
+        <path d="M626.33,305.96v21.22h20.62v15.92h-20.77v32.29c0,7.13,3.94,10.61,9.7,10.61c2.88,0,6.22-0.91,8.94-2.27l5.15,15.77
 			c-5.31,2.12-9.7,3.03-15.31,3.18c-16.22,0.61-26.83-8.64-26.83-27.29V343.1h-13.95v-15.92h13.95v-19.25L626.33,305.96z"/>
-		<path d="M720.02,327.03h17.74v74.74h-17.43l-0.91-10.91c-4.24,8.79-15.92,13.04-24.26,13.19c-22.13,0.15-38.51-13.49-38.51-39.72
+        <path d="M720.02,327.03h17.74v74.74h-17.43l-0.91-10.91c-4.24,8.79-15.92,13.04-24.26,13.19c-22.13,0.15-38.51-13.49-38.51-39.72
 			c0-25.77,17.13-39.26,38.96-39.11c10.01,0,19.56,4.7,23.8,12.13L720.02,327.03z M675.14,364.33c0,14.25,9.85,22.74,22.13,22.74
 			c29.11,0,29.11-45.33,0-45.33C685,341.74,675.14,350.08,675.14,364.33z"/>
-		<path d="M771.71,295.8v105.97h-18.34V295.8H771.71z"/>
-		<path d="M806.27,295.8v105.97h-18.34V295.8H806.27z"/>
-		<path d="M945.74,347.5c0.61,26.98-16.68,54.27-53.82,54.27c-11.98,0-23.95,0-35.93,0V295.65c11.98,0,23.95,0,35.93,0
+        <path d="M771.71,295.8v105.97h-18.34V295.8H771.71z" />
+        <path d="M806.27,295.8v105.97h-18.34V295.8H806.27z" />
+        <path d="M945.74,347.5c0.61,26.98-16.68,54.27-53.82,54.27c-11.98,0-23.95,0-35.93,0V295.65c11.98,0,23.95,0,35.93,0
 			C927.85,295.65,945.13,321.42,945.74,347.5z M864.18,303.38v90.5h27.74c31.53,0,46.08-23.65,45.63-46.39
 			c-0.45-22.13-15.01-44.12-45.63-44.12H864.18z"/>
-		<path d="M960.89,364.48c0-23.8,16.98-38.96,38.05-38.96c21.07,0,38.05,15.16,38.05,38.96c0,23.8-16.98,38.35-38.05,38.35
+        <path d="M960.89,364.48c0-23.8,16.98-38.96,38.05-38.96c21.07,0,38.05,15.16,38.05,38.96c0,23.8-16.98,38.35-38.05,38.35
 			C977.87,402.83,960.89,388.28,960.89,364.48z M1029.72,364.48c0-19.4-13.79-31.99-30.77-31.99s-30.77,12.58-30.77,31.99
 			s13.8,31.08,30.77,31.08S1029.72,383.88,1029.72,364.48z"/>
-		<path d="M1115.52,391.31c-7.58,7.58-17.43,11.22-27.29,11.22c-21.07,0-38.5-14.55-38.5-38.2c0-23.65,16.83-38.2,38.5-38.2
+        <path d="M1115.52,391.31c-7.58,7.58-17.43,11.22-27.29,11.22c-21.07,0-38.5-14.55-38.5-38.2c0-23.65,16.83-38.2,38.5-38.2
 			c9.85,0,19.71,3.79,27.29,11.22l-4.85,4.7c-6.06-6.06-14.4-8.94-22.44-8.94c-16.98,0-31.23,11.07-31.23,31.23
 			c0,20.16,14.25,31.23,31.23,31.23c8.04,0,16.22-3.18,22.29-9.25L1115.52,391.31z"/>
-		<path d="M1147.8,304.29v22.59h25.47v6.22h-25.47v45.63c0,10.16,2.12,17.28,13.8,17.28c3.64,0,7.73-1.21,11.52-3.03l2.58,6.06
+        <path d="M1147.8,304.29v22.59h25.47v6.22h-25.47v45.63c0,10.16,2.12,17.28,13.8,17.28c3.64,0,7.73-1.21,11.52-3.03l2.58,6.06
 			c-4.7,2.27-9.4,3.79-14.1,3.79c-15.92,0-21.07-9.4-21.07-24.1V333.1h-15.92v-6.22h15.92v-21.83L1147.8,304.29z"/>
-		<path d="M1186.92,364.48c0-23.8,16.98-38.96,38.05-38.96c21.07,0,38.05,15.16,38.05,38.96c0,23.8-16.98,38.35-38.05,38.35
+        <path d="M1186.92,364.48c0-23.8,16.98-38.96,38.05-38.96c21.07,0,38.05,15.16,38.05,38.96c0,23.8-16.98,38.35-38.05,38.35
 			C1203.89,402.83,1186.92,388.28,1186.92,364.48z M1255.74,364.48c0-19.4-13.79-31.99-30.77-31.99s-30.77,12.58-30.77,31.99
 			s13.8,31.08,30.77,31.08S1255.74,383.88,1255.74,364.48z"/>
-		<path d="M1287.12,326.88l0.3,13.34c4.7-10.16,15.31-14.1,24.86-14.1c5.61-0.15,11.07,1.36,16.07,4.4l-3.33,6.06
+        <path d="M1287.12,326.88l0.3,13.34c4.7-10.16,15.31-14.1,24.86-14.1c5.61-0.15,11.07,1.36,16.07,4.4l-3.33,6.06
 			c-3.94-2.43-8.34-3.49-12.73-3.49c-13.95,0.15-24.71,11.37-24.71,25.01v43.66h-7.43v-74.89H1287.12z"/>
-	</g>
-	<g>
-		<path d="M336.36,290.63v118.75c0,12.69-10.29,22.98-22.98,22.98H194.63c-12.69,0-22.98-10.29-22.98-22.98v-13.73h141.5
+      </g>
+      <g>
+        <path d="M336.36,290.63v118.75c0,12.69-10.29,22.98-22.98,22.98H194.63c-12.69,0-22.98-10.29-22.98-22.98v-13.73h141.5
 			c4.75,0,8.6-3.85,8.6-8.6s-3.85-8.6-8.6-8.6h-141.5V358.6h115.7c4.75,0,8.6-3.85,8.6-8.6c0-4.75-3.85-8.6-8.6-8.6h-115.7v-19.85
 			h93.21c4.75,0,8.6-3.85,8.6-8.6s-3.85-8.6-8.6-8.6h-93.21v-13.73c0-12.69,10.29-22.98,22.98-22.98h118.75
 			C326.06,267.65,336.36,277.93,336.36,290.63z"/>
-	</g>
-</g>
+      </g>
+    </g>
   </svg>
-);
+)

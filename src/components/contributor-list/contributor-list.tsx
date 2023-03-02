@@ -1,17 +1,17 @@
-import { Button } from '@ionic-internal/ionic-ds';
-import { Component, Prop, Host, h } from '@stencil/core';
+import { Button } from '@ionic-internal/ionic-ds'
+import { Component, Prop, Host, h } from '@stencil/core'
 
 @Component({
   tag: 'contributor-list',
   styleUrl: 'contributor-list.css',
 })
 export class ContributorList {
-  @Prop() contributors: string[];
-  @Prop() editUrl: string;
-  @Prop() editApiUrl: string;
+  @Prop() contributors: string[]
+  @Prop() editUrl: string
+  @Prop() editApiUrl: string
 
   render() {
-    const c = this.contributors;
+    const c = this.contributors
 
     return (
       <Host>
@@ -22,6 +22,7 @@ export class ContributorList {
                 <a
                   class="contributor-img"
                   target="_blank"
+                  rel="noopener"
                   href={`https://github.com/${contributor}`}
                 >
                   <img
@@ -65,6 +66,6 @@ export class ContributorList {
           </Button>
         )} */}
       </Host>
-    );
+    )
   }
 }

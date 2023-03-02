@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://install.doctor/sitemap.xml
+Sitemap: https://install.doctor/sitemap_index.xml

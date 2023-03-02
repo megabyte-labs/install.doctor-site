@@ -1,4 +1,4 @@
-import { Component, h, Host, Prop } from '@stencil/core';
+import { Component, h, Host, Prop } from '@stencil/core'
 import {
   ResponsiveContainer,
   Heading,
@@ -6,8 +6,8 @@ import {
   PrismicRichText,
   PrismicResponsiveImage,
   Paragraph,
-} from '@ionic-internal/ionic-ds';
-import { State } from '@stencil/core/internal';
+} from '@ionic-internal/ionic-ds'
+import { State } from '@stencil/core/internal'
 
 @Component({
   tag: 'enterprise-page',
@@ -15,7 +15,7 @@ import { State } from '@stencil/core/internal';
   scoped: true
 })
 export class EnterprisePage {
-  @Prop() data: any;
+  @Prop() data: any
   @State() ebookModalOpen = false;
 
   render() {
@@ -31,11 +31,14 @@ export class EnterprisePage {
       Features,
       Demo,
       Editions,
-    } = this;
+    } = this
 
     return (
       <Host>
-        <meta-tags />
+        <meta-tags
+          page-title={`Open-Source Enterprise Provisioning Solutions`}
+          description={'Learn about the enterprise-grade support and exclusive features offered to our clientel. Find out how to amplify your business with Install Doctor.'}
+        />
         <enterprise-subnav />
         <Top />
         <Native />
@@ -52,12 +55,12 @@ export class EnterprisePage {
         <pre-footer />
         <capacitor-site-footer />
       </Host>
-    );
+    )
   }
 
   Top = () => {
-    const { top } = this.data;
-    const { title, text, cta_1, background } = top[0];
+    const { top } = this.data
+    const { title, text, cta_1, background } = top[0]
 
     return (
       <section id="top">
@@ -79,11 +82,11 @@ export class EnterprisePage {
           </div>
         </ResponsiveContainer>
       </section>
-    );
+    )
   };
 
   Companies = () => {
-    const { companies } = this.data;
+    const { companies } = this.data
 
     const companies__list = [
       ['nationwide', '34x42'],
@@ -94,7 +97,7 @@ export class EnterprisePage {
       ['microsoft', '35x35'],
       ['amtrak', '58x25'],
       ['general-electric', '35x35'],
-    ];
+    ]
 
     return (
       <section id="companies">
@@ -117,8 +120,7 @@ export class EnterprisePage {
                 <img
                   width={stats[1].split('x')[0]}
                   height={stats[1].split('x')[1]}
-                  src={`./assets-enterprise-page/companies/${
-                      i + companies__list.length / 2
+                  src={`./assets-enterprise-page/companies/${i + companies__list.length / 2
                     }@2x.png`}
                   loading="lazy"
                   alt={`${stats[0]} logo`}
@@ -128,18 +130,18 @@ export class EnterprisePage {
           </div>
         </ResponsiveContainer>
       </section>
-    );
+    )
   };
 
   Native = () => {
-    const { native, native__list } = this.data;
-    const { supertext, title, subtext } = native[0];
+    const { native, native__list } = this.data
+    const { supertext, title, subtext } = native[0]
 
     const icons = [
       ['Three blocks with up arrow', '64x64'],
-      ['Fingerprint icon with lock symbol', '76x64'],
       ['Clock icon with up arrow', '64x64'],
-    ];
+      ['Fingerprint icon with lock symbol', '64x64'],
+    ]
 
     return (
       <ResponsiveContainer id="native" as="section">
@@ -167,12 +169,12 @@ export class EnterprisePage {
           ))}
         </ul>
       </ResponsiveContainer>
-    );
+    )
   };
 
   Ebook = () => {
-    const { ebook } = this.data;
-    const { text, cta, background, book } = ebook[0];
+    const { ebook } = this.data
+    const { text, cta, background, book } = ebook[0]
 
     return (
       <section id="ebook">
@@ -209,7 +211,7 @@ export class EnterprisePage {
           </div>
         </ResponsiveContainer>
       </section>
-    );
+    )
   };
 
   // Approach = () => {
@@ -275,8 +277,8 @@ export class EnterprisePage {
   // };
 
   MicroFrontends = () => {
-    const { micro_frontends } = this.data;
-    const { supertext, title, subtext, image } = micro_frontends[0];
+    const { micro_frontends } = this.data
+    const { supertext, title, subtext, image } = micro_frontends[0]
 
     return (
       <section id="micro-frontends">
@@ -295,12 +297,12 @@ export class EnterprisePage {
           </div>
         </ResponsiveContainer>
       </section>
-    );
+    )
   };
 
   Plugins = () => {
-    const { plugins } = this.data;
-    const { supertext, title, subtext, image } = plugins[0];
+    const { plugins } = this.data
+    const { supertext, title, subtext, image } = plugins[0]
 
     return (
       <section id="plugins">
@@ -319,12 +321,12 @@ export class EnterprisePage {
           </div>
         </ResponsiveContainer>
       </section>
-    );
+    )
   };
 
   Security = () => {
-    const { security } = this.data;
-    const { supertext, title, subtext, image } = security[0];
+    const { security } = this.data
+    const { supertext, title, subtext, image } = security[0]
 
     return (
       <section id="security">
@@ -343,12 +345,12 @@ export class EnterprisePage {
           </div>
         </ResponsiveContainer>
       </section>
-    );
+    )
   };
 
   Delivery = () => {
-    const { delivery } = this.data;
-    const { supertext, title, subtext, image } = delivery[0];
+    const { delivery } = this.data
+    const { supertext, title, subtext, image } = delivery[0]
 
     return (
       <section id="delivery">
@@ -367,11 +369,11 @@ export class EnterprisePage {
           </div>
         </ResponsiveContainer>
       </section>
-    );
+    )
   };
 
   SupportGuidance = () => {
-    const { support_guidance } = this.data;
+    const { support_guidance } = this.data
 
     return (
       <section id="support-guidance">
@@ -387,12 +389,12 @@ export class EnterprisePage {
           </div>
         </ResponsiveContainer>
       </section>
-    );
+    )
   };
 
   Features = () => {
-    const { features, features__list } = this.data;
-    const { supertext, title, subtext } = features[0];
+    const { features, features__list } = this.data
+    const { supertext, title, subtext } = features[0]
 
     return (
       <section id="features">
@@ -423,12 +425,12 @@ export class EnterprisePage {
           </div>
         </ResponsiveContainer>
       </section>
-    );
+    )
   };
 
   Editions = () => {
-    const { editions } = this.data;
-    const { supertext, title, paragraph_1, paragraph_2, cta_1, image } = editions[0];
+    const { editions } = this.data
+    const { supertext, title, paragraph_1, paragraph_2, cta_1, image } = editions[0]
 
     return (
       <section id="editions">
@@ -458,12 +460,12 @@ export class EnterprisePage {
           </div>
         </ResponsiveContainer>
       </section>
-    );
+    )
   };
 
   Demo = () => {
-    const { demo } = this.data;
-    const { supertext, title } = demo[0];
+    const { demo } = this.data
+    const { supertext, title } = demo[0]
 
     return (
       <section id="demo">
@@ -477,6 +479,6 @@ export class EnterprisePage {
           <capacitor-hubspot-form formId="b74a09f0-f963-47d2-b7d0-43d74dae366f" />
         </ResponsiveContainer>
       </section>
-    );
+    )
   };
 }

@@ -1,77 +1,96 @@
 <!DOCTYPE html>
 <html dir="ltr" lang="en">
+
   <head>
     <meta charset="utf-8" />
-    <title>Install Doctor - Provision, fully-configured desktops automatically</title>
-
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta http-equiv="x-rim-auto-match" content="none">
+    <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
+    <title>Install Doctor: Provision, fully-configured desktops automatically</title>
+    <script>
+      function supportWebp() {
+        var elem = document.createElement('canvas')
+        if (!!(elem.getContext && elem.getContext('2d'))) {
+          // was able or not to get WebP representation
+          return elem.toDataURL('image/webp').indexOf('data:image/webp') == 0
+        }
+        else {
+          // very old browser like IE 8, canvas not supported
+          return false
+        }
+      }
+      if (supportWebp()) {
+        var images = document.getElementsByTagName('img')
+        for (image of images) {
+          image.src = image.src.replace(/.png/, '.webp')
+          if (image.srcset) {
+            image.srcset = image.srcset.replace(/.png/g, '.webp')
+          }
+        }
+      }
+    </script>
     <!-- Google Tag Manager -->
     <script>
       (function (w, d, s, l, i) {
-        w[l] = w[l] || [];
-        w[l].push({ 'gtm.start': new Date().getTime(), 'event': 'gtm.js' });
+        w[l] = w[l] || []
+        w[l].push({ 'gtm.start': new Date().getTime(), 'event': 'gtm.js' })
         var f = d.getElementsByTagName(s)[0],
           j = d.createElement(s),
-          dl = l != 'dataLayer' ? '&l=' + l : '';
-        j.async = true;
-        j.src = 'https://www.googletagmanager.com/gtm.js?id=' + i + dl;
-        f.parentNode.insertBefore(j, f);
+          dl = l != 'dataLayer' ? '&l=' + l : ''
+        j.async = true
+        j.src = 'https://www.googletagmanager.com/gtm.js?id=' + i + dl
+        f.parentNode.insertBefore(j, f)
       })(window, document, 'script', 'dataLayer', 'GTM-PJQ4263');
     </script>
     <!-- End Google Tag Manager -->
 
-    <meta
-      name="viewport"
-      content="width=device-width, minimum-scale=1, initial-scale=1, user-scalable=yes"
-    />
-    <meta
-      name="description"
-      content="Setup your workstation automatically with the best, free open-source software"
-    />
-    <meta property="og:type" content="website" />
-    <meta
-      property="og:title"
-      content="Install Doctor: Provision your workstation automatically"
-    />
-    <meta
-      property="og:description"
-      content="Setup your workstation automatically with the best, free open-source software"
-    />
-    <meta
-      property="og:image"
-      content="https://install.doctor/assets/img/og.png"
-    />
-    <meta property="og:url" content="https://install.doctor" />
-    <meta
-      name="twitter:title"
-      content="Install Doctor: Provision your workstation automatically"
-    />
-    <meta
-      name="twitter:description"
-      content="Setup your workstation automatically with the best, free open-source software"
-    />
-    <meta
-      name="twitter:image"
-      content="https://install.doctor/assets/img/og.png"
-    />
-    <meta name="twitter:creator" content="@installdoctor" />
-
     <!-- These tags shoudln't chagne. If they do, add to meta-tags.tsx -->
-    <meta
-      property="og:site_name"
-      content="Install Doctor: Provision your workstation automatically"
-    />
-    <meta name="twitter:site" content="@capacitorjs" />
+    <meta property="og:site_name" content="Install Doctor" />
+    <meta name="twitter:site" content="@InstallDoc" />
     <meta name="twitter:card" content="summary_large_image" />
-
+    <meta name="author" content="Brian Zalewski">
+    <meta name="copyright" content="Megabyte LLC">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="HandheldFriendly" content="True">
+    <meta name="keywords"
+      content="open source opensource github gitlab installdoctor jumpusb kubernetes docker ubuntu fedora qubes archlinux debian windows macos provisioning deployment ansible bash scripting terminal settings">
+    <meta name="MobileOptimized" content="400">
+    <meta name="twitter:creator" content="@InstallDoctor" />
+    <meta name="viewport" content="width=device-width, minimum-scale=1, initial-scale=1, user-scalable=yes" />
+    <meta property="fb:app_id" content="669135071652897">
+    <meta property="og:image:height" content="630">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:site_name" content="Install Doctor">
+    <meta property="og:type" content="website" />
+    <link type="text/plain" rel="author" href="http://install.doctor/humans.txt" />
     <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
     <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
     <link rel="manifest" href="/manifest.json">
     <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#000000">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
     <meta name="apple-mobile-web-app-title" content="Install Doctor">
     <meta name="application-name" content="Install Doctor">
-    <meta name="msapplication-TileColor" content="#ffffff">
-    <meta name="theme-color" content="#ffffff">
+    <meta name="contact" content="help@install.doctor">
+    <meta name="geography" content="USA">
+    <meta name="msapplication-starturl" content="https://install.doctor">
+    <meta name="msapplication-tap-highlight" content="no">
+    <meta name="msapplication-task"
+      content="name=Documentation;action-uri=https://install.doctor/docs;icon-uri=https://megabyte.spacce/assets/img/microsoft/search.ico">
+    <meta name="msapplication-task"
+      content="name=GitHub;action-uri=https://github.com/megabyte-lab/install.doctors;icon-uri=https://install.doctor/assets/img/microsoft/github.ico">
+    <meta name="msapplication-task"
+      content="name=GitLab;action-uri=https://gitlab.com/megabyte-labs/install.doctor;icon-uri=https://install.doctor/assets/img/microsoft/gitlab.ico">
+    <meta name="msapplication-task"
+      content="name=Home;action-uri=https://install.doctor;icon-uri=https://install.doctor/assets/img/microsoft/home.ico">
+    <meta name="msapplication-TileColor" content="#FFFFFF">
+    <meta name="msapplication-tooltip" content="Install Doctor: Enterprise-grade open-source solutions">
+    <meta name="robots" content="index, follow">
+    <meta name="theme-color" content="#FFFFFF">
+    <link rel="dns-prefetch" href="https://www.googletagmanager.com">
+    <link rel="search" type="application/opensearchdescription+xml" href="/docs/opensearch.xml" title="Install Doctor">
 
     <meta name="format-detection" content="telephone=no" />
     <meta name="msapplication-tap-highlight" content="no" />
@@ -79,63 +98,264 @@
     <script>
       navigator.serviceWorker.getRegistrations().then(function (registrations) {
         for (let registration of registrations) {
-          registration.unregister();
+          registration.unregister()
         }
       });
     </script>
     <script type="module" src="/build/site.esm.js"></script>
     <script nomodule src="/build/site.js"></script>
 
-    <link
-      rel="preload"
-      href="/assets/fonts/inter/Inter-variable-ASCII-subset.woff2"
-      as="font"
-      type="font/woff2"
-    />
-    <link
-      rel="preload"
-      href="/assets/fonts/eina/eina-01-bold.woff2"
-      as="font"
-      type="font/woff2"
-    />
-    <link
-      rel="preload"
-      href="/assets/fonts/eina/eina-01-semibold.woff2"
-      as="font"
-      type="font/woff2"
-    />
+    <link rel="preload" href="/assets/fonts/inter/Inter-variable-ASCII-subset.woff2" as="font" type="font/woff2"
+      crossOrigin="anonymous" />
+    <link rel="preload" href="/assets/fonts/eina/eina-01-bold.woff2" as="font" type="font/woff2"
+      crossOrigin="anonymous" />
+    <link rel="preload" href="/assets/fonts/eina/eina-01-semibold.woff2" as="font" type="font/woff2"
+      crossOrigin="anonymous" />
+    <link rel="preload" href="/assets/fonts/roboto-mono-v22-latin-700.woff2" as="font" type="font/woff2"
+      crossOrigin="anonymous" />
+    <link rel="preload" href="/assets/fonts/roboto-mono-v22-latin-regular.woff2" as="font" type="font/woff2"
+      crossOrigin="anonymous" />
 
     <link rel="stylesheet" href="/build/site.css" />
 
-    <link
-      href="https://fonts.googleapis.com/css?family=Roboto+Mono:400,700"
-      rel="stylesheet"
-    />
+    <script type="application/ld+json">
+      {
+        "@context": "http://schema.org",
+        "@type": "WebSite",
+        "publisher": "Install Doctor",
+        "url": "http://install.doctor",
+        "potentialAction": []
+      }
+    </script>
+    <script type="application/ld+json">
+      {
+        "@context": "http://schema.org",
+        "@type": "WebApplication",
+        "browserRequirements": ["HTML5", "CSS3", "JavaScript", "Modern Browser"],
+        "applicationSuite": "Install Doctor",
+        "featureList": [
+          "Open-source software",
+          "Documentation",
+          "Advanced search",
+          "Provisioning system",
+          "Enterprise-support details",
+          "Ansible roles",
+          "Software installer",
+          "Optimized dotfiles",
+          "Improved system settings"
+        ],
+        "fileSize": "5MB",
+        "memoryRequirements": "200MB",
+        "permissions": ["Notifications (optional)", "WiFi, 4G, or direct connection (recommended)",
+          "E-mail address (for logged-in users)"
+        ],
+        "softwareVersion": "0.69",
+        "screenshot": [{
+          "@context": "http://schema.org",
+          "@type": "ImageObject",
+          "contentUrl": "https://install.doctor/assets/img/screenshot-home.png",
+          "name": "Landing page of Install Doctor",
+          "uploadDate": "2023-02-27",
+          "caption": "Home of Install Doctor, an enterprise-grade, open-source provisioning system",
+          "height": 1080,
+          "width": 1920,
+          "encodingFormat": "image/png",
+          "productionCompany": {
+            "@type": "Organization",
+            "name": "Install Doctor",
+            "logo": {
+              "@type": "ImageObject",
+              "url": "https://install.doctor/apple-touch-icon.png"
+            }
+          },
+          "representativeOfPage": true,
+          "thumbnail": {
+            "@type": "ImageObject",
+            "contentUrl": "https://install.doctor/assets/img/screenshot-home-thumb.png",
+            "name": "Landing page of Install Doctor (thumbnail)",
+            "uploadDate": "2023-02-27",
+            "caption": "Home of Install Doctor, an enterprise-grade open-source provisioning system",
+            "height": 225,
+            "width": 400,
+            "encodingFormat": "image/png",
+            "productionCompany": {
+              "@type": "Organization",
+              "name": "Install Doctor",
+              "logo": {
+                "@type": "ImageObject",
+                "url": "https://install.doctor/apple-touch-icon.png"
+              }
+            },
+            "representativeOfPage": true
+          }
+        }, {
+          "@context": "http://schema.org",
+          "@type": "ImageObject",
+          "contentUrl": "https://install.doctor/assets/img/screenshot-docs.png",
+          "name": "Home Page",
+          "uploadDate": "2023-02-27",
+          "caption": "Browse through the Install Doctor documentation site",
+          "height": 1080,
+          "width": 1920,
+          "encodingFormat": "image/png",
+          "productionCompany": {
+            "@type": "Organization",
+            "name": "Install Doctor",
+            "logo": {
+              "@type": "ImageObject",
+              "url": "https://install.doctor/apple-touch-icon.png"
+            }
+          },
+          "representativeOfPage": true,
+          "thumbnail": {
+            "@type": "ImageObject",
+            "contentUrl": "https://install.doctor/assets/img/screenshot-docs-thumb.png",
+            "name": "Documentation site thumbnail",
+            "uploadDate": "2023-02-27",
+            "caption": "Browse through the Install Doctor documentation site",
+            "height": 225,
+            "width": 400,
+            "encodingFormat": "image/png",
+            "productionCompany": {
+              "@type": "Organization",
+              "name": "Install Doctor",
+              "logo": {
+                "@type": "ImageObject",
+                "url": "https://install.doctor/apple-touch-icon.png"
+              }
+            },
+            "representativeOfPage": true
+          }
+        }],
+        "releaseNotes": "This release includes an graphical overview of Install Doctor, a documentation site, and a convienient search feature.",
+        "thumbnailUrl": "https://install.doctor/apple-touch-icon.png",
+        "copyrightYear": 2023,
+        "copyrightHolder": "Megabyte LLC",
+        "creator": "Brian Zalewski",
+        "accessibilityControl": ["fullMouseControl", "fullTouchControl"],
+        "accessibilityHazard": [],
+        "accessMode": ["textual", "visual"],
+        "accessModeSufficient": ["textual", "visual"],
+        "accessibilitySummary": "Currently we do not support screen readers or languages other than English - these features are on the road map so check back frequently."
+      }
+
+    </script>
+    <script type="application/ld+json">
+      {
+        "@context": "http://schema.org",
+        "@type": "Organization",
+        "name": "Install Doctor",
+        "legalName": "Megabyte LLC",
+        "email": "help@install.doctor",
+        "url": "https://install.doctor",
+        "logo": {
+          "@type": "ImageObject",
+          "url": "https://install.doctor/apple-touch-icon.png"
+        },
+        "founder": "Brian Zalewski",
+        "foundingDate": "2022-10-29",
+        "numberOfEmployees": "2",
+        "seeks": "Open-source collaborations",
+        "address": {
+          "@type": "PostalAddress",
+          "addressLocality": "Morristown",
+          "postalCode": "07960",
+          "streetAddress": "63 James Street"
+        },
+        "alternateName": [
+          "InstallDoc",
+          "install.doctor"
+        ],
+        "brand": [
+          "Megabyte Labs",
+          "Megabyte Space",
+          "Megabyte LLC",
+          "Megabyte Labs Open Source",
+          "Install Doctor"
+        ],
+        "award": "Workstation Provisioning System of the Year",
+        "sameAs": [
+          "https://www.facebook.com/InstallDoctor",
+          "https://twitter.com/InstallDoc",
+          "https://www.pinterest.com/InstallDoc/",
+          "https://www.instagram.com/megabytelabs/",
+          "https://gitlab.com/megabyte-labs/install.doctor",
+          "https://github.com/megabyte-labs/install.doctor",
+          "https://linkedin.com/company/megabyte-labs"
+        ],
+        "contactPoint": [{
+            "@type": "ContactPoint",
+            "email": "help@install.doctor",
+            "url": "https://install.doctor",
+            "contactType": "Customer Service",
+            "availableLanguage": ["English"]
+          }
+        ]
+      }
+
+    </script>
+    <script type="application/ld+json">
+      [{
+          "@context": "http://schema.org",
+          "@type": "Article",
+          "url": "https://install.doctor/privacy",
+          "publisher": {
+            "@type": "Organization",
+            "name": "Install Doctor",
+            "logo": {
+              "@type": "ImageObject",
+              "url": "https://install.doctor/apple-touch-icon.png"
+            }
+          },
+          "headline": "Privacy Policy",
+          "image": {
+            "@list": [{
+              "@type": "ImageObject",
+              "url": "https://install.doctor/assets/img/og.png"
+            }]
+          },
+          "author": "Brian Zalewski",
+          "mainEntityOfPage": "https://install.doctor/privacy"
+        },
+        {
+          "@context": "http://schema.org",
+          "@type": "Article",
+          "url": "https://install.doctor/terms",
+          "publisher": {
+            "@type": "Organization",
+            "name": "Install Doctor",
+            "logo": {
+              "@type": "ImageObject",
+              "url": "https://install.doctor/apple-touch-icon.png"
+            }
+          },
+          "headline": "Terms of Service",
+          "image": {
+            "@list": [{
+              "@type": "ImageObject",
+              "url": "https://install.doctor/assets/img/og.png"
+            }]
+          },
+          "author": "Brian Zalewski",
+          "mainEntityOfPage": "https://install.doctor/terms"
+        }
+      ]
+    </script>
   </head>
+
   <body>
     <!-- Google Tag Manager (noscript) -->
     <noscript>
-      <iframe
-        src="https://www.googletagmanager.com/ns.html?id=GTM-PJQ4263"
-        height="0"
-        width="0"
-        style="display: none; visibility: hidden"
-      ></iframe>
+      <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-PJQ4263" height="0" width="0"
+        style="display: none; visibility: hidden"></iframe>
     </noscript>
     <!-- End Google Tag Manager (noscript) -->
 
     <capacitor-site></capacitor-site>
 
-    <script async defer src="https://buttons.github.io/buttons.js"></script>
-
     <!-- Start of HubSpot Embed Code -->
-    <script
-      type="text/javascript"
-      id="hs-script-loader"
-      async
-      defer
-      src="//js.hs-scripts.com/24052635.js"
-    ></script>
+    <script type="text/javascript" id="hs-script-loader" async defer src="//js.hs-scripts.com/24052635.js"></script>
     <!-- End of HubSpot Embed Code -->
   </body>
+
 </html>

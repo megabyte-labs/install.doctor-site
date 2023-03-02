@@ -7,14 +7,14 @@ import {
   Host,
   h,
   Listen,
-} from '@stencil/core';
-import Router from '../../router';
-import { importResource } from '../../utils/common';
-import { SiteHeader } from '../capacitor-site-header/capacitor-site-header';
+} from '@stencil/core'
+import Router from '../../router'
+import { importResource } from '../../utils/common'
+import { SiteHeader } from '../capacitor-site-header/capacitor-site-header'
 
 declare global {
   interface Window {
-    docsearch: (opts?: {}) => any;
+    docsearch: (opts?: {}) => any
   }
 }
 
@@ -23,68 +23,68 @@ declare global {
   styleUrl: 'docs-search.scss',
 })
 export class DocsSearch implements ComponentInterface {
-  private siteContent: HTMLElement;
+  private siteContent: HTMLElement
   private contentWidth = 736;
   private uniqueId = Math.random().toString().replace('.', '');
 
   @Prop() theme: SiteHeader['theme'] = 'light';
   @Prop() placeholder = 'Search';
 
-  @Element() el: HTMLElement;
+  @Element() el: HTMLElement
   @State() input: {
-    el?: HTMLInputElement;
-    isPristine: boolean;
-    isEmpty: boolean;
+    el?: HTMLInputElement
+    isPristine: boolean
+    isEmpty: boolean
   } = {
-    isPristine: true,
-    isEmpty: true,
-  };
+      isPristine: true,
+      isEmpty: true,
+    };
   @State() searchStats: {
-    width?: string;
-    left?: string;
+    width?: string
+    left?: string
   } = {};
 
   componentDidLoad() {
     importResource({ propertyName: 'docsearch', link: algolia }, () =>
       this.setupSearch(),
-    );
+    )
 
     this.el.addEventListener(
       'focus',
       () => {
         this.siteContent =
           document.querySelector('docs-component .measure-lg') ||
-          document.querySelector('section.ui-container');
-        this.getContentStats();
+          document.querySelector('section.ui-container')
+        this.getContentStats()
       },
       true,
-    );
+    )
   }
 
   @Listen('resize', { target: 'window' })
   getContentStats() {
     requestAnimationFrame(() => {
-      if (!this.siteContent) return;
+      if (!this.siteContent) return
 
       let left =
         this.siteContent.getBoundingClientRect().left -
-        this.el.getBoundingClientRect().left;
-      let width = this.siteContent.offsetWidth;
+        this.el.getBoundingClientRect().left
+      let width = this.siteContent.offsetWidth
 
       if (width > this.contentWidth) {
-        left -= (this.contentWidth - width) / 2;
+        left -= (this.contentWidth - width) / 2
 
         this.searchStats = {
           width: this.contentWidth.toString().concat('px'),
           left: left.toString().concat('px'),
-        };
+        }
       } else {
         this.searchStats = {
           width: width.toString().concat('px'),
           left: left.toString().concat('px'),
-        };
+        }
       }
-    });
+    })
   }
 
   setupSearch() {
@@ -96,44 +96,44 @@ export class DocsSearch implements ComponentInterface {
       debug: false, // Set debug to true if you want to inspect the dropdown
       queryHook: () => {
         if (this.input.isPristine) {
-          this.input.isPristine = false;
+          this.input.isPristine = false
 
           this.input.el = this.el.querySelector(
             `#id-${this.uniqueId} input[name="search"]`,
-          ) as HTMLInputElement;
+          ) as HTMLInputElement
 
-          this.input.el.oninput = () => this.handleInput();
+          this.input.el.oninput = () => this.handleInput()
 
-          this.handleInput();
-          this.getContentStats();
+          this.handleInput()
+          this.getContentStats()
         }
       },
       handleSelected: (_, __, suggestion) => {
-        const url = suggestion.url.replace('https://install.doctor', '');
-        this.clearSearch();
-        Router.push(url);
+        const url = suggestion.url.replace('https://install.doctor', '')
+        this.clearSearch()
+        Router.push(url)
       },
-    });
+    })
   }
 
   clearSearch = () => {
-    this.input.el.value = '';
+    this.input.el.value = ''
     this.input = {
       ...this.input,
       isEmpty: true,
-    };
+    }
   };
 
   handleInput() {
     if (this.input.el.value === '') {
-      this.input = { ...this.input, isEmpty: true };
+      this.input = { ...this.input, isEmpty: true }
     } else {
-      this.input = { ...this.input, isEmpty: false };
+      this.input = { ...this.input, isEmpty: false }
     }
   }
 
   render() {
-    const { placeholder } = this;
+    const { placeholder } = this
 
     return (
       <Host
@@ -182,8 +182,8 @@ export class DocsSearch implements ComponentInterface {
           onClick={() => this.clearSearch()}
         />
       </Host>
-    );
+    )
   }
 }
 
-const algolia = `https://cdn.jsdelivr.net/npm/docsearch.js@2/dist/cdn/docsearch.min.js`;
+const algolia = `https://cdn.jsdelivr.net/npm/docsearch.js@2/dist/cdn/docsearch.min.js`

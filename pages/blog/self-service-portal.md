@@ -4,7 +4,7 @@ slug: self-service-portal
 date: 2023-02-19 14:00:00
 author: Brian Zalewski <brian@megabyte.space>
 authorUrl: https://twitter.com/HillBillyHack3r
-description: Details on the upcoming self-service portal that will be available to Enterprise clients
+description: Details on the upcoming self-service portal which will allow provisioning of remote VMs and will be available to Install Doctor Enterprise clients
 featuredImage: /self-service-portal.png
 featuredImageAlt: Self service portal graphic
 ---

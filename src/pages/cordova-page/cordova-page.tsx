@@ -1,11 +1,11 @@
-import { Component, h, Host, State } from '@stencil/core';
+import { Component, h, Host, State } from '@stencil/core'
 
 import {
   ResponsiveContainer,
   Paragraph,
   Heading,
-} from '@ionic-internal/ionic-ds';
-import { href } from '@stencil/router';
+} from '@ionic-internal/ionic-ds'
+import { href } from '@stencil/router'
 
 @Component({
   tag: 'cordova-page',
@@ -16,7 +16,7 @@ export class CordovaPage {
   @State() selectedCodeTab: string = 'before';
 
   render() {
-    const { Top, GettingStarted, MoreResources } = this;
+    const { Top, GettingStarted, MoreResources } = this
 
     return (
       <Host>
@@ -36,7 +36,7 @@ export class CordovaPage {
         <pre-footer />
         <capacitor-site-footer />
       </Host>
-    );
+    )
   }
 
   Top = () => (

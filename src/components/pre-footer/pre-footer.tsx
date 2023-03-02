@@ -1,9 +1,9 @@
-import { Component, Host, h } from '@stencil/core';
+import { Component, Host, h } from '@stencil/core'
 import {
   ResponsiveContainer,
   Heading,
   Paragraph,
-} from '@ionic-internal/ionic-ds';
+} from '@ionic-internal/ionic-ds'
 
 @Component({
   tag: 'pre-footer',
@@ -69,6 +69,6 @@ export class PreFooter {
           </a>
         </ResponsiveContainer>
       </Host>
-    );
+    )
   }
 }

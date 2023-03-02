@@ -1,6 +1,6 @@
-import { Component, Host, h, State, Listen } from '@stencil/core';
-import Router from '../../router';
-import { href } from '@utils/common';
+import { Component, Host, h, State, Listen } from '@stencil/core'
+import Router from '../../router'
+import { href } from '@utils/common'
 
 @Component({
   tag: 'version-select',
@@ -13,18 +13,18 @@ export class VersionSelect {
   @Listen('click', { target: 'window' })
   closeSelect() {
     if (this.expanded) {
-      this.expanded = false;
+      this.expanded = false
     }
   }
 
   openSelect = (ev: UIEvent) => {
-    ev.preventDefault();
-    ev.stopPropagation();
-    this.expanded = !this.expanded;
+    ev.preventDefault()
+    ev.stopPropagation()
+    this.expanded = !this.expanded
   };
 
   render() {
-    const selectedVersion = Router.path.includes('/v2') ? 2 : 3;
+    const selectedVersion = Router.path.includes('/v2') ? 2 : 3
     return (
       <Host role="navigation" aria-label="Documentation Version Selector">
         <a
@@ -56,6 +56,7 @@ export class VersionSelect {
           <a
             href="https://github.com/megabyte-labs/install.doctor/releases"
             target="_blank"
+            rel="noopener"
             class="releases"
           >
             <span>All Releases</span>
@@ -75,7 +76,7 @@ export class VersionSelect {
           </a>
         </div>
       </Host>
-    );
+    )
   }
 }
 
@@ -93,4 +94,4 @@ const checkmark = () => (
       stroke-linejoin="round"
     />
   </svg>
-);
+)

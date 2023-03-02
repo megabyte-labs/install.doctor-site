@@ -18,13 +18,24 @@
     text-align: center;
 
     img {
+      max-width: 301px;
       margin-block-end: var(--space-7);
-      width: min(252px, 100%);
+      width: min(301px, 100%);
+      max-height: 167px;
     }
   }
 }
 
 #getting-started {
+  .image-wrapper {
+    max-width: 320px;
+    margin: 0 auto;
+  }
+
+  .image-wrapper > img {
+    max-width: 100%;
+  }
+
   .step {
     display: flex;
     padding-block-end: 120px;
@@ -50,7 +61,7 @@
 
     &::before {
       content: '';
-      z-index: -1;
+      z-index: 0;
       position: absolute;
       top: 24px;
       left: 7px;
@@ -75,6 +86,7 @@
     }
 
     .heading-group {
+      max-width: 500px;
       flex-grow: 1;
 
       @media screen and (max-width: $screen-xs-max) {
@@ -86,7 +98,7 @@
       }
 
       > * {
-        max-width: 440px;
+        max-width: 520px;
       }
 
       .platforms {
@@ -140,6 +152,83 @@
   }
 }
 
+.quote-summary {
+  max-width: 780px;
+    border-left: 5px solid black;
+    padding-left: 37px;
+    padding-right: 37px;
+    padding-top: 14px;
+    padding-bottom: 14px;
+    margin-bottom: 0;
+}
+
+#continue {
+  margin: 0;
+  background-color: var(--c-indigo-10);
+  width: 100%;
+  margin-top: 69px;
+  padding-top: 69px;
+  padding-bottom: 69px;
+  margin-bottom: 0;
+
+  > div {
+    max-width: 780px;
+    margin: 0 auto;
+      text-align: center;
+  }
+}
+
+#heading-demo {
+  margin-top: 69px;
+    text-align: center;
+}
+
+#demo {
+  .heading-group {
+    max-width: 724px;
+    text-align: left;
+    padding-top: 69px;
+    margin: 0 auto;
+    padding-bottom: 32px;
+  }
+
+  h2 {
+    text-align: center;
+  }
+}
+
+#what-is {
+  margin-bottom: 69px;
+  padding-bottom: 69px;
+  padding-top: 69px;
+  margin-left: 0;
+  padding-left: 59px;
+  margin-right: 0 !important;
+  background-color: var(--c-indigo-10);
+  width: 100%;
+
+  .what-is-info-icon {
+    position: absolute;
+    right: 0;
+    margin-top: 0;
+    margin-right: 69px;
+    font-size: 124px;
+    color: var(--c-indigo-30);
+  }
+
+  @media screen and (max-width: 1044px) {
+    .what-is-info-icon {
+      display: none;
+    }
+  }
+}
+
+@media (max-width: 720px) {
+  #what-is {
+    padding-left: 14px !important;
+  }
+}
+
 .ui-tabs {
   .ui-tab {
     min-height: 300px;
@@ -169,4 +258,23 @@
       }
     }
   }
+}
+
+.quote-summary-list {
+  margin-top: 0;
+  padding-left: 69px;
+
+  li {
+    font-family: var(--p3-font);
+    font-size: var(--p3-size);
+    line-height: var(--p3-leading);
+    letter-spacing: var(--p3-tracking);
+    font-weight: var(--p3-weight);
+    color: var(--p3-color);
+    text-transform: var(--p3-transform);
+  }
+}
+
+capacitor-hubspot-form {
+  padding-bottom: 69px;
 }

@@ -1,12 +1,32 @@
-import { Fragment, h } from '@stencil/core';
+import { Fragment, h } from '@stencil/core'
 import {
   ResponsiveContainer,
   Heading,
   Paragraph,
-} from '@ionic-internal/ionic-ds';
+} from '@ionic-internal/ionic-ds'
 export const SolutionCentOS = () => {
   return (
     <Fragment>
+      <ResponsiveContainer id="what-is" as="section">
+        <div class="ui-container">
+          <ion-icon class="what-is-info-icon" name="information-circle-outline"></ion-icon>
+          <Paragraph class="quote-summary">
+            <b>What is CentOS and why should you provision it with Install Doctor?</b>
+          </Paragraph>
+          <Paragraph class="quote-summary">
+            CentOS (Community Enterprise Operating System) is a popular Linux distribution that is based on the source code for Red Hat Enterprise Linux (RHEL). It is known for its stability, security, and long-term support, making it a popular choice for servers and other mission-critical applications. CentOS is maintained by the CentOS Project, which is a community-driven effort to develop and maintain the software.
+        </Paragraph>
+          <Paragraph class="quote-summary">
+            If you are provisioning CentOS, you would want to do it properly with an installation framework like Install Doctor. This is because the installation process for any operating system can be time-consuming and complex, especially if you are provisioning multiple systems. An installation framework like Install Doctor can automate many of the tasks involved in installing and configuring the operating system, making the process faster and more efficient.
+        </Paragraph>
+          <Paragraph class="quote-summary">
+            Furthermore, Install Doctor is regularly tested on CentOS, which means that it is designed to work seamlessly with the operating system. It also handles many of the CentOS specific issues that people face while provisioning CentOS, such as package dependencies and kernel modules. This means that you can be confident that the installation process will be smooth and reliable, without any compatibility issues or other problems.
+        </Paragraph>
+          <Paragraph class="quote-summary">
+            In summary, CentOS is a popular Linux distribution that is known for its stability, security, and long-term support. If you are provisioning CentOS, you would want to do it properly with an installation framework like Install Doctor. Install Doctor is regularly tested on CentOS and is designed to work seamlessly with the operating system. It can automate many of the tasks involved in installing and configuring the operating system, making the process faster and more efficient. Additionally, Install Doctor handles many of the CentOS specific issues that people face while provisioning CentOS, which makes it an ideal tool for provisioning CentOS systems.
+        </Paragraph>
+        </div>
+      </ResponsiveContainer>
       <ResponsiveContainer id="getting-started" as="section">
         <article class="step">
           <sup class="ui-heading-6">01</sup>
@@ -142,22 +162,6 @@ run setup:vms
           </div>
         </article>
       </ResponsiveContainer>
-      <section id="continue">
-        <ResponsiveContainer>
-          <Heading level={3}>Continue your Install Doctor Journey.</Heading>
-          <Paragraph>
-            This is only the beginning. Learn more about the Install Doctor{' '}
-            <a href="/docs/customization">
-              development workflow
-            </a>{' '}
-            or leveraging the{' '}
-            <a href="/docs/features">
-              amazing features
-            </a>{' '}
-            .
-          </Paragraph>
-        </ResponsiveContainer>
-      </section>
     </Fragment>
-  );
-};
+  )
+}

@@ -87,7 +87,7 @@ h6 {
     }
     .ui-paragraph {
       margin-block-end: var(--space-6);
-      max-width: 448px;
+      max-width: 580px;
     }
   }
 
@@ -518,6 +518,11 @@ h6 {
       }
     }
   }
+
+  img.sc-landing-page {
+    width: 64px;
+    height: 64px;
+  }
 }
 
 #features {
@@ -561,7 +566,7 @@ h6 {
   }
 }
 
-#framework {
+#framework, #products {
   margin-block-start: $section-space;
   margin-block-end: $section-space;
 
@@ -747,6 +752,8 @@ h6 {
 
         transition: all 0.2s ease-out;
 
+        border: 1px solid #ced6e0;
+
         &:hover {
           transform: translateY(-1px);
           box-shadow: var(--elevation-2);
@@ -761,6 +768,10 @@ h6 {
           line-height: 112%;
           margin: 0;
         }
+      }
+
+      article:hover {
+        box-shadow: 0 4px 8px rgb(0 0 0 / 10%), 0 2px 4px rgb(0 0 0 / 6%);
       }
     }
   }
@@ -954,5 +965,10 @@ h6 {
   em::after {
     background: #fff;
     opacity: 0.3;
+  }
+}
+@media (max-width: 767px) {
+  #features .ui-paragraph {
+    margin-right: 14px;
   }
 }

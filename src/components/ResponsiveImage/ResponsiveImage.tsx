@@ -14,60 +14,31 @@ interface ResponsiveImgProps
   fallback?: boolean
 }
 
-function supportWebp() {
-  var elem = document.createElement('canvas')
-  if (!!(elem.getContext && elem.getContext('2d'))) {
-    // was able or not to get WebP representation
-    return elem.toDataURL('image/webp').indexOf('data:image/webp') == 0
-  }
-  else {
-    // very old browser like IE 8, canvas not supported
-    return false
-  }
-}
-
-const supportsWebp = supportWebp()
-
 const ResponsiveImage = ({
   path,
   name,
   type = 'png',
   alt,
   dimensions,
-  fallback = false,
+  fallback = true,
   ...props
 }: ResponsiveImgProps) => {
   !props.loading ? (props.loading = 'lazy') : ''
-
-  if (supportsWebp) {
-    type = 'webp'
-  }
-
-  if (fallback) {
-    return (
-      <picture>
-        <source src={`${path}${name}@2x.${type} 2x`} />
-        <source src={`${path}${name}.${type} 1x`} />
-        <img
-          {...props}
-          src={`${path}${name}.${type}`}
-          width={dimensions.split('x')[0]}
-          height={dimensions.split('x')[1]}
-        />
-      </picture>
-    )
-  } else {
-    return (
+  return (
+    <picture>
+      <source type="image/webp" src={`${path}${name}@2x.webp 2x`} />
+      <source type="image/webp" src={`${path}${name}.webp 1x`} />
+      <source type="image/png" src={`${path}${name}@2x.${type} 2x`} />
+      <source type="image/png" src={`${path}${name}.${type} 1x`} />
       <img
         {...props}
-        src={`${path}${name}@2x.${type}`}
-        srcset={`${path}${name}.${type} 1x,
-                ${path}${name}@2x.${type} 2x`}
+        alt={alt}
+        src={`${path}${name}.${type}`}
         width={dimensions.split('x')[0]}
         height={dimensions.split('x')[1]}
       />
-    )
-  }
+    </picture>
+  )
 }
 
 export default ResponsiveImage

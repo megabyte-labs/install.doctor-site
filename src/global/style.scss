@@ -31,6 +31,15 @@ body {
 html,
 body {
   scroll-padding-top: 80px;
+  background-color: white;
+}
+
+community-page, landing-page, blog-page, blog-post {
+  padding-top: 64px;
+}
+
+blog-page .heading-group {
+  margin-bottom: 0 !important;
 }
 
 img {
@@ -74,8 +83,13 @@ li a {
     opacity: 0.7;
   }
 }
+
+capacitor-site {
+  background-color: white;
+}
+
 enterprise-page {
-  #top .background.sc-enterprise-page {
+  #top img.background.sc-enterprise-page {
     width: 100%;
     height: 100%;
   }
@@ -208,6 +222,11 @@ capacitor-site-footer {
   scroll-behavior: smooth;
 }
 
+#tweets h2 {
+  margin: 0 auto;
+  text-align: center;
+}
+
 #tweets.sc-landing-page .bottom.sc-landing-page .links.sc-landing-page {
   margin: 0 auto !important;
 }
@@ -256,10 +275,224 @@ capacitor-site-footer {
        url('/assets/fonts/roboto-mono-v22-latin-700.svg#RobotoMono') format('svg'); /* Legacy iOS */
 }
 
+@font-face {
+  font-family: "IonEina";
+  font-display: swap;
+  src: local("IonEina Bold"),url("/assets/fonts/ion-eina/ion-eina-01-bold.woff2") format("woff2"),url("/assets/fonts/ion-eina/ion-eina-01-bold.woff") format("woff"),url("/assets/fonts/ion-eina/ion-eina-01-bold.ttf") format("ttf"),url("/assets/fonts/ion-eina/ion-eina-01-bold.eot") format("eot");
+  font-weight: 700;
+  unicode-range: U+000-5FF, U+2019
+}
+
+@font-face {
+  font-family: "IonEina";
+  font-display: swap;
+  src: local("IonEina Semibold"),url("/assets/fonts/ion-eina/ion-eina-01-semibold.woff2") format("woff2"),url("/assets/fonts/ion-eina/ion-eina-01-semibold.woff") format("woff"),url("/assets/fonts/ion-eina/ion-eina-01-semibold.ttf") format("ttf"),url("/assets/fonts/ion-eina/ion-eina-01-semibold.eot") format("eot");
+  font-weight: 600;
+  unicode-range: U+000-5FF, U+2019
+}
+
+@font-face {
+  font-family: "IonEina";
+  font-display: swap;
+  src: local("IonEina Regular"),url("/assets/fonts/ion-eina/ion-eina-01-regular.woff2") format("woff2"),url("/assets/fonts/ion-eina/ion-eina-01-regular.woff") format("woff"),url("/assets/fonts/ion-eina/ion-eina-01-regular.ttf") format("ttf"),url("/assets/fonts/ion-eina/ion-eina-01-regular.eot") format("eot");
+  font-weight: 400;
+  unicode-range: U+000-5FF, U+2019
+}
+
+@font-face {
+  font-family: "Eina";
+  font-display: swap;
+  src: local("Eina Bold"),url("/assets/fonts/eina/eina-01-bold.woff2") format("woff2"),url("/assets/fonts/eina/eina-01-bold.woff") format("woff"),url("/assets/fonts/eina/eina-01-bold.ttf") format("ttf"),url("/assets/fonts/eina/eina-01-bold.eot") format("eot");
+  font-weight: 700;
+  unicode-range: U+000-5FF, U+2019
+}
+
+@font-face {
+  font-family: "Eina";
+  font-display: swap;
+  src: local("Eina Semibold"),url("/assets/fonts/eina/eina-01-semibold.woff2") format("woff2"),url("/assets/fonts/eina/eina-01-semibold.woff") format("woff"),url("/assets/fonts/eina/eina-01-semibold.ttf") format("ttf"),url("/assets/fonts/eina/eina-01-semibold.eot") format("eot");
+  font-weight: 600;
+  unicode-range: U+000-5FF, U+2019
+}
+
+@font-face {
+  font-family: "Eina";
+  font-display: swap;
+  src: local("Eina Regular"),url("/assets/fonts/eina/eina-01-regular.woff2") format("woff2"),url("/assets/fonts/eina/eina-01-regular.woff") format("woff"),url("/assets/fonts/eina/eina-01-regular.ttf") format("ttf"),url("/assets/fonts/eina/eina-01-regular.eot") format("eot");
+  font-weight: 400;
+  unicode-range: U+000-5FF, U+2019
+}
+
 blog-post h2 {
   color: var(--h2-color)
 }
 
 h2.ui-heading.ui-heading-2.ui-theme--editorial > a {
   color: var(--h2-color);
+}
+
+top-parallax #top.sc-top-parallax {
+  padding-top: 11.44vh;
+}
+
+landing-page {
+  #framework .ui-grid img, #products .ui-grid img {
+  width: 100%;
+}
+
+#native .ui-grid .ui-col img {
+  margin-block-end: 40px;
+}
+
+#cta .card img {
+  position: absolute;
+    z-index: 1;
+    right: 0;
+    top: -8.25%;
+    max-width: 100%;
+    min-height: 108.25%;
+}
+}
+
+community-page {
+  #top .cards .card .image-wrapper img {
+    width: 100%;
+    transition: transform 0.2s cubic-bezier(0.32, 0.72, 0, 1);
+  }
+
+  #websites.sc-community-page .ui-col.sc-community-page img {
+    margin-block-end: 27px;
+  }
+}
+
+enterprise-page {
+  #top img {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    right: 0;
+    top: -40px;
+    z-index: 1;
+    opacity: 0.2;
+  }
+
+  @media (max-width: 1216px) {
+    #top img {
+      right: calc((1330px - 100%) * -1 / 2);
+    }
+  }
+  #micro-frontends .image-wrapper img {
+    margin-inline-start: -3rem;
+    max-width: 100%;
+  }
+
+  #plugins .image-wrapper img {
+    max-width: 90%;
+  }
+
+  #features ul li .image-wrapper img {
+    margin-inline-end: 2.5rem;
+    position: relative;
+    z-index: 1;
+  }
+}
+
+capacitor-site-footer {
+  img {
+    width: 200px;
+    margin-bottom: 7px;
+    filter: invert(55%) sepia(5%) saturate(1382%) hue-rotate(178deg) brightness(92%) contrast(88%);
+  }
+}
+
+solution-page {
+  #top {
+    img {
+      -webkit-margin-after: var(--space-7);
+      margin-block-end: var(--space-7);
+    }
+  }
+
+  .numbered-pic {
+    max-width: 100%;
+  }
+}
+
+community-page {
+  #top {
+    h1 {
+      font-size: clamp(52px, 15.5vw, 64px);
+    }
+  }
+}
+
+@keyframes fadeInUp {
+  0% {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+
+enterprise-page #top {
+  margin-top: 64px;
+}
+enterprise-subnav {
+  --height: 64px !important;
+}
+enterprise-page, landing-page {
+  .ui-button {
+    opacity: 0;
+    animation: fadeInUp 0.8s ease-out forwards;
+    animation-delay: 1s;
+  }
+}
+
+.homepage-blog-article {
+  background-color: white;
+    box-shadow: 5px 5px 5px 5px rgb(0 0 0 / 39%);
+    width: 95%;
+    max-width: 720px;
+    padding: 69px;
+    margin: 0 auto;
+
+  img {
+    max-width: min(290px, 69%);
+    margin-left: 30px;
+    margin-top: 50px;
+    margin-bottom: 50px;
+  }
+  .fun-fact {
+    line-height: 1.1;
+  }
+}
+
+not-found-page {
+    img {
+      max-width: 600px;
+      width: 100%;
+      margin: 0 auto;
+    }
+}
+
+not-found-page, terms-service-page, privacy-policy-page, enterprise-page, landing-page, blog-page, blog-post, community-page {
+  > :not(site-header) {
+    animation: fadeIn 0.52s ease-out forwards;
+    animation-delay: 0.24s;
+    opacity: 0;
+  }
 }

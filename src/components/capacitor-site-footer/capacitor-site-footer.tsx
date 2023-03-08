@@ -1,4 +1,5 @@
 import { Component, Host, State, h } from '@stencil/core'
+import { href } from '@stencil/router'
 import {
   ResponsiveContainer,
   Grid,
@@ -115,41 +116,41 @@ export class CapacitorSiteFooter {
                     </Paragraph>
                   </div>
                 ) : (
-                    <form class="hs-form" onSubmit={e => this.handleNewsletterSubmit(e)}>
-                      <div class="hs_email hs-email hs-fieldtype-text field hs-form-field">
-                        <div class="input">
-                          <input
-                            name="email"
-                            type="email"
-                            autocomplete="email"
-                            inputmode="email"
-                            value={this.email}
-                            onInput={() => this.handleEmailChange(event)}
-                            disabled={this.isLoading}
-                            placeholder="E-mail"
-                            class={{ 'error': this.isValid, 'ui-paragraph-4': true }}
-                            aria-label="Email"
-                            required
-                          />
-                        </div>
+                  <form class="hs-form" onSubmit={e => this.handleNewsletterSubmit(e)}>
+                    <div class="hs_email hs-email hs-fieldtype-text field hs-form-field">
+                      <div class="input">
+                        <input
+                          name="email"
+                          type="email"
+                          autocomplete="email"
+                          inputmode="email"
+                          value={this.email}
+                          onInput={() => this.handleEmailChange(event)}
+                          disabled={this.isLoading}
+                          placeholder="E-mail"
+                          class={{ 'error': this.isValid, 'ui-paragraph-4': true }}
+                          aria-label="Email"
+                          required
+                        />
                       </div>
-                      <div class="hs_submit hs-submit">
-                        <div class="actions">
-                          <input type="submit" class="hs-button primary large" value="Subscribe" />
-                        </div>
+                    </div>
+                    <div class="hs_submit hs-submit">
+                      <div class="actions">
+                        <input type="submit" class="hs-button primary large" value="Subscribe" />
                       </div>
-                      {!this.isValid && (
-                        <Paragraph level={5} class="error-message">
-                          {this.inlineMessage}
-                        </Paragraph>
-                      )}
-                    </form>
-                  )}
+                    </div>
+                    {!this.isValid && (
+                      <Paragraph level={5} class="error-message">
+                        {this.inlineMessage}
+                      </Paragraph>
+                    )}
+                  </form>
+                )}
               </div>
             </div>
             <Grid>
               <Col md={6} sm={4} xs={12} cols={12} class="copyright">
-                <img
+                <webp-image
                   src="/assets/img/logo-white2.png"
                   alt="Install Doctor Logo"
                   class="logo"
@@ -180,11 +181,11 @@ export class CapacitorSiteFooter {
                 </div>
                 <p>© {new Date().getFullYear()} Megabyte LLC</p>
                 <p>
-                  <a href="https://megabyte.space" target="_blank">Megabyte Labs Open Source</a> | Released
+                  <a href="https://megabyte.space" target="_blank" rel="noopener">Megabyte Labs Open Source</a> | Released
                   under <span id="mit">MIT License</span>
                 </p>
                 <p>
-                  <a href="/privacy">Privacy Policy</a> | <a href="/terms">Terms of Service</a>
+                  <a {...href('/privacy')}>Privacy Policy</a> | <a {...href('/terms')}>Terms of Service</a>
                 </p>
               </Col >
               <Col md={6} sm={8} xs={12} cols={12}>
@@ -226,7 +227,7 @@ export class CapacitorSiteFooter {
                         </a>
                       </li>
                       <li>
-                        <a class="ui-paragraph-4" href="/community">
+                        <a class="ui-paragraph-4" {...href('/community')}>
                           Community
                         </a>
                       </li>
@@ -239,7 +240,7 @@ export class CapacitorSiteFooter {
                         </a>
                       </li>
                       <li>
-                        <a class="ui-paragraph-4" href="/enterprise">
+                        <a class="ui-paragraph-4" {...href('/enterprise')}>
                           Enterprise
                         </a>
                       </li>

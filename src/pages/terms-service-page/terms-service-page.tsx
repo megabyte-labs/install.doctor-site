@@ -1,4 +1,5 @@
-import { Component, Host, h, Prop } from '@stencil/core'
+import { Component, Host, h } from '@stencil/core'
+import { href } from '@stencil/router'
 import {
   ResponsiveContainer,
   Heading,
@@ -11,26 +12,25 @@ import {
   scoped: true,
 })
 export class TermsServicePage {
-  @Prop() data: any
 
   render() {
-    const { Telemetry } = this
+    const { TermsService } = this
 
     return (
       <Host>
         <meta-tags
-          page-title="Terms of Service"
+          pageTitle="Terms of Service"
           description={'Install Doctor is owned by Megabyte LLC and, as a requirement of many web services it integrates with, provides this Terms of Service agreement to its users to keep them well informed.'}
         />
-        <Telemetry />
-
+        <site-header class="heading-container" sticky={true} />
+        <TermsService />
         <pre-footer />
         <capacitor-site-footer />
       </Host>
     )
   }
 
-  Telemetry = () => (
+  TermsService = () => (
     <ResponsiveContainer id="terms-service" as="section">
       <Heading level={1}>Terms of Service</Heading>
       <Paragraph>
@@ -74,7 +74,7 @@ export class TermsServicePage {
               invasive, racist, or contains any type of suggestive, inappropriate, or explicit language;</li>
             <li>ii. Infringes on any trademark, patent, trade secret, copyright, or other proprietary right of any party;</li>
             <li>iii. Contains any type of unauthorized or unsolicited advertising;</li>
-            <li>iiii. Impersonates any person or entity, including any https://megabyte.space or https://install.doctor employees or representatives.</li>
+            <li>iiii. Impersonates any person or entity, including any <a href="https://megabyte.space" target="_blank" rel="noopener">https://megabyte.space</a> or <a {...href('/')}>https://install.doctor</a> employees or representatives.</li>
           </ul>
         </li>
       </ul>
@@ -86,7 +86,7 @@ export class TermsServicePage {
           irrevocable, worldwide, royalty-free, exclusive license to reproduce, modify, adapt, translate, publish, publicly
           display and/or distribute as we see fit. This only refers and applies to content posted via open communication
           tools as described, and does not refer to information that is provided as part of the registration process, necessary
-          in order to use our Resources. All information provided as part of our registration process is covered by our <a class="underline-hover" href="/privacy">privacy policy</a>.</li>
+          in order to use our Resources. All information provided as part of our registration process is covered by our <a class="underline-hover" {...href('/privacy')}>privacy policy</a>.</li>
         <li>i. You agree to indemnify and hold harmless Megabyte LLC and its parent company and affiliates, and their directors,
           officers, managers, employees, donors, agents, and licensors, from and against all losses, expenses, damages
           and costs, including reasonable attorneys' fees, resulting from any violation of this User Agreement or the failure
@@ -98,7 +98,7 @@ export class TermsServicePage {
       <Heading level={3}>Privacy</Heading>
       <Paragraph>Your privacy is very important to us, which is why we've created a separate Privacy Policy in order to explain in
         detail how we collect, manage, process, secure, and store your private information. Our privacy policy is included
-        under the scope of this User Agreement. To read our privacy policy in its entirety, <a class="underline-hover" href="/privacy">click here</a>.</Paragraph>
+        under the scope of this User Agreement. To read our privacy policy in its entirety, <a class="underline-hover" {...href('/privacy')}>click here</a>.</Paragraph>
       <Heading level={3}>Limitation of Warranties</Heading>
       <Paragraph>By using our website, you understand and agree that all Resources we provide are "as is" and "as available". This
         means that we do not represent or warrant to you that:</Paragraph>
@@ -124,7 +124,7 @@ export class TermsServicePage {
         incurred by you as a result of using our Resources, or as a result of any changes, data loss or corruption, cancellation,
         loss of access, or downtime to the full extent that applicable limitation of liability laws apply.</Paragraph>
       <Heading level={3}>Copyrights/Trademarks</Heading>
-      <Paragraph>All content and materials available on https://install.doctor, including but not limited to text, graphics, website
+      <Paragraph>All content and materials available on <a {...href('/')}>https://install.doctor</a>, including but not limited to text, graphics, website
         name, code, images and logos are the intellectual property of Megabyte LLC, and are protected by applicable copyright
         and trademark law.Any inappropriate use, including but not limited to the reproduction, distribution, display
         or transmission of any content on this site is strictly prohibited, unless specifically authorized by Megabyte LLC.</Paragraph>

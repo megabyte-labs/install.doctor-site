@@ -7,30 +7,7 @@
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
     <meta http-equiv="x-rim-auto-match" content="none">
     <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
-    <title>Install Doctor: Provision, fully-configured desktops automatically</title>
-    <script>
-      function supportWebp() {
-        var elem = document.createElement('canvas')
-        if (!!(elem.getContext && elem.getContext('2d'))) {
-          // was able or not to get WebP representation
-          return elem.toDataURL('image/webp').indexOf('data:image/webp') == 0
-        }
-        else {
-          // very old browser like IE 8, canvas not supported
-          return false
-        }
-      }
-      if (supportWebp()) {
-        var images = document.getElementsByTagName('img')
-        for (image of images) {
-          image.src = image.src.replace(/.png/, '.webp')
-          if (image.srcset) {
-            image.srcset = image.srcset.replace(/.png/g, '.webp')
-          }
-        }
-      }
-    </script>
-    <!-- Google Tag Manager -->
+    <title>Install Doctor: Provision fully-configured desktops automatically</title>
     <script>
       (function (w, d, s, l, i) {
         w[l] = w[l] || []
@@ -43,7 +20,6 @@
         f.parentNode.insertBefore(j, f)
       })(window, document, 'script', 'dataLayer', 'GTM-PJQ4263');
     </script>
-    <!-- End Google Tag Manager -->
 
     <!-- These tags shoudln't chagne. If they do, add to meta-tags.tsx -->
     <meta property="og:site_name" content="Install Doctor" />
@@ -59,9 +35,6 @@
     <meta name="twitter:creator" content="@InstallDoctor" />
     <meta name="viewport" content="width=device-width, minimum-scale=1, initial-scale=1, user-scalable=yes" />
     <meta property="fb:app_id" content="669135071652897">
-    <meta property="og:image:height" content="630">
-    <meta property="og:image:width" content="1200">
-    <meta property="og:site_name" content="Install Doctor">
     <meta property="og:type" content="website" />
     <link type="text/plain" rel="author" href="http://install.doctor/humans.txt" />
     <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
@@ -86,7 +59,7 @@
     <meta name="msapplication-task"
       content="name=Home;action-uri=https://install.doctor;icon-uri=https://install.doctor/assets/img/microsoft/home.ico">
     <meta name="msapplication-TileColor" content="#FFFFFF">
-    <meta name="msapplication-tooltip" content="Install Doctor: Enterprise-grade open-source solutions">
+    <meta name="msapplication-tooltip" content="Install Doctor: Provision fully-configured desktops automatically">
     <meta name="robots" content="index, follow">
     <meta name="theme-color" content="#FFFFFF">
     <link rel="dns-prefetch" href="https://www.googletagmanager.com">
@@ -115,6 +88,7 @@
       crossOrigin="anonymous" />
     <link rel="preload" href="/assets/fonts/roboto-mono-v22-latin-regular.woff2" as="font" type="font/woff2"
       crossOrigin="anonymous" />
+    <link rel="preconnect" href="https://TODO-dsn.algolia.net" crossorigin />
 
     <link rel="stylesheet" href="/build/site.css" />
 
@@ -344,18 +318,12 @@
   </head>
 
   <body>
-    <!-- Google Tag Manager (noscript) -->
     <noscript>
       <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-PJQ4263" height="0" width="0"
         style="display: none; visibility: hidden"></iframe>
     </noscript>
-    <!-- End Google Tag Manager (noscript) -->
-
     <capacitor-site></capacitor-site>
-
-    <!-- Start of HubSpot Embed Code -->
     <script type="text/javascript" id="hs-script-loader" async defer src="//js.hs-scripts.com/24052635.js"></script>
-    <!-- End of HubSpot Embed Code -->
   </body>
 
 </html>

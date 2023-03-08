@@ -83,9 +83,9 @@ export class SolutionPage implements ComponentInterface {
         />
         <ResponsiveContainer id="top" as="section">
           <div class="heading-group">
-            <img
-              width={this.framework.dimensions?.split('x')[0]}
-              height={this.framework.dimensions?.split('x')[1]}
+            <webp-image
+              width="301"
+              height="167"
               loading="eager"
               src={this.framework.logo}
               alt={this.framework.name}
@@ -118,13 +118,13 @@ export class SolutionPage implements ComponentInterface {
               This is only the beginning. Browse through the Install Doctor{' '}
               <a href="https://github.com/megabyte-labs/install.doctor" target="_blank" rel="noopener">
                 GitHub repository
-            </a>{' '}
-            or get started with your own configuration by checking out the{' '}
+              </a>{' '}
+              or get started with your own configuration by checking out the{' '}
               <a href="/docs">
                 documentation
-            </a>{' '}
-            .
-          </Paragraph>
+              </a>{' '}
+              .
+            </Paragraph>
           </ResponsiveContainer>
         </section>
         {this.Demo()}

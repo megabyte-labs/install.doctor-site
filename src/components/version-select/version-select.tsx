@@ -1,6 +1,5 @@
 import { Component, Host, h, State, Listen } from '@stencil/core'
 import Router from '../../router'
-import { href } from '@utils/common'
 
 @Component({
   tag: 'version-select',
@@ -28,7 +27,7 @@ export class VersionSelect {
     return (
       <Host role="navigation" aria-label="Documentation Version Selector">
         <a
-          {...href('/docs')}
+          href='/docs'
           aria-label={`Version ${selectedVersion}.x Docs`}
           class="version-selected"
           onClick={this.openSelect}
@@ -38,7 +37,7 @@ export class VersionSelect {
         </a>
         <div class="version-selector" hidden={!this.expanded}>
           <a
-            {...href('/docs/v2')}
+            href='/docs/v2'
             aria-label="Version 2.x Docs"
             class={{ selected: selectedVersion === 2 }}
           >
@@ -46,7 +45,7 @@ export class VersionSelect {
             {checkmark()}
           </a>
           <a
-            {...href('/docs')}
+            href='/docs'
             aria-label="Version 3.x Docs"
             class={{ selected: selectedVersion === 3 }}
           >

@@ -1,4 +1,4 @@
-import { Component, Host, h, Prop } from '@stencil/core'
+import { Component, Host, h } from '@stencil/core'
 import {
   ResponsiveContainer,
   Heading,
@@ -11,26 +11,25 @@ import {
   scoped: true,
 })
 export class PrivacyPolicyPage {
-  @Prop() data: any
 
   render() {
-    const { Telemetry } = this
+    const { PrivacyPolicy } = this
 
     return (
       <Host>
         <meta-tags
-          page-title="Privacy Policy"
-          description={'Learn about what we do to protect our users privacy at Install Doctor. Our privacy policy can answer your privacy-related issues.'}
+          pageTitle="Privacy Policy"
+          description={'Learn about what we do to protect our users privacy. Our privacy policy can answer your privacy-related issues.'}
         />
-        <Telemetry />
-
+        <site-header class="heading-container" sticky={true} />
+        <PrivacyPolicy />
         <pre-footer />
         <capacitor-site-footer />
       </Host>
     )
   }
 
-  Telemetry = () => (
+  PrivacyPolicy = () => (
     <ResponsiveContainer id="privacy-policy" as="section">
       <Heading level={1}>Privacy Policy</Heading>
       <Paragraph>

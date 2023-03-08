@@ -7,8 +7,8 @@ import {
   State,
   h,
 } from '@stencil/core'
-import { href } from '@utils/common'
-import Router, { docsVersionHref } from '../../router'
+import { href } from '@stencil/router'
+import Router from '../../router'
 import { Button } from '@ionic-internal/ionic-ds'
 import { JSXBase } from '@stencil/core/internal'
 import { DocsTemplate } from 'src/data.server/models'
@@ -157,7 +157,7 @@ export class SiteHeader implements ComponentInterface {
             <docs-search theme={this.theme} />
           </div>
           <a
-            {...href(docsVersionHref('/docs/features'))}
+            href='/docs/features'
             class={{
               'ui-paragraph-4': true,
               'active': template === 'cli',
@@ -166,7 +166,7 @@ export class SiteHeader implements ComponentInterface {
             Features
           </a>
           <a
-            {...href(docsVersionHref('/docs'))}
+            href='/docs'
             class={{
               'ui-paragraph-4': true,
               'active': template === 'docs',
@@ -210,7 +210,7 @@ export class SiteHeader implements ComponentInterface {
               <docs-search />
             </div>
             <a
-              {...href('/blog')}
+              href='/blog'
               class="ui-paragraph-4"
               ref={el => (this.links.blog = el)}
             >
@@ -297,7 +297,7 @@ export class SiteHeader implements ComponentInterface {
             <Button
               class="primary | ui-paragraph-4"
               anchor
-              {...href('/docs/getting-started')}
+              href='/docs/getting-started'
               kind="regular"
               color="cyan"
               size="md"

@@ -22,9 +22,8 @@ export interface BlogData extends MarkdownResults {
   announcement_bar?: any;
 }
 
-export const getAllBlogData: MapParamData = async () => {
+export const getAllBlogData: any = async () => {
   const results: BlogData[] = [];
-
   const fileNames = fs.readdirSync(blogDir);
 
   await Promise.all(

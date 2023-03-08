@@ -1,6 +1,6 @@
-import { Component, h } from '@stencil/core';
-import { Routes } from '../../router';
-import state from '../../store';
+import { Component, h } from '@stencil/core'
+import { Routes } from '../../router'
+import state from '../../store'
 
 @Component({
   tag: 'capacitor-site',
@@ -14,6 +14,6 @@ export class App {
           <Routes />
         </div>
       </site-root>
-    );
+    )
   }
 }

@@ -53,8 +53,7 @@ export class DocsSearch implements ComponentInterface {
       'focus',
       () => {
         this.siteContent =
-          document.querySelector('docs-component .measure-lg') ||
-          document.querySelector('section.ui-container')
+          document.querySelector('section.ui-container') || document.querySelector('div.ui-container')
         this.getContentStats()
       },
       true,
@@ -94,7 +93,7 @@ export class DocsSearch implements ComponentInterface {
       indexName: `installdoc`,
       inputSelector: `#input-${this.uniqueId}`,
       debug: false, // Set debug to true if you want to inspect the dropdown
-      queryHook: () => {
+      queryHook: (e, t) => {
         if (this.input.isPristine) {
           this.input.isPristine = false
 
@@ -156,18 +155,20 @@ export class DocsSearch implements ComponentInterface {
             fill="#B2BECD"
           />
         </svg>
-        <input
-          id={`input-${this.uniqueId}`}
-          name="search"
-          type="search"
-          autocomplete="off"
-          placeholder={placeholder}
-          aria-label={placeholder}
-          required
-          style={{
-            visibility: 'hidden',
-          }}
-        />
+        <span class="algolia-autocomplete">
+          <input
+            id={`input-${this.uniqueId}`}
+            name="search"
+            type="search"
+            autocomplete="off"
+            placeholder={placeholder}
+            aria-label={placeholder}
+            required
+            style={{
+              visibility: 'hidden',
+            }}
+          />
+        </span>
         <ion-icon
           style={{
             display: this.input.isEmpty ? 'none' : 'block',

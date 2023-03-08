@@ -25,7 +25,7 @@ export class ContributorList {
                   rel="noopener"
                   href={`https://github.com/${contributor}`}
                 >
-                  <img
+                  <webp-image
                     src={`https://github.com/${contributor}.png?size=90`}
                     title={`Contributor ${contributor}`}
                     loading="lazy"

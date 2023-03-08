@@ -2,7 +2,6 @@ import { Component, Host, h, Prop } from '@stencil/core'
 import {
   ResponsiveContainer,
   PrismicRichText,
-  PrismicResponsiveImage,
   Grid,
   Col,
 } from '@ionic-internal/ionic-ds'
@@ -21,7 +20,7 @@ export class CommunityPage {
     return (
       <Host>
         <meta-tags
-          page-title="Community Hub"
+          pageTitle="Community Hub"
           description={
             'Get connected and get help from the Install Doctor community. Find out how you can join our thriving community.'
           }
@@ -46,7 +45,7 @@ export class CommunityPage {
           {top__list.map(({ image, text, link: { target, url } }) => (
             <a target={target} href={url} class="card">
               <div class="image-wrapper">
-                <PrismicResponsiveImage image={image} />
+                <prismic-image image={image} loading="eager" />
               </div>
               <PrismicRichText richText={text} />
             </a>
@@ -59,18 +58,17 @@ export class CommunityPage {
   Websites = () => {
     const { websites__list } = this.data
 
-    const dimensions = ['40x32', '40x34', '34x40', '40x40']
+    const dimensions = ['48x48', '48x48', '48x48', '48x48']
 
     return (
       <ResponsiveContainer id="websites" as="section">
         <Grid>
           {websites__list.map(({ icon, text, link }, i) => {
             const [width, height] = dimensions[i].split('x')
-
             return (
               <Col cols={12} xs={6} md={3}>
                 <div class="image-wrapper">
-                  <PrismicResponsiveImage
+                  <prismic-image
                     width={width}
                     height={height}
                     image={icon}

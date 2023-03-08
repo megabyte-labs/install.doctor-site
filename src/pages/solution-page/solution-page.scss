@@ -5,6 +5,15 @@
   scroll-behavior: smooth;
 }
 
+.vm-icon {
+  margin-left: 3px;
+  margin-right: 3px;
+}
+
+.numbered-pic {
+  max-width: 100%;
+}
+
 #top {
   .heading-group {
     margin-block-start: clamp(16px, 10vh, 96px);
@@ -20,8 +29,8 @@
     img {
       max-width: 301px;
       margin-block-end: var(--space-7);
-      width: min(301px, 100%);
-      max-height: 167px;
+      width: 301px;
+      height: 167px;
     }
   }
 }

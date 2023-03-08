@@ -7,7 +7,6 @@ import {
   Breakpoint,
   Button,
   PrismicRichText,
-  PrismicResponsiveImage,
   Paragraph,
 } from '@ionic-internal/ionic-ds'
 import { href } from '@stencil/router'
@@ -39,7 +38,7 @@ export class LandingPage {
     return (
       <Host>
         <meta-tags
-          page-title="Provision fully configured desktops automatically"
+          pageTitle="Provision fully configured desktops automatically"
           description="Setup your workstation automatically with the best, free open-source software using Install Doctor, an open-source, multi-OS provisioning system."
         />
         <Top />
@@ -62,7 +61,6 @@ export class LandingPage {
     const { Announcement } = this
     const { top, top__ctas, top__link, top__hero, top__icons } = this.data
     const { primary, secondary } = top__ctas[0]
-
     return (
       <section id="top">
         <div class="background"></div>
@@ -93,17 +91,15 @@ export class LandingPage {
               {top__link}
               <span class="arrow"> -&gt;</span>
             </a>
-            <PrismicResponsiveImage
+            <prismic-image
               loading="eager"
               image={top__icons}
-              params={{
-                w: '91',
-                h: '16',
-              }}
+              width="91"
+              height="16"
             />
           </div>
           <div class="image-wrapper">
-            <PrismicResponsiveImage loading="eager" image={top__hero} />
+            <prismic-image loading="eager" image={top__hero} />
           </div>
         </ResponsiveContainer>
       </section>
@@ -369,10 +365,10 @@ firefoxAddOns:
             <capacitor-hubspot-form formId="df7c28cd-d123-4ea2-aa2c-d7cb304fd398" />
           </site-modal>
           <div class="wrapper">
-            <PrismicResponsiveImage image={background} class="background" />
+            <prismic-image image={background} class="background" />
             <div class="content">
               <div class="image-wrapper">
-                <PrismicResponsiveImage image={book} />
+                <prismic-image image={book} />
               </div>
               <div class="heading-group">
                 <PrismicRichText paragraphLevel={1} richText={text} />
@@ -393,7 +389,7 @@ firefoxAddOns:
 
   Native = () => {
     const { native, native__list } = this.data
-    const dimensions = ['48x64', '60x64', '60x64']
+    const dimensions = ['64x64', '64x64', '64x64']
 
     return (
       <ResponsiveContainer id="native" as="section">
@@ -403,7 +399,7 @@ firefoxAddOns:
         <Grid>
           {native__list.map(({ icon, item }, i: number) => (
             <Col xs={6} sm={4} cols={12}>
-              <PrismicResponsiveImage
+              <prismic-image
                 image={icon}
                 width={dimensions[i].split('x')[0]}
                 height={dimensions[i].split('x')[1]}
@@ -434,7 +430,7 @@ firefoxAddOns:
         <ResponsiveContainer>
           <div class="heading-group">
             <PrismicRichText richText={features} />
-            <a href="/docs/features" class="link | ui-heading-4">
+            <a href='/docs/features' class="link | ui-heading-4">
               {features__link}
               <span class="arrow">-&gt;</span>
             </a>
@@ -442,7 +438,7 @@ firefoxAddOns:
           <Grid>
             {features__list.map(({ icon, item }, i: number) => (
               <Col xs={6} sm={4} md={3} cols={12}>
-                <PrismicResponsiveImage
+                <prismic-image
                   image={icon}
                   width={dimensions[i].split('x')[0]}
                   height={dimensions[i].split('x')[1]}
@@ -460,7 +456,7 @@ firefoxAddOns:
     const { framework, framework__list } = this.data
 
     const logoTile = (logo: any) => (
-      <PrismicResponsiveImage image={logo} width="272" height="200" />
+      <prismic-image image={logo} width="272" height="200" />
     )
 
     return (
@@ -499,7 +495,7 @@ firefoxAddOns:
             {tweets__list.map(({ name, handle, text, image, verified }, i) => (
               <article class="tweet" key={i}>
                 <div class="title-row">
-                  <PrismicResponsiveImage image={image} />
+                  <prismic-image image={image} />
                   <div class="title">
                     <Heading level={5} as="h3">
                       {name}
@@ -546,7 +542,7 @@ firefoxAddOns:
               {tweets__bottom__list.map(({ icon, text, link }) => (
                 <a href={link.url} target={link.target}>
                   <article>
-                    <PrismicResponsiveImage image={icon} />
+                    <prismic-image image={icon} />
                     <Heading level={4}>{text}</Heading>
                   </article>
                 </a>
@@ -631,7 +627,7 @@ firefoxAddOns:
             <PrismicRichText richText={title} />
             <div class="wrapper">
               <div class="card">
-                <PrismicResponsiveImage image={image} class="background" />
+                <prismic-image image={image} class="background" />
                 <div class="heading-group">
                   <PrismicRichText richText={text} paragraphLevel={1} />
                   <Button kind="round" {...href('/enterprise')}>

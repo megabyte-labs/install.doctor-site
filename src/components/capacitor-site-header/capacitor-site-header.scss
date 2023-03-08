@@ -19,7 +19,8 @@
 }
 
 :host(.sticky) {
-  position: sticky;
+  position: fixed;
+  width: 100%;
 }
 
 // #region ---------------------- DARK THEME --------------------------

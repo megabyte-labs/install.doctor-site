@@ -7,7 +7,7 @@ import {
 } from '@ionic-internal/ionic-ds'
 import { Components as DS } from '@ionic-internal/ionic-ds/dist/types/components'
 
-import { href } from '@utils/common'
+import { href } from '@stencil/router'
 
 import parseISO from 'date-fns/parseISO'
 
@@ -228,6 +228,7 @@ export class BlogPost {
 
     return [
       <PostHelmet />,
+      <site-header class="heading-container" sticky={true} />,
       <blog-subnav
         breadcrumbs={[
           ['Blog', '/blog'],
@@ -349,7 +350,7 @@ export class BlogPost {
 
     return (
       <a href={authorUrl} target="_blank" rel="noopener" class="author-info">
-        <img
+        <webp-image
           src={`/assets/blog/author/${authorImageName}`}
           alt={authorName}
           width="56"
@@ -406,7 +407,7 @@ export class BlogPost {
     return (
       <div class="featured-image-wrapper">
         {preview ? (
-          <a {...href(`/blog/${post.slug}`)}>
+          <a href={`/blog/${post.slug}`}>
             <ResponsiveImage
               {...data}
               fallback
@@ -414,8 +415,9 @@ export class BlogPost {
                 window.scrollTo(0, 0)
               }}
               class="featured-image"
-              dimensions="1600x840"
+              dimensions="1200x670"
               path={'/assets/img/blog'}
+              loading="eager"
             />
           </a>
         ) : (
@@ -423,8 +425,9 @@ export class BlogPost {
             {...data}
             fallback
             class="featured-image"
-            dimensions="1600x840"
+            dimensions="1200x670"
             path={'/assets/img/blog'}
+            loading="eager"
           />
         )}
       </div>

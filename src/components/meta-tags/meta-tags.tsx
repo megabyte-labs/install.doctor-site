@@ -7,7 +7,7 @@ import Helmet from '@stencil/helmet'
 export class MetaTags {
   site = 'https://install.doctor';
   @Prop() pageTitle =
-    'Install Doctor: Provision, fully-configured desktops automatically';
+    'Install Doctor: Provision fully-configured desktops automatically';
   @Prop() description =
     'Setup your workstation automatically with the best, free open-source software using Install Doctor, an open-source, multi-OS provisioning system.';
   @Prop() image = 'https://install.doctor/assets/img/og.png';
@@ -20,13 +20,13 @@ export class MetaTags {
   render() {
     const prettyTitle =
       this.pageTitle ===
-        'Install Doctor: Provision, fully-configured desktops automatically'
+        'Install Doctor: Provision fully-configured desktops automatically'
         ? this.pageTitle
         : `${this.pageTitle} | Install Doctor`
 
-    if (!this.el.isConnected || Build.isServer) {
-      return <Host></Host>
-    }
+    //if (!this.el.isConnected || Build.isServer) {
+    //  return <Host></Host>
+    //}
 
     return (
       <Helmet>

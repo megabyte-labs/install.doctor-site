@@ -65,7 +65,7 @@ h6 {
     }
   }
 
-  .background {
+  img.background {
     position: absolute;
     bottom: 100px;
 
@@ -386,6 +386,30 @@ h6 {
   }
 }
 
+#technologies {
+  .heading-group {
+    text-align: center;
+  }
+
+  .ui-paragraph {
+    text-align: center;
+    margin: 0 auto;
+    display: inline-block;
+    //font-weight: bold;
+  }
+
+  prismic-image {
+    display: inline-block;
+    margin: 14px;
+    filter: grayscale(1);
+  }
+
+  .images {
+    margin-top: 29px;
+    text-align: center;
+  }
+}
+
 #ebook {
   site-modal {
     h2 {
@@ -394,7 +418,7 @@ h6 {
       margin-block-end: 2rem;
     }
   }
-  .background {
+  img.background {
     position: absolute;
     object-fit: cover;
     width: 100%;
@@ -627,7 +651,9 @@ h6 {
   padding-block-end: $section-space;
 
   background: var(--c-indigo-10);
-
+  article {
+    width: 269px;
+  }
   .heading-group {
     margin-block-end: 6rem;
 
@@ -779,6 +805,7 @@ h6 {
 
 #multisection {
   background: linear-gradient(180deg, #ffffff 0%, #f6f8fc 100%);
+  padding-bottom: 69px;
 }
 #cta {
   --h2-color: var(--c-carbon-50);
@@ -828,7 +855,7 @@ h6 {
       overflow: hidden;
     }
 
-    .background {
+    img.background {
       position: absolute;
       z-index: 1;
       right: 0;

@@ -60,21 +60,21 @@ capacitor-site-footer {
     margin-right: 0;
   }
 
-  ul {
-    padding: 0;
-  }
-
   .footer-social-wrapper {
     min-width: 240px;
+  }
+
+  ul {
+    padding: 0;
   }
 
   .newsletter {
     display: flex;
     flex-wrap: wrap;
+    justify-content: center;
     margin-block-end: 4rem;
     margin-block-start: -1rem;
     align-items: center;
-    justify-content: center;
     text-align: center;
 
     @media (max-width: $screen-xs-max) {

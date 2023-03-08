@@ -1,6 +1,6 @@
-import { Component, Prop, Host, h } from '@stencil/core';
-import type { PageNavigation } from '@stencil/ssg';
-import { href } from '@utils/common';
+import { Component, Prop, Host, h } from '@stencil/core'
+import type { PageNavigation } from '@stencil/ssg'
+import { href } from '@stencil/router'
 
 @Component({
   tag: 'lower-content-nav',
@@ -8,12 +8,12 @@ import { href } from '@utils/common';
   scoped: true,
 })
 export class LowerContentNav {
-  @Prop() navigation: PageNavigation;
+  @Prop() navigation: PageNavigation
 
   render() {
-    const n = this.navigation;
+    const n = this.navigation
     if (!n) {
-      return null;
+      return null
     }
     return (
       <Host role="navigation">
@@ -36,6 +36,6 @@ export class LowerContentNav {
           </a>
         ) : null}
       </Host>
-    );
+    )
   }
 }

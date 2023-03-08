@@ -10,9 +10,8 @@ import {
   Watch,
   h,
 } from '@stencil/core'
-import { href } from '@utils/common'
+import { href } from '@stencil/router'
 import type { TableOfContents } from '@stencil/ssg'
-import { docsVersionHref } from '../../router'
 import type { DocsTemplate } from '../../data.server/models'
 
 @Component({
@@ -101,7 +100,7 @@ export class SiteMenu implements ComponentInterface {
                 {capacitorLogo()}
               </a>
               <a
-                {...href(docsVersionHref('/docs'))}
+                href='/docs'
                 class="menu-header__docs-link"
               >
                 Docs
@@ -143,15 +142,15 @@ export class SiteMenu implements ComponentInterface {
                                   <span class="bump-up">{childItem.text}</span>
                                 </a>
                               ) : (
-                                  <a
-                                    class="link--external"
-                                    target="_blank"
-                                    rel="noopener"
-                                    href="#"
-                                  >
-                                    {childItem.text}
-                                  </a>
-                                )}
+                                <a
+                                  class="link--external"
+                                  target="_blank"
+                                  rel="noopener"
+                                  href="#"
+                                >
+                                  {childItem.text}
+                                </a>
+                              )}
                             </li>
                           )
                         })}
@@ -173,15 +172,15 @@ export class SiteMenu implements ComponentInterface {
                         <span class="section-label">{item.text}</span>
                       </a>
                     ) : (
-                        <a
-                          rel="noopener"
-                          class="link--external"
-                          target="_blank"
-                          href="#"
-                        >
-                          {item.text}
-                        </a>
-                      )}
+                      <a
+                        rel="noopener"
+                        class="link--external"
+                        target="_blank"
+                        href="#"
+                      >
+                        {item.text}
+                      </a>
+                    )}
                   </li>
                 )
               })}

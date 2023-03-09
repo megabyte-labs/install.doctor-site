@@ -17,7 +17,12 @@ export const config: Config = {
       baseUrl: 'https://install.doctor/',
       serviceWorker: {
         globPatterns: [
-          '**/*.{js,css,json,html,ico,png}'
+          '*.{png,xml,ico,json,svg,html}',
+          'host.config.json',
+          'page.state.json',
+          '*/**/*.json',
+          '**/*.{js,css,json,html,webp,woff2}',
+          '**/build/svg/{logo-github,close,logo-gitlab,logo-slack,logo-discord,logo-facebook,logo-twitter,logo-linkedin,ellipsis-vertical,information-circle-outline,link,mail,navigate,checkmark-circle}.svg'
         ]
       },
       copy: [
@@ -77,6 +82,10 @@ export const config: Config = {
           src: './humans.txt',
           dest: 'humans.txt'
         }
+        /*{
+          src: './OneSignalSDKWorker.js',
+          dest: 'OneSignalSDKWorker.js'
+        }*/
       ],
     },
   ],

@@ -17,9 +17,9 @@ export const Routes = () => (
     <Route
       path="/"
       mapParams={staticState(getPage)}
-      render={(_, data) => (
+      render={(_, _data) => (
         <Fragment>
-          <landing-page data={data} />
+          <landing-page />
         </Fragment>
       )}
     />
@@ -47,10 +47,10 @@ export const Routes = () => (
     <Route
       path="/community"
       mapParams={staticState(getPage)}
-      render={(_, data) => {
+      render={(_, _data) => {
         return (
           <Fragment>
-            <community-page data={data} />
+            <community-page />
           </Fragment>
         )
       }}
@@ -79,9 +79,9 @@ export const Routes = () => (
     <Route
       path="/enterprise"
       mapParams={staticState(getPage)}
-      render={(_, data) => (
+      render={(_, _data) => (
         <Fragment>
-          <enterprise-page data={data} />
+          <enterprise-page />
         </Fragment>
       )}
     />
@@ -108,9 +108,7 @@ export const Routes = () => (
 )
 
 Router.on('change', (newUrl, oldUrl) => {
-  window.scrollTo(0, 0)
-  //debugger
-  //requestAnimationFrame(() => window.scrollTo(0, 0))
+  requestAnimationFrame(() => window.scrollTo(0, 0))
   if (newUrl.hash) {
     const id = newUrl.hash.slice(1)
     setTimeout(() => {

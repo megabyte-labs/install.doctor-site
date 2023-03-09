@@ -12,7 +12,7 @@ export const config: PrerenderConfig = {
     }
     return true;
   },
-  entryUrls: ['/'],
+  entryUrls: ['/', '/404.html'],
   // normalizeUrl(href, base) {
   //   // temp fix for absolute paths with /docs/v3
   //   href = href.replace('v3/v3', 'v3');

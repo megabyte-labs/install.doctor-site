@@ -177,7 +177,7 @@
                 },
                 "alt": "Triple phone icon",
                 "copyright": null,
-                "url": "https://install.doctor/assets/img/landing/triple-phone-icon.png"
+                "url": "https://install.doctor/assets/img/landing/triple-phone-icon-1x.png"
             },
             "item": [
                 {
@@ -200,7 +200,7 @@
                 },
                 "alt": "Cube with sphere inside icon",
                 "copyright": null,
-                "url": "https://install.doctor/assets/img/landing/cube-sphere-icon.png"
+                "url": "https://install.doctor/assets/img/landing/cube-sphere-icon-1x.png"
             },
             "item": [
                 {
@@ -223,7 +223,7 @@
                 },
                 "alt": "Tripe stack layered icon",
                 "copyright": null,
-                "url": "https://install.doctor/assets/img/landing/triple-stack-icon.png"
+                "url": "https://install.doctor/assets/img/landing/triple-stack-icon-1x.png"
             },
             "item": [
                 {
@@ -825,7 +825,7 @@
             },
             "link": {
                 "link_type": "Web",
-                "url": "https://forum.megabyte.space/c/install-doctor",
+                "url": "https://app.slack.com/client/T01ABCG4NK1/C01AKCQS2RL",
                 "target": "_blank"
             },
             "text": "Connect on Slack"

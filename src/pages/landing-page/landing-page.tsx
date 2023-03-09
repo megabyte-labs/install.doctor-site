@@ -17,7 +17,708 @@ import { href } from '@stencil/router'
   scoped: true,
 })
 export class LandingPage {
-  @Prop() data: any
+  @Prop() data?: any = {
+    "top": [
+      {
+        "type": "heading1",
+        "spans": [],
+        "text": "Multi-OS provisioning made easy."
+      },
+      {
+        "type": "paragraph",
+        "spans": [],
+        "text": "Install Doctor is a free provisioning tool compatible with most operating systems that lets you define the state of your operating system. With it, you can re-format often and provision your devices rapidly. Without any customization, it provisions an expertly configured eco-system of popular, free, open-source GitHub projects. It also provides a framework for defining your ideal configurations with as little work as possible."
+      }
+    ],
+    "top__ctas": [
+      {
+        "primary": "Get Started",
+        "secondary": "Explore Features"
+      }
+    ],
+    "top__link": "Customize your build",
+    "top__hero": {
+      "dimensions": {},
+      "alt": "Install Doctor connected to Archlinux, CentOS, Debian, Fedora, macOS, Ubuntu, Qubes, and Windows as a mind map",
+      "copyright": null,
+      "url": "https://install.doctor/assets/img/enterprise/os-wheel.png",
+      "2x": {}
+    },
+    "top__icons": {
+      "dimensions": {},
+      "alt": "Archlinux, CentOS, Debian, Fedora, macOS, Qubes, Ubuntu, and Windows icons",
+      "copyright": null,
+      "url": "https://install.doctor/assets/img/landing/supported-os-icon.png",
+      "2x": {}
+    },
+    "announcement": {
+      "tag_text": "Blog",
+      "desktop_text": "The Switch from Gas Station to Install Doctor",
+      "mobile_text": "From Gas Station to Install Doctor",
+      "link": {
+        "url": "/blog/gas-station-predecessor"
+      }
+    },
+    "started": [
+      {
+        "type": "heading2",
+        "spans": [
+          {
+            "start": 12,
+            "end": 19,
+            "type": "em"
+          }
+        ],
+        "text": "Get started easily."
+      }
+    ],
+    "started__list": [
+      {
+        "number": "01",
+        "title": "Get started with a one-liner and guided prompts.",
+        "text": "It is incredibly easy to get started with Install Doctor. Run the one-liner and you will be guided through interactive prompts where you can input any missing information."
+      },
+      {
+        "number": "02",
+        "title": "Customize the script with your own fork.",
+        "text": "Fork the Install Doctor project on GitHub and use the same convienient script to provision your devices by defining an environment variable with your username/project-name."
+      },
+      {
+        "number": "03",
+        "title": "Test it out in a VM with Vagrant.",
+        "text": "Test out Install Doctor before provisioning your main workstations with a one-liner. The script will install Vagrant, ensure a suitable virtualization platform is installed, and then provision a VM."
+      },
+      {
+        "number": "04",
+        "title": "Automate everything.",
+        "text": "Pass in your sensitive data as environment variables or include them as encrypted secrets stored in your fork for a completely automated one-line installation."
+      },
+      {
+        "number": "05",
+        "title": "Manage software across operating systems.",
+        "text": "Leverage our custom installer and define package requirements in a cross-OS way by defining the OS-specific package names software a YAML file."
+      },
+      {
+        "number": "06",
+        "title": "Pin all your plugins, packages, and extensions.",
+        "text": "Configure Install Doctor to install your favorite packages while provisioning your device by defining them in YAML."
+      }
+    ],
+    "ebook": [
+      {
+        "text": [
+          {
+            "type": "paragraph",
+            "spans": [
+              {
+                "start": 0,
+                "end": 45,
+                "type": "em"
+              }
+            ],
+            "text": "Provision your computing environments faster. Our free guide details the benefits of leveraging Install Doctor to define the state of your PCs."
+          }
+        ],
+        "cta1": "Read the free eBook",
+        "background": {
+          "dimensions": {},
+          "alt": "See-through tiles",
+          "copyright": null,
+          "url": "https://install.doctor/assets/img/landing/see-thru-tiles.png",
+          "2x": {}
+        },
+        "book": {
+          "dimensions": {},
+          "alt": "Book cover with title reading \"Provisioning Operating Systems with Install Doctor\"",
+          "copyright": null,
+          "url": "https://install.doctor/assets/img/landing/ebook-text-box.png",
+          "2x": {}
+        }
+      }
+    ],
+    "native": [
+      {
+        "type": "heading2",
+        "spans": [
+          {
+            "start": 14,
+            "end": 42,
+            "type": "em"
+          }
+        ],
+        "text": "Automatically provision your devices."
+      }
+    ],
+    "native__list": [
+      {
+        "icon": {
+          "dimensions": {},
+          "alt": "Triple phone icon",
+          "copyright": null,
+          "url": "https://install.doctor/assets/img/landing/triple-phone-icon-1x.png"
+        },
+        "item": [
+          {
+            "type": "heading4",
+            "spans": [],
+            "text": "OS-independent"
+          },
+          {
+            "type": "paragraph",
+            "spans": [],
+            "text": "Bring your devices to roughly equivalent states, regardless of the operating system you choose."
+          }
+        ]
+      },
+      {
+        "icon": {
+          "dimensions": {},
+          "alt": "Cube with sphere inside icon",
+          "copyright": null,
+          "url": "https://install.doctor/assets/img/landing/cube-sphere-icon-1x.png"
+        },
+        "item": [
+          {
+            "type": "heading4",
+            "spans": [],
+            "text": "Security-focused"
+          },
+          {
+            "type": "paragraph",
+            "spans": [],
+            "text": "Provision your devices with clever security measures that will mitigate security risks and give hackers a PITA."
+          }
+        ]
+      },
+      {
+        "icon": {
+          "dimensions": {},
+          "alt": "Tripe stack layered icon",
+          "copyright": null,
+          "url": "https://install.doctor/assets/img/landing/triple-stack-icon-1x.png"
+        },
+        "item": [
+          {
+            "type": "heading4",
+            "spans": [],
+            "text": "Virtualization-friendly"
+          },
+          {
+            "type": "paragraph",
+            "spans": [],
+            "text": "Use Install Doctor to provision VMs, leverage pre-configured Docker sandboxing, and even provision a fully configured Qubes environment."
+          }
+        ]
+      }
+    ],
+    "features": [
+      {
+        "type": "heading2",
+        "spans": [
+          {
+            "start": 21,
+            "end": 44,
+            "type": "em"
+          }
+        ],
+        "text": "Consistent features, any operating system."
+      }
+    ],
+    "features__list": [
+      {
+        "icon": {
+          "dimensions": {},
+          "alt": "Camera icon",
+          "copyright": null,
+          "url": "https://install.doctor/assets/img/landing/camera-icon-1x.png"
+        },
+        "item": [
+          {
+            "type": "heading4",
+            "spans": [],
+            "text": "Stunning UI"
+          },
+          {
+            "type": "paragraph",
+            "spans": [],
+            "text": "Both KDE and GNOME Linux systems are configured to use our stunning Sweet-based theme and boot screens are sleek, without useless log messages."
+          }
+        ]
+      },
+      {
+        "icon": {
+          "dimensions": {},
+          "alt": "File system icon",
+          "copyright": null,
+          "url": "https://install.doctor/assets/img/landing/file-system-icon-1x.png"
+        },
+        "item": [
+          {
+            "type": "heading4",
+            "spans": [],
+            "text": "File System"
+          },
+          {
+            "type": "paragraph",
+            "spans": [],
+            "text": "Read-only network file sharing folder, back-ups to S3 buckets, and integrations with OS-specific technologies like BTRFS."
+          }
+        ]
+      },
+      {
+        "icon": {
+          "dimensions": {},
+          "alt": "Antenna icon",
+          "copyright": null,
+          "url": "https://install.doctor/assets/img/landing/pin-icon-1x.png"
+        },
+        "item": [
+          {
+            "type": "heading4",
+            "spans": [],
+            "text": "Pin Everything"
+          },
+          {
+            "type": "paragraph",
+            "spans": [],
+            "text": "Our system allows you to pin everything into your configuration. Keep track of your favorite addons / tools / extensions by pinning software packages, Chrome extensions, VSCode extensions, and more."
+          }
+        ]
+      },
+      {
+        "icon": {
+          "dimensions": {},
+          "alt": "Spherical rings icon",
+          "copyright": null,
+          "url": "https://install.doctor/assets/img/landing/sphere-icon-1x.png"
+        },
+        "item": [
+          {
+            "type": "heading4",
+            "spans": [],
+            "text": "Developer-First"
+          },
+          {
+            "type": "paragraph",
+            "spans": [],
+            "text": "The default configuration is designed to accomodate the needs of developers by including development software and power-user tools like fully-enhanced terminal settings."
+          }
+        ]
+      },
+      {
+        "icon": {
+          "dimensions": {},
+          "alt": "Bell icon",
+          "copyright": null,
+          "url": "https://install.doctor/assets/img/landing/notifications-icon-1x.png"
+        },
+        "item": [
+          {
+            "type": "heading4",
+            "spans": [],
+            "text": "Notifications"
+          },
+          {
+            "type": "paragraph",
+            "spans": [],
+            "text": "Monitor your devices via a personal web dashboard and receive notifications when something goes awry."
+          }
+        ]
+      },
+      {
+        "icon": {
+          "dimensions": {},
+          "alt": "Person with circle around icon",
+          "copyright": null,
+          "url": "https://install.doctor/assets/img/landing/network-icon-1x.png"
+        },
+        "item": [
+          {
+            "type": "heading4",
+            "spans": [],
+            "text": "Network"
+          },
+          {
+            "type": "paragraph",
+            "spans": [],
+            "text": "Connect to your devices / services anywhere with a VPN-based LAN and SSO-protected web services."
+          }
+        ]
+      },
+      {
+        "icon": {
+          "dimensions": {},
+          "alt": "Three encompassing circles icon",
+          "copyright": null,
+          "url": "https://install.doctor/assets/img/landing/three-circles-icon-1x.png"
+        },
+        "item": [
+          {
+            "type": "heading4",
+            "spans": [],
+            "text": "Multi-Layer Security"
+          },
+          {
+            "type": "paragraph",
+            "spans": [],
+            "text": "Utilize multiple layers of pre-configured security features like app-specific firewalls, sandboxing, and honeypots."
+          }
+        ]
+      },
+      {
+        "icon": {
+          "dimensions": {},
+          "alt": "Slider adjustment icon",
+          "copyright": null,
+          "url": "https://install.doctor/assets/img/landing/configure-icon-1x.png"
+        },
+        "item": [
+          {
+            "type": "heading4",
+            "spans": [],
+            "text": "Configurable"
+          },
+          {
+            "type": "paragraph",
+            "spans": [],
+            "text": "Easily customize your own version of Install Doctor and host it, optionally bundled with your encrypted secrets, on GitHub."
+          }
+        ]
+      }
+    ],
+    "features__link": "Explore Features",
+    "framework": [
+      {
+        "type": "heading2",
+        "spans": [
+          {
+            "start": 15,
+            "end": 34,
+            "type": "em"
+          }
+        ],
+        "text": "Bring your own operating system."
+      },
+      {
+        "type": "paragraph",
+        "spans": [
+          {
+            "start": 126,
+            "end": 135,
+            "type": "hyperlink",
+            "data": {
+              "link_type": "Web",
+              "url": "https://install.doctor/solution/archlinux"
+            }
+          },
+          {
+            "start": 137,
+            "end": 143,
+            "type": "hyperlink",
+            "data": {
+              "link_type": "Web",
+              "url": "https://install.doctor/solution/centos"
+            }
+          },
+          {
+            "start": 145,
+            "end": 151,
+            "type": "hyperlink",
+            "data": {
+              "link_type": "Web",
+              "url": "https://install.doctor/solution/debian"
+            }
+          },
+          {
+            "start": 153,
+            "end": 159,
+            "type": "hyperlink",
+            "data": {
+              "link_type": "Web",
+              "url": "https://install.doctor/solution/fedora"
+            }
+          },
+          {
+            "start": 161,
+            "end": 167,
+            "type": "hyperlink",
+            "data": {
+              "link_type": "Web",
+              "url": "https://install.doctor/solution/macos"
+            }
+          },
+          {
+            "start": 168,
+            "end": 173,
+            "type": "hyperlink",
+            "data": {
+              "link_type": "Web",
+              "url": "https://install.doctor/solution/qubes"
+            }
+          },
+          {
+            "start": 175,
+            "end": 181,
+            "type": "hyperlink",
+            "data": {
+              "link_type": "Web",
+              "url": "https://install.doctor/solution/ubuntu"
+            }
+          },
+          {
+            "start": 187,
+            "end": 194,
+            "type": "hyperlink",
+            "data": {
+              "link_type": "Web",
+              "url": "https://install.doctor/solution/windows"
+            }
+          }
+        ],
+        "text": "Use Install Doctor to provision a wide range of operating systems and virtualization platforms. The latest x86-64 releases of Archlinux, CentOS, Debian, Fedora, macOS, Qubes, Ubuntu, and Windows are officiallysupported. Support for other operating systems is also possible."
+      }
+    ],
+    "framework__list": [
+      {
+        "logo": {
+          "dimensions": {},
+          "alt": "Archlinux logo tile",
+          "copyright": null,
+          "url": "https://install.doctor/assets/img/landing/archlinux-box.png",
+          "2x": {}
+        },
+        "link": "/solution/archlinux"
+      },
+      {
+        "logo": {
+          "dimensions": {},
+          "alt": "CentOS logo tile",
+          "copyright": null,
+          "url": "https://install.doctor/assets/img/landing/centos-box.png",
+          "2x": {}
+        },
+        "link": "/solution/centos"
+      },
+      {
+        "logo": {
+          "dimensions": {},
+          "alt": "Debian logo tile",
+          "copyright": null,
+          "url": "https://install.doctor/assets/img/landing/debian-box.png",
+          "2x": {}
+        },
+        "link": "/solution/debian"
+      },
+      {
+        "logo": {
+          "dimensions": {},
+          "alt": "Fedora logo tile",
+          "copyright": null,
+          "url": "https://install.doctor/assets/img/landing/fedora-box.png",
+          "2x": {}
+        },
+        "link": "/solution/fedora"
+      },
+      {
+        "logo": {
+          "dimensions": {},
+          "alt": "macOS logo tile",
+          "copyright": null,
+          "url": "https://install.doctor/assets/img/landing/macos-box.png",
+          "2x": {}
+        },
+        "link": "/solution/macos"
+      },
+      {
+        "logo": {
+          "dimensions": {},
+          "alt": "Qubes logo tile",
+          "copyright": null,
+          "url": "https://install.doctor/assets/img/landing/qubes-box.png",
+          "2x": {}
+        },
+        "link": "/solution/qubes"
+      },
+      {
+        "logo": {
+          "dimensions": {},
+          "alt": "Ubuntu logo tile",
+          "copyright": null,
+          "url": "https://install.doctor/assets/img/landing/ubuntu-box.png",
+          "2x": {}
+        },
+        "link": "/solution/ubuntu"
+      },
+      {
+        "logo": {
+          "dimensions": {},
+          "alt": "Windows logo tile",
+          "copyright": null,
+          "url": "https://install.doctor/assets/img/landing/windows-box.png",
+          "2x": {}
+        },
+        "link": "/solution/windows"
+      }
+    ],
+    "tweets": [
+      {
+        "title": [
+          {
+            "type": "heading2",
+            "spans": [
+              {
+                "start": 23,
+                "end": 46,
+                "type": "em"
+              }
+            ],
+            "text": "What people are saying about Install Doctor."
+          }
+        ]
+      }
+    ],
+    "tweets__list": [
+      {
+        "name": "Brian Zalewski",
+        "handle": "@HillBillyHack3r",
+        "text": [
+          {
+            "type": "paragraph",
+            "spans": [
+              {
+                "start": 29,
+                "end": 40,
+                "type": "hyperlink",
+                "data": {
+                  "target": "_blank",
+                  "link_type": "Web",
+                  "url": "https://twitter.com/InstallDoc"
+                }
+              }
+            ],
+            "text": "The default configuration of @InstallDoc is an educational tool that helps me learn about emerging open-source technologies.. Hopefully people find it as useful as I do"
+          }
+        ],
+        "image": {
+          "dimensions": {},
+          "alt": "Brian Zalewski Twitter profile picture",
+          "copyright": null,
+          "url": "https://install.doctor/assets/img/landing/twitter-brian-zalewski.png",
+          "2x": {}
+        },
+        "verified": false
+      }
+    ],
+    "tweets__bottom": [
+      {
+        "emoji": "",
+        "text": [
+          {
+            "type": "paragraph",
+            "spans": [
+              {
+                "start": 40,
+                "end": 79,
+                "type": "em"
+              }
+            ],
+            "text": "The Install Doctor Community is growing. Connect with us, your opinion matters."
+          }
+        ]
+      }
+    ],
+    "tweets__bottom__list": [
+      {
+        "icon": {
+          "dimensions": {},
+          "alt": "Twitter icon",
+          "copyright": null,
+          "url": "https://install.doctor/assets/img/landing/twitter-icon-1x.png"
+        },
+        "text": "Follow us on Twitter",
+        "link": {
+          "url": "https://twitter.com/InstallDoc",
+          "target": "_blank"
+        }
+      },
+      {
+        "icon": {
+          "dimensions": {},
+          "alt": "Github icon",
+          "copyright": null,
+          "url": "https://install.doctor/assets/img/landing/github-icon-1x.png"
+        },
+        "text": "Star us on GitHub",
+        "link": {
+          "url": "https://github.com/megabyte-labs/install.doctor",
+          "target": "_blank"
+        }
+      },
+      {
+        "icon": {
+          "dimensions": {},
+          "alt": "Chat bubble icon",
+          "copyright": null,
+          "url": "https://install.doctor/assets/img/landing/chat-icon-1x.png"
+        },
+        "text": "Connect on Slack",
+        "link": {
+          "url": "https://app.slack.com/client/T01ABCG4NK1/C01AKCQS2RL",
+          "target": "_blank"
+        }
+      }
+    ],
+    "cta": [
+      {
+        "image": {
+          "dimensions": {},
+          "alt": "Raised platforms with app icons",
+          "copyright": null,
+          "url": "https://install.doctor/assets/img/landing/cap-enterprise-cta.png",
+          "2x": {}
+        },
+        "title": [
+          {
+            "type": "heading2",
+            "spans": [
+              {
+                "start": 25,
+                "end": 59,
+                "type": "em"
+              }
+            ],
+            "text": "Supercharge your workflow with enterprise-grade solutions."
+          }
+        ],
+        "text": [
+          {
+            "type": "paragraph",
+            "spans": [
+              {
+                "start": 0,
+                "end": 21,
+                "type": "em"
+              }
+            ],
+            "text": "Ready for enterprise. With Install Doctor Enterprise, access advanced security features, integrate SSO, and utilize a proprietary hardware-based, read-only file system."
+          }
+        ],
+        "cta1": "Learn more"
+      }
+    ],
+    "get_started2": [
+      {
+        "title": "Ready to get started?",
+        "text": "Dive in and start provisioning your devices with Install Doctor"
+      }
+    ],
+    "get_started__ctas": [
+      {
+        "primary": "Get Started",
+        "secondary": "Explore Features"
+      }
+    ]
+  }
 
   @State() selectedCodeTab: string = 'notifications';
   @State() ebookModalOpen = false;
@@ -41,6 +742,7 @@ export class LandingPage {
           pageTitle="Provision fully configured desktops automatically"
           description="Setup your workstation automatically with the best, free open-source software using Install Doctor, an open-source, multi-OS provisioning system."
         />
+        <site-header class="heading-container" sticky={true} />
         <Top />
         {/* <IoniconfCta /> */}
         {/* <top-parallax /> */}

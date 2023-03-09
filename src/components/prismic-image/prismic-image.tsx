@@ -33,19 +33,29 @@ export class PrismicImage {
     }
     // @ts-ignore
     var { image, params } = this.image, props = __rest(this.image, ["image", "params"])
-    const strippedUrl = props.url.replace(/https:\/\/megabyte.space/gi, '')
+    const strippedUrl = props.url.replace(/https:\/\/install.doctor/gi, '')
     const webpSrc = strippedUrl.replace(/.png/gi, '.webp')
     const webpSrc2x = strippedUrl.replace(/.png/gi, '-2x.webp')
     const pngSrc2x = strippedUrl.replace(/.png/gi, '-2x.png')
     const imgSrcSet = strippedUrl + ' 1x, ' + pngSrc2x + ' 2x'
-    return (
-      <picture>
-        <source type="image/webp" src={webpSrc + ' 1x'} />
-        <source type="image/webp" src={webpSrc2x + ' 2x'} />
-        <source type="image/png" src={props.url + ' 1x'} />
-        <source type="image/png" src={pngSrc2x + ' 2x'} />
-        <img src={strippedUrl} alt={props.alt} width={this.width} height={this.height} class={this.class} loading={this.loading} srcset={imgSrcSet} />
-      </picture>
-    )
+    if (strippedUrl.match(/-1x.png$/gi)) {
+      return (
+        <picture>
+          <source type="image/webp" src={webpSrc} />
+          <source type="image/png" src={strippedUrl} />
+          <img src={strippedUrl} alt={props.alt} width={this.width} height={this.height} class={this.class} loading={this.loading} />
+        </picture>
+      )
+    } else {
+      return (
+        <picture>
+          <source type="image/webp" src={webpSrc + ' 1x'} />
+          <source type="image/webp" src={webpSrc2x + ' 2x'} />
+          <source type="image/png" src={props.url + ' 1x'} />
+          <source type="image/png" src={pngSrc2x + ' 2x'} />
+          <img src={strippedUrl} alt={props.alt} width={this.width} height={this.height} class={this.class} loading={this.loading} srcset={imgSrcSet} />
+        </picture>
+      )
+    }
   }
 }

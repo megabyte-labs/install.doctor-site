@@ -70,14 +70,12 @@ export namespace Components {
   };
     }
     interface CommunityPage {
-        "data": any;
+        "data"?: any;
     }
     interface ContributorList {
         "contributors": string[];
         "editApiUrl": string;
         "editUrl": string;
-    }
-    interface CordovaPage {
     }
     interface DocSnippet {
     }
@@ -102,7 +100,7 @@ export namespace Components {
         "theme": SiteHeader['theme'];
     }
     interface EnterprisePage {
-        "data": any;
+        "data"?: any;
     }
     interface EnterpriseSubnav {
     }
@@ -113,7 +111,7 @@ export namespace Components {
         "url": string;
     }
     interface LandingPage {
-        "data": any;
+        "data"?: any;
     }
     interface LowerContentNav {
         "navigation": PageNavigation;
@@ -133,13 +131,23 @@ export namespace Components {
     }
     interface NewsletterSignupParallax {
     }
+    interface NotFoundPage {
+    }
     interface PluginPlatforms {
         "platforms": string;
     }
     interface PreFooter {
     }
+    interface PrismicImage {
+        "alt": string;
+        "class": string;
+        "height": number | string;
+        "image": any;
+        "loading": 'eager' | 'lazy';
+        "params": any;
+        "width": number | string;
+    }
     interface PrivacyPolicyPage {
-        "data": any;
     }
     interface SiteHeader {
         "includeBurger": boolean;
@@ -155,11 +163,19 @@ export namespace Components {
         "data": any;
     }
     interface TermsServicePage {
-        "data": any;
     }
     interface TopParallax {
     }
     interface VersionSelect {
+    }
+    interface WebpImage {
+        "alt": string;
+        "class": string;
+        "height": string | number;
+        "loading": "lazy" | "auto" | "eager";
+        "src": string;
+        "srcset": string;
+        "width": string | number;
     }
 }
 declare global {
@@ -271,12 +287,6 @@ declare global {
         prototype: HTMLContributorListElement;
         new (): HTMLContributorListElement;
     };
-    interface HTMLCordovaPageElement extends Components.CordovaPage, HTMLStencilElement {
-    }
-    var HTMLCordovaPageElement: {
-        prototype: HTMLCordovaPageElement;
-        new (): HTMLCordovaPageElement;
-    };
     interface HTMLDocSnippetElement extends Components.DocSnippet, HTMLStencilElement {
     }
     var HTMLDocSnippetElement: {
@@ -361,6 +371,12 @@ declare global {
         prototype: HTMLNewsletterSignupParallaxElement;
         new (): HTMLNewsletterSignupParallaxElement;
     };
+    interface HTMLNotFoundPageElement extends Components.NotFoundPage, HTMLStencilElement {
+    }
+    var HTMLNotFoundPageElement: {
+        prototype: HTMLNotFoundPageElement;
+        new (): HTMLNotFoundPageElement;
+    };
     interface HTMLPluginPlatformsElement extends Components.PluginPlatforms, HTMLStencilElement {
     }
     var HTMLPluginPlatformsElement: {
@@ -372,6 +388,12 @@ declare global {
     var HTMLPreFooterElement: {
         prototype: HTMLPreFooterElement;
         new (): HTMLPreFooterElement;
+    };
+    interface HTMLPrismicImageElement extends Components.PrismicImage, HTMLStencilElement {
+    }
+    var HTMLPrismicImageElement: {
+        prototype: HTMLPrismicImageElement;
+        new (): HTMLPrismicImageElement;
     };
     interface HTMLPrivacyPolicyPageElement extends Components.PrivacyPolicyPage, HTMLStencilElement {
     }
@@ -415,6 +437,12 @@ declare global {
         prototype: HTMLVersionSelectElement;
         new (): HTMLVersionSelectElement;
     };
+    interface HTMLWebpImageElement extends Components.WebpImage, HTMLStencilElement {
+    }
+    var HTMLWebpImageElement: {
+        prototype: HTMLWebpImageElement;
+        new (): HTMLWebpImageElement;
+    };
     interface HTMLElementTagNameMap {
         "anchor-link": HTMLAnchorLinkElement;
         "app-menu-toggle": HTMLAppMenuToggleElement;
@@ -434,7 +462,6 @@ declare global {
         "code-tabs": HTMLCodeTabsElement;
         "community-page": HTMLCommunityPageElement;
         "contributor-list": HTMLContributorListElement;
-        "cordova-page": HTMLCordovaPageElement;
         "doc-snippet": HTMLDocSnippetElement;
         "docs-component": HTMLDocsComponentElement;
         "docs-dropdown": HTMLDocsDropdownElement;
@@ -449,8 +476,10 @@ declare global {
         "more-button": HTMLMoreButtonElement;
         "newsletter-signup": HTMLNewsletterSignupElement;
         "newsletter-signup-parallax": HTMLNewsletterSignupParallaxElement;
+        "not-found-page": HTMLNotFoundPageElement;
         "plugin-platforms": HTMLPluginPlatformsElement;
         "pre-footer": HTMLPreFooterElement;
+        "prismic-image": HTMLPrismicImageElement;
         "privacy-policy-page": HTMLPrivacyPolicyPageElement;
         "site-header": HTMLSiteHeaderElement;
         "solution-page": HTMLSolutionPageElement;
@@ -458,6 +487,7 @@ declare global {
         "terms-service-page": HTMLTermsServicePageElement;
         "top-parallax": HTMLTopParallaxElement;
         "version-select": HTMLVersionSelectElement;
+        "webp-image": HTMLWebpImageElement;
     }
 }
 declare namespace LocalJSX {
@@ -528,8 +558,6 @@ declare namespace LocalJSX {
         "editApiUrl"?: string;
         "editUrl"?: string;
     }
-    interface CordovaPage {
-    }
     interface DocSnippet {
     }
     interface DocsComponent {
@@ -581,13 +609,23 @@ declare namespace LocalJSX {
     }
     interface NewsletterSignupParallax {
     }
+    interface NotFoundPage {
+    }
     interface PluginPlatforms {
         "platforms"?: string;
     }
     interface PreFooter {
     }
+    interface PrismicImage {
+        "alt"?: string;
+        "class"?: string;
+        "height"?: number | string;
+        "image"?: any;
+        "loading"?: 'eager' | 'lazy';
+        "params"?: any;
+        "width"?: number | string;
+    }
     interface PrivacyPolicyPage {
-        "data"?: any;
     }
     interface SiteHeader {
         "includeBurger"?: boolean;
@@ -603,11 +641,19 @@ declare namespace LocalJSX {
         "data"?: any;
     }
     interface TermsServicePage {
-        "data"?: any;
     }
     interface TopParallax {
     }
     interface VersionSelect {
+    }
+    interface WebpImage {
+        "alt"?: string;
+        "class"?: string;
+        "height"?: string | number;
+        "loading"?: "lazy" | "auto" | "eager";
+        "src"?: string;
+        "srcset"?: string;
+        "width"?: string | number;
     }
     interface IntrinsicElements {
         "anchor-link": AnchorLink;
@@ -628,7 +674,6 @@ declare namespace LocalJSX {
         "code-tabs": CodeTabs;
         "community-page": CommunityPage;
         "contributor-list": ContributorList;
-        "cordova-page": CordovaPage;
         "doc-snippet": DocSnippet;
         "docs-component": DocsComponent;
         "docs-dropdown": DocsDropdown;
@@ -643,8 +688,10 @@ declare namespace LocalJSX {
         "more-button": MoreButton;
         "newsletter-signup": NewsletterSignup;
         "newsletter-signup-parallax": NewsletterSignupParallax;
+        "not-found-page": NotFoundPage;
         "plugin-platforms": PluginPlatforms;
         "pre-footer": PreFooter;
+        "prismic-image": PrismicImage;
         "privacy-policy-page": PrivacyPolicyPage;
         "site-header": SiteHeader;
         "solution-page": SolutionPage;
@@ -652,6 +699,7 @@ declare namespace LocalJSX {
         "terms-service-page": TermsServicePage;
         "top-parallax": TopParallax;
         "version-select": VersionSelect;
+        "webp-image": WebpImage;
     }
 }
 export { LocalJSX as JSX };
@@ -676,7 +724,6 @@ declare module "@stencil/core" {
             "code-tabs": LocalJSX.CodeTabs & JSXBase.HTMLAttributes<HTMLCodeTabsElement>;
             "community-page": LocalJSX.CommunityPage & JSXBase.HTMLAttributes<HTMLCommunityPageElement>;
             "contributor-list": LocalJSX.ContributorList & JSXBase.HTMLAttributes<HTMLContributorListElement>;
-            "cordova-page": LocalJSX.CordovaPage & JSXBase.HTMLAttributes<HTMLCordovaPageElement>;
             "doc-snippet": LocalJSX.DocSnippet & JSXBase.HTMLAttributes<HTMLDocSnippetElement>;
             "docs-component": LocalJSX.DocsComponent & JSXBase.HTMLAttributes<HTMLDocsComponentElement>;
             "docs-dropdown": LocalJSX.DocsDropdown & JSXBase.HTMLAttributes<HTMLDocsDropdownElement>;
@@ -691,8 +738,10 @@ declare module "@stencil/core" {
             "more-button": LocalJSX.MoreButton & JSXBase.HTMLAttributes<HTMLMoreButtonElement>;
             "newsletter-signup": LocalJSX.NewsletterSignup & JSXBase.HTMLAttributes<HTMLNewsletterSignupElement>;
             "newsletter-signup-parallax": LocalJSX.NewsletterSignupParallax & JSXBase.HTMLAttributes<HTMLNewsletterSignupParallaxElement>;
+            "not-found-page": LocalJSX.NotFoundPage & JSXBase.HTMLAttributes<HTMLNotFoundPageElement>;
             "plugin-platforms": LocalJSX.PluginPlatforms & JSXBase.HTMLAttributes<HTMLPluginPlatformsElement>;
             "pre-footer": LocalJSX.PreFooter & JSXBase.HTMLAttributes<HTMLPreFooterElement>;
+            "prismic-image": LocalJSX.PrismicImage & JSXBase.HTMLAttributes<HTMLPrismicImageElement>;
             "privacy-policy-page": LocalJSX.PrivacyPolicyPage & JSXBase.HTMLAttributes<HTMLPrivacyPolicyPageElement>;
             "site-header": LocalJSX.SiteHeader & JSXBase.HTMLAttributes<HTMLSiteHeaderElement>;
             "solution-page": LocalJSX.SolutionPage & JSXBase.HTMLAttributes<HTMLSolutionPageElement>;
@@ -700,6 +749,7 @@ declare module "@stencil/core" {
             "terms-service-page": LocalJSX.TermsServicePage & JSXBase.HTMLAttributes<HTMLTermsServicePageElement>;
             "top-parallax": LocalJSX.TopParallax & JSXBase.HTMLAttributes<HTMLTopParallaxElement>;
             "version-select": LocalJSX.VersionSelect & JSXBase.HTMLAttributes<HTMLVersionSelectElement>;
+            "webp-image": LocalJSX.WebpImage & JSXBase.HTMLAttributes<HTMLWebpImageElement>;
         }
     }
 }

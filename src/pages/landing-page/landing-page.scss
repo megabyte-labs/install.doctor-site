@@ -53,7 +53,7 @@ h6 {
   .ui-container {
     display: flex;
     // flex-wrap: wrap;
-    margin-block-start: clamp(64px, 17vh, 154px);
+    margin-block-start: clamp(64px, 14vh, 154px);
 
     @media screen and (max-width: $screen-xs) {
       margin-block-start: 240px;

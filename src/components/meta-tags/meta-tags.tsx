@@ -1,4 +1,4 @@
-import { Build, Component, Element, Host, Prop, h } from '@stencil/core'
+import { Component, Element, Prop, h } from '@stencil/core'
 import Helmet from '@stencil/helmet'
 
 @Component({

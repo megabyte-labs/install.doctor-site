@@ -108,7 +108,7 @@ export class CommunityPage {
           "dimensions": {},
           "alt": "Twitter icon",
           "copyright": null,
-          "url": "https://install.doctor/assets/img/community/twitter-icon.png"
+          "url": "https://install.doctor/assets/img/community/twitter-icon-1x.png"
         },
         "text": [
           {
@@ -146,7 +146,7 @@ export class CommunityPage {
           "dimensions": {},
           "alt": "Reddit icon",
           "copyright": null,
-          "url": "https://install.doctor/assets/img/community/reddit-icon.png"
+          "url": "https://install.doctor/assets/img/community/reddit-icon-1x.png"
         },
         "text": [
           {
@@ -184,7 +184,7 @@ export class CommunityPage {
           "dimensions": {},
           "alt": "Slack icon",
           "copyright": null,
-          "url": "https://install.doctor/assets/img/community/slack-icon.png"
+          "url": "https://install.doctor/assets/img/community/slack-icon-1x.png"
         },
         "text": [
           {
@@ -222,7 +222,7 @@ export class CommunityPage {
           "dimensions": {},
           "alt": "GitHub icon",
           "copyright": null,
-          "url": "https://install.doctor/assets/img/community/github-icon.png"
+          "url": "https://install.doctor/assets/img/community/github-icon-1x.png"
         },
         "text": [
           {

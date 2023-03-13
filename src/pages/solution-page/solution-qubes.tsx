@@ -10,21 +10,21 @@ export const SolutionQubes = () => {
       <ResponsiveContainer id="what-is" as="section">
         <div class="ui-container">
           <ion-icon class="what-is-info-icon" name="information-circle-outline"></ion-icon>
-          <Paragraph class="quote-summary">
-            <b>What is Qubes OS?</b>
-          </Paragraph>
+          <Heading class="quote-summary" level={2}>
+            What is Qubes OS?
+          </Heading>
           <Paragraph class="quote-summary">
             Qubes OS is a security-focused, open-source operating system that is designed to provide better security and isolation for its users. Unlike traditional operating systems, Qubes OS uses a unique approach to security called "Security by Compartmentalization."
-        </Paragraph>
+          </Paragraph>
           <Paragraph class="quote-summary">
             This approach involves separating different applications and tasks into isolated compartments, called "qubes," which are each assigned a specific level of trust. For example, you can have a qube for your personal documents, a qube for browsing the web, and a qube for running sensitive applications. This way, if one qube is compromised, the others remain secure and unaffected.
-        </Paragraph>
+          </Paragraph>
           <Paragraph class="quote-summary">
             Qubes OS also provides other security features, such as strict isolation of networking and USB devices, enforced memory management, and compartmentalized cryptography. It is designed to be used on a variety of hardware, including laptops and desktops, and supports a range of applications, including web browsing, email, office productivity, and multimedia.
-        </Paragraph>
+          </Paragraph>
           <Paragraph class="quote-summary">
             Qubes OS is free and open-source, which means that anyone can access the source code and contribute to its development. It is often used by journalists, activists, and security professionals who require a high level of security and privacy in their work.
-        </Paragraph>
+          </Paragraph>
         </div>
       </ResponsiveContainer>
       <ResponsiveContainer id="getting-started" as="section">

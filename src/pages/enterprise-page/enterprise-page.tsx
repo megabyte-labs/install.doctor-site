@@ -475,6 +475,18 @@ export class EnterprisePage {
         <Demo />
         <pre-footer />
         <capacitor-site-footer />
+        <site-modal
+          open={this.ebookModalOpen}
+          onModalClose={() => (this.ebookModalOpen = false)}
+        >
+          <Heading level={2}>
+            Free Install Doctor eBook
+          </Heading>
+          <Paragraph>
+            Fill out and submit the form below to get your free copy of <strong>Open-Source, Cross-OS Workstations with Install Doctor</strong> sent to your e-mail.
+          </Paragraph>
+          <capacitor-hubspot-form formId="df7c28cd-d123-4ea2-aa2c-d7cb304fd398" />
+        </site-modal>
       </Host>
     )
   }
@@ -551,18 +563,6 @@ export class EnterprisePage {
     return (
       <section id="ebook">
         <ResponsiveContainer>
-          <site-modal
-            open={this.ebookModalOpen}
-            onModalClose={() => (this.ebookModalOpen = false)}
-          >
-            <Heading level={2}>
-              Free Install Doctor eBook
-            </Heading>
-            <Paragraph>
-              Fill out and submit the form below to get your free copy of <strong>Open-Source, Cross-OS Workstations with Install Doctor</strong> sent to your e-mail.
-            </Paragraph>
-            <capacitor-hubspot-form formId="df7c28cd-d123-4ea2-aa2c-d7cb304fd398" />
-          </site-modal>
           <div class="wrapper">
             <prismic-image image={background} class="background" />
             <div class="content">
@@ -847,6 +847,15 @@ export class EnterprisePage {
               <sup>{supertext}</sup>
             </p>
             <Heading level={2}>{title}</Heading>
+            <Paragraph>
+              Install Doctor is a well-known and respected provider of technical support services. By engaging with the support team, you can tap into expertise and knowledge to help solve any problems or issues you may be experiencing with your product or business. This can save you valuable time and resources that would otherwise be spent trying to figure things out on your own.
+            </Paragraph>
+            <Paragraph>
+              Secondly, you can gain insights into best practices and industry trends that can help you improve your product or business by leveraging our support's expertise. Our support team may have worked with other companies in your industry and can share their experiences and recommendations with you. We also have access to data and analytics that can help you make better-informed decisions about your product or business strategy. Overall, engaging with Install Doctor's support can help you stay ahead of the curve and position your product or business for success.
+            </Paragraph>
+            <Paragraph>
+              <b>Submit your inquiry below and we will respond to you in a timely fashion.</b>
+            </Paragraph>
           </div>
           <capacitor-hubspot-form formId="b74a09f0-f963-47d2-b7d0-43d74dae366f" />
         </ResponsiveContainer>

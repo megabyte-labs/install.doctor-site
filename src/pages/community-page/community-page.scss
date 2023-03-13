@@ -97,3 +97,13 @@
 #newsletter {
   margin-block-end: 160px;
 }
+
+#what-is {
+  margin-bottom: 0;
+}
+
+@media (max-width: 640px) {
+  #top .image-wrapper {
+    max-width: 430px !important;
+  }
+}

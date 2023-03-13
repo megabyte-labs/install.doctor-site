@@ -81,6 +81,7 @@ export class SolutionPage implements ComponentInterface {
             this.framework.name + ' using Install Doctor, an intuitive, well-designed provisioning system compatible with most operating systems.'
           }
         />
+        <site-header class="heading-container" sticky={true} />
         <ResponsiveContainer id="top" as="section">
           <div class="heading-group">
             <webp-image

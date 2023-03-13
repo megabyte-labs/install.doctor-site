@@ -7,8 +7,6 @@ import {
 } from '@ionic-internal/ionic-ds'
 import { Components as DS } from '@ionic-internal/ionic-ds/dist/types/components'
 
-import { href } from '@stencil/router'
-
 import parseISO from 'date-fns/parseISO'
 
 import { BlogData } from 'src/data.server/blog'
@@ -281,7 +279,7 @@ export class BlogPost {
             window.scrollTo(0, 0)
           }}
         >
-          <a {...href(`/blog/${this.data.slug}`)}>{this.data!.title}</a>
+          <a href={`/blog/${this.data.slug}`}>{this.data!.title}</a>
         </Heading>
         <PostAuthor />
         <PostFeaturedImage preview={this.preview} post={this.data} />
@@ -290,7 +288,7 @@ export class BlogPost {
 
         <a
           class="continue-reading ui-paragraph-2"
-          {...href(`/blog/${this.data.slug}`)}
+          href={`/blog/${this.data.slug}`}
         >
           <span onClick={() => window.scrollTo(0, 0)}>
             Continue reading <span class="arrow">-&gt;</span>

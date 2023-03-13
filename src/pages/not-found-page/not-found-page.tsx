@@ -33,7 +33,7 @@ export class NotFoundPage {
   NotFound = () => (
     <ResponsiveContainer id="not-found" as="section">
       <Heading class="top-text" level={1}>404: Not Found</Heading>
-      <Paragraph class="top-text">This page does not exist! The <a {...href('/')}>home page</a> might be a good place to start.</Paragraph>
+      <Paragraph class="top-text">Houston, we have a problem! This URL does not link to an existing page. You might want to start with the <a {...href('/')}>home page</a> or go to the <a href="/docs">documentation portal</a> welcome page.</Paragraph>
       <webp-image alt="404 not found graphic" src="/assets/img/404.png" loading="eager"></webp-image>
     </ResponsiveContainer>
   );

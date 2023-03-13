@@ -2,6 +2,8 @@ import { Component, Host, h, Prop } from '@stencil/core'
 import {
   ResponsiveContainer,
   PrismicRichText,
+  Paragraph,
+  Heading,
   Grid,
   Col,
 } from '@ionic-internal/ionic-ds'
@@ -22,7 +24,7 @@ export class CommunityPage {
       {
         "type": "paragraph",
         "spans": [],
-        "text": "Install Doctor is a large and growing project with a passionate community. Engage with the Install Doctor team and other helpful community members through the official forum, GitHub community, Twitter, and more."
+        "text": "Install Doctor is a large and growing project with a passionate community. Engage with the Install Doctor team and other helpful community members through Discord, GitHub Discussions, Twitter, and more."
       }
     ],
     "top__list": [
@@ -209,7 +211,7 @@ export class CommunityPage {
                 "data": {
                   "target": "_blank",
                   "link_type": "Web",
-                  "url": "https://megabyte-labs.slack.com"
+                  "url": "https://app.slack.com/client/T01ABCG4NK1/C04TDHV564E"
                 }
               }
             ],
@@ -259,7 +261,7 @@ export class CommunityPage {
   }
 
   render() {
-    const { Top, Websites } = this
+    const { Top, Websites, WhyJoin } = this
 
     return (
       <Host>
@@ -272,6 +274,7 @@ export class CommunityPage {
         <site-header class="heading-container" sticky={true} />
         <Top />
         <Websites />
+        <WhyJoin />
         <pre-footer />
         <capacitor-site-footer />
       </Host>
@@ -328,4 +331,26 @@ export class CommunityPage {
       </ResponsiveContainer>
     )
   };
+
+  WhyJoin = () => {
+    return (
+      <ResponsiveContainer id="what-is" as="section">
+        <div class="ui-container">
+          <ion-icon class="what-is-info-icon" name="information-circle-outline"></ion-icon>
+          <Heading class="quote-summary" level={2}>
+            <b>Why join the Install Doctor community?</b>
+          </Heading>
+          <Paragraph class="quote-summary">
+            Joining Install Doctor's community pages can be incredibly useful and important for the project's growth. These platforms provide an avenue for the project's developers and contributors to communicate, collaborate, and share their ideas, issues, and solutions. By joining these platforms, users can stay up-to-date with the latest project developments, contribute to ongoing discussions, and offer feedback on the project's progress.
+          </Paragraph>
+          <Paragraph class="quote-summary">
+            For developers and contributors, joining these community pages can be an excellent opportunity to learn and grow their skills. By interacting with other developers and contributors, they can gain insight into best practices, troubleshoot problems, and receive guidance on how to improve their code. Furthermore, these platforms also provide a space for users to contribute to the project's documentation, which can be a valuable asset for other users and new contributors.
+          </Paragraph>
+          <Paragraph class="quote-summary">
+            Finally, joining Install Doctor's community pages can also help to promote the project and increase its visibility. By engaging with users on social media platforms like Twitter, the project can reach a wider audience and attract new contributors. Moreover, by participating in discussions and sharing their experiences, users can help to build a sense of community around the project, which can be a significant factor in the project's long-term success. In summary, joining Install Doctor's community pages can be a mutually beneficial experience for both users and the project.
+          </Paragraph>
+        </div>
+      </ResponsiveContainer>
+    )
+  }
 }

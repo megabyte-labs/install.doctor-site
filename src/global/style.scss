@@ -508,3 +508,157 @@ not-found-page, terms-service-page, privacy-policy-page, enterprise-page, landin
     opacity: 0;
   }
 }
+
+#what-is {
+  margin-bottom: 69px;
+  padding-bottom: 69px;
+  padding-top: 69px;
+  margin-left: 0;
+  padding-left: 59px;
+  margin-right: 0 !important;
+  background-color: var(--c-indigo-10);
+  width: 100%;
+
+  h2 {
+    margin-top: 0;
+    font-size: 24px;
+  }
+
+  .quote-summary {
+    max-width: 780px;
+      border-left: 5px solid black;
+      padding-left: 37px;
+      padding-right: 37px;
+      padding-top: 14px;
+      padding-bottom: 14px;
+      margin-bottom: 0;
+  }
+
+  .quote-summary-list {
+    margin-top: 0;
+    padding-left: 69px;
+
+    li {
+      font-family: var(--p3-font);
+      font-size: var(--p3-size);
+      line-height: var(--p3-leading);
+      letter-spacing: var(--p3-tracking);
+      font-weight: var(--p3-weight);
+      color: var(--p3-color);
+      text-transform: var(--p3-transform);
+    }
+  }
+
+  .what-is-info-icon {
+    position: absolute;
+    right: 0;
+    margin-top: 0;
+    margin-right: 69px;
+    font-size: 124px;
+    color: var(--c-indigo-30);
+  }
+
+  @media screen and (max-width: 1044px) {
+    .what-is-info-icon {
+      display: none;
+    }
+  }
+}
+
+@media (max-width: 720px) {
+  #what-is {
+    padding-left: 14px !important;
+  }
+}
+
+#demo {
+  .heading-group {
+    max-width: 724px;
+    text-align: left;
+    padding-top: 69px;
+    margin: 0 auto;
+    padding-bottom: 32px;
+  }
+
+  h2 {
+    text-align: center;
+  }
+
+  p {
+    text-align: left;
+  }
+}
+
+enterprise-page {
+  #demo {
+    .heading-group {
+      margin-bottom: 0;
+    }
+  }
+}
+
+#onesignal-slidedown-container {
+  * {
+    font-family: var(--f-family-text) !important;
+  }
+
+  #email-input-with-validation-element {
+    label {
+      text-transform: uppercase;
+    color: var(--c-gray-30);
+    letter-spacing: 2.4px;
+    font-family: var(--f-family-display);
+    font-weight: 700;
+    font-size: 12px;
+    }
+  }
+
+  #onesignal-slidedown-allow-button {
+    font-weight: 600 !important;
+    text-transform: capitalize !important;
+    font-family: var(--f-family-text) !important;
+    --c-text: #fff;
+    --elevation: 0px 0px 0px 0px rgba(0, 0, 0, 0);
+    --f-size: 14px;
+    --f-family: var(--f-family-text);
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    border: none;
+    line-height: 100%;
+    outline: rgba(0, 0, 0, 0) solid 1px;
+    box-shadow: var(--elevation);
+    white-space: nowrap;
+    padding: var(--padding);
+    letter-spacing: 0.08em;
+    font-size: var(--f-size);
+    height: var(--height);
+    transition: box-shadow 0.2s ease-out 0s, background-color 0.2s ease-out 0s, -webkit-box-shadow 0.2s ease-out 0s;
+    --padding: 16px 28px;
+    --height: 51px;
+    border-radius: var(--radius-4);
+    --c-background: var(--c-cyan-90);
+    --c-focus: #D3ECFF;
+    --c-background--hover: var(--c-cyan-80);
+    --c-background--active: var(--c-cyan-100);
+  }
+
+  #onesignal-slidedown-allow-button:hover {
+    background: #5cbeff !important;
+  }
+
+  #onesignal-slidedown-allow-button:active {
+    background: #33adff !important;
+  }
+}
+
+.modal__content .modal__close-button ion-icon {
+  font-size: 24px !important;
+  margin-top: 0 !important;
+}
+
+#not-found p {
+  max-width: 670px;
+    margin: 0 auto;
+}

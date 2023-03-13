@@ -10,12 +10,12 @@ export const SolutionMacOS = () => {
       <ResponsiveContainer id="what-is" as="section">
         <div class="ui-container">
           <ion-icon class="what-is-info-icon" name="information-circle-outline"></ion-icon>
-          <Paragraph class="quote-summary">
-            <b>What is macOS and why should you provision it with Install Doctor?</b>
-          </Paragraph>
+          <Heading class="quote-summary" level={2}>
+            What is macOS and why should you provision it with Install Doctor?
+          </Heading>
           <Paragraph class="quote-summary">
             If you need to provision macOS, using an installation framework like Install Doctor can make the process faster, easier, and more reliable. Here are some of the main reasons why you would want to use Install Doctor to provision macOS:
-        </Paragraph>
+          </Paragraph>
           <ul class="quote-summary quote-summary-list">
             <li><b>Optimized configurations for thousands of programs</b>: Install Doctor comes with preconfigured settings for thousands of popular programs, which can help to ensure that your applications run optimally on your macOS system.</li>
             <li><b>Advanced terminal settings</b>: Install Doctor includes terminal settings that use the best open-source projects available, providing a powerful and flexible command-line environment that you can customize to suit your needs. With these settings, you can take advantage of features and capabilities that you may not have even known were possible.</li>
@@ -26,7 +26,7 @@ export const SolutionMacOS = () => {
 
           <Paragraph class="quote-summary">
             Overall, if you need to provision macOS systems, using an installation framework like Install Doctor can make the process faster, easier, and more reliable. With optimized configurations for thousands of programs, advanced terminal settings, and automatic macOS-specific optimizations, Install Doctor can help you to configure your system to run optimally and securely. Additionally, the time-saving automation features can help to streamline the provisioning process, freeing up your time for other tasks.
-        </Paragraph>
+          </Paragraph>
         </div>
       </ResponsiveContainer>
       <ResponsiveContainer id="getting-started" as="section">
@@ -44,7 +44,7 @@ export const SolutionMacOS = () => {
             <code-snippet
               language="shell-session"
               code={`
-bash <(curl -sSL https://install.doctor)
+bash <(curl -sSL https://install.doctor/start)
 `}
             />
           </div>

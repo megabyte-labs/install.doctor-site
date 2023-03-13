@@ -33,6 +33,13 @@
       }
     }
 
+    @media (max-width: 500px) {
+      h4 {
+        font-size: 14px;
+        letter-spacing: 1px;
+      }
+    }
+
     .footer-social {
       font-size: 43px;
       display: inline-block;
@@ -42,6 +49,13 @@
       margin-left: 8px;
       margin-right: 8px;
       cursor: pointer;
+    }
+
+    @media (max-width: 500px) {
+      .footer-social {
+      font-size: 30px;
+      top: 8px;
+      }
     }
 
     .footer-social.facebook {

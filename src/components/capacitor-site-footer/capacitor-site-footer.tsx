@@ -163,7 +163,7 @@ export class CapacitorSiteFooter {
                   <a class="footer-social gitlab" href="https://gitlab.com/megabyte-labs/install.doctor" target="_blank" rel="noopener">
                     <ion-icon name="logo-gitlab"></ion-icon>
                   </a>
-                  <a class="footer-social slack" href="https://megabyte-labs.slack.com" target="_blank" rel="noopener">
+                  <a class="footer-social slack" href="https://app.slack.com/client/T01ABCG4NK1/C04TDHV564E" target="_blank" rel="noopener">
                     <ion-icon name="logo-slack"></ion-icon>
                   </a>
                   <a class="footer-social discord" href="https://discord.com/channels/1077138419953713222/1077138479928049734" target="_blank" rel="noopener">

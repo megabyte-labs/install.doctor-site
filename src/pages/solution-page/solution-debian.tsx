@@ -10,21 +10,21 @@ export const SolutionDebian = () => {
       <ResponsiveContainer id="what-is" as="section">
         <div class="ui-container">
           <ion-icon class="what-is-info-icon" name="information-circle-outline"></ion-icon>
-          <Paragraph class="quote-summary">
-            <b>What is Debian and why should you provision it with Install Doctor?</b>
-          </Paragraph>
+          <Heading class="quote-summary" level={2}>
+            What is Debian and why should you provision it with Install Doctor?
+          </Heading>
           <Paragraph class="quote-summary">
             Debian is a widely used Linux distribution that is known for its stability, security, and open-source nature. It is maintained by the Debian Project, which is a community of volunteers who work together to develop and maintain the software. Debian is popular among both users and developers due to its vast repository of free, open-source software packages and its commitment to the principles of free software.
-        </Paragraph>
+          </Paragraph>
           <Paragraph class="quote-summary">
             One reason why you would want to provision Debian properly with an installation framework like Install Doctor is that it can save you time and effort. The installation process for any operating system can be time-consuming and complicated, especially if you are installing it on multiple systems. An installation framework like Install Doctor can automate many of the tasks involved in installing and configuring the operating system, making the process faster and more efficient.
-        </Paragraph>
+          </Paragraph>
           <Paragraph class="quote-summary">
             Another reason to use Install Doctor to provision Debian is that it has been heavily tested on Debian and is designed to work seamlessly with the operating system. This means that you can be confident that the installation process will be smooth and reliable, without any compatibility issues or other problems. Additionally, Install Doctor supports the installation of thousands of free, open-source software packages, which makes it easier to get up and running with the software you need.
-        </Paragraph>
+          </Paragraph>
           <Paragraph class="quote-summary">
             In summary, Debian is a popular and well-respected Linux distribution that is known for its stability, security, and vast repository of free, open-source software packages. Provisioning it properly with an installation framework like Install Doctor can save time, increase efficiency, and ensure that installations are consistent and reliable. Furthermore, Install Doctor has been extensively tested on Debian and supports the installation of thousands of free, open-source software packages, making it an ideal tool for provisioning Debian systems.
-        </Paragraph>
+          </Paragraph>
         </div>
       </ResponsiveContainer>
       <ResponsiveContainer id="getting-started" as="section">
@@ -42,7 +42,7 @@ export const SolutionDebian = () => {
             <code-snippet
               language="shell-session"
               code={`
-bash <(curl -sSL https://install.doctor)
+bash <(curl -sSL https://install.doctor/start)
 `}
             />
           </div>

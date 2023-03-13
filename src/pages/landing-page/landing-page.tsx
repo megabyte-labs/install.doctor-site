@@ -404,7 +404,7 @@ export class LandingPage {
         "spans": [
           {
             "start": 126,
-            "end": 135,
+            "end": 136,
             "type": "hyperlink",
             "data": {
               "link_type": "Web",
@@ -413,7 +413,7 @@ export class LandingPage {
           },
           {
             "start": 137,
-            "end": 143,
+            "end": 144,
             "type": "hyperlink",
             "data": {
               "link_type": "Web",
@@ -422,7 +422,7 @@ export class LandingPage {
           },
           {
             "start": 145,
-            "end": 151,
+            "end": 152,
             "type": "hyperlink",
             "data": {
               "link_type": "Web",
@@ -431,7 +431,7 @@ export class LandingPage {
           },
           {
             "start": 153,
-            "end": 159,
+            "end": 160,
             "type": "hyperlink",
             "data": {
               "link_type": "Web",
@@ -449,7 +449,7 @@ export class LandingPage {
           },
           {
             "start": 168,
-            "end": 173,
+            "end": 174,
             "type": "hyperlink",
             "data": {
               "link_type": "Web",
@@ -458,7 +458,7 @@ export class LandingPage {
           },
           {
             "start": 175,
-            "end": 181,
+            "end": 182,
             "type": "hyperlink",
             "data": {
               "link_type": "Web",
@@ -755,6 +755,18 @@ export class LandingPage {
         <Cta />
         <pre-footer />
         <capacitor-site-footer />
+        <site-modal
+          open={this.ebookModalOpen}
+          onModalClose={() => (this.ebookModalOpen = false)}
+        >
+          <Heading level={2}>
+            Free Install Doctor eBook
+          </Heading>
+          <Paragraph>
+            Fill out and submit the form below to get your free copy of <strong>Open-Source, Cross-OS Workstations with Install Doctor</strong> sent to your e-mail.
+          </Paragraph>
+          <capacitor-hubspot-form formId="df7c28cd-d123-4ea2-aa2c-d7cb304fd398" />
+        </site-modal>
       </Host>
     )
   }
@@ -1054,18 +1066,6 @@ firefoxAddOns:
     return (
       <section id="ebook">
         <ResponsiveContainer>
-          <site-modal
-            open={this.ebookModalOpen}
-            onModalClose={() => (this.ebookModalOpen = false)}
-          >
-            <Heading level={2}>
-              Free Install Doctor eBook
-            </Heading>
-            <Paragraph>
-              Fill out and submit the form below to get your free copy of <strong>Open-Source, Cross-OS Workstations with Install Doctor</strong> sent to your e-mail.
-            </Paragraph>
-            <capacitor-hubspot-form formId="df7c28cd-d123-4ea2-aa2c-d7cb304fd398" />
-          </site-modal>
           <div class="wrapper">
             <prismic-image image={background} class="background" />
             <div class="content">

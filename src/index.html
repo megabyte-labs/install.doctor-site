@@ -78,19 +78,110 @@
     <script type="module" src="/build/site.esm.js"></script>
     <script nomodule src="/build/site.js"></script>
 
-    <link rel="preload" href="/assets/fonts/inter/Inter-variable-ASCII-subset.woff2" as="font" type="font/woff2"
+    <link rel="preload" href="/build/svg/ellipsis-vertical.svg" as="image" type="image/svg+xml" />
+    <link rel="preload" href="/assets/fonts/inter-v12-latin-regular.woff2" as="font" type="font/woff2"
       crossOrigin="anonymous" />
-    <link rel="preload" href="/assets/fonts/eina/eina-01-bold.woff2" as="font" type="font/woff2"
+    <link rel="preload" href="/assets/fonts/inter-v12-latin-500.woff2" as="font" type="font/woff2"
       crossOrigin="anonymous" />
-    <link rel="preload" href="/assets/fonts/eina/eina-01-semibold.woff2" as="font" type="font/woff2"
+    <link rel="preload" href="/assets/fonts/inter-v12-latin-600.woff2" as="font" type="font/woff2"
       crossOrigin="anonymous" />
-    <link rel="preload" href="/assets/fonts/roboto-mono-v22-latin-700.woff2" as="font" type="font/woff2"
+    <link rel="preload" href="/assets/fonts/inter-v12-latin-700.woff2" as="font" type="font/woff2"
+      crossOrigin="anonymous" />
+    <link rel="preload" href="/assets/fonts/roboto-mono-v22-latin-regular.woff2" as="font" type="font/woff2"
       crossOrigin="anonymous" />
     <link rel="preload" href="/assets/fonts/roboto-mono-v22-latin-regular.woff2" as="font" type="font/woff2"
       crossOrigin="anonymous" />
     <link rel="preconnect" href="https://TODO-dsn.algolia.net" crossorigin />
 
+    <style>
+@font-face {
+  font-display: swap;
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 400;
+  src: url('/assets/fonts/inter-v12-latin-regular.eot'); /* IE9 Compat Modes */
+  src: url('/assets/fonts/inter-v12-latin-regular.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+       url('/assets/fonts/inter-v12-latin-regular.woff2') format('woff2'), /* Super Modern Browsers */
+       url('/assets/fonts/inter-v12-latin-regular.woff') format('woff'), /* Modern Browsers */
+       url('/assets/fonts/inter-v12-latin-regular.ttf') format('truetype'), /* Safari, Android, iOS */
+       url('/assets/fonts/inter-v12-latin-regular.svg#Inter') format('svg'); /* Legacy iOS */
+}
+@font-face {
+  font-display: swap;
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 500;
+  src: url('/assets/fonts/inter-v12-latin-500.eot'); /* IE9 Compat Modes */
+  src: url('/assets/fonts/inter-v12-latin-500.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+       url('/assets/fonts/inter-v12-latin-500.woff2') format('woff2'), /* Super Modern Browsers */
+       url('/assets/fonts/inter-v12-latin-500.woff') format('woff'), /* Modern Browsers */
+       url('/assets/fonts/inter-v12-latin-500.ttf') format('truetype'), /* Safari, Android, iOS */
+       url('/assets/fonts/inter-v12-latin-500.svg#Inter') format('svg'); /* Legacy iOS */
+}
+@font-face {
+  font-display: swap;
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 600;
+  src: url('/assets/fonts/inter-v12-latin-600.eot'); /* IE9 Compat Modes */
+  src: url('/assets/fonts/inter-v12-latin-600.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+       url('/assets/fonts/inter-v12-latin-600.woff2') format('woff2'), /* Super Modern Browsers */
+       url('/assets/fonts/inter-v12-latin-600.woff') format('woff'), /* Modern Browsers */
+       url('/assets/fonts/inter-v12-latin-600.ttf') format('truetype'), /* Safari, Android, iOS */
+       url('/assets/fonts/inter-v12-latin-600.svg#Inter') format('svg'); /* Legacy iOS */
+}
+
+@font-face {
+  font-display: swap;
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 700;
+  src: url('/assets/fonts/inter-v12-latin-700.eot'); /* IE9 Compat Modes */
+  src: url('/assets/fonts/inter-v12-latin-700.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+       url('/assets/fonts/inter-v12-latin-700.woff2') format('woff2'), /* Super Modern Browsers */
+       url('/assets/fonts/inter-v12-latin-700.woff') format('woff'), /* Modern Browsers */
+       url('/assets/fonts/inter-v12-latin-700.ttf') format('truetype'), /* Safari, Android, iOS */
+       url('/assets/fonts/inter-v12-latin-700.svg#Inter') format('svg'); /* Legacy iOS */
+}
+      @font-face {
+  font-display: swap;
+  font-family: 'Roboto Mono';
+  font-style: normal;
+  font-weight: 400;
+  src: url('/assets/fonts/roboto-mono-v22-latin-regular.eot'); /* IE9 Compat Modes */
+  src: url('/assets/fonts/roboto-mono-v22-latin-regular.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+       url('/assets/fonts/roboto-mono-v22-latin-regular.woff2') format('woff2'), /* Super Modern Browsers */
+       url('/assets/fonts/roboto-mono-v22-latin-regular.woff') format('woff'), /* Modern Browsers */
+       url('/assets/fonts/roboto-mono-v22-latin-regular.ttf') format('truetype'), /* Safari, Android, iOS */
+       url('/assets/fonts/roboto-mono-v22-latin-regular.svg#RobotoMono') format('svg'); /* Legacy iOS */
+}
+
+@font-face {
+  font-display: swap;
+  font-family: 'Roboto Mono';
+  font-style: normal;
+  font-weight: 700;
+  src: url('/assets/fonts/roboto-mono-v22-latin-700.eot'); /* IE9 Compat Modes */
+  src: url('/assets/fonts/roboto-mono-v22-latin-700.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+       url('/assets/fonts/roboto-mono-v22-latin-700.woff2') format('woff2'), /* Super Modern Browsers */
+       url('/assets/fonts/roboto-mono-v22-latin-700.woff') format('woff'), /* Modern Browsers */
+       url('/assets/fonts/roboto-mono-v22-latin-700.ttf') format('truetype'), /* Safari, Android, iOS */
+       url('/assets/fonts/roboto-mono-v22-latin-700.svg#RobotoMono') format('svg'); /* Legacy iOS */
+}
+    </style>
     <link rel="stylesheet" href="/build/site.css" />
+
+    <noscript>
+      <link rel="stylesheet" href="/assets/site-offline.css" />
+    </noscript>
+
+    <noscript>
+      <style>
+        .tabs-wrapper {
+          display: none !important;
+        }
+      </style>
+    </noscript>
 
     <script type="application/ld+json">
       {

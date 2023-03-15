@@ -122,38 +122,6 @@ landing-page {
     margin-bottom: 14px;
   }
 
-  .ui-col.ui-col-6.ui-col-sm-3:nth-child(1) {
-    background: #cfecfa;
-  }
-
-  .ui-col.ui-col-6.ui-col-sm-3:nth-child(2) {
-    background: #f5caeb;
-  }
-
-  .ui-col.ui-col-6.ui-col-sm-3:nth-child(3) {
-    background: #fdcbdd;
-  }
-
-  .ui-col.ui-col-6.ui-col-sm-3:nth-child(4) {
-    background: #b7d2fa
-  }
-
-  .ui-col.ui-col-6.ui-col-sm-3:nth-child(5) {
-    background: #cfcfcf;
-  }
-
-  .ui-col.ui-col-6.ui-col-sm-3:nth-child(6) {
-    background: #e1edff;
-  }
-
-  .ui-col.ui-col-6.ui-col-sm-3:nth-child(7) {
-    background: #fbdbd0;
-  }
-
-  .ui-col.ui-col-6.ui-col-sm-3:nth-child(8) {
-    background: #cceeff;
-  }
-
   #features .heading-group .ui-heading {
     max-width: 500px;
   }
@@ -164,22 +132,6 @@ landing-page {
 
   #cta .ui-heading-2 {
     max-width: 44rem;
-  }
-
-  #products .ui-col.ui-col-6.ui-col-sm-3:nth-child(1) {
-    background: #cccccc;
-  }
-
-  #products .ui-col.ui-col-6.ui-col-sm-3:nth-child(2) {
-    background: #c6d2e5;
-  }
-
-  #products .ui-col.ui-col-6.ui-col-sm-3:nth-child(3) {
-    background: #fad6d9;
-  }
-
-  #products .ui-col.ui-col-6.ui-col-sm-3:nth-child(4) {
-    background: #cccccc
   }
 }
 
@@ -258,81 +210,6 @@ capacitor-site-footer {
 
 #homing-particles > canvas:nth-child(1) {
   display: block;
-}
-
-/* roboto-mono-regular - latin */
-@font-face {
-  font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
-  font-family: 'Roboto Mono';
-  font-style: normal;
-  font-weight: 400;
-  src: url('/assets/fonts/roboto-mono-v22-latin-regular.eot'); /* IE9 Compat Modes */
-  src: url('/assets/fonts/roboto-mono-v22-latin-regular.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
-       url('/assets/fonts/roboto-mono-v22-latin-regular.woff2') format('woff2'), /* Super Modern Browsers */
-       url('/assets/fonts/roboto-mono-v22-latin-regular.woff') format('woff'), /* Modern Browsers */
-       url('/assets/fonts/roboto-mono-v22-latin-regular.ttf') format('truetype'), /* Safari, Android, iOS */
-       url('/assets/fonts/roboto-mono-v22-latin-regular.svg#RobotoMono') format('svg'); /* Legacy iOS */
-}
-/* roboto-mono-700 - latin */
-@font-face {
-  font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
-  font-family: 'Roboto Mono';
-  font-style: normal;
-  font-weight: 700;
-  src: url('/assets/fonts/roboto-mono-v22-latin-700.eot'); /* IE9 Compat Modes */
-  src: url('/assets/fonts/roboto-mono-v22-latin-700.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
-       url('/assets/fonts/roboto-mono-v22-latin-700.woff2') format('woff2'), /* Super Modern Browsers */
-       url('/assets/fonts/roboto-mono-v22-latin-700.woff') format('woff'), /* Modern Browsers */
-       url('/assets/fonts/roboto-mono-v22-latin-700.ttf') format('truetype'), /* Safari, Android, iOS */
-       url('/assets/fonts/roboto-mono-v22-latin-700.svg#RobotoMono') format('svg'); /* Legacy iOS */
-}
-
-@font-face {
-  font-family: "IonEina";
-  font-display: swap;
-  src: local("IonEina Bold"),url("/assets/fonts/ion-eina/ion-eina-01-bold.woff2") format("woff2"),url("/assets/fonts/ion-eina/ion-eina-01-bold.woff") format("woff"),url("/assets/fonts/ion-eina/ion-eina-01-bold.ttf") format("ttf"),url("/assets/fonts/ion-eina/ion-eina-01-bold.eot") format("eot");
-  font-weight: 700;
-  unicode-range: U+000-5FF, U+2019
-}
-
-@font-face {
-  font-family: "IonEina";
-  font-display: swap;
-  src: local("IonEina Semibold"),url("/assets/fonts/ion-eina/ion-eina-01-semibold.woff2") format("woff2"),url("/assets/fonts/ion-eina/ion-eina-01-semibold.woff") format("woff"),url("/assets/fonts/ion-eina/ion-eina-01-semibold.ttf") format("ttf"),url("/assets/fonts/ion-eina/ion-eina-01-semibold.eot") format("eot");
-  font-weight: 600;
-  unicode-range: U+000-5FF, U+2019
-}
-
-@font-face {
-  font-family: "IonEina";
-  font-display: swap;
-  src: local("IonEina Regular"),url("/assets/fonts/ion-eina/ion-eina-01-regular.woff2") format("woff2"),url("/assets/fonts/ion-eina/ion-eina-01-regular.woff") format("woff"),url("/assets/fonts/ion-eina/ion-eina-01-regular.ttf") format("ttf"),url("/assets/fonts/ion-eina/ion-eina-01-regular.eot") format("eot");
-  font-weight: 400;
-  unicode-range: U+000-5FF, U+2019
-}
-
-@font-face {
-  font-family: "Eina";
-  font-display: swap;
-  src: local("Eina Bold"),url("/assets/fonts/eina/eina-01-bold.woff2") format("woff2"),url("/assets/fonts/eina/eina-01-bold.woff") format("woff"),url("/assets/fonts/eina/eina-01-bold.ttf") format("ttf"),url("/assets/fonts/eina/eina-01-bold.eot") format("eot");
-  font-weight: 700;
-  unicode-range: U+000-5FF, U+2019
-}
-
-@font-face {
-  font-family: "Eina";
-  font-display: swap;
-  src: local("Eina Semibold"),url("/assets/fonts/eina/eina-01-semibold.woff2") format("woff2"),url("/assets/fonts/eina/eina-01-semibold.woff") format("woff"),url("/assets/fonts/eina/eina-01-semibold.ttf") format("ttf"),url("/assets/fonts/eina/eina-01-semibold.eot") format("eot");
-  font-weight: 600;
-  unicode-range: U+000-5FF, U+2019
-}
-
-@font-face {
-  font-family: "Eina";
-  font-display: swap;
-  src: local("Eina Regular"),url("/assets/fonts/eina/eina-01-regular.woff2") format("woff2"),url("/assets/fonts/eina/eina-01-regular.woff") format("woff"),url("/assets/fonts/eina/eina-01-regular.ttf") format("ttf"),url("/assets/fonts/eina/eina-01-regular.eot") format("eot");
-  font-weight: 400;
-  unicode-range: U+000-5FF, U+2019
 }
 
 blog-post h2 {
@@ -501,7 +378,7 @@ not-found-page {
     }
 }
 
-not-found-page, terms-service-page, privacy-policy-page, enterprise-page, landing-page, blog-page, blog-post, community-page {
+not-found-page, terms-service-page, privacy-policy-page, enterprise-page, landing-page, blog-page, blog-post, community-page, solution-page {
   > :not(site-header) {
     animation: fadeIn 0.52s ease-out forwards;
     animation-delay: 0.24s;
@@ -661,4 +538,16 @@ enterprise-page {
 #not-found p {
   max-width: 670px;
     margin: 0 auto;
+}
+
+@media (max-width: 640px) {
+  landing-page {
+    #top .image-wrapper img {
+      --width: 200px;
+    max-width: var(--width);
+    left: calc(50% - var(--width) / 2) !important;
+    top: -220px;
+    position: absolute;
+    }
+  }
 }

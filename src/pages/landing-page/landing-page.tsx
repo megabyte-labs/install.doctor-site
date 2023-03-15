@@ -801,7 +801,7 @@ export class LandingPage {
                 {secondary}
               </Button>
             </div>
-            <a class="link | ui-paragraph-4" {...href('/docs/customization')}>
+            <a class="link | ui-paragraph-4" href="/docs/customization">
               {top__link}
               <span class="arrow"> -&gt;</span>
             </a>

@@ -31,10 +31,6 @@ export const config: Config = {
           dest: 'docs'
         },
         {
-          src: '../node_modules/@ionic-internal/ionic-ds/www/assets/fonts',
-          dest: 'assets/fonts'
-        },
-        {
           src: './android-chrome-192x192.png',
           dest: 'android-chrome-192x192.png'
         },

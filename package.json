@@ -4,9 +4,10 @@
   "version": "0.0.1",
   "description": "Install Doctor Site",
   "scripts": {
-    "build": "npm run build:noscript && stencil build --prerender --ci",
-    "build:noscript": "rm src/global/style.scss && cd src/global && ln -s style-offline.scss style.scss && cd ../.. && npm run build && cp www/build/site.css src/site-noscript.css",
-    "deploy": "npm run build && firebase deploy",
+    "build": "stencil build --prerender --ci",
+    "build:noscript": "rm src/global/style.scss && cd src/global && ln -s style-offline.scss style.scss && cd ../.. && npm run build && cp www/build/site.css src/site-noscript.css && cd src/global && rm style.scss && ln -s style-default.scss style.scss && cd ../..",
+    "build:prod": "npm run build:noscript && npm run build",
+    "deploy": "npm run build:prod && firebase deploy",
     "start": "stencil build --dev --watch --serve --ssr"
   },
   "husky": {

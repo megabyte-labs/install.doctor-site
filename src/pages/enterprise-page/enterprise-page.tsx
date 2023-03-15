@@ -854,7 +854,10 @@ export class EnterprisePage {
               Secondly, you can gain insights into best practices and industry trends that can help you improve your product or business by leveraging our support's expertise. Our support team may have worked with other companies in your industry and can share their experiences and recommendations with you. We also have access to data and analytics that can help you make better-informed decisions about your product or business strategy. Overall, engaging with Install Doctor's support can help you stay ahead of the curve and position your product or business for success.
             </Paragraph>
             <Paragraph>
-              <b>Submit your inquiry below and we will respond to you in a timely fashion.</b>
+              <b class="noshow-noscript">Submit your inquiry below and we will respond to you in a timely fashion.</b>
+              <noscript>
+                <b>Send an e-mail to <a href="mailto:help@install.doctor">help@install.doctor</a> and we will respond to you in a timely fashion.</b>
+              </noscript>
             </Paragraph>
           </div>
           <capacitor-hubspot-form formId="b74a09f0-f963-47d2-b7d0-43d74dae366f" />

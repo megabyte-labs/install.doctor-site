@@ -80,6 +80,7 @@ capacitor-site-footer {
     @media (max-width: $screen-xs-max) {
       margin-block-end: 2rem;
     }
+
     @media (min-width: 1024px) {
       text-align: left;
       justify-content: space-between;
@@ -88,7 +89,7 @@ capacitor-site-footer {
     --h4-color: var(--c-carbon-100);
     --p4-color: var(--c-indigo-70);
 
-    > * {
+    >* {
       margin-block-start: 16px;
     }
   }
@@ -114,10 +115,17 @@ capacitor-site-footer {
     }
   }
 
-  img.logo {
+  .logo img {
     width: 200px;
     margin-bottom: 7px;
     filter: invert(55%) sepia(5%) saturate(1382%) hue-rotate(178deg) brightness(92%) contrast(88%);
+  }
+
+  @media (max-width: 767px) {
+    .logo img {
+      margin: 0 auto;
+      margin-bottom: 14px;
+    }
   }
 
   .ui-heading {
@@ -160,7 +168,7 @@ capacitor-site-footer {
     align-items: center;
     justify-content: center;
 
-    > * {
+    >* {
       margin-block-start: 16px;
     }
 
@@ -232,9 +240,11 @@ capacitor-site-footer {
           background: #24a7ff;
           box-shadow: none;
         }
+
         &:active {
           background: #0090f0;
         }
+
         &:focus {
           outline: 1px solid rgba(0, 0, 0, 0);
           box-shadow: 0px 0px 0px 3px #c2d8ff;
@@ -252,7 +262,7 @@ capacitor-site-footer {
     }
   }
 
-  p > ion-icon {
+  p>ion-icon {
     font-size: 24px;
     margin-right: 8px;
   }

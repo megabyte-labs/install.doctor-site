@@ -63,7 +63,7 @@ export class SolutionPage implements ComponentInterface {
             <Paragraph>Get it done the easy way by leveraging our team of <b>{this.framework.name} experts</b>.</Paragraph>
             <Paragraph>Guaranteed response SLAs to support your business needs. Our professional support team is on-hand to help you troubleshoot and address issues.</Paragraph>
             <Paragraph>Our team of experts will work with your teams to provide open-source based recommendations, strategies, and custom solutions that fits your unique goals and challenges. We are here to help ensure your success.</Paragraph>
-            <Paragraph>Use the form below to send us a message or ask questions about how Install Doctor can help you with your specific needs.</Paragraph>
+            <Paragraph><b class="noshow-noscript">Use the form below to send us a message or ask questions about how Install Doctor can help you with your specific needs.</b><noscript><b>Send an e-mail to <a href="mailto:help@install.doctor">help@install.doctor</a> with details on how we can help and we will respond to you in a timely fashion.</b></noscript></Paragraph>
           </div>
           <capacitor-hubspot-form formId="b74a09f0-f963-47d2-b7d0-43d74dae366f" />
         </ResponsiveContainer>

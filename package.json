@@ -4,18 +4,10 @@
   "version": "0.0.1",
   "description": "Install Doctor Site",
   "scripts": {
-    "ci:env": "touch .env && echo PRISMIC_ENDPOINT=$PRISMIC_ENDPOINT >> .env",
-    "ci": "npm run ci:env && npm run build",
-    "build": "stencil build --prerender --ci",
-    "prerender": "stencil build --prerender",
-    "start": "stencil build --dev --watch --serve --ssr",
-    "generate": "stencil generate",
-    "serve": "stencil build --dev --watch",
-    "lint": "npm run prettier -- --check",
-    "fmt": "npm run prettier -- --write",
-    "prettier": "prettier \"{src,pages}/**/*.{css,scss,html,ts,tsx,md}\"",
-    "test": "stencil test --spec",
-    "test.watch": "stencil test --spec --watch"
+    "build": "npm run build:noscript && stencil build --prerender --ci",
+    "build:noscript": "rm src/global/style.scss && cd src/global && ln -s style-offline.scss style.scss && cd ../.. && npm run build && cp www/build/site.css src/site-noscript.css",
+    "deploy": "npm run build && firebase deploy",
+    "start": "stencil build --dev --watch --serve --ssr"
   },
   "husky": {
     "hooks": {

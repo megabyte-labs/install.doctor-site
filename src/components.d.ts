@@ -125,7 +125,6 @@ export namespace Components {
         "pageTitle": string;
     }
     interface MoreButton {
-        "icon": string;
     }
     interface NewsletterSignup {
     }
@@ -603,7 +602,6 @@ declare namespace LocalJSX {
         "pageTitle"?: string;
     }
     interface MoreButton {
-        "icon"?: string;
     }
     interface NewsletterSignup {
     }

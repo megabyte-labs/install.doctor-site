@@ -5,6 +5,7 @@
 
   display: block;
   overflow: hidden;
+
   #footer-social-container {
     width: 100%;
     background-color: #f7f9fc;
@@ -53,8 +54,13 @@
 
     @media (max-width: 500px) {
       .footer-social {
-      font-size: 30px;
-      top: 8px;
+        font-size: 30px;
+        top: 8px;
+
+        svg {
+          height: 30px;
+          width: 30px;
+        }
       }
     }
 
@@ -144,6 +150,7 @@
       h1 {
         font-weight: bold;
       }
+
       pre[class*='language-'] {
         padding: 2em;
         margin: 1.6em 0px;
@@ -207,11 +214,11 @@
         }
       }
 
-      p + p {
+      p+p {
         margin-block-start: var(--space-6);
       }
 
-      p + h2 {
+      p+h2 {
         margin-block-start: var(--space-9);
       }
 
@@ -255,6 +262,7 @@
   more-resources {
     margin-block-end: 121px;
   }
+
   .more-resources__title {
     margin-block-end: var(--space-5);
   }
@@ -288,9 +296,11 @@
       display: flex;
       flex-direction: column;
       justify-content: center;
+
       .ui-heading {
         color: #010610;
       }
+
       .ui-paragraph {
         margin-block-start: 4px;
         color: #92a1b3;
@@ -304,7 +314,7 @@
     border-bottom: 2px solid var(--c-indigo-20);
 
     .post-content {
-      & > * {
+      &>* {
         display: none;
       }
 

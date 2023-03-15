@@ -1,19 +1,16 @@
-import { Component, Prop, h, Host } from '@stencil/core';
+import { Component, h, Host } from '@stencil/core';
 
 @Component({
   tag: 'more-button',
-  styleUrl: 'more-button.scss',
+  styleUrl: 'more-button.scss'
 })
 export class MoreButton {
-  @Prop() icon = 'ellipsis-vertical';
 
   render() {
-    const { icon } = this;
-
     return (
       <Host>
         <button>
-          <ion-icon icon={icon} />
+          <svg xmlns="http://www.w3.org/2000/svg" class="ionicon" viewBox="0 0 512 512"><title>Ellipsis Vertical</title><circle cx="256" cy="256" r="48"/><circle cx="256" cy="416" r="48"/><circle cx="256" cy="96" r="48"/></svg>
         </button>
       </Host>
     );

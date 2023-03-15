@@ -21,8 +21,8 @@ export const config: Config = {
           'host.config.json',
           'page.state.json',
           '*/**/*.json',
-          '**/*.{js,css,json,html,webp,woff2}',
-          '**/build/svg/{logo-github,close,logo-gitlab,logo-slack,logo-discord,logo-facebook,logo-twitter,logo-linkedin,ellipsis-vertical,information-circle-outline,link,mail,navigate,checkmark-circle}.svg'
+          '*/**/*.{js,css,json,html,webp,woff2}',
+          '**/build/svg/{logo-github,close,logo-gitlab,logo-slack,logo-discord,logo-facebook,logo-twitter,logo-linkedin,information-circle-outline,link,mail,navigate,checkmark-circle}.svg'
         ]
       },
       copy: [
@@ -81,6 +81,10 @@ export const config: Config = {
         {
           src: './OneSignalSDKWorker.js',
           dest: 'OneSignalSDKWorker.js'
+        },
+        {
+          src: './site-noscript.css',
+          dest: 'site-noscript.css'
         }
       ],
     },

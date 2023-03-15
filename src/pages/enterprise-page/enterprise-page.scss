@@ -70,7 +70,7 @@ ul {
 
   padding-block-end: 11rem;
 
-  img.background {
+  .background img {
     position: absolute;
     right: 0;
     top: -40px;
@@ -213,7 +213,7 @@ ul {
       margin-block-end: 2rem;
     }
   }
-  img.background {
+  .background img {
     position: absolute;
     object-fit: cover;
     width: 100%;
@@ -852,9 +852,9 @@ ul {
   .heading-group {
     .ui-heading-6 {
       margin-block-end: 1.5rem;
+      text-align: center;
     }
     text-align: center;
-    margin-block-end: 4rem;
   }
 
   hubspot-form {

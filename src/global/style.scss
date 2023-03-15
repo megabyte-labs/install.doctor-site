@@ -34,7 +34,9 @@ body {
   background-color: white;
 }
 
-community-page, landing-page, blog-page, blog-post {
+landing-page,
+blog-page,
+blog-post {
   padding-top: 64px;
 }
 
@@ -89,6 +91,7 @@ li a {
 capacitor-site {
   background-color: white;
 }
+
 landing-page {
   #top img {
     width: 100%;
@@ -106,7 +109,7 @@ enterprise-page {
     height: 100%;
   }
 
-  #editions image-wrapper > img {
+  #editions image-wrapper>img {
     max-width: 90%;
     margin: 0 auto;
   }
@@ -117,7 +120,7 @@ landing-page {
     width: 214px;
   }
 
-  #top > .ui-container > .heading-group > .link {
+  #top>.ui-container>.heading-group>.link {
     margin-left: 5px;
     margin-bottom: 14px;
   }
@@ -135,9 +138,17 @@ landing-page {
   }
 }
 
-.cls-1{fill:#fff !important;}
-.cls-2{fill:#14ade8 !important;}
-.cls-3{fill:#0450ec !important;}
+.cls-1 {
+  fill: #fff !important;
+}
+
+.cls-2 {
+  fill: #14ade8 !important;
+}
+
+.cls-3 {
+  fill: #0450ec !important;
+}
 
 
 h2#h-developer-first-open-source {
@@ -147,12 +158,13 @@ h2#h-developer-first-open-source {
 #products h2#h-gorgeous-interfaces-innovative-products {
   max-width: 500px;
 }
+
 capacitor-site-footer {
-  .logo {
+  .logo img {
     margin-bottom: 14px;
   }
 
-  .routes-group > div {
+  .routes-group>div {
     width: 33.3%;
     display: inline-block;
   }
@@ -161,7 +173,7 @@ capacitor-site-footer {
 @media (max-width: 767px) {
   capacitor-site-footer {
     .ui-grid {
-      .logo {
+      .logo img {
         margin: 0 auto;
         margin-bottom: 14px;
       }
@@ -204,11 +216,11 @@ capacitor-site-footer {
   border: 1px solid var(--c-indigo-30);
 }
 
-#homing-particles > canvas {
+#homing-particles>canvas {
   display: none;
 }
 
-#homing-particles > canvas:nth-child(1) {
+#homing-particles>canvas:nth-child(1) {
   display: block;
 }
 
@@ -216,7 +228,7 @@ blog-post h2 {
   color: var(--h2-color)
 }
 
-h2.ui-heading.ui-heading-2.ui-theme--editorial > a {
+h2.ui-heading.ui-heading-2.ui-theme--editorial>a {
   color: var(--h2-color);
 }
 
@@ -225,22 +237,24 @@ top-parallax #top {
 }
 
 landing-page {
-  #framework .ui-grid img, #products .ui-grid img {
-  width: 100%;
-}
 
-#native .ui-grid .ui-col img {
-  margin-block-end: 40px;
-}
+  #framework .ui-grid img,
+  #products .ui-grid img {
+    width: 100%;
+  }
 
-#cta .card img {
-  position: absolute;
+  #native .ui-grid .ui-col img {
+    margin-block-end: 40px;
+  }
+
+  #cta .card img {
+    position: absolute;
     z-index: 1;
     right: 0;
     top: -8.25%;
     max-width: 100%;
     min-height: 108.25%;
-}
+  }
 }
 
 community-page {
@@ -270,6 +284,7 @@ enterprise-page {
       right: calc((1330px - 100%) * -1 / 2);
     }
   }
+
   #micro-frontends .image-wrapper img {
     margin-inline-start: -3rem;
     max-width: 100%;
@@ -340,10 +355,13 @@ community-page {
 enterprise-page #top {
   margin-top: 64px;
 }
+
 enterprise-subnav {
   --height: 64px !important;
 }
-enterprise-page, landing-page {
+
+enterprise-page,
+landing-page {
   .ui-button {
     opacity: 0;
     animation: fadeInUp 0.8s ease-out forwards;
@@ -353,11 +371,11 @@ enterprise-page, landing-page {
 
 .homepage-blog-article {
   background-color: white;
-    box-shadow: 5px 5px 5px 5px rgb(0 0 0 / 39%);
-    width: 95%;
-    max-width: 720px;
-    padding: 69px;
-    margin: 0 auto;
+  box-shadow: 5px 5px 5px 5px rgb(0 0 0 / 39%);
+  width: 95%;
+  max-width: 720px;
+  padding: 69px;
+  margin: 0 auto;
 
   img {
     max-width: min(290px, 69%);
@@ -365,20 +383,29 @@ enterprise-page, landing-page {
     margin-top: 50px;
     margin-bottom: 50px;
   }
+
   .fun-fact {
     line-height: 1.1;
   }
 }
 
 not-found-page {
-    img {
-      max-width: 600px;
-      width: 100%;
-      margin: 0 auto;
-    }
+  img {
+    max-width: 600px;
+    width: 100%;
+    margin: 0 auto;
+  }
 }
 
-not-found-page, terms-service-page, privacy-policy-page, enterprise-page, landing-page, blog-page, blog-post, community-page, solution-page {
+not-found-page,
+terms-service-page,
+privacy-policy-page,
+enterprise-page,
+landing-page,
+blog-page,
+blog-post,
+community-page,
+solution-page {
   > :not(site-header) {
     animation: fadeIn 0.52s ease-out forwards;
     animation-delay: 0.24s;
@@ -403,12 +430,12 @@ not-found-page, terms-service-page, privacy-policy-page, enterprise-page, landin
 
   .quote-summary {
     max-width: 780px;
-      border-left: 5px solid black;
-      padding-left: 37px;
-      padding-right: 37px;
-      padding-top: 14px;
-      padding-bottom: 14px;
-      margin-bottom: 0;
+    border-left: 5px solid black;
+    padding-left: 37px;
+    padding-right: 37px;
+    padding-top: 14px;
+    padding-bottom: 14px;
+    margin-bottom: 0;
   }
 
   .quote-summary-list {
@@ -482,11 +509,11 @@ enterprise-page {
   #email-input-with-validation-element {
     label {
       text-transform: uppercase;
-    color: var(--c-gray-30);
-    letter-spacing: 2.4px;
-    font-family: var(--f-family-display);
-    font-weight: 700;
-    font-size: 12px;
+      color: var(--c-gray-30);
+      letter-spacing: 2.4px;
+      font-family: var(--f-family-display);
+      font-weight: 700;
+      font-size: 12px;
     }
   }
 
@@ -537,17 +564,17 @@ enterprise-page {
 
 #not-found p {
   max-width: 670px;
-    margin: 0 auto;
+  margin: 0 auto;
 }
 
 @media (max-width: 640px) {
   landing-page {
     #top .image-wrapper img {
       --width: 200px;
-    max-width: var(--width);
-    left: calc(50% - var(--width) / 2) !important;
-    top: -220px;
-    position: absolute;
+      max-width: var(--width);
+      left: calc(50% - var(--width) / 2) !important;
+      top: -220px;
+      position: absolute;
     }
   }
 }

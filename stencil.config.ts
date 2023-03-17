@@ -16,6 +16,7 @@ export const config: Config = {
       prerenderConfig: './prerender.config.ts',
       baseUrl: 'https://install.doctor/',
       serviceWorker: {
+        swSrc: 'src/sw.js',
         globPatterns: [
           '*.{png,xml,ico,json,svg,html}',
           'host.config.json',
@@ -77,10 +78,6 @@ export const config: Config = {
         {
           src: './humans.txt',
           dest: 'humans.txt'
-        },
-        {
-          src: './OneSignalSDKWorker.js',
-          dest: 'OneSignalSDKWorker.js'
         },
         {
           src: './site-noscript.css',

@@ -78,7 +78,6 @@
     <script type="module" src="/build/site.esm.js"></script>
     <script nomodule src="/build/site.js"></script>
 
-    <link rel="preload" href="/build/svg/ellipsis-vertical.svg" as="image" type="image/svg+xml" />
     <link rel="preload" href="/assets/fonts/inter-v12-latin-regular.woff2" as="font" type="font/woff2"
       crossOrigin="anonymous" />
     <link rel="preload" href="/assets/fonts/inter-v12-latin-500.woff2" as="font" type="font/woff2"
@@ -107,7 +106,7 @@
        url('/assets/fonts/inter-v12-latin-regular.svg#Inter') format('svg'); /* Legacy iOS */
 }
 @font-face {
-  font-display: swap;
+  font-display: block;
   font-family: 'Inter';
   font-style: normal;
   font-weight: 500;
@@ -414,7 +413,6 @@
         style="display: none; visibility: hidden"></iframe>
     </noscript>
     <capacitor-site></capacitor-site>
-    <script type="text/javascript" id="hs-script-loader" async defer src="//js.hs-scripts.com/24052635.js"></script>
   </body>
 
 </html>

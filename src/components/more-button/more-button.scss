@@ -17,9 +17,9 @@ more-button {
     transition: opacity 0.2s ease-out;
 
     svg {
-      color: var(--color, black);
-      height: 20px;
-      width: 20px;
+      fill: var(--color, black);
+      height: 20px !important;
+      width: 20px !important;
     }
 
     &:hover {

@@ -4,7 +4,7 @@ import {
   Heading,
   Paragraph,
   ResponsiveContainer,
-} from '@ionic-internal/ionic-ds'
+} from 'ionic-ds-no-fonts'
 import { BlogData } from 'src/data.server/blog'
 import { href } from '@stencil/router'
 

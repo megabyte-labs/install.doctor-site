@@ -1,13 +1,13 @@
-import { Component, Host, State, h } from '@stencil/core';
-import { Heading, Paragraph } from '@ionic-internal/ionic-ds';
+import { Component, Host, State, h } from '@stencil/core'
+import { Heading, Paragraph } from 'ionic-ds-no-fonts'
 
 declare global {
   interface Window {
     hbspt: {
       forms: {
-        create: ({}) => any;
-      };
-    };
+        create: ({ }) => any
+      }
+    }
   }
 }
 
@@ -22,38 +22,38 @@ export class NewsletterSignup {
   @State() isValid: boolean = true;
   @State() inlineMessage: string = '';
 
-  componentWillLoad() {}
+  componentWillLoad() { }
 
   handleNewsletterSubmit(e: Event) {
-    e.preventDefault();
+    e.preventDefault()
 
-    this.isLoading = true;
+    this.isLoading = true
 
-    const xhr = new XMLHttpRequest();
+    const xhr = new XMLHttpRequest()
     const url = [
       'https://api.hsforms.com/submissions/v3/integration/submit',
       '24052635',
       'eb0d85ad-67a2-41fe-bebe-ca909073f286',
-    ].join('/');
-    xhr.open('POST', url);
-    xhr.setRequestHeader('Content-Type', 'application/json;charset=UTF-8');
+    ].join('/')
+    xhr.open('POST', url)
+    xhr.setRequestHeader('Content-Type', 'application/json;charset=UTF-8')
     xhr.onreadystatechange = () => {
       if (xhr.readyState === 4 && xhr.status === 200) {
-        const json = JSON.parse(xhr.responseText);
-        this.inlineMessage = json.inlineMessage;
-        this.isLoading = false;
-        this.hasSubmitted = true;
-        this.isValid = true;
+        const json = JSON.parse(xhr.responseText)
+        this.inlineMessage = json.inlineMessage
+        this.isLoading = false
+        this.hasSubmitted = true
+        this.isValid = true
       } else if (xhr.readyState == 4 && xhr.status == 400) {
-        this.inlineMessage = 'Please enter a valid e-mail address.';
-        this.isLoading = false;
-        this.isValid = false;
+        this.inlineMessage = 'Please enter a valid e-mail address.'
+        this.isLoading = false
+        this.isValid = false
       }
-    };
+    }
 
     const hutkMatch =
-      document.cookie.match && document.cookie.match(/hubspotutk=(.*?);/);
-    const hutk = hutkMatch ? hutkMatch[1] : undefined;
+      document.cookie.match && document.cookie.match(/hubspotutk=(.*?);/)
+    const hutk = hutkMatch ? hutkMatch[1] : undefined
 
     xhr.send(
       JSON.stringify({
@@ -74,18 +74,18 @@ export class NewsletterSignup {
           pageName: document.title,
         },
       }),
-    );
+    )
   }
 
   handleEmailChange(ev: any) {
-    this.email = ev.target.value;
-    this.isValid = true;
+    this.email = ev.target.value
+    this.isValid = true
   }
 
   handleInlineMessage(returnMessage: string) {
     const messageMatch =
-      returnMessage.match && returnMessage.match(/<p>(.*?)<\/p>/);
-    return messageMatch ? messageMatch[1] : undefined;
+      returnMessage.match && returnMessage.match(/<p>(.*?)<\/p>/)
+    return messageMatch ? messageMatch[1] : undefined
   }
 
   render() {
@@ -100,14 +100,14 @@ export class NewsletterSignup {
             </Paragraph>
           </div>
           <div class="form-group">
-              {this.hasSubmitted ? (
-                <div class="form-message">
-                  <ion-icon name="checkmark-circle"></ion-icon>
-                  <Paragraph>
-                    {this.handleInlineMessage(this.inlineMessage)}
-                  </Paragraph>
-                </div>
-                ) : (
+            {this.hasSubmitted ? (
+              <div class="form-message">
+                <ion-icon name="checkmark-circle"></ion-icon>
+                <Paragraph>
+                  {this.handleInlineMessage(this.inlineMessage)}
+                </Paragraph>
+              </div>
+            ) : (
                 <form class="hs-form" onSubmit={e => this.handleNewsletterSubmit(e)}>
                   <div class="hs_email hs-email hs-fieldtype-text field hs-form-field">
                     <div class="input">
@@ -132,15 +132,15 @@ export class NewsletterSignup {
                     </div>
                   </div>
                   {!this.isValid && (
-                  <Paragraph level={5} class="error-message">
-                    {this.inlineMessage}
-                  </Paragraph>
-                )}
+                    <Paragraph level={5} class="error-message">
+                      {this.inlineMessage}
+                    </Paragraph>
+                  )}
                 </form>
-                )}
-              </div>
-            </div>
+              )}
+          </div>
+        </div>
       </Host>
-    );
+    )
   }
 }

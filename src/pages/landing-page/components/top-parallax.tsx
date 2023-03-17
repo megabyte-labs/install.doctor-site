@@ -1,5 +1,5 @@
 import { Component, State, h } from '@stencil/core'
-import { ResponsiveContainer, Button } from '@ionic-internal/ionic-ds'
+import { ResponsiveContainer, Button } from 'ionic-ds-no-fonts'
 
 // import { Background } from '../assets/bg-3-only.svg';
 // import { Background } from '../assets/bg-boxes.svg';

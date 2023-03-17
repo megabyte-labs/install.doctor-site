@@ -5,7 +5,7 @@ import {
   Button,
   PrismicRichText,
   Paragraph,
-} from '@ionic-internal/ionic-ds'
+} from 'ionic-ds-no-fonts'
 import { State } from '@stencil/core/internal'
 
 @Component({

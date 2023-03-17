@@ -1,5 +1,5 @@
 import { Component, h, Element, State, Host, Prop } from '@stencil/core'
-import { IntersectionHelper, Breadcrumbs } from '@ionic-internal/ionic-ds'
+import { IntersectionHelper, Breadcrumbs } from 'ionic-ds-no-fonts'
 
 @Component({
   tag: 'blog-subnav',
@@ -48,8 +48,8 @@ export class BlogSubnav {
                     {crumb[0]}
                   </a>
                 ) : (
-                  crumb[0]
-                )}
+                    crumb[0]
+                  )}
               </li>
             ))}
           </Breadcrumbs>

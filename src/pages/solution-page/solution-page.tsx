@@ -4,7 +4,7 @@ import {
   ResponsiveContainer,
   Heading,
   Paragraph,
-} from '@ionic-internal/ionic-ds'
+} from 'ionic-ds-no-fonts'
 
 import { SolutionUbuntu } from './solution-ubuntu'
 import { SolutionFedora } from './solution-fedora'

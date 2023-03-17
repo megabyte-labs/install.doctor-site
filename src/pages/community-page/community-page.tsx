@@ -6,7 +6,7 @@ import {
   Heading,
   Grid,
   Col,
-} from '@ionic-internal/ionic-ds'
+} from 'ionic-ds-no-fonts'
 
 @Component({
   tag: 'community-page',

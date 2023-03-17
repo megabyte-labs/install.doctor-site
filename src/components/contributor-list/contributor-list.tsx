@@ -1,4 +1,4 @@
-import { Button } from '@ionic-internal/ionic-ds'
+import { Button } from 'ionic-ds-no-fonts'
 import { Component, Prop, Host, h } from '@stencil/core'
 
 @Component({

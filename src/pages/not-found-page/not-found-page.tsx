@@ -3,7 +3,7 @@ import {
   ResponsiveContainer,
   Heading,
   Paragraph,
-} from '@ionic-internal/ionic-ds'
+} from 'ionic-ds-no-fonts'
 import { href } from '@stencil/router'
 
 @Component({

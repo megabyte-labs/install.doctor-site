@@ -17,7 +17,7 @@ export class PrismicImage {
   @Element() el
 
   render() {
-    // This was copied from @ionic-internal/ionic-ds after it was compiled which is not available on GitHub. Not sure
+    // This was copied from ionic-ds-no-fonts after it was compiled which is not available on GitHub. Not sure
     // how they are getting the data but this code seems to work. Wasn't sure what to make of it.
     const __rest = (this && this.__rest) || function (s, e) {
       var t = {}

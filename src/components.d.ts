@@ -11,7 +11,17 @@ import { JSX } from "@stencil/core";
 import { HeadingData, PageNavigation, TableOfContents } from "@stencil/ssg";
 import { SiteHeader } from "./components/capacitor-site-header/capacitor-site-header";
 import { DocsTemplate as DocsTemplate1 } from "src/data.server/models";
+export { BlogData } from "src/data.server/blog";
+export { DocsData, DocsTemplate } from "./data.server/models";
+export { JSX } from "@stencil/core";
+export { HeadingData, PageNavigation, TableOfContents } from "@stencil/ssg";
+export { SiteHeader } from "./components/capacitor-site-header/capacitor-site-header";
+export { DocsTemplate as DocsTemplate1 } from "src/data.server/models";
 export namespace Components {
+    /**
+     * Used in the generated doc markup as well as the site, so don't remve this
+     * even if it looks like no one is using it
+     */
     interface AnchorLink {
         "to": string;
     }
@@ -152,7 +162,7 @@ export namespace Components {
         "includeBurger": boolean;
         "includeLogo": boolean;
         "sticky": boolean;
-        "template": DocsTemplate;
+        "template": DocsTemplate1;
         "theme": 'light' | 'dark';
     }
     interface SolutionPage {
@@ -177,7 +187,23 @@ export namespace Components {
         "width": string | number;
     }
 }
+export interface AppMenuToggleCustomEvent<T> extends CustomEvent<T> {
+    detail: T;
+    target: HTMLAppMenuToggleElement;
+}
+export interface CapacitorHubspotFormCustomEvent<T> extends CustomEvent<T> {
+    detail: T;
+    target: HTMLCapacitorHubspotFormElement;
+}
+export interface DocsMenuCustomEvent<T> extends CustomEvent<T> {
+    detail: T;
+    target: HTMLDocsMenuElement;
+}
 declare global {
+    /**
+     * Used in the generated doc markup as well as the site, so don't remve this
+     * even if it looks like no one is using it
+     */
     interface HTMLAnchorLinkElement extends Components.AnchorLink, HTMLStencilElement {
     }
     var HTMLAnchorLinkElement: {
@@ -490,12 +516,16 @@ declare global {
     }
 }
 declare namespace LocalJSX {
+    /**
+     * Used in the generated doc markup as well as the site, so don't remve this
+     * even if it looks like no one is using it
+     */
     interface AnchorLink {
         "to"?: string;
     }
     interface AppMenuToggle {
         "icon"?: string;
-        "onMenuToggleClick"?: (event: CustomEvent<any>) => void;
+        "onMenuToggleClick"?: (event: AppMenuToggleCustomEvent<any>) => void;
     }
     interface AvcCodeType {
         "typeId"?: string;
@@ -531,7 +561,7 @@ declare namespace LocalJSX {
         "ajax"?: boolean;
         "formId"?: string;
         "goToWebinarKey"?: string;
-        "onFormSubmitted"?: (event: CustomEvent<any>) => void;
+        "onFormSubmitted"?: (event: CapacitorHubspotFormCustomEvent<any>) => void;
         "portalId"?: string;
     }
     interface CapacitorSite {
@@ -568,7 +598,7 @@ declare namespace LocalJSX {
     }
     interface DocsMenu {
         "activePath"?: string;
-        "onMenuToggled"?: (event: CustomEvent<any>) => void;
+        "onMenuToggled"?: (event: DocsMenuCustomEvent<any>) => void;
         "template"?: DocsTemplate;
         "toc"?: TableOfContents;
     }
@@ -629,7 +659,7 @@ declare namespace LocalJSX {
         "includeBurger"?: boolean;
         "includeLogo"?: boolean;
         "sticky"?: boolean;
-        "template"?: DocsTemplate;
+        "template"?: DocsTemplate1;
         "theme"?: 'light' | 'dark';
     }
     interface SolutionPage {
@@ -704,6 +734,10 @@ export { LocalJSX as JSX };
 declare module "@stencil/core" {
     export namespace JSX {
         interface IntrinsicElements {
+            /**
+             * Used in the generated doc markup as well as the site, so don't remve this
+             * even if it looks like no one is using it
+             */
             "anchor-link": LocalJSX.AnchorLink & JSXBase.HTMLAttributes<HTMLAnchorLinkElement>;
             "app-menu-toggle": LocalJSX.AppMenuToggle & JSXBase.HTMLAttributes<HTMLAppMenuToggleElement>;
             "avc-code-type": LocalJSX.AvcCodeType & JSXBase.HTMLAttributes<HTMLAvcCodeTypeElement>;

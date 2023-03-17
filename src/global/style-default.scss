@@ -594,3 +594,16 @@ enterprise-page {
     }
   }
 }
+
+landing-page {
+  #top .background {
+    position: absolute;
+    bottom: 100px;
+    width: 1800px;
+    height: 1800px;
+    left: calc(((1800px - 100%) / -2) - 50px);
+    background: rgb(246, 249, 252);
+    transform: rotate(29deg) skewX(-30deg);
+    z-index: -1;
+  }
+}

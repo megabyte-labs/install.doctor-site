@@ -60,5 +60,5 @@ async function fetchGithubCommits(
     return [];
   }
 
-  return request.json();
+  return (request as any).json();
 }

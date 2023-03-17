@@ -453,7 +453,7 @@
         },
         {
             "type": "paragraph",
-            "text": "Use Install Doctor to provision a wide range of operating systems and virtualization platforms. The latest x86-64 releases of Archlinux, CentOS, Debian, Fedora, macOS, Qubes, Ubuntu, and Windows are officiallysupported. Support for other operating systems is also possible.",
+            "text": "Use Install Doctor to provision a wide range of operating systems and virtualization platforms. The latest x86-64 releases of Archlinux, CentOS, Debian, Fedora, macOS, Qubes, Ubuntu, and Windows are officially supported. Support for other operating systems is also possible.",
             "spans": [
                 {
                     "start": 126,

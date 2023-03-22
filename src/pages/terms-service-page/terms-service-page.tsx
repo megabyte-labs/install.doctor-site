@@ -1,10 +1,11 @@
-import { Component, Host, h } from '@stencil/core'
+import { Component, Host, h, Prop } from '@stencil/core'
 import { href } from '@stencil/router'
 import {
   ResponsiveContainer,
   Heading,
   Paragraph,
 } from 'ionic-ds-no-fonts'
+import { defaults } from 'src/store'
 
 @Component({
   tag: 'terms-service-page',
@@ -12,6 +13,7 @@ import {
   scoped: true,
 })
 export class TermsServicePage {
+  @Prop() defaults: typeof defaults
 
   render() {
     const { TermsService } = this
@@ -19,22 +21,35 @@ export class TermsServicePage {
     return (
       <Host>
         <meta-tags
+          defaults={this.defaults}
           pageTitle="Terms of Service"
-          description={'Install Doctor is owned by Megabyte LLC and, as a requirement of many web services it integrates with, provides this Terms of Service agreement to its users to keep them well informed.'}
+          description={this.defaults.brandName + ' is owned by ' + this.defaults.companyLegalName + ' and, as a requirement of many web services it integrates with, provides this Terms of Service agreement to its users to keep them well informed.'}
         />
-        <site-header class="heading-container" sticky={true} />
+        <site-header defaults={this.defaults} class="heading-container" sticky={true} />
         <TermsService />
-        <pre-footer />
+        <pre-footer defaults={this.defaults} />
         <capacitor-site-footer />
       </Host>
     )
+  }
+
+  CompanyLink = (linkText?: string) => {
+    if (this.defaults.homepage === this.defaults.companyUrl) {
+      return (
+        <a {...href('/')} target="_blank" rel="noopener">{linkText ? linkText : this.defaults.companyLegalName}</a>
+      )
+    } else {
+      return (
+        <a href={this.defaults.companyUrl} target="_blank" rel="noopener">{linkText ? linkText : this.defaults.companyLegalName}</a>
+      )
+    }
   }
 
   TermsService = () => (
     <ResponsiveContainer id="terms-service" as="section">
       <Heading level={1}>Terms of Service</Heading>
       <Paragraph>
-        This website is owned and operated by <a href="https://megabyte.space" target="_blank" rel="noopener">Megabyte LLC</a> (also referred to as Megabyte Labs). By visiting our website and accessing the information, resources, services, products, and tools we provide, you understand and agree to accept and adhere to the following terms and conditions as stated in this policy (hereafter referred to as 'User Agreement'), along with the terms and conditions as stated in our Privacy Policy (please refer to the Privacy Policy section below for more information).
+        This website is owned and operated by {this.CompanyLink()} (also referred to as {this.defaults.companyAlias}). By visiting our website and accessing the information, resources, services, products, and tools we provide, you understand and agree to accept and adhere to the following terms and conditions as stated in this policy (hereafter referred to as 'User Agreement'), along with the terms and conditions as stated in our Privacy Policy (please refer to the Privacy Policy section below for more information).
       </Paragraph>
       <Paragraph>We reserve the right to change this User Agreement from time to time without notice. You acknowledge and agree that
       it is your responsibility to review this User Agreement periodically to familiarize yourself with any modifications.
@@ -74,7 +89,7 @@ export class TermsServicePage {
               invasive, racist, or contains any type of suggestive, inappropriate, or explicit language;</li>
             <li>ii. Infringes on any trademark, patent, trade secret, copyright, or other proprietary right of any party;</li>
             <li>iii. Contains any type of unauthorized or unsolicited advertising;</li>
-            <li>iiii. Impersonates any person or entity, including any <a href="https://megabyte.space" target="_blank" rel="noopener">https://megabyte.space</a> or <a {...href('/')}>https://install.doctor</a> employees or representatives.</li>
+            <li>iiii. Impersonates any person or entity, including any {this.CompanyLink()} employees or representatives.</li>
           </ul>
         </li>
       </ul>
@@ -82,12 +97,12 @@ export class TermsServicePage {
       <ul>
         <li>h. We do not assume any liability for any content posted by you or any other 3rd party users of our website. However,
         any content posted by you using any open communication tools on our website, provided that it doesn't violate
-        or infringe on any 3rd party copyrights or trademarks, becomes the property of Megabyte LLC, and as such, gives us a perpetual,
+        or infringe on any 3rd party copyrights or trademarks, becomes the property of {this.defaults.companyLegalName}, and as such, gives us a perpetual,
         irrevocable, worldwide, royalty-free, exclusive license to reproduce, modify, adapt, translate, publish, publicly
         display and/or distribute as we see fit. This only refers and applies to content posted via open communication
         tools as described, and does not refer to information that is provided as part of the registration process, necessary
           in order to use our Resources. All information provided as part of our registration process is covered by our <a class="underline-hover" {...href('/privacy')}>privacy policy</a>.</li>
-        <li>i. You agree to indemnify and hold harmless Megabyte LLC and its parent company and affiliates, and their directors,
+        <li>i. You agree to indemnify and hold harmless {this.defaults.companyLegalName} and its parent company and affiliates, and their directors,
         officers, managers, employees, donors, agents, and licensors, from and against all losses, expenses, damages
         and costs, including reasonable attorneys' fees, resulting from any violation of this User Agreement or the failure
         to fulfill any obligations relating to your account incurred by you or any other person using your account. We
@@ -113,21 +128,21 @@ export class TermsServicePage {
         <li>v. any content downloaded or otherwise obtained through the use of our Resources is done at your own discretion
         and risk, and that you are solely responsible for any damage to your computer or other devices for any loss of
           data that may result from the download of such content.</li>
-        <li>vi. no information or advice, whether expressed, implied, oral or written, obtained by you from Megabyte LLC
+        <li>vi. no information or advice, whether expressed, implied, oral or written, obtained by you from {this.defaults.companyLegalName}
         or through any Resources we provide shall create any warranty, guarantee, or conditions of any kind, except for
           those expressly outlined in this User Agreement.</li>
       </ul>
       <Heading level={3}>Limitation of Liability</Heading>
       <Paragraph>In conjunction with the Limitation of Warranties as explained above, you expressly understand and agree that any
-      claim against us shall be limited to the amount you paid, if any, for use of products and/or services. Megabyte LLC
+      claim against us shall be limited to the amount you paid, if any, for use of products and/or services. {this.defaults.companyLegalName}
       will not be liable for any direct, indirect, incidental, consequential or exemplary loss or damages which may be
       incurred by you as a result of using our Resources, or as a result of any changes, data loss or corruption, cancellation,
         loss of access, or downtime to the full extent that applicable limitation of liability laws apply.</Paragraph>
       <Heading level={3}>Copyrights/Trademarks</Heading>
-      <Paragraph>All content and materials available on <a {...href('/')}>https://install.doctor</a>, including but not limited to text, graphics, website
-        name, code, images and logos are the intellectual property of Megabyte LLC, and are protected by applicable copyright
-        and trademark law.Any inappropriate use, including but not limited to the reproduction, distribution, display
-        or transmission of any content on this site is strictly prohibited, unless specifically authorized by Megabyte LLC.</Paragraph>
+      <Paragraph>All content and materials available on <a {...href('/')}>{this.defaults.homepage}</a>, including but not limited to text, graphics, website
+        name, code, images and logos are the intellectual property of {this.defaults.companyLegalName}, and are protected by applicable copyright
+        and trademark law. Any inappropriate use, including but not limited to the reproduction, distribution, display
+        or transmission of any content on this site is strictly prohibited, unless specifically authorized by {this.defaults.companyLegalName}.</Paragraph>
       <Heading level={3}>Termination of Use</Heading>
       <Paragraph>You agree that we may, at our sole discretion, suspend or terminate your access to all or part of our website and
       Resources with or without notice and for any reason, including, without limitation, breach of this User Agreement.
@@ -136,7 +151,7 @@ export class TermsServicePage {
       we provide will immediately cease, and we reserve the right to remove or delete any information that you may have
         on file with us, including any account or login information.</Paragraph>
       <Heading level={3}>Governing Law</Heading>
-      <Paragraph>This website is controlled by Megabyte LLC from our offices located in the state of New Jersey, USA. It can be
+      <Paragraph>This website is controlled by {this.defaults.companyLegalName} from our offices located in the state of New Jersey, USA. It can be
       accessed by most countries around the world. As each country has laws that may differ from those of New Jersey,
       by accessing our website, you agree that the statutes and laws of New Jersey, without regard to the conflict of
       laws and the United Nations Convention on the International Sales of Goods, will apply to all matters relating
@@ -145,7 +160,7 @@ export class TermsServicePage {
       USA, New Jersey You hereby agree to personal jurisdiction by such courts, and waive any jurisdictional, venue,
         or inconvenient forum objections to such courts.</Paragraph>
       <Heading level={3}>Guarantee</Heading>
-      <Paragraph>UNLESS OTHERWISE EXPRESSED, MEGABYTE LLC EXPRESSLY DISCLAIMS ALL WARRANTIES AND CONDITIONS OF ANY KIND, WHETHER
+      <Paragraph>UNLESS OTHERWISE EXPRESSED, {this.defaults.companyLegalName.toUpperCase()} EXPRESSLY DISCLAIMS ALL WARRANTIES AND CONDITIONS OF ANY KIND, WHETHER
       EXPRESS OR IMPLIED, INCLUDING, BUT NOT LIMITED TO THE IMPLIED WARRANTIES AND CONDITIONS OF MERCHANTABILITY, FITNESS
         FOR A PARTICULAR PURPOSE AND NON-INFRINGEMENT.</Paragraph>
       <Heading level={3}>Contact Information</Heading>
@@ -156,7 +171,7 @@ export class TermsServicePage {
             <ion-icon name="link"></ion-icon>
           </div>
           <div class="contact-text">
-            <a class="underline-hover" href="https://megabyte.space" target="_blank" rel="noopener">https://megabyte.space</a>
+            {this.CompanyLink(this.defaults.companyUrl)}
           </div>
         </div>
         <div class="contact-detail">
@@ -164,17 +179,17 @@ export class TermsServicePage {
             <ion-icon name="mail"></ion-icon>
           </div>
           <div class="contact-text">
-            <a class="underline-hover" href="mailto:help@megabyte.space">help@megabyte.space</a>
+            <a href={'mailto:' + this.defaults.companyEmail}>{this.defaults.companyEmail}</a>
           </div>
         </div>
         <div class="contact-detail">
           <div class="contact-icon">
             <ion-icon name="navigate"></ion-icon>
           </div>
-          <div class="contact-text">Megabyte LLC
-            <br />63 James Street,
-            <br />Morristown, New Jersey 07960
-            <br />United States of America</div>
+          <div class="contact-text">{this.defaults.companyLegalName}
+            <br />{this.defaults.companyAddress.line1},
+            <br />{this.defaults.companyAddress.line2}
+            <br />{this.defaults.companyAddress.line3}</div>
         </div>
       </div>
     </ResponsiveContainer >

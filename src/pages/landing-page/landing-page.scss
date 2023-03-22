@@ -871,7 +871,6 @@ h6 {
 
 #multisection {
   background: linear-gradient(180deg, #ffffff 0%, #f6f8fc 100%);
-  padding-bottom: 69px;
 }
 #cta {
   --h2-color: var(--c-carbon-50);
@@ -1013,6 +1012,7 @@ h6 {
   --h2-color: var(--c-carbon-100);
 
   padding-block-end: 9.5rem;
+  padding-block-start: 9.5rem;
 
   display: flex;
   flex-wrap: wrap;

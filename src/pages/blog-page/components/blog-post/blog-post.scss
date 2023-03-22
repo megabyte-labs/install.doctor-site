@@ -6,6 +6,23 @@
   display: block;
   overflow: hidden;
 
+  .modified-date {
+    font-weight: bold;
+  }
+
+  .tag-pill {
+    display: inline-block;
+    padding: 4px;
+    background: var(--c-gray-10);
+    color: var(--c-gray-40);
+    font-size: 10px;
+    border-radius: 24px;
+    padding-left: 8px;
+    padding-right: 8px;
+    margin-left: 2px;
+    margin-right: 2px;
+  }
+
   #footer-social-container {
     width: 100%;
     background-color: #f7f9fc;
@@ -22,7 +39,7 @@
       display: inline-block;
       display: inline-block;
       text-transform: uppercase;
-      font-size: 24px;
+      font-size: 14px;
       letter-spacing: 4px;
       color: var(--c-carbon-30);
       margin-top: 0;
@@ -36,17 +53,16 @@
 
     @media (max-width: 500px) {
       h4 {
-        font-size: 14px;
         letter-spacing: 1px;
       }
     }
 
     .footer-social {
-      font-size: 43px;
+      font-size: 14px;
       display: inline-block;
       transition: opacity 0.3s ease-out;
       position: relative;
-      top: 10px;
+      top: 6px;
       margin-left: 8px;
       margin-right: 8px;
       cursor: pointer;
@@ -283,7 +299,7 @@
   .author-info {
     display: flex;
     margin-block-start: var(--space-6);
-    margin-block-end: 120px;
+    margin-block-end: var(--space-6);
 
     img {
       width: 56px;

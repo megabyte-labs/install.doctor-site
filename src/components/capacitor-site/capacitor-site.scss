@@ -12,6 +12,11 @@ capacitor-site {
 
   min-height: 100%;
   display: block;
+
+  svg {
+    width: unset !important;
+    height: unset !important;
+  }
 }
 
 .heading-container {

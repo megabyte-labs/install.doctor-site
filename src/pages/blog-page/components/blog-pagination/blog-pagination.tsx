@@ -1,5 +1,6 @@
-import { Component, h, Host, Prop } from '@stencil/core';
-import { JSXBase } from '@stencil/core/internal';
+import { Component, h, Host, Prop } from '@stencil/core'
+import { JSXBase } from '@stencil/core/internal'
+import { defaults } from 'src/store'
 
 @Component({
   tag: 'blog-pagination',
@@ -7,19 +8,14 @@ import { JSXBase } from '@stencil/core/internal';
   scoped: true,
 })
 export class BlogPagination {
+  @Prop() defaults: typeof defaults
   @Prop() linkText: [string, string] = ['Older posts', 'Newer posts'];
   @Prop() rssIcon: boolean = false;
 
   render = () => (
     <Host>
-      <a href="#" class="link back ui-paragraph-3">
-        <ion-icon name="chevron-back-outline"></ion-icon>
-        {this.linkText[0]}
-      </a>
-      {this.rssIcon ? rssIcon({}, { height: 32, width: 32 }) : ''}
-      <a href="#" class="link forward ui-paragraph-3">
-        {this.linkText[1]}
-        <ion-icon name="chevron-forward-outline"></ion-icon>
+      <a class="rss-link" href={this.defaults.homepage + '/blog/rss.xml'} target="_blank" rel="noopener">
+        {this.rssIcon ? rssIcon({}, { height: 32, width: 32 }) : ''}
       </a>
     </Host>
   );
@@ -44,4 +40,4 @@ const rssIcon = (
       d="M9.143 9.143v2.853c6.107 0 10.853 4.75 10.853 10.861h2.86c0-7.56-6.142-13.714-13.713-13.714z"
     />
   </svg>
-);
+)

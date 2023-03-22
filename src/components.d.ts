@@ -6,51 +6,32 @@
  */
 import { HTMLStencilElement, JSXBase } from "@stencil/core/internal";
 import { BlogData } from "src/data.server/blog";
-import { DocsData, DocsTemplate } from "./data.server/models";
-import { JSX } from "@stencil/core";
-import { HeadingData, PageNavigation, TableOfContents } from "@stencil/ssg";
 import { SiteHeader } from "./components/capacitor-site-header/capacitor-site-header";
-import { DocsTemplate as DocsTemplate1 } from "src/data.server/models";
+import { DocsTemplate } from "src/data.server/models";
 export { BlogData } from "src/data.server/blog";
-export { DocsData, DocsTemplate } from "./data.server/models";
-export { JSX } from "@stencil/core";
-export { HeadingData, PageNavigation, TableOfContents } from "@stencil/ssg";
 export { SiteHeader } from "./components/capacitor-site-header/capacitor-site-header";
-export { DocsTemplate as DocsTemplate1 } from "src/data.server/models";
+export { DocsTemplate } from "src/data.server/models";
 export namespace Components {
-    /**
-     * Used in the generated doc markup as well as the site, so don't remve this
-     * even if it looks like no one is using it
-     */
-    interface AnchorLink {
-        "to": string;
-    }
     interface AppMenuToggle {
         "icon": string;
     }
-    interface AvcCodeType {
-        "typeId": string;
-    }
-    interface BlogForumLink {
-        "href"?: string;
-    }
-    interface BlogNewsletter {
-    }
     interface BlogPage {
         "data": BlogData[];
+        "defaults": typeof defaults;
     }
     interface BlogPagination {
+        "defaults": typeof defaults;
         "linkText": [string, string];
         "rssIcon": boolean;
     }
     interface BlogPost {
         "data": BlogData;
+        "defaults": typeof defaults;
         "preview"?: boolean;
-    }
-    interface BlogSearch {
     }
     interface BlogSocialActions {
         "column": boolean;
+        "defaults": typeof defaults;
         "post"?: BlogData;
     }
     interface BlogSubnav {
@@ -60,13 +41,14 @@ export namespace Components {
     }
     interface CapacitorHubspotForm {
         "ajax": boolean;
+        "defaults": typeof defaults;
         "formId"?: string;
         "goToWebinarKey"?: string;
-        "portalId": string;
     }
     interface CapacitorSite {
     }
     interface CapacitorSiteFooter {
+        "defaults": typeof defaults;
     }
     interface CodeSnippet {
         "code": string;
@@ -80,76 +62,49 @@ export namespace Components {
   };
     }
     interface CommunityPage {
-        "data"?: any;
-    }
-    interface ContributorList {
-        "contributors": string[];
-        "editApiUrl": string;
-        "editUrl": string;
-    }
-    interface DocSnippet {
-    }
-    interface DocsComponent {
-        "data": DocsData;
-    }
-    interface DocsDropdown {
-        "align": 'left' | 'right' | 'center';
-        "close": () => Promise<void>;
-        "icon"?: (props: any) => JSX.Element;
-        "open": () => Promise<void>;
-        "toggle": () => Promise<void>;
-    }
-    interface DocsMenu {
-        "activePath": string;
-        "template": DocsTemplate;
-        "toc": TableOfContents;
-        "toggleOverlayMenu": () => Promise<void>;
+        "data": typeof CommunityPageData;
     }
     interface DocsSearch {
+        "defaults": typeof defaults;
         "placeholder": string;
         "theme": SiteHeader['theme'];
     }
     interface EnterprisePage {
-        "data"?: any;
+        "data": typeof EnterprisePageData;
     }
     interface EnterpriseSubnav {
     }
-    interface InPageNavigation {
-        "editApiUrl": string;
-        "editUrl": string;
-        "headings": HeadingData[];
-        "url": string;
-    }
     interface LandingPage {
-        "data"?: any;
-    }
-    interface LowerContentNav {
-        "navigation": PageNavigation;
+        "data": typeof LandingPageData;
     }
     interface MetaTags {
-        "authorTwitter": string;
-        "canonicalUrl": string;
-        "description": string;
-        "image": string;
-        "ogType": string;
-        "pageTitle": string;
+        "authorTwitter"?: any;
+        "canonicalUrl"?: any;
+        "defaults": typeof defaults;
+        "description"?: any;
+        "image"?: any;
+        "ogType"?: any;
+        "pageTitle"?: any;
+        "rssTitle"?: any;
     }
     interface MoreButton {
     }
     interface NewsletterSignup {
+        "defaults": typeof defaults;
     }
     interface NewsletterSignupParallax {
+        "defaults": typeof defaults;
     }
     interface NotFoundPage {
-    }
-    interface PluginPlatforms {
-        "platforms": string;
+        "defaults": typeof defaults;
     }
     interface PreFooter {
+        "defaults": typeof defaults;
     }
     interface PrismicImage {
         "alt": string;
         "class": string;
+        "defaults": typeof defaults;
         "height": number | string;
         "image": any;
         "loading": 'eager' | 'lazy';
@@ -157,25 +112,25 @@ export namespace Components {
         "width": number | string;
     }
     interface PrivacyPolicyPage {
+        "defaults": typeof defaults;
     }
     interface SiteHeader {
+        "defaults": typeof defaults;
         "includeBurger": boolean;
         "includeLogo": boolean;
         "sticky": boolean;
-        "template": DocsTemplate1;
+        "template": DocsTemplate;
         "theme": 'light' | 'dark';
     }
     interface SolutionPage {
+        "defaults": typeof defaults;
         "solutionId": string;
     }
-    interface TelemetryPage {
-        "data": any;
-    }
     interface TermsServicePage {
+        "defaults": typeof defaults;
     }
     interface TopParallax {
-    }
-    interface VersionSelect {
+        "defaults": typeof defaults;
     }
     interface WebpImage {
         "alt": string;
@@ -195,44 +150,12 @@ export interface CapacitorHubspotFormCustomEvent<T> extends CustomEvent<T> {
     detail: T;
     target: HTMLCapacitorHubspotFormElement;
 }
-export interface DocsMenuCustomEvent<T> extends CustomEvent<T> {
-    detail: T;
-    target: HTMLDocsMenuElement;
-}
 declare global {
-    /**
-     * Used in the generated doc markup as well as the site, so don't remve this
-     * even if it looks like no one is using it
-     */
-    interface HTMLAnchorLinkElement extends Components.AnchorLink, HTMLStencilElement {
-    }
-    var HTMLAnchorLinkElement: {
-        prototype: HTMLAnchorLinkElement;
-        new (): HTMLAnchorLinkElement;
-    };
     interface HTMLAppMenuToggleElement extends Components.AppMenuToggle, HTMLStencilElement {
     }
     var HTMLAppMenuToggleElement: {
         prototype: HTMLAppMenuToggleElement;
         new (): HTMLAppMenuToggleElement;
-    };
-    interface HTMLAvcCodeTypeElement extends Components.AvcCodeType, HTMLStencilElement {
-    }
-    var HTMLAvcCodeTypeElement: {
-        prototype: HTMLAvcCodeTypeElement;
-        new (): HTMLAvcCodeTypeElement;
-    };
-    interface HTMLBlogForumLinkElement extends Components.BlogForumLink, HTMLStencilElement {
-    }
-    var HTMLBlogForumLinkElement: {
-        prototype: HTMLBlogForumLinkElement;
-        new (): HTMLBlogForumLinkElement;
-    };
-    interface HTMLBlogNewsletterElement extends Components.BlogNewsletter, HTMLStencilElement {
-    }
-    var HTMLBlogNewsletterElement: {
-        prototype: HTMLBlogNewsletterElement;
-        new (): HTMLBlogNewsletterElement;
     };
     interface HTMLBlogPageElement extends Components.BlogPage, HTMLStencilElement {
     }
@@ -251,12 +174,6 @@ declare global {
     var HTMLBlogPostElement: {
         prototype: HTMLBlogPostElement;
         new (): HTMLBlogPostElement;
-    };
-    interface HTMLBlogSearchElement extends Components.BlogSearch, HTMLStencilElement {
-    }
-    var HTMLBlogSearchElement: {
-        prototype: HTMLBlogSearchElement;
-        new (): HTMLBlogSearchElement;
     };
     interface HTMLBlogSocialActionsElement extends Components.BlogSocialActions, HTMLStencilElement {
     }
@@ -306,36 +223,6 @@ declare global {
         prototype: HTMLCommunityPageElement;
         new (): HTMLCommunityPageElement;
     };
-    interface HTMLContributorListElement extends Components.ContributorList, HTMLStencilElement {
-    }
-    var HTMLContributorListElement: {
-        prototype: HTMLContributorListElement;
-        new (): HTMLContributorListElement;
-    };
-    interface HTMLDocSnippetElement extends Components.DocSnippet, HTMLStencilElement {
-    }
-    var HTMLDocSnippetElement: {
-        prototype: HTMLDocSnippetElement;
-        new (): HTMLDocSnippetElement;
-    };
-    interface HTMLDocsComponentElement extends Components.DocsComponent, HTMLStencilElement {
-    }
-    var HTMLDocsComponentElement: {
-        prototype: HTMLDocsComponentElement;
-        new (): HTMLDocsComponentElement;
-    };
-    interface HTMLDocsDropdownElement extends Components.DocsDropdown, HTMLStencilElement {
-    }
-    var HTMLDocsDropdownElement: {
-        prototype: HTMLDocsDropdownElement;
-        new (): HTMLDocsDropdownElement;
-    };
-    interface HTMLDocsMenuElement extends Components.DocsMenu, HTMLStencilElement {
-    }
-    var HTMLDocsMenuElement: {
-        prototype: HTMLDocsMenuElement;
-        new (): HTMLDocsMenuElement;
-    };
     interface HTMLDocsSearchElement extends Components.DocsSearch, HTMLStencilElement {
     }
     var HTMLDocsSearchElement: {
@@ -354,23 +241,11 @@ declare global {
         prototype: HTMLEnterpriseSubnavElement;
         new (): HTMLEnterpriseSubnavElement;
     };
-    interface HTMLInPageNavigationElement extends Components.InPageNavigation, HTMLStencilElement {
-    }
-    var HTMLInPageNavigationElement: {
-        prototype: HTMLInPageNavigationElement;
-        new (): HTMLInPageNavigationElement;
-    };
     interface HTMLLandingPageElement extends Components.LandingPage, HTMLStencilElement {
     }
     var HTMLLandingPageElement: {
         prototype: HTMLLandingPageElement;
         new (): HTMLLandingPageElement;
-    };
-    interface HTMLLowerContentNavElement extends Components.LowerContentNav, HTMLStencilElement {
-    }
-    var HTMLLowerContentNavElement: {
-        prototype: HTMLLowerContentNavElement;
-        new (): HTMLLowerContentNavElement;
     };
     interface HTMLMetaTagsElement extends Components.MetaTags, HTMLStencilElement {
     }
@@ -402,12 +277,6 @@ declare global {
         prototype: HTMLNotFoundPageElement;
         new (): HTMLNotFoundPageElement;
     };
-    interface HTMLPluginPlatformsElement extends Components.PluginPlatforms, HTMLStencilElement {
-    }
-    var HTMLPluginPlatformsElement: {
-        prototype: HTMLPluginPlatformsElement;
-        new (): HTMLPluginPlatformsElement;
-    };
     interface HTMLPreFooterElement extends Components.PreFooter, HTMLStencilElement {
     }
     var HTMLPreFooterElement: {
@@ -438,12 +307,6 @@ declare global {
         prototype: HTMLSolutionPageElement;
         new (): HTMLSolutionPageElement;
     };
-    interface HTMLTelemetryPageElement extends Components.TelemetryPage, HTMLStencilElement {
-    }
-    var HTMLTelemetryPageElement: {
-        prototype: HTMLTelemetryPageElement;
-        new (): HTMLTelemetryPageElement;
-    };
     interface HTMLTermsServicePageElement extends Components.TermsServicePage, HTMLStencilElement {
     }
     var HTMLTermsServicePageElement: {
@@ -456,12 +319,6 @@ declare global {
         prototype: HTMLTopParallaxElement;
         new (): HTMLTopParallaxElement;
     };
-    interface HTMLVersionSelectElement extends Components.VersionSelect, HTMLStencilElement {
-    }
-    var HTMLVersionSelectElement: {
-        prototype: HTMLVersionSelectElement;
-        new (): HTMLVersionSelectElement;
-    };
     interface HTMLWebpImageElement extends Components.WebpImage, HTMLStencilElement {
     }
     var HTMLWebpImageElement: {
@@ -469,15 +326,10 @@ declare global {
         new (): HTMLWebpImageElement;
     };
     interface HTMLElementTagNameMap {
-        "anchor-link": HTMLAnchorLinkElement;
         "app-menu-toggle": HTMLAppMenuToggleElement;
-        "avc-code-type": HTMLAvcCodeTypeElement;
-        "blog-forum-link": HTMLBlogForumLinkElement;
-        "blog-newsletter": HTMLBlogNewsletterElement;
         "blog-page": HTMLBlogPageElement;
         "blog-pagination": HTMLBlogPaginationElement;
         "blog-post": HTMLBlogPostElement;
-        "blog-search": HTMLBlogSearchElement;
         "blog-social-actions": HTMLBlogSocialActionsElement;
         "blog-subnav": HTMLBlogSubnavElement;
         "capacitor-hubspot-form": HTMLCapacitorHubspotFormElement;
@@ -486,70 +338,47 @@ declare global {
         "code-snippet": HTMLCodeSnippetElement;
         "code-tabs": HTMLCodeTabsElement;
         "community-page": HTMLCommunityPageElement;
-        "contributor-list": HTMLContributorListElement;
-        "doc-snippet": HTMLDocSnippetElement;
-        "docs-component": HTMLDocsComponentElement;
-        "docs-dropdown": HTMLDocsDropdownElement;
-        "docs-menu": HTMLDocsMenuElement;
         "docs-search": HTMLDocsSearchElement;
         "enterprise-page": HTMLEnterprisePageElement;
         "enterprise-subnav": HTMLEnterpriseSubnavElement;
-        "in-page-navigation": HTMLInPageNavigationElement;
         "landing-page": HTMLLandingPageElement;
-        "lower-content-nav": HTMLLowerContentNavElement;
         "meta-tags": HTMLMetaTagsElement;
         "more-button": HTMLMoreButtonElement;
         "newsletter-signup": HTMLNewsletterSignupElement;
         "newsletter-signup-parallax": HTMLNewsletterSignupParallaxElement;
         "not-found-page": HTMLNotFoundPageElement;
-        "plugin-platforms": HTMLPluginPlatformsElement;
         "pre-footer": HTMLPreFooterElement;
         "prismic-image": HTMLPrismicImageElement;
         "privacy-policy-page": HTMLPrivacyPolicyPageElement;
         "site-header": HTMLSiteHeaderElement;
         "solution-page": HTMLSolutionPageElement;
-        "telemetry-page": HTMLTelemetryPageElement;
         "terms-service-page": HTMLTermsServicePageElement;
         "top-parallax": HTMLTopParallaxElement;
-        "version-select": HTMLVersionSelectElement;
         "webp-image": HTMLWebpImageElement;
     }
 }
 declare namespace LocalJSX {
-    /**
-     * Used in the generated doc markup as well as the site, so don't remve this
-     * even if it looks like no one is using it
-     */
-    interface AnchorLink {
-        "to"?: string;
-    }
     interface AppMenuToggle {
         "icon"?: string;
         "onMenuToggleClick"?: (event: AppMenuToggleCustomEvent<any>) => void;
     }
-    interface AvcCodeType {
-        "typeId"?: string;
-    }
-    interface BlogForumLink {
-        "href"?: string;
-    }
-    interface BlogNewsletter {
-    }
     interface BlogPage {
         "data"?: BlogData[];
+        "defaults"?: typeof defaults;
     }
     interface BlogPagination {
+        "defaults"?: typeof defaults;
         "linkText"?: [string, string];
         "rssIcon"?: boolean;
     }
     interface BlogPost {
         "data"?: BlogData;
+        "defaults"?: typeof defaults;
         "preview"?: boolean;
-    }
-    interface BlogSearch {
     }
     interface BlogSocialActions {
         "column"?: boolean;
+        "defaults"?: typeof defaults;
         "post"?: BlogData;
     }
     interface BlogSubnav {
@@ -559,14 +388,15 @@ declare namespace LocalJSX {
     }
     interface CapacitorHubspotForm {
         "ajax"?: boolean;
+        "defaults"?: typeof defaults;
         "formId"?: string;
         "goToWebinarKey"?: string;
         "onFormSubmitted"?: (event: CapacitorHubspotFormCustomEvent<any>) => void;
-        "portalId"?: string;
     }
     interface CapacitorSite {
     }
     interface CapacitorSiteFooter {
+        "defaults"?: typeof defaults;
     }
     interface CodeSnippet {
         "code": string;
@@ -580,73 +410,49 @@ declare namespace LocalJSX {
   };
     }
     interface CommunityPage {
-        "data"?: any;
-    }
-    interface ContributorList {
-        "contributors"?: string[];
-        "editApiUrl"?: string;
-        "editUrl"?: string;
-    }
-    interface DocSnippet {
-    }
-    interface DocsComponent {
-        "data"?: DocsData;
-    }
-    interface DocsDropdown {
-        "align"?: 'left' | 'right' | 'center';
-        "icon"?: (props: any) => JSX.Element;
-    }
-    interface DocsMenu {
-        "activePath"?: string;
-        "onMenuToggled"?: (event: DocsMenuCustomEvent<any>) => void;
-        "template"?: DocsTemplate;
-        "toc"?: TableOfContents;
+        "data"?: typeof CommunityPageData;
     }
     interface DocsSearch {
+        "defaults"?: typeof defaults;
         "placeholder"?: string;
         "theme"?: SiteHeader['theme'];
     }
     interface EnterprisePage {
-        "data"?: any;
+        "data"?: typeof EnterprisePageData;
     }
     interface EnterpriseSubnav {
     }
-    interface InPageNavigation {
-        "editApiUrl"?: string;
-        "editUrl"?: string;
-        "headings"?: HeadingData[];
-        "url"?: string;
-    }
     interface LandingPage {
-        "data"?: any;
-    }
-    interface LowerContentNav {
-        "navigation"?: PageNavigation;
+        "data"?: typeof LandingPageData;
     }
     interface MetaTags {
-        "authorTwitter"?: string;
-        "canonicalUrl"?: string;
-        "description"?: string;
-        "image"?: string;
-        "ogType"?: string;
-        "pageTitle"?: string;
+        "authorTwitter"?: any;
+        "canonicalUrl"?: any;
+        "defaults"?: typeof defaults;
+        "description"?: any;
+        "image"?: any;
+        "ogType"?: any;
+        "pageTitle"?: any;
+        "rssTitle"?: any;
     }
     interface MoreButton {
     }
     interface NewsletterSignup {
+        "defaults"?: typeof defaults;
     }
     interface NewsletterSignupParallax {
+        "defaults"?: typeof defaults;
     }
     interface NotFoundPage {
-    }
-    interface PluginPlatforms {
-        "platforms"?: string;
+        "defaults"?: typeof defaults;
     }
     interface PreFooter {
+        "defaults"?: typeof defaults;
     }
     interface PrismicImage {
         "alt"?: string;
         "class"?: string;
+        "defaults"?: typeof defaults;
         "height"?: number | string;
         "image"?: any;
         "loading"?: 'eager' | 'lazy';
@@ -654,25 +460,25 @@ declare namespace LocalJSX {
         "width"?: number | string;
     }
     interface PrivacyPolicyPage {
+        "defaults"?: typeof defaults;
     }
     interface SiteHeader {
+        "defaults"?: typeof defaults;
         "includeBurger"?: boolean;
         "includeLogo"?: boolean;
         "sticky"?: boolean;
-        "template"?: DocsTemplate1;
+        "template"?: DocsTemplate;
         "theme"?: 'light' | 'dark';
     }
     interface SolutionPage {
+        "defaults"?: typeof defaults;
         "solutionId"?: string;
     }
-    interface TelemetryPage {
-        "data"?: any;
-    }
     interface TermsServicePage {
+        "defaults"?: typeof defaults;
     }
     interface TopParallax {
-    }
-    interface VersionSelect {
+        "defaults"?: typeof defaults;
     }
     interface WebpImage {
         "alt"?: string;
@@ -684,15 +490,10 @@ declare namespace LocalJSX {
         "width"?: string | number;
     }
     interface IntrinsicElements {
-        "anchor-link": AnchorLink;
         "app-menu-toggle": AppMenuToggle;
-        "avc-code-type": AvcCodeType;
-        "blog-forum-link": BlogForumLink;
-        "blog-newsletter": BlogNewsletter;
         "blog-page": BlogPage;
         "blog-pagination": BlogPagination;
         "blog-post": BlogPost;
-        "blog-search": BlogSearch;
         "blog-social-actions": BlogSocialActions;
         "blog-subnav": BlogSubnav;
         "capacitor-hubspot-form": CapacitorHubspotForm;
@@ -701,32 +502,22 @@ declare namespace LocalJSX {
         "code-snippet": CodeSnippet;
         "code-tabs": CodeTabs;
         "community-page": CommunityPage;
-        "contributor-list": ContributorList;
-        "doc-snippet": DocSnippet;
-        "docs-component": DocsComponent;
-        "docs-dropdown": DocsDropdown;
-        "docs-menu": DocsMenu;
         "docs-search": DocsSearch;
         "enterprise-page": EnterprisePage;
         "enterprise-subnav": EnterpriseSubnav;
-        "in-page-navigation": InPageNavigation;
         "landing-page": LandingPage;
-        "lower-content-nav": LowerContentNav;
         "meta-tags": MetaTags;
         "more-button": MoreButton;
         "newsletter-signup": NewsletterSignup;
         "newsletter-signup-parallax": NewsletterSignupParallax;
         "not-found-page": NotFoundPage;
-        "plugin-platforms": PluginPlatforms;
         "pre-footer": PreFooter;
         "prismic-image": PrismicImage;
         "privacy-policy-page": PrivacyPolicyPage;
         "site-header": SiteHeader;
         "solution-page": SolutionPage;
-        "telemetry-page": TelemetryPage;
         "terms-service-page": TermsServicePage;
         "top-parallax": TopParallax;
-        "version-select": VersionSelect;
         "webp-image": WebpImage;
     }
 }
@@ -734,19 +525,10 @@ export { LocalJSX as JSX };
 declare module "@stencil/core" {
     export namespace JSX {
         interface IntrinsicElements {
-            /**
-             * Used in the generated doc markup as well as the site, so don't remve this
-             * even if it looks like no one is using it
-             */
-            "anchor-link": LocalJSX.AnchorLink & JSXBase.HTMLAttributes<HTMLAnchorLinkElement>;
             "app-menu-toggle": LocalJSX.AppMenuToggle & JSXBase.HTMLAttributes<HTMLAppMenuToggleElement>;
-            "avc-code-type": LocalJSX.AvcCodeType & JSXBase.HTMLAttributes<HTMLAvcCodeTypeElement>;
-            "blog-forum-link": LocalJSX.BlogForumLink & JSXBase.HTMLAttributes<HTMLBlogForumLinkElement>;
-            "blog-newsletter": LocalJSX.BlogNewsletter & JSXBase.HTMLAttributes<HTMLBlogNewsletterElement>;
             "blog-page": LocalJSX.BlogPage & JSXBase.HTMLAttributes<HTMLBlogPageElement>;
             "blog-pagination": LocalJSX.BlogPagination & JSXBase.HTMLAttributes<HTMLBlogPaginationElement>;
             "blog-post": LocalJSX.BlogPost & JSXBase.HTMLAttributes<HTMLBlogPostElement>;
-            "blog-search": LocalJSX.BlogSearch & JSXBase.HTMLAttributes<HTMLBlogSearchElement>;
             "blog-social-actions": LocalJSX.BlogSocialActions & JSXBase.HTMLAttributes<HTMLBlogSocialActionsElement>;
             "blog-subnav": LocalJSX.BlogSubnav & JSXBase.HTMLAttributes<HTMLBlogSubnavElement>;
             "capacitor-hubspot-form": LocalJSX.CapacitorHubspotForm & JSXBase.HTMLAttributes<HTMLCapacitorHubspotFormElement>;
@@ -755,32 +537,22 @@ declare module "@stencil/core" {
             "code-snippet": LocalJSX.CodeSnippet & JSXBase.HTMLAttributes<HTMLCodeSnippetElement>;
             "code-tabs": LocalJSX.CodeTabs & JSXBase.HTMLAttributes<HTMLCodeTabsElement>;
             "community-page": LocalJSX.CommunityPage & JSXBase.HTMLAttributes<HTMLCommunityPageElement>;
-            "contributor-list": LocalJSX.ContributorList & JSXBase.HTMLAttributes<HTMLContributorListElement>;
-            "doc-snippet": LocalJSX.DocSnippet & JSXBase.HTMLAttributes<HTMLDocSnippetElement>;
-            "docs-component": LocalJSX.DocsComponent & JSXBase.HTMLAttributes<HTMLDocsComponentElement>;
-            "docs-dropdown": LocalJSX.DocsDropdown & JSXBase.HTMLAttributes<HTMLDocsDropdownElement>;
-            "docs-menu": LocalJSX.DocsMenu & JSXBase.HTMLAttributes<HTMLDocsMenuElement>;
             "docs-search": LocalJSX.DocsSearch & JSXBase.HTMLAttributes<HTMLDocsSearchElement>;
             "enterprise-page": LocalJSX.EnterprisePage & JSXBase.HTMLAttributes<HTMLEnterprisePageElement>;
             "enterprise-subnav": LocalJSX.EnterpriseSubnav & JSXBase.HTMLAttributes<HTMLEnterpriseSubnavElement>;
-            "in-page-navigation": LocalJSX.InPageNavigation & JSXBase.HTMLAttributes<HTMLInPageNavigationElement>;
             "landing-page": LocalJSX.LandingPage & JSXBase.HTMLAttributes<HTMLLandingPageElement>;
-            "lower-content-nav": LocalJSX.LowerContentNav & JSXBase.HTMLAttributes<HTMLLowerContentNavElement>;
             "meta-tags": LocalJSX.MetaTags & JSXBase.HTMLAttributes<HTMLMetaTagsElement>;
             "more-button": LocalJSX.MoreButton & JSXBase.HTMLAttributes<HTMLMoreButtonElement>;
             "newsletter-signup": LocalJSX.NewsletterSignup & JSXBase.HTMLAttributes<HTMLNewsletterSignupElement>;
             "newsletter-signup-parallax": LocalJSX.NewsletterSignupParallax & JSXBase.HTMLAttributes<HTMLNewsletterSignupParallaxElement>;
             "not-found-page": LocalJSX.NotFoundPage & JSXBase.HTMLAttributes<HTMLNotFoundPageElement>;
-            "plugin-platforms": LocalJSX.PluginPlatforms & JSXBase.HTMLAttributes<HTMLPluginPlatformsElement>;
             "pre-footer": LocalJSX.PreFooter & JSXBase.HTMLAttributes<HTMLPreFooterElement>;
             "prismic-image": LocalJSX.PrismicImage & JSXBase.HTMLAttributes<HTMLPrismicImageElement>;
             "privacy-policy-page": LocalJSX.PrivacyPolicyPage & JSXBase.HTMLAttributes<HTMLPrivacyPolicyPageElement>;
             "site-header": LocalJSX.SiteHeader & JSXBase.HTMLAttributes<HTMLSiteHeaderElement>;
             "solution-page": LocalJSX.SolutionPage & JSXBase.HTMLAttributes<HTMLSolutionPageElement>;
-            "telemetry-page": LocalJSX.TelemetryPage & JSXBase.HTMLAttributes<HTMLTelemetryPageElement>;
             "terms-service-page": LocalJSX.TermsServicePage & JSXBase.HTMLAttributes<HTMLTermsServicePageElement>;
             "top-parallax": LocalJSX.TopParallax & JSXBase.HTMLAttributes<HTMLTopParallaxElement>;
-            "version-select": LocalJSX.VersionSelect & JSXBase.HTMLAttributes<HTMLVersionSelectElement>;
             "webp-image": LocalJSX.WebpImage & JSXBase.HTMLAttributes<HTMLWebpImageElement>;
         }
     }

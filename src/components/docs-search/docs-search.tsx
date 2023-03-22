@@ -8,6 +8,7 @@ import {
   h,
   Listen,
 } from '@stencil/core'
+import { defaults } from 'src/store'
 import Router from '../../router'
 import { importResource } from '../../utils/common'
 import { SiteHeader } from '../capacitor-site-header/capacitor-site-header'
@@ -29,6 +30,7 @@ export class DocsSearch implements ComponentInterface {
 
   @Prop() theme: SiteHeader['theme'] = 'light';
   @Prop() placeholder = 'Search';
+  @Prop() defaults: typeof defaults
 
   @Element() el: HTMLElement
   @State() input: {
@@ -88,9 +90,9 @@ export class DocsSearch implements ComponentInterface {
 
   setupSearch() {
     window.docsearch({
-      appId: 'S9NORH1KTE',
-      apiKey: 'e14004b94a1f75b3bb71fc63f070466c',
-      indexName: `installdoc`,
+      appId: this.defaults.algolia.appId,
+      apiKey: this.defaults.algolia.apiKey,
+      indexName: this.defaults.algolia.indexName,
       inputSelector: `#input-${this.uniqueId}`,
       debug: false, // Set debug to true if you want to inspect the dropdown
       queryHook: (e, t) => {
@@ -108,7 +110,7 @@ export class DocsSearch implements ComponentInterface {
         }
       },
       handleSelected: (_, __, suggestion) => {
-        const url = suggestion.url.replace('https://install.doctor', '')
+        const url = suggestion.url.replace(defaults.homepage, '')
         this.clearSearch()
         Router.push(url)
       },

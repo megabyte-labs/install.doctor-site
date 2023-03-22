@@ -48,15 +48,12 @@ export class BlogSubnav {
                     {crumb[0]}
                   </a>
                 ) : (
-                    crumb[0]
-                  )}
+                  crumb[0]
+                )}
               </li>
             ))}
           </Breadcrumbs>
           <div class="blog-search-wrapper">
-            {/* <Breakpoint md={true}>
-              <blog-search />
-            </Breakpoint> */}
             {/* <Breakpoint class="mobile" xs={true} md={false} display="flex">
               {this.open
               ? <ion-icon
@@ -80,11 +77,10 @@ export class BlogSubnav {
             }}
           >
             <ResponsiveContainer>
-              <blog-search />
               {this.socialActions
               ? <blog-social-actions /> : ''}
               {this.pagination
-              ? <blog-pagination linkText={['Older', 'Newer']}/> : ''}
+              ? <blog-pagination defaults={this.defaults} linkText={['Older', 'Newer']}/> : ''}
             </ResponsiveContainer>
           </div> */}
         </div>

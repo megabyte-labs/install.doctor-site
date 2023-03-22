@@ -409,8 +409,8 @@ blog-post,
 community-page,
 solution-page {
   > :not(site-header) {
-    animation: fadeIn 0.52s ease-out forwards;
-    animation-delay: 0.24s;
+    animation: fadeIn 1.4s ease-in-out forwards;
+    animation-delay: 0.3s;
     opacity: 0;
   }
 }

@@ -4,6 +4,7 @@ import {
   ResponsiveContainer,
   Heading,
   Paragraph,
+  Button,
 } from 'ionic-ds-no-fonts'
 
 import { SolutionUbuntu } from './solution-ubuntu'
@@ -14,6 +15,7 @@ import { SolutionMacOS } from './solution-macos'
 import { SolutionArchlinux } from './solution-archlinux'
 import { SolutionQubes } from './solution-qubes'
 import { SolutionWindows } from './solution-windows'
+import { defaults } from 'src/store'
 
 @Component({
   tag: 'solution-page',
@@ -22,6 +24,7 @@ import { SolutionWindows } from './solution-windows'
 })
 export class SolutionPage implements ComponentInterface {
   @Prop() solutionId: string
+  @Prop() defaults: typeof defaults
 
   framework: {
     id: string
@@ -31,7 +34,7 @@ export class SolutionPage implements ComponentInterface {
     dimensions: string
   }
   componentWillLoad() {
-    this.framework = solutions.find(entry => entry.id === this.solutionId)
+    this.framework = this.defaults.solutionPage.solutions.find(entry => entry.id === this.solutionId)
   }
   getComponent() {
     switch (this.solutionId) {
@@ -59,13 +62,13 @@ export class SolutionPage implements ComponentInterface {
       <section id="demo">
         <ResponsiveContainer>
           <div class="heading-group">
-            <Heading id="demo-heading" level={2}>Install Doctor Enterprise Support</Heading>
+            <Heading id="demo-heading" level={2}>{this.defaults.solutionPage.enterpriseSupport.title}</Heading>
             <Paragraph>Get it done the easy way by leveraging our team of <b>{this.framework.name} experts</b>.</Paragraph>
-            <Paragraph>Guaranteed response SLAs to support your business needs. Our professional support team is on-hand to help you troubleshoot and address issues.</Paragraph>
-            <Paragraph>Our team of experts will work with your teams to provide open-source based recommendations, strategies, and custom solutions that fits your unique goals and challenges. We are here to help ensure your success.</Paragraph>
-            <Paragraph><b class="noshow-noscript">Use the form below to send us a message or ask questions about how Install Doctor can help you with your specific needs.</b><noscript><b>Send an e-mail to <a href="mailto:help@install.doctor">help@install.doctor</a> with details on how we can help and we will respond to you in a timely fashion.</b></noscript></Paragraph>
+            <Paragraph>{this.defaults.solutionPage.enterpriseSupport.paragraph1}</Paragraph>
+            <Paragraph>{this.defaults.solutionPage.enterpriseSupport.paragraph2}</Paragraph>
+            <Paragraph><b class="noshow-noscript">Use the form below to send us a message or ask questions about how {this.defaults.brandName} can help you with your specific needs.</b><noscript><b>Send an e-mail to <a href={'mailto:' + this.defaults.brandEmail}>{this.defaults.brandEmail}</a> with details on how we can help and we will respond to you in a timely fashion.</b></noscript></Paragraph>
           </div>
-          <capacitor-hubspot-form formId="b74a09f0-f963-47d2-b7d0-43d74dae366f" />
+          <capacitor-hubspot-form defaults={this.defaults} formId={this.defaults.hubspot.enterpriseContactForm.formId} />
         </ResponsiveContainer>
       </section>
     )
@@ -75,13 +78,11 @@ export class SolutionPage implements ComponentInterface {
     return (
       <Host>
         <meta-tags
-          page-title={'Provision ' + this.framework.name + ' using a powerful, customizable one-liner'}
-          description={
-            'Headlessly deploy a fully configured workstation on ' +
-            this.framework.name + ' using Install Doctor, an intuitive, well-designed provisioning system compatible with most operating systems.'
-          }
+          defaults={this.defaults}
+          page-title={this.defaults.solutionPage.meta.pageTitle(this.framework.name)}
+          description={this.defaults.solutionPage.meta.pageTitle(this.framework.name)}
         />
-        <site-header class="heading-container" sticky={true} />
+        <site-header defaults={this.defaults} class="heading-container" sticky={true} />
         <ResponsiveContainer id="top" as="section">
           <div class="heading-group">
             <webp-image
@@ -93,34 +94,34 @@ export class SolutionPage implements ComponentInterface {
               class="react"
             />
             <Heading level={2} as="h1">
-              {this.framework.name} &amp; Install Doctor
+              {this.framework.name} &amp; {this.defaults.brandName}
             </Heading>
             <Paragraph level={2}>
-              Get more out of{' '}
+              {this.defaults.solutionPage.subHeader.text1}{' '}
               {this.framework.name}
               {' '}
-              by provisioning it with Install Doctor
+              {this.defaults.solutionPage.subHeader.text2}
             </Paragraph>
-            {/* <Button
+            <Button
               anchor
               href="#install"
               id="get-started"
               style={{ '--button-background': this.framework.theme }}
             >
               Get Started
-            </Button> */}
+            </Button>
           </div>
         </ResponsiveContainer>
         {this.getComponent()}
         <section id="continue">
           <ResponsiveContainer>
-            <Heading level={3}>Continue your Install Doctor journey.</Heading>
+            <Heading level={3}>Continue your {this.defaults.brandName} journey.</Heading>
             <Paragraph>
-              This is only the beginning. Browse through the Install Doctor{' '}
-              <a href="https://github.com/megabyte-labs/install.doctor" target="_blank" rel="noopener">
+              This is only the beginning. Browse through the {this.defaults.brandName}{' '}
+              <a href={this.defaults.social.github} target="_blank" rel="noopener">
                 GitHub repository
               </a>{' '}
-              or get started with your own configuration by checking out the{' '}
+              or dive deeper by going through the{' '}
               <a href="/docs">
                 documentation
               </a>{' '}
@@ -129,68 +130,9 @@ export class SolutionPage implements ComponentInterface {
           </ResponsiveContainer>
         </section>
         {this.Demo()}
-        <pre-footer />
-        <capacitor-site-footer />
+        <pre-footer defaults={this.defaults} />
+        <capacitor-site-footer defaults={this.defaults} />
       </Host>
     )
   }
 }
-
-const solutions = [
-  {
-    id: 'archlinux',
-    name: 'Archlinux',
-    theme: '#1793d1',
-    logo: '/assets/img/solutions/archlinux.png',
-    dimensions: '252x224',
-  },
-  {
-    id: 'centos',
-    name: 'CentOS',
-    theme: '#212078',
-    logo: '/assets/img/solutions/centos.png',
-    dimensions: '252x224',
-  },
-  {
-    id: 'debian',
-    name: 'Debian',
-    theme: '#d70a53',
-    logo: '/assets/img/solutions/debian.png',
-    dimensions: '252x224',
-  },
-  {
-    id: 'fedora',
-    name: 'Fedora',
-    theme: '#0B57A4',
-    logo: '/assets/img/solutions/fedora.png',
-    dimensions: '252x224',
-  },
-  {
-    id: 'macos',
-    name: 'macOS',
-    theme: '#000000',
-    logo: '/assets/img/solutions/macos.png',
-    dimensions: '252x224',
-  },
-  {
-    id: 'qubes',
-    name: 'Qubes',
-    theme: '#3874d8',
-    logo: '/assets/img/solutions/qubes.png',
-    dimensions: '252x224',
-  },
-  {
-    id: 'ubuntu',
-    name: 'Ubuntu',
-    theme: '#dd4814',
-    logo: '/assets/img/solutions/ubuntu.png',
-    dimensions: '252x224',
-  },
-  {
-    id: 'windows',
-    name: 'Windows',
-    theme: '#00a1f1',
-    logo: '/assets/img/solutions/windows.png',
-    dimensions: '252x224',
-  },
-]

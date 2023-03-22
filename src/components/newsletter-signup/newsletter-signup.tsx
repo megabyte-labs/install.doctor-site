@@ -1,5 +1,6 @@
-import { Component, Host, State, h } from '@stencil/core'
+import { Component, Host, State, h, Prop } from '@stencil/core'
 import { Heading, Paragraph } from 'ionic-ds-no-fonts'
+import { defaults } from '../../store'
 
 declare global {
   interface Window {
@@ -16,6 +17,7 @@ declare global {
   styleUrl: 'newsletter-signup.scss',
 })
 export class NewsletterSignup {
+  @Prop() defaults: typeof defaults
   @State() email: string = '';
   @State() isLoading: boolean = false;
   @State() hasSubmitted: boolean = false;
@@ -32,8 +34,8 @@ export class NewsletterSignup {
     const xhr = new XMLHttpRequest()
     const url = [
       'https://api.hsforms.com/submissions/v3/integration/submit',
-      '24052635',
-      'eb0d85ad-67a2-41fe-bebe-ca909073f286',
+      this.defaults.hubspot.emailForm.id,
+      this.defaults.hubspot.emailForm.key,
     ].join('/')
     xhr.open('POST', url)
     xhr.setRequestHeader('Content-Type', 'application/json;charset=UTF-8')
@@ -65,7 +67,7 @@ export class NewsletterSignup {
           },
           {
             name: 'first_campaign_conversion',
-            value: 'Install Doctor Newsletter',
+            value: this.defaults.brandName + ' Newsletter',
           },
         ],
         context: {
@@ -95,7 +97,7 @@ export class NewsletterSignup {
           <div class="heading-group">
             <Heading>The latest updates. Delivered monthly.</Heading>
             <Paragraph>
-              Install Doctor is getting better every day. Sign up for a monthly email
+              {this.defaults.brandName} is getting better every day. Sign up for a monthly email
               on the latest updates, releases, articles, news, and exclusive beta features!
             </Paragraph>
           </div>
@@ -108,36 +110,36 @@ export class NewsletterSignup {
                 </Paragraph>
               </div>
             ) : (
-                <form class="hs-form" onSubmit={e => this.handleNewsletterSubmit(e)}>
-                  <div class="hs_email hs-email hs-fieldtype-text field hs-form-field">
-                    <div class="input">
-                      <input
-                        name="email"
-                        type="email"
-                        autocomplete="email"
-                        inputmode="email"
-                        value={this.email}
-                        onInput={() => this.handleEmailChange(event)}
-                        disabled={this.isLoading}
-                        placeholder="E-mail"
-                        class={{ 'error': this.isValid, 'ui-paragraph-4': true }}
-                        aria-label="Email"
-                        required
-                      />
-                    </div>
+              <form class="hs-form" onSubmit={e => this.handleNewsletterSubmit(e)}>
+                <div class="hs_email hs-email hs-fieldtype-text field hs-form-field">
+                  <div class="input">
+                    <input
+                      name="email"
+                      type="email"
+                      autocomplete="email"
+                      inputmode="email"
+                      value={this.email}
+                      onInput={() => this.handleEmailChange(event)}
+                      disabled={this.isLoading}
+                      placeholder="E-mail"
+                      class={{ 'error': this.isValid, 'ui-paragraph-4': true }}
+                      aria-label="Email"
+                      required
+                    />
                   </div>
-                  <div class="hs_submit hs-submit">
-                    <div class="actions">
-                      <input type="submit" class="hs-button primary large" value="Subscribe" />
-                    </div>
+                </div>
+                <div class="hs_submit hs-submit">
+                  <div class="actions">
+                    <input type="submit" class="hs-button primary large" value="Subscribe" />
                   </div>
-                  {!this.isValid && (
-                    <Paragraph level={5} class="error-message">
-                      {this.inlineMessage}
-                    </Paragraph>
-                  )}
-                </form>
-              )}
+                </div>
+                {!this.isValid && (
+                  <Paragraph level={5} class="error-message">
+                    {this.inlineMessage}
+                  </Paragraph>
+                )}
+              </form>
+            )}
           </div>
         </div>
       </Host>

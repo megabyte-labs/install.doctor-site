@@ -1,8 +1,7 @@
-import { Component, State, h } from '@stencil/core'
+import { Component, State, h, Prop } from '@stencil/core'
+import { href } from '@stencil/router'
 import { ResponsiveContainer, Button } from 'ionic-ds-no-fonts'
-
-// import { Background } from '../assets/bg-3-only.svg';
-// import { Background } from '../assets/bg-boxes.svg';
+import { defaults } from 'src/store'
 
 import { importResource } from '../../../utils/common'
 
@@ -12,8 +11,8 @@ import { importResource } from '../../../utils/common'
   scoped: true,
 })
 export class LandingPage {
+  @Prop() defaults: typeof defaults;
   $shapes!: HTMLDivElement
-  libID = 'parallax-lib';
 
   @State() showEmailInput: boolean = false;
   @State() showCommunity: boolean = false;
@@ -44,14 +43,12 @@ export class LandingPage {
         <div id="homing-particles" class="section-overlay"></div>
         <ResponsiveContainer>
           <h1>
-            <span class="reveal">Open</span>
-            <span class="reveal">Source</span>
-            <span class="reveal">Wizardry</span>
+            <span class="reveal">{this.defaults.landingPage.parallax.reveal1}</span>
+            <span class="reveal">{this.defaults.landingPage.parallax.reveal2}</span>
+            <span class="reveal">{this.defaults.landingPage.parallax.reveal3}</span>
           </h1>
           <p class="reveal">
-            Join us in our quest to build the ultimate device deployment tools, scripts, and software
-            or follow us to reap the benefits of expert-configured, open-source software
-            built with paranoid-level security practices.
+            {this.defaults.landingPage.parallax.text}
           </p>
           <div class="btns">
             <Button
@@ -59,22 +56,22 @@ export class LandingPage {
               kind="round"
               color="indigo"
               variation="light"
-              href={this.showCommunity ? '/community' : ''}
+              {...href(this.showCommunity ? this.defaults.landingPage.parallax.newsletterButtonSecondaryLink : '')}
               onClick={(e) => this.showEmail(e)}
               anchor={true}
             >
-              {this.showCommunity ? 'Join Community' : 'Get Beta Access'}  <span>{'->'}</span>
+              {this.showCommunity ? this.defaults.landingPage.parallax.newsletterButtonSecondaryText : this.defaults.landingPage.parallax.newsletterButtonText}  <span>{'->'}</span>
             </Button>
             <Button
               class="reveal"
               kind="round"
               color="indigo"
-              href="https://gitlab.com/megabyte-labs"
+              href={this.defaults.landingPage.parallax.secondButtonHref}
               target="_blank"
               rel="noopener"
               anchor={true}
             >
-              Browse Code <span>{'->'}</span>
+              {this.defaults.landingPage.parallax.secondButtonText} <span>{'->'}</span>
             </Button>
             <newsletter-signup-parallax class={{
               open: this.showEmailInput

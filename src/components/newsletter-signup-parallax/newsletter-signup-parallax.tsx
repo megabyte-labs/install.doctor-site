@@ -1,5 +1,6 @@
-import { Component, Host, State, h } from '@stencil/core'
+import { Component, Host, State, h, Prop } from '@stencil/core'
 import { Paragraph } from 'ionic-ds-no-fonts'
+import { defaults } from 'src/store'
 
 declare global {
   interface Window {
@@ -16,6 +17,7 @@ declare global {
   styleUrl: 'newsletter-signup-parallax.scss',
 })
 export class NewsletterSignupParallax {
+  @Prop() defaults: typeof defaults
   @State() email: string = '';
   @State() isLoading: boolean = false;
   @State() hasSubmitted: boolean = false;
@@ -32,8 +34,8 @@ export class NewsletterSignupParallax {
     const xhr = new XMLHttpRequest()
     const url = [
       'https://api.hsforms.com/submissions/v3/integration/submit',
-      '24052635',
-      '8801fbf5-204e-450a-87f4-f252a994c945',
+      this.defaults.hubspot.emailForm.id,
+      this.defaults.hubspot.emailForm.key,
     ].join('/')
     xhr.open('POST', url)
     xhr.setRequestHeader('Content-Type', 'application/json;charset=UTF-8')
@@ -65,7 +67,7 @@ export class NewsletterSignupParallax {
           },
           {
             name: 'first_campaign_conversion',
-            value: 'Megabyte Labs Newsletter',
+            value: this.defaults.brandName + ' Newsletter Parallax',
           },
         ],
         context: {
@@ -103,34 +105,34 @@ export class NewsletterSignupParallax {
               </Paragraph>
             </div>
           ) : (
-              <div class="form-group">
-                <form class="hs-form" onSubmit={e => this.handleNewsletterSubmit(e)}>
-                  <div class="hs_email hs-email hs-fieldtype-text field hs-form-field">
-                    <div class="input">
-                      <input
-                        name="email"
-                        type="email"
-                        autocomplete="email"
-                        inputmode="email"
-                        value={this.email}
-                        onInput={() => this.handleEmailChange(event)}
-                        disabled={this.isLoading}
-                        placeholder="E-mail"
-                        class={{ 'error': this.isValid, 'ui-paragraph-4': true }}
-                        aria-label="Email"
-                        required
-                      />
-                    </div>
+            <div class="form-group">
+              <form class="hs-form" onSubmit={e => this.handleNewsletterSubmit(e)}>
+                <div class="hs_email hs-email hs-fieldtype-text field hs-form-field">
+                  <div class="input">
+                    <input
+                      name="email"
+                      type="email"
+                      autocomplete="email"
+                      inputmode="email"
+                      value={this.email}
+                      onInput={() => this.handleEmailChange(event)}
+                      disabled={this.isLoading}
+                      placeholder="E-mail"
+                      class={{ 'error': this.isValid, 'ui-paragraph-4': true }}
+                      aria-label="Email"
+                      required
+                    />
                   </div>
-                  <div class="hs_submit hs-submit">
-                    <div class="actions">
-                      <input type="submit" class="hs-button ui-button primary large" value=" ->" />
-                    </div>
+                </div>
+                <div class="hs_submit hs-submit">
+                  <div class="actions">
+                    <input type="submit" class="hs-button ui-button primary large" value=" ->" />
                   </div>
-                </form>
+                </div>
+              </form>
 
-              </div>
-            )}
+            </div>
+          )}
         </div>
         {!this.isValid && (
           <Paragraph level={5} class="error-message">

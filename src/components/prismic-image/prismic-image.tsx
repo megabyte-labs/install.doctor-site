@@ -1,4 +1,5 @@
 import { Component, Element, Prop, h } from '@stencil/core'
+import { defaults } from 'src/store'
 
 @Component({
   tag: 'prismic-image',
@@ -6,6 +7,7 @@ import { Component, Element, Prop, h } from '@stencil/core'
 })
 export class PrismicImage {
   @Prop() image
+  @Prop() defaults: typeof defaults
   @Prop() params
   @Prop() height: number | string
   @Prop() width: number | string
@@ -33,7 +35,8 @@ export class PrismicImage {
     }
     // @ts-ignore
     var { image, params } = this.image, props = __rest(this.image, ["image", "params"])
-    const strippedUrl = props.url.replace(/https:\/\/install.doctor/gi, '')
+    const regex = new RegExp(this.defaults.homepage, "gi")
+    const strippedUrl = props.url.replace(regex, '')
     const webpSrc = strippedUrl.replace(/.png/gi, '.webp')
     const webpSrc2x = strippedUrl.replace(/.png/gi, '-2x.webp')
     const pngSrc2x = strippedUrl.replace(/.png/gi, '-2x.png')

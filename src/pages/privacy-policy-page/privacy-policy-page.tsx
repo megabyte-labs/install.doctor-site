@@ -1,9 +1,11 @@
-import { Component, Host, h } from '@stencil/core'
+import { Component, Host, h, Prop } from '@stencil/core'
+import { href } from '@stencil/router'
 import {
   ResponsiveContainer,
   Heading,
   Paragraph,
 } from 'ionic-ds-no-fonts'
+import { defaults } from 'src/store'
 
 @Component({
   tag: 'privacy-policy-page',
@@ -11,6 +13,7 @@ import {
   scoped: true,
 })
 export class PrivacyPolicyPage {
+  @Prop() defaults: typeof defaults
 
   render() {
     const { PrivacyPolicy } = this
@@ -18,15 +21,28 @@ export class PrivacyPolicyPage {
     return (
       <Host>
         <meta-tags
+          defaults={this.defaults}
           pageTitle="Privacy Policy"
           description={'Learn about what we do to protect our users privacy. Our privacy policy can answer your privacy-related issues.'}
         />
         <site-header class="heading-container" sticky={true} />
         <PrivacyPolicy />
-        <pre-footer />
-        <capacitor-site-footer />
+        <pre-footer defaults={this.defaults} />
+        <capacitor-site-footer defaults={this.defaults} />
       </Host>
     )
+  }
+
+  CompanyLink = (linkText?: string) => {
+    if (this.defaults.homepage === this.defaults.companyUrl) {
+      return (
+        <a {...href('/')} target="_blank" rel="noopener">{linkText ? linkText : this.defaults.companyLegalName}</a>
+      )
+    } else {
+      return (
+        <a href={this.defaults.companyUrl} target="_blank" rel="noopener">{linkText ? linkText : this.defaults.companyLegalName}</a>
+      )
+    }
   }
 
   PrivacyPolicy = () => (
@@ -187,7 +203,7 @@ export class PrivacyPolicyPage {
         <li>Honor opt-out/unsubscribe requests quickly.</li>
         <li>Allow users to unsubscribe by using the link at the bottom of each email.</li>
       </ul>
-      <Paragraph>If at any time you would like to unsubscribe from receiving future emails, you can email us at <a class="underline-hover" href="mailto:help@megabyte.space">help@megabyte.space</a> or you can follow the instructions at the bottom of each email and we will promptly remove
+      <Paragraph>If at any time you would like to unsubscribe from receiving future emails, you can email us at <a class="underline-hover" href={'mailto:' + this.defaults.companyEmail}>{this.defaults.companyEmail}</a> or you can follow the instructions at the bottom of each email and we will promptly remove
         you from all correspondence.</Paragraph>
       <div class="contact-info">
         <div class="contact-detail">
@@ -195,7 +211,7 @@ export class PrivacyPolicyPage {
             <ion-icon name="link"></ion-icon>
           </div>
           <div class="contact-text">
-            <a class="underline-hover" href="https://megabyte.space" target="_blank" rel="noopener">https://megabyte.space</a>
+            {this.CompanyLink(this.defaults.companyUrl)}
           </div>
         </div>
         <div class="contact-detail">
@@ -203,17 +219,17 @@ export class PrivacyPolicyPage {
             <ion-icon name="mail"></ion-icon>
           </div>
           <div class="contact-text">
-            <a class="underline-hover" href="mailto:help@megabyte.space">help@megabyte.space</a>
+            <a href={'mailto:' + this.defaults.companyEmail}>{this.defaults.companyEmail}</a>
           </div>
         </div>
         <div class="contact-detail">
           <div class="contact-icon">
             <ion-icon name="navigate"></ion-icon>
           </div>
-          <div class="contact-text">Megabyte LLC
-            <br />63 James Street,
-            <br />Morristown, New Jersey 07960
-            <br />United States of America</div>
+          <div class="contact-text">{this.defaults.companyLegalName}
+            <br />{this.defaults.companyAddress.line1},
+            <br />{this.defaults.companyAddress.line2}
+            <br />{this.defaults.companyAddress.line3}</div>
         </div>
       </div>
     </ResponsiveContainer>

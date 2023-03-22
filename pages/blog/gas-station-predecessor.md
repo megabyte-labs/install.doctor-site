@@ -1,12 +1,17 @@
 ---
 title: Gas Station, the Predecessor of Install Doctor
 slug: gas-station-predecessor
-date: 2023-02-19 14:00:00
+date: 2023-02-16 14:00:00
+modifiedDate: 2023-03-16 14:00:00
 author: Brian Zalewski <brian@megabyte.space>
 authorUrl: https://twitter.com/HillBillyHack3r
+authorName: Brian Zalewski
+authorImageName: hey.png
+authorDescription: Yo whats goodie.
 description: A little bit about the transition of our provisioning system from Ansible to Chezmoi
 featuredImage: /gas-station-predecessor.png
 featuredImageAlt: Transition from Gas Station to Install Doctor
+tags: Ansible,Open-Source,Deprecated
 ---
 
 When we began on our quest for our code-defined set of instructions to headlessly provision full workstations without having to micro-optimize settings after deployment, Ansible seemed to fit. However, we came up with a better solution.

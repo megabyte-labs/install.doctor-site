@@ -1,5 +1,6 @@
-import { Component, Host, State, h } from '@stencil/core'
+import { Component, Host, State, h, Fragment, Prop } from '@stencil/core'
 import { href } from '@stencil/router'
+import { defaults } from '../../store'
 import {
   ResponsiveContainer,
   Grid,
@@ -23,6 +24,7 @@ declare global {
   styleUrl: 'capacitor-site-footer.scss',
 })
 export class CapacitorSiteFooter {
+  @Prop() defaults: typeof defaults
   @State() email: string = '';
   @State() isLoading: boolean = false;
   @State() hasSubmitted: boolean = false;
@@ -39,8 +41,8 @@ export class CapacitorSiteFooter {
     const xhr = new XMLHttpRequest()
     const url = [
       'https://api.hsforms.com/submissions/v3/integration/submit',
-      '24052635',
-      'eb0d85ad-67a2-41fe-bebe-ca909073f286',
+      this.defaults.hubspot.emailForm.id,
+      this.defaults.hubspot.emailForm.key,
     ].join('/')
     xhr.open('POST', url)
     xhr.setRequestHeader('Content-Type', 'application/json;charset=UTF-8')
@@ -72,7 +74,7 @@ export class CapacitorSiteFooter {
           },
           {
             name: 'first_campaign_conversion',
-            value: 'Install Doctor Newsletter',
+            value: this.defaults.brandName + ' Newsletter Sign-Up Footer',
           },
         ],
         context: {
@@ -95,6 +97,22 @@ export class CapacitorSiteFooter {
     return messageMatch ? messageMatch[1] : undefined
   }
 
+  companyLink() {
+    if (this.defaults.companyUrl !== this.defaults.homepage) {
+      return (
+        <Fragment>
+          <a href={this.defaults.companyUrl} target="_blank" rel="noopener">{this.defaults.companyFooterBrandName}</a> | Released under <span id="mit">{this.defaults.license} License</span>
+        </Fragment>
+      )
+    } else {
+      return (
+        <Fragment>
+          <a {...href('/')}>{this.defaults.companyFooterBrandName}</a> | Released under <span id="mit">{this.defaults.license} License</span>
+        </Fragment>
+      )
+    }
+  }
+
   render() {
     return (
       <Host>
@@ -104,7 +122,7 @@ export class CapacitorSiteFooter {
               <div>
                 <Heading level={4}>Join our Newsletter</Heading>
                 <Paragraph level={4}>
-                  Keep up to date with all the latest Install Doctor news and updates
+                  Keep up to date with all the latest {this.defaults.brandName} news and updates
                 </Paragraph>
               </div>
               <div class="form-group">
@@ -116,73 +134,75 @@ export class CapacitorSiteFooter {
                     </Paragraph>
                   </div>
                 ) : (
-                    <form class="hs-form" onSubmit={e => this.handleNewsletterSubmit(e)}>
-                      <div class="hs_email hs-email hs-fieldtype-text field hs-form-field">
-                        <div class="input">
-                          <input
-                            name="email"
-                            type="email"
-                            autocomplete="email"
-                            inputmode="email"
-                            value={this.email}
-                            onInput={() => this.handleEmailChange(event)}
-                            disabled={this.isLoading}
-                            placeholder="E-mail"
-                            class={{ 'error': this.isValid, 'ui-paragraph-4': true }}
-                            aria-label="Email"
-                            required
-                          />
-                        </div>
+                  <form class="hs-form" onSubmit={e => this.handleNewsletterSubmit(e)}>
+                    <div class="hs_email hs-email hs-fieldtype-text field hs-form-field">
+                      <div class="input">
+                        <input
+                          name="email"
+                          type="email"
+                          autocomplete="email"
+                          inputmode="email"
+                          value={this.email}
+                          onInput={() => this.handleEmailChange(event)}
+                          disabled={this.isLoading}
+                          placeholder="E-mail"
+                          class={{ 'error': this.isValid, 'ui-paragraph-4': true }}
+                          aria-label="Email"
+                          required
+                        />
                       </div>
-                      <div class="hs_submit hs-submit">
-                        <div class="actions">
-                          <input type="submit" class="hs-button primary large" value="Subscribe" />
-                        </div>
+                    </div>
+                    <div class="hs_submit hs-submit">
+                      <div class="actions">
+                        <input type="submit" class="hs-button primary large" value="Subscribe" />
                       </div>
-                      {!this.isValid && (
-                        <Paragraph level={5} class="error-message">
-                          {this.inlineMessage}
-                        </Paragraph>
-                      )}
-                    </form>
-                  )}
+                    </div>
+                    {!this.isValid && (
+                      <Paragraph level={5} class="error-message">
+                        {this.inlineMessage}
+                      </Paragraph>
+                    )}
+                  </form>
+                )}
               </div>
             </div>
             <Grid>
               <Col md={6} sm={4} xs={12} cols={12} class="copyright">
                 <webp-image
                   src="/assets/img/logo-white2.png"
-                  alt="Install Doctor Logo"
+                  alt={this.defaults.brandName + ' logo'}
                   class="logo"
                   loading="lazy"
                 />
                 <div class="footer-social-wrapper">
-                  <a class="footer-social github" href="https://github.com/megabyte-labs/install.doctor" target="_blank" rel="noopener">
+                  <a class="footer-social github" href={this.defaults.social.github} target="_blank" rel="noopener">
                     <ion-icon name="logo-github"></ion-icon>
                   </a>
-                  <a class="footer-social gitlab" href="https://gitlab.com/megabyte-labs/install.doctor" target="_blank" rel="noopener">
+                  <a class="footer-social gitlab" href={this.defaults.social.gitlab} target="_blank" rel="noopener">
                     <ion-icon name="logo-gitlab"></ion-icon>
                   </a>
-                  <a class="footer-social slack" href="https://app.slack.com/client/T01ABCG4NK1/C04TDHV564E" target="_blank" rel="noopener">
+                  <a class="footer-social slack" href={this.defaults.social.slack} target="_blank" rel="noopener">
                     <ion-icon name="logo-slack"></ion-icon>
                   </a>
-                  <a class="footer-social discord" href="https://discord.com/channels/1077138419953713222/1077138479928049734" target="_blank" rel="noopener">
+                  <a class="footer-social discord" href={this.defaults.social.discord} target="_blank" rel="noopener">
                     <ion-icon name="logo-discord"></ion-icon>
                   </a>
-                  <a class="footer-social facebook" href="https://www.facebook.com/InstallDoctor" target="_blank" rel="noopener">
+                  <a class="footer-social facebook" href={this.defaults.social.facebook} target="_blank" rel="noopener">
                     <ion-icon name="logo-facebook"></ion-icon>
                   </a>
-                  <a class="footer-social twitter" href="https://twitter.com/InstallDoc" target="_blank" rel="noopener">
+                  <a class="footer-social twitter" href={this.defaults.social.twitter} target="_blank" rel="noopener">
                     <ion-icon name="logo-twitter"></ion-icon>
                   </a>
-                  <a class="footer-social linkedin" href="https://linkedin.com/company/megabyte-labs" target="_blank" rel="noopener">
+                  <a class="footer-social linkedin" href={this.defaults.social.linkedin} target="_blank" rel="noopener">
                     <ion-icon name="logo-linkedin"></ion-icon>
                   </a>
+                  <a class="footer-social youtube" href={this.defaults.social.youtube} target="_blank" rel="noopener">
+                    <ion-icon name="logo-youtube"></ion-icon>
+                  </a>
                 </div>
-                <p>© {new Date().getFullYear()} Megabyte LLC</p>
+                <p>© {new Date().getFullYear()} {this.defaults.companyLegalName}</p>
                 <p>
-                  <a href="https://megabyte.space" target="_blank" rel="noopener">Megabyte Labs Open Source</a> | Released
-                  under <span id="mit">MIT License</span>
+                  {this.companyLink()}
                 </p>
                 <p>
                   <a {...href('/privacy')}>Privacy Policy</a> | <a {...href('/terms')}>Terms of Service</a>
@@ -193,26 +213,13 @@ export class CapacitorSiteFooter {
                   <div>
                     <Heading level={5}>Documentation</Heading>
                     <ul class="routes">
-                      <li>
-                        <a class="ui-paragraph-4" href="/docs/getting-started">
-                          Getting Started
-                        </a>
-                      </li>
-                      <li>
-                        <a class="ui-paragraph-4" href="/docs/features">
-                          Features
-                        </a>
-                      </li>
-                      <li>
-                        <a class="ui-paragraph-4" href="/docs/customization">
-                          Customization
-                        </a>
-                      </li>
-                      <li>
-                        <a class="ui-paragraph-4" href="/docs/contributing">
-                          Contributing
-                        </a>
-                      </li>
+                      {this.defaults.documentationFooterLinks.map(({ title, href }) => (
+                        <li>
+                          <a class="ui-paragraph-4" href={href}>
+                            {title}
+                          </a>
+                        </li>
+                      ))}
                     </ul>
                   </div>
                   <div>
@@ -234,7 +241,9 @@ export class CapacitorSiteFooter {
                       <li>
                         <a
                           class="ui-paragraph-4"
-                          href="https://github.com/megabyte-labs/install.doctor/discussions"
+                          href={this.defaults.social.githubDiscussions}
+                          target="_blank"
+                          rel="noopener"
                         >
                           Discussions
                         </a>
@@ -252,7 +261,7 @@ export class CapacitorSiteFooter {
                       <li>
                         <a
                           class="ui-paragraph-4"
-                          href="https://github.com/megabyte-labs/install.doctor"
+                          href={this.defaults.social.github}
                           target="_blank"
                           rel="noopener"
                         >
@@ -262,7 +271,7 @@ export class CapacitorSiteFooter {
                       <li>
                         <a
                           class="ui-paragraph-4"
-                          href="https://gitlab.com/megabyte-labs/install.doctor"
+                          href={this.defaults.social.gitlab}
                           target="_blank"
                           rel="noopener"
                         >
@@ -272,7 +281,7 @@ export class CapacitorSiteFooter {
                       <li>
                         <a
                           class="ui-paragraph-4"
-                          href="https://facebook.com/InstallDoctor"
+                          href={this.defaults.social.facebook}
                           target="_blank"
                           rel="noopener"
                         >
@@ -282,7 +291,7 @@ export class CapacitorSiteFooter {
                       <li>
                         <a
                           class="ui-paragraph-4"
-                          href="https://twitter.com/InstallDoc"
+                          href={this.defaults.social.twitter}
                           target="_blank"
                           rel="noopener"
                         >

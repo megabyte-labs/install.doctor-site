@@ -1,10 +1,11 @@
-import { Component, Host, h } from '@stencil/core'
+import { Component, Host, h, Prop } from '@stencil/core'
 import {
   ResponsiveContainer,
   Heading,
   Paragraph,
 } from 'ionic-ds-no-fonts'
 import { href } from '@stencil/router'
+import { defaults } from 'src/store'
 
 @Component({
   tag: 'not-found-page',
@@ -12,6 +13,7 @@ import { href } from '@stencil/router'
   scoped: true,
 })
 export class NotFoundPage {
+  @Prop() defaults: typeof defaults
 
   render() {
     const { NotFound } = this
@@ -19,13 +21,14 @@ export class NotFoundPage {
     return (
       <Host>
         <meta-tags
+          defaults={this.defaults}
           pageTitle="Not Found: 404 Error"
           description={'This is a link to a page that does not exist. You should still visit this page to see how awesome our 404 page is though.'}
         />
-        <site-header class="heading-container" sticky={true} />
+        <site-header defaults={this.defaults} class="heading-container" sticky={true} />
         <NotFound />
-        <pre-footer />
-        <capacitor-site-footer />
+        <pre-footer defaults={this.defaults} />
+        <capacitor-site-footer defaults={this.defaults} />
       </Host>
     )
   }

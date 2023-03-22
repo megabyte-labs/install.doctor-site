@@ -3,8 +3,6 @@ import fs from 'fs';
 import { join } from 'path';
 import { parseMarkdown, MarkdownResults, JsxAstNode } from '@stencil/ssg/parse';
 
-import { queryPrismic } from './prismic';
-
 const repoRootDir = join(__dirname, '..', '..');
 const blogDir = join(repoRootDir, 'pages', 'blog');
 
@@ -20,6 +18,8 @@ export interface BlogData extends MarkdownResults {
   date?: string;
   preview?: boolean;
   announcement_bar?: any;
+  tags?: string;
+  modifiedDate?: string | boolean;
 }
 
 export const getAllBlogData: any = async () => {
@@ -60,10 +60,16 @@ const getFormattedData = async (slug: string, preview = false) => {
     .slice(emailIndex + 1, authorString.indexOf('>'))
     .trim();
   results.authorUrl = results.attributes.authorUrl;
+  results.tags = results.attributes.tags;
   results.authorImageName = results.attributes.authorImageName;
   results.authorDescription = results.attributes.authorDescription;
 
   results.date = new Date(results.attributes.date).toISOString();
+  if (results.attributes.modifiedDate) {
+    results.modifiedDate = new Date(results.attributes.modifiedDate).toISOString();
+  } else {
+    results.modifiedDate = false
+  }
 
   results.featuredImage = results.attributes.featuredImage;
   results.featuredImageAlt = results.attributes.featuredImageAlt;
@@ -74,7 +80,7 @@ const getFormattedData = async (slug: string, preview = false) => {
 
   results = updateAnchors(results, slug);
 
-  results.announcement_bar = await queryPrismic('announcement_bar');
+  results.announcement_bar = null
 
   return results;
 };

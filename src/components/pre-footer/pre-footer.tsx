@@ -1,9 +1,10 @@
-import { Component, Host, h } from '@stencil/core'
+import { Component, Host, h, Prop } from '@stencil/core'
 import {
   ResponsiveContainer,
   Heading,
   Paragraph,
 } from 'ionic-ds-no-fonts'
+import { defaults } from 'src/store'
 
 @Component({
   tag: 'pre-footer',
@@ -11,12 +12,13 @@ import {
   scoped: true,
 })
 export class PreFooter {
+  @Prop() defaults: typeof defaults
   render() {
     return (
       <Host>
         <div class="squares"></div>
         <ResponsiveContainer>
-          <a href="/docs/getting-started">
+          <a href={this.defaults.prefooter.left.href}>
             <svg
               width="56"
               height="50"
@@ -32,13 +34,13 @@ export class PreFooter {
               />
             </svg>
             <Heading level={4}>
-              Installation Guide <span class="arrow">-&gt;</span>
+              {this.defaults.prefooter.left.title} <span class="arrow">-&gt;</span>
             </Heading>
             <Paragraph>
-              Provision your operating system, learn how to customize it, and unlock integrations with free cloud services.
+              {this.defaults.prefooter.left.text}
             </Paragraph>
           </a>
-          <a href="/docs/features">
+          <a href={this.defaults.prefooter.right.href}>
             <svg
               width="48"
               height="50"
@@ -61,10 +63,10 @@ export class PreFooter {
               />
             </svg>
             <Heading level={4}>
-              Explore Features <span class="arrow">-&gt;</span>
+              {this.defaults.prefooter.right.title} <span class="arrow">-&gt;</span>
             </Heading>
             <Paragraph>
-              Explore the features and apps that are included with Install Doctor.
+              {this.defaults.prefooter.right.text}
             </Paragraph>
           </a>
         </ResponsiveContainer>

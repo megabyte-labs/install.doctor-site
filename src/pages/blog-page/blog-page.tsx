@@ -7,6 +7,7 @@ import {
 } from 'ionic-ds-no-fonts'
 import { BlogData } from 'src/data.server/blog'
 import { href } from '@stencil/router'
+import { defaults } from 'src/store'
 
 @Component({
   tag: 'blog-page',
@@ -15,42 +16,44 @@ import { href } from '@stencil/router'
 })
 export class BlogPage {
   @Prop() data: BlogData[]
+  @Prop() defaults: typeof defaults
 
   render() {
     if (!this.data) console.error('No blog posts received')
     return (
       <Host>
-        {/* <blog-subnav breadcrumbs={[['Blog', '/blog']]} /> */}
         <meta-tags
-          pageTitle="The Blog: Articles by the team and community"
-          description="Read about all things related to Install Doctor. Find information about Kubernetes, Docker, virtualization, CLIs, and other tools included in the Install Doctor stack."
+          defaults={this.defaults}
+          pageTitle={this.defaults.blogPage.meta.pageTitle}
+          description={this.defaults.blogPage.meta.description}
+          rssTitle={this.defaults.blogRssTitle}
         />
-        <site-header class="heading-container" sticky={true} />
+        <site-header defaults={this.defaults} class="heading-container" sticky={true} />
         <ResponsiveContainer>
           <div class="heading-group">
             <Heading level={2} as="h1">
-              Install Doctor Blog
+              {this.defaults.blogPage.title}
             </Heading>
             <Paragraph level={2}>
-              Articles by the Install Doctor team and community
+              {this.defaults.blogPage.subheader}
             </Paragraph>
           </div>
           <div class="content">
             {this.data?.map((d, i) => (
               <article key={i}>
-                <blog-post data={d} preview={true} />
+                <blog-post defaults={this.defaults} data={d} preview={true} />
               </article>
             ))}
-            {/* <blog-pagination rssIcon /> */}
+            <blog-pagination defaults={this.defaults} rssIcon />
           </div>
         </ResponsiveContainer>
         <ResponsiveContainer class="blog-info-wrapper">
           <div class="blog-info">
-            <h4>About the Install Doctor Blog</h4>
-            <p>Our articles are written by the Install Doctor team and community. If you would like to post on our blog, you can do so by opening up a pull request on <a href="https://github.com/megabyte-labs/install.doctor-site/tree/master/pages/blog" target="_blank" rel="noopener">our website's repository on GitHub</a>. There, you can also browse through our site's source code which is a modified version of the <a href="https://github.com/ionic-team/capacitor-site" target="_blank" rel="noopener">Capacitor's open-source website project</a>. If you would like to base your next website off of this modified version of the Capacitor website that removes the Prismic dependency (among a few other features), then please <a {...href('/community')}>join our community</a> and ask for help.</p>
+            <h4>About the {this.defaults.brandName} Blog</h4>
+            <p>Our articles are written by the {this.defaults.brandName} team and community. If you would like to post on our blog, you can do so by opening up a pull request against <a href={this.defaults.social.github + '-site/tree/master/pages/blog'} target="_blank" rel="noopener">our website's repository</a> on GitHub. There, you can also browse through our site's source code which is a modified version of the <a href="https://github.com/ionic-team/capacitor-site" target="_blank" rel="noopener">Capacitor's open-source website</a> project. If you would like to base your next website off of this modified version of the Capacitor website that removes the Prismic dependency (among a few other features), then please <a {...href('/community')}>join our community</a> and ask for help.</p>
           </div>
         </ResponsiveContainer>
-        <capacitor-site-footer />
+        <capacitor-site-footer defaults={this.defaults} />
       </Host>
     )
   }

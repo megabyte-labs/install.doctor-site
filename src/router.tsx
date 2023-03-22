@@ -5,8 +5,8 @@ import {
   staticState,
   match
 } from '@stencil/router'
-import { getPage } from './data.server/prismic'
 import { getBlogData, getAllBlogData } from './data.server/blog'
+import { CommunityPageData, defaults, EnterprisePageData, LandingPageData } from './store'
 
 export const Router = createRouter()
 
@@ -16,10 +16,9 @@ export const Routes = () => (
   <Router.Switch>
     <Route
       path="/"
-      mapParams={staticState(getPage)}
-      render={(_, _data) => (
+      render={() => (
         <Fragment>
-          <landing-page />
+          <landing-page data={LandingPageData} />
         </Fragment>
       )}
     />
@@ -29,28 +28,27 @@ export const Routes = () => (
       mapParams={staticState(getAllBlogData)}
       render={(_, data) => (
         <Fragment>
-          <blog-page data={data instanceof Map ? Object.values(Object.fromEntries(data))[0] : data} />
+          <blog-page defaults={defaults} data={data instanceof Map ? Object.values(Object.fromEntries(data))[0] : data} />
         </Fragment>
       )}
-    ></Route>
+    />
 
     <Route
       path={match('/blog/:slug*')}
       mapParams={staticState(getBlogData)}
       render={(_, data) => (
         <Fragment>
-          <blog-post data={data instanceof Map ? Object.values(Object.fromEntries(data))[0] : data} />
+          <blog-post defaults={defaults} data={data instanceof Map ? Object.values(Object.fromEntries(data))[0] : data} />
         </Fragment>
       )}
     />
 
     <Route
       path="/community"
-      mapParams={staticState(getPage)}
-      render={(_, _data) => {
+      render={() => {
         return (
           <Fragment>
-            <community-page />
+            <community-page data={CommunityPageData} />
           </Fragment>
         )
       }}
@@ -58,40 +56,36 @@ export const Routes = () => (
 
     <Route
       path="/terms"
-      mapParams={staticState(getPage)}
-      render={(_, _data) => (
+      render={() => (
         <Fragment>
-          <terms-service-page />
+          <terms-service-page defaults={defaults} />
         </Fragment>
       )}
     />
 
     <Route
       path="/privacy"
-      mapParams={staticState(getPage)}
-      render={(_, _data) => (
+      render={() => (
         <Fragment>
-          <privacy-policy-page />
+          <privacy-policy-page defaults={defaults} />
         </Fragment>
       )}
     />
 
     <Route
       path="/enterprise"
-      mapParams={staticState(getPage)}
-      render={(_, _data) => (
+      render={() => (
         <Fragment>
-          <enterprise-page />
+          <enterprise-page data={EnterprisePageData} />
         </Fragment>
       )}
     />
 
     <Route
       path={match('/solution/:solutionId*')}
-      mapParams={staticState(getPage)}
       render={(params) => (
         <Fragment>
-          <solution-page solutionId={params.solutionId} />
+          <solution-page solutionId={params.solutionId} defaults={defaults} />
         </Fragment>
       )}
     />
@@ -100,7 +94,7 @@ export const Routes = () => (
       path={match('/:nada')}
       render={() => (
         <Fragment>
-          <not-found-page />
+          <not-found-page defaults={defaults} />
         </Fragment>
       )}
     />
@@ -119,16 +113,3 @@ Router.on('change', (newUrl, oldUrl) => {
     }, 50)
   }
 })
-
-const docsPath = '/docs'
-const versionedDocsPath = '/docs/v2'
-
-export const docsVersionHref = (path: string) => {
-  if (
-    Router.path.startsWith(versionedDocsPath) &&
-    !path.startsWith(versionedDocsPath)
-  ) {
-    return path.replace(docsPath, versionedDocsPath)
-  }
-  return path
-}

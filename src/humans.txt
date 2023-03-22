@@ -6,4 +6,4 @@ LinkedIn: https://www.linkedin.com/in/blzalewski
 Location: NJ, USA
 
 /* SITE */
-Original design cloned from: https://github.com/ionic-team/stencil-site
+Original design cloned from: https://github.com/ionic-team/stencil-site (modified heavily)

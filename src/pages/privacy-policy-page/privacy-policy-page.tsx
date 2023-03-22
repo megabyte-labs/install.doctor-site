@@ -25,7 +25,7 @@ export class PrivacyPolicyPage {
           pageTitle="Privacy Policy"
           description={'Learn about what we do to protect our users privacy. Our privacy policy can answer your privacy-related issues.'}
         />
-        <site-header class="heading-container" sticky={true} />
+        <site-header defaults={this.defaults} class="heading-container" sticky={true} />
         <PrivacyPolicy />
         <pre-footer defaults={this.defaults} />
         <capacitor-site-footer defaults={this.defaults} />

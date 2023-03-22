@@ -28,7 +28,7 @@ export class TermsServicePage {
         <site-header defaults={this.defaults} class="heading-container" sticky={true} />
         <TermsService />
         <pre-footer defaults={this.defaults} />
-        <capacitor-site-footer />
+        <capacitor-site-footer defaults={this.defaults} />
       </Host>
     )
   }

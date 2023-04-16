@@ -18,7 +18,8 @@ import { LandingPageData } from 'src/store'
   scoped: true,
 })
 export class LandingPage {
-  @Prop() data: typeof LandingPageData
+  @Prop() data: typeof LandingPageData;
+  @Prop() template;
 
   @State() selectedCodeTab: string = 'notifications';
   @State() ebookModalOpen = false;
@@ -27,14 +28,13 @@ export class LandingPage {
     const {
       Top,
       Started,
+      Ebook,
       Native,
       Features,
       Framework,
       Tweets,
-      Cta,
-      Ebook
+      Cta
     } = this
-
     return (
       <Host>
         <meta-tags

@@ -284,7 +284,6 @@ export class BlogPost {
       />
     )
   };
-  // <disqus-comments url={`https://useappflow.com/blog/${post.slug}`} siteId="ionic"/>
   PostDetail = () => {
     const {
       PostAuthor,
@@ -322,6 +321,7 @@ export class BlogPost {
           <div class="post-content" innerHTML={data!.html} />
           <PostAuthorLarge post={data!} />
           <MoreResources />
+          <disqus-comments url={`${window.location.origin}/blog/${data.slug}`} siteId={this.defaults.disqusSiteId}/>
         </article>
       </ResponsiveContainer>,
       <ResponsiveContainer id="footer-social-container">

@@ -607,3 +607,9 @@ landing-page {
     z-index: -1;
   }
 }
+
+@media (max-width: 970px) {
+  blog-social-actions {
+    display: none !important;
+  }
+}

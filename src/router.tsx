@@ -98,6 +98,24 @@ export const Routes = () => (
         </Fragment>
       )}
     />
+
+    <Route
+      path={match('/:bada/:bing')}
+      render={() => (
+        <Fragment>
+          <not-found-page defaults={defaults} />
+        </Fragment>
+      )}
+    />
+
+    <Route
+      path={match('/:big/:giant/:elevator')}
+      render={() => (
+        <Fragment>
+          <not-found-page defaults={defaults} />
+        </Fragment>
+      )}
+    />
   </Router.Switch>
 )
 

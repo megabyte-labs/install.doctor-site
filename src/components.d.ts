@@ -76,6 +76,7 @@ export namespace Components {
     }
     interface LandingPage {
         "data": typeof LandingPageData;
+        "template": any;
     }
     interface MetaTags {
         "authorTwitter"?: any;
@@ -424,6 +425,7 @@ declare namespace LocalJSX {
     }
     interface LandingPage {
         "data"?: typeof LandingPageData;
+        "template"?: any;
     }
     interface MetaTags {
         "authorTwitter"?: any;

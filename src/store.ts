@@ -21,6 +21,7 @@ export const defaults = {
       source: 'pwa'
     }
   },
+  disqusSiteId: 'install-doctor',
   facebookAppId: '669135071652897',
   pageTitle: 'Install Doctor: Provision fully-configured desktops automatically',
   brandName: 'Install Doctor',
@@ -245,9 +246,9 @@ export const defaults = {
     }
   },
   algolia: {
-    appId: 'S9NORH1KTE',
-    apiKey: 'e14004b94a1f75b3bb71fc63f070466c',
-    indexName: 'installdoc'
+    appId: 'KFVMJ7I0DW',
+    apiKey: 'c00de731b08c54ccfcc8d9456fca31d5',
+    indexName: 'installtor'
   },
   social: {
     discord: 'https://discord.com/channels/1077138419953713222/1077138479928049734',

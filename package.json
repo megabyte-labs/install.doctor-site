@@ -7,7 +7,8 @@
     "build": "stencil build --prerender --ci",
     "build:docs": "if [ ! -d docs ]; then git clone https://github.com/megabyte-labs/install.doctor-docs.git docs && cd docs; else cd docs && git pull origin master; fi; npm run build",
     "build:noscript": "rm src/global/style.scss && cd src/global && ln -s style-offline.scss style.scss && cd ../.. && npm run build && cp www/build/site.css src/site-noscript.css && cd src/global && rm style.scss && ln -s style-default.scss style.scss && cd ../..",
-    "build:prod": "npm run build:docs && npm run build:noscript && npm run build",
+    "build:prod": "npm run build:docs && npm run build:noscript && npm run build && npm run build:rss",
+    "build:rss": "mkdir -p www/blog && curl -sSL https://rss.manhattan.workers.dev > www/blog/rss.xml",
     "deploy": "npm run build:prod && firebase deploy",
     "start": "stencil build --dev --watch --serve --ssr"
   },

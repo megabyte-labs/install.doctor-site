@@ -76,6 +76,10 @@ export const config: Config = {
           dest: 'robots.txt'
         },
         {
+          src: './ads.txt',
+          dest: 'ads.txt'
+        },
+        {
           src: './humans.txt',
           dest: 'humans.txt'
         },

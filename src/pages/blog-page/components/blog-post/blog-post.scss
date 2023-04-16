@@ -134,9 +134,10 @@
 
       img {
         margin-inline-end: var(--space-3);
-        width: 32px;
-        height: 32px;
-        border-radius: 20px;
+        width: 69px;
+        height: 69px;
+        border-radius: 69px;
+        padding: 0;
       }
 
       .ui-paragraph {
@@ -302,10 +303,13 @@
     margin-block-end: var(--space-6);
 
     img {
-      width: 56px;
-      height: 56px;
+      width: 128px;
+      min-width: 128px;
+      height: 128px;
+      min-height: 128px;
       margin-inline-end: var(--space-4);
-      border-radius: 100%;
+      border-radius: 128px;
+      padding: 0;
     }
 
     .description {

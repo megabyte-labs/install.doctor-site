@@ -420,8 +420,8 @@ export class BlogPost {
         {authorImageName ? (
           <ResponsiveImage
             {...data}
-            path="/assets/blog/author/"
-            dimensions="56x56"
+            path="/assets/img/blog/author/"
+            dimensions="69x69"
             alt={authorName}
           />
         ) : null}
@@ -457,10 +457,10 @@ export class BlogPost {
     return (
       <a href={authorUrl} target="_blank" rel="noopener" class="author-info">
         <webp-image
-          src={`/assets/blog/author/${authorImageName}`}
+          src={`/assets/img/blog/author/${authorImageName}`}
           alt={authorName}
-          width="56"
-          height="56"
+          width="128"
+          height="128"
         />
         <div class="description">
           <Heading level={5}>{authorName}</Heading>

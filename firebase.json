@@ -47,6 +47,15 @@
         ]
       },
       {
+        "source": "blog/rss.xml",
+        "headers": [
+          {
+            "key": "Content-Type",
+            "value": "application/rss+xml"
+          }
+        ]
+      },
+      {
         "source": "manifest.json",
         "headers": [
           {

@@ -247,7 +247,7 @@ export const defaults = {
   },
   algolia: {
     appId: 'KFVMJ7I0DW',
-    apiKey: 'c00de731b08c54ccfcc8d9456fca31d5',
+    apiKey: '15f17ad0bf94da92836732a7ceda2ec4',
     indexName: 'installtor'
   },
   social: {

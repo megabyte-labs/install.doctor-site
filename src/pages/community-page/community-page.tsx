@@ -1,13 +1,5 @@
-import { Component, Host, h, Prop } from '@stencil/core'
-import {
-  ResponsiveContainer,
-  PrismicRichText,
-  Paragraph,
-  Heading,
-  Grid,
-  Col,
-} from 'ionic-ds-no-fonts'
-import { CommunityPageData } from 'src/store'
+import { Component, Host, h, Prop } from '@stencil/core';
+import { ResponsiveContainer, PrismicRichText, Paragraph, Heading, Grid, Col } from 'ionic-ds-no-fonts';
 
 @Component({
   tag: 'community-page',
@@ -15,10 +7,10 @@ import { CommunityPageData } from 'src/store'
   scoped: true,
 })
 export class CommunityPage {
-  @Prop() data: typeof CommunityPageData
+  @Prop() data: any;
 
   render() {
-    const { Top, Websites, WhyJoin } = this
+    const { Top, Websites, WhyJoin } = this;
 
     return (
       <Host>
@@ -34,11 +26,11 @@ export class CommunityPage {
         <pre-footer defaults={this.data.defaults} />
         <capacitor-site-footer defaults={this.data.defaults} />
       </Host>
-    )
+    );
   }
 
   Top = () => {
-    const { top, top__list } = this.data
+    const { top, top__list } = this.data;
 
     return (
       <ResponsiveContainer id="top" as="section">
@@ -56,37 +48,32 @@ export class CommunityPage {
           ))}
         </div>
       </ResponsiveContainer>
-    )
+    );
   };
 
   Websites = () => {
-    const { websites__list } = this.data
+    const { websites__list } = this.data;
 
-    const dimensions = ['48x48', '48x48', '48x48', '48x48']
+    const dimensions = ['48x48', '48x48', '48x48', '48x48'];
 
     return (
       <ResponsiveContainer id="websites" as="section">
         <Grid>
           {websites__list.map(({ icon, text, link }, i) => {
-            const [width, height] = dimensions[i].split('x')
+            const [width, height] = dimensions[i].split('x');
             return (
               <Col cols={12} xs={6} md={3}>
                 <div class="image-wrapper">
-                  <prismic-image
-                    defaults={this.data.defaults}
-                    width={width}
-                    height={height}
-                    image={icon}
-                  />
+                  <prismic-image defaults={this.data.defaults} width={width} height={height} image={icon} />
                 </div>
                 <PrismicRichText richText={text} />
                 <PrismicRichText class="link" richText={link} />
               </Col>
-            )
+            );
           })}
         </Grid>
       </ResponsiveContainer>
-    )
+    );
   };
 
   WhyJoin = () => {
@@ -97,17 +84,11 @@ export class CommunityPage {
           <Heading class="quote-summary" level={2}>
             <b>{this.data.defaults.communityPage.whyJoin.title}</b>
           </Heading>
-          <Paragraph class="quote-summary">
-            {this.data.defaults.communityPage.whyJoin.paragraph1}
-          </Paragraph>
-          <Paragraph class="quote-summary">
-            {this.data.defaults.communityPage.whyJoin.paragraph2}
-          </Paragraph>
-          <Paragraph class="quote-summary">
-            {this.data.defaults.communityPage.whyJoin.paragraph3}
-          </Paragraph>
+          <Paragraph class="quote-summary">{this.data.defaults.communityPage.whyJoin.paragraph1}</Paragraph>
+          <Paragraph class="quote-summary">{this.data.defaults.communityPage.whyJoin.paragraph2}</Paragraph>
+          <Paragraph class="quote-summary">{this.data.defaults.communityPage.whyJoin.paragraph3}</Paragraph>
         </div>
       </ResponsiveContainer>
-    )
-  }
+    );
+  };
 }

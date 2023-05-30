@@ -62,7 +62,7 @@ export namespace Components {
   };
     }
     interface CommunityPage {
-        "data": typeof CommunityPageData;
+        "data": any;
     }
     interface DocsSearch {
         "defaults": typeof defaults;
@@ -411,7 +411,7 @@ declare namespace LocalJSX {
   };
     }
     interface CommunityPage {
-        "data"?: typeof CommunityPageData;
+        "data"?: any;
     }
     interface DocsSearch {
         "defaults"?: typeof defaults;

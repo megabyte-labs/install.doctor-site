@@ -1,21 +1,15 @@
-import { Component, Host, State, h, Fragment, Prop } from '@stencil/core'
-import { href } from '@stencil/router'
-import { defaults } from '../../store'
-import {
-  ResponsiveContainer,
-  Grid,
-  Col,
-  Heading,
-  Paragraph,
-} from 'ionic-ds-no-fonts'
+import { Component, Host, State, h, Fragment, Prop } from '@stencil/core';
+import { href } from '@stencil/router';
+import { defaults } from '../../store';
+import { ResponsiveContainer, Grid, Col, Heading, Paragraph } from 'ionic-ds-no-fonts';
 
 declare global {
   interface Window {
     hbspt: {
       forms: {
-        create: ({ }) => any
-      }
-    }
+        create: ({}) => any;
+      };
+    };
   }
 }
 
@@ -24,45 +18,41 @@ declare global {
   styleUrl: 'capacitor-site-footer.scss',
 })
 export class CapacitorSiteFooter {
-  @Prop() defaults: typeof defaults
+  @Prop() defaults: typeof defaults;
   @State() email: string = '';
   @State() isLoading: boolean = false;
   @State() hasSubmitted: boolean = false;
   @State() isValid: boolean = true;
   @State() inlineMessage: string = '';
 
-  componentWillLoad() { }
+  componentWillLoad() {}
 
   handleNewsletterSubmit(e: Event) {
-    e.preventDefault()
+    e.preventDefault();
 
-    this.isLoading = true
+    this.isLoading = true;
 
-    const xhr = new XMLHttpRequest()
-    const url = [
-      'https://api.hsforms.com/submissions/v3/integration/submit',
-      this.defaults.hubspot.emailForm.id,
-      this.defaults.hubspot.emailForm.key,
-    ].join('/')
-    xhr.open('POST', url)
-    xhr.setRequestHeader('Content-Type', 'application/json;charset=UTF-8')
+    const xhr = new XMLHttpRequest();
+    const url = this.defaults.emailForm.url;
+
+    xhr.open('POST', url);
+    xhr.setRequestHeader('Content-Type', 'application/json;charset=UTF-8');
     xhr.onreadystatechange = () => {
       if (xhr.readyState === 4 && xhr.status === 200) {
-        const json = JSON.parse(xhr.responseText)
-        this.inlineMessage = json.inlineMessage
-        this.isLoading = false
-        this.hasSubmitted = true
-        this.isValid = true
+        const json = JSON.parse(xhr.responseText);
+        this.inlineMessage = json.inlineMessage;
+        this.isLoading = false;
+        this.hasSubmitted = true;
+        this.isValid = true;
       } else if (xhr.readyState == 4 && xhr.status == 400) {
-        this.inlineMessage = 'Please enter a valid e-mail address.'
-        this.isLoading = false
-        this.isValid = false
+        this.inlineMessage = 'Please enter a valid e-mail address.';
+        this.isLoading = false;
+        this.isValid = false;
       }
-    }
+    };
 
-    const hutkMatch =
-      document.cookie.match && document.cookie.match(/hubspotutk=(.*?);/)
-    const hutk = hutkMatch ? hutkMatch[1] : undefined
+    const hutkMatch = document.cookie.match && document.cookie.match(/hubspotutk=(.*?);/);
+    const hutk = hutkMatch ? hutkMatch[1] : undefined;
 
     xhr.send(
       JSON.stringify({
@@ -82,34 +72,37 @@ export class CapacitorSiteFooter {
           pageUri: window.location.href,
           pageName: document.title,
         },
-      }),
-    )
+      })
+    );
   }
 
   handleEmailChange(ev: any) {
-    this.email = ev.target.value
-    this.isValid = true
+    this.email = ev.target.value;
+    this.isValid = true;
   }
 
   handleInlineMessage(returnMessage: string) {
-    const messageMatch =
-      returnMessage.match && returnMessage.match(/<p>(.*?)<\/p>/)
-    return messageMatch ? messageMatch[1] : undefined
+    const messageMatch = returnMessage.match && returnMessage.match(/<p>(.*?)<\/p>/);
+    return messageMatch ? messageMatch[1] : undefined;
   }
 
   companyLink() {
     if (this.defaults.companyUrl !== this.defaults.homepage) {
       return (
         <Fragment>
-          <a href={this.defaults.companyUrl} target="_blank" rel="noopener">{this.defaults.companyFooterBrandName}</a> | Released under <span id="mit">{this.defaults.license} License</span>
+          <a href={this.defaults.companyUrl} target="_blank" rel="noopener">
+            {this.defaults.companyFooterBrandName}
+          </a>{' '}
+          | Released under <span id="mit">{this.defaults.license} License</span>
         </Fragment>
-      )
+      );
     } else {
       return (
         <Fragment>
-          <a {...href('/')}>{this.defaults.companyFooterBrandName}</a> | Released under <span id="mit">{this.defaults.license} License</span>
+          <a {...href('/')}>{this.defaults.companyFooterBrandName}</a> | Released under{' '}
+          <span id="mit">{this.defaults.license} License</span>
         </Fragment>
-      )
+      );
     }
   }
 
@@ -129,12 +122,10 @@ export class CapacitorSiteFooter {
                 {this.hasSubmitted ? (
                   <div class="form-message">
                     <ion-icon name="checkmark-circle"></ion-icon>
-                    <Paragraph>
-                      {this.handleInlineMessage(this.inlineMessage)}
-                    </Paragraph>
+                    <Paragraph>{this.handleInlineMessage(this.inlineMessage)}</Paragraph>
                   </div>
                 ) : (
-                  <form class="hs-form" onSubmit={e => this.handleNewsletterSubmit(e)}>
+                  <form class="hs-form" onSubmit={(e) => this.handleNewsletterSubmit(e)}>
                     <div class="hs_email hs-email hs-fieldtype-text field hs-form-field">
                       <div class="input">
                         <input
@@ -146,7 +137,7 @@ export class CapacitorSiteFooter {
                           onInput={() => this.handleEmailChange(event)}
                           disabled={this.isLoading}
                           placeholder="E-mail"
-                          class={{ 'error': this.isValid, 'ui-paragraph-4': true }}
+                          class={{ error: this.isValid, 'ui-paragraph-4': true }}
                           aria-label="Email"
                           required
                         />
@@ -200,14 +191,14 @@ export class CapacitorSiteFooter {
                     <ion-icon name="logo-youtube"></ion-icon>
                   </a>
                 </div>
-                <p>© {new Date().getFullYear()} {this.defaults.companyLegalName}</p>
                 <p>
-                  {this.companyLink()}
+                  © {new Date().getFullYear()} {this.defaults.companyLegalName}
                 </p>
+                <p>{this.companyLink()}</p>
                 <p>
                   <a {...href('/privacy')}>Privacy Policy</a> | <a {...href('/terms')}>Terms of Service</a>
                 </p>
-              </Col >
+              </Col>
               <Col md={6} sm={8} xs={12} cols={12}>
                 <div class="routes-group">
                   <div>
@@ -226,10 +217,7 @@ export class CapacitorSiteFooter {
                     <Heading level={5}>Resources</Heading>
                     <ul class="routes">
                       <li>
-                        <a
-                          class="ui-paragraph-4"
-                          href="/blog"
-                        >
+                        <a class="ui-paragraph-4" href="/blog">
                           Blog
                         </a>
                       </li>
@@ -259,42 +247,22 @@ export class CapacitorSiteFooter {
                     <Heading level={5}>Connect</Heading>
                     <ul class="routes">
                       <li>
-                        <a
-                          class="ui-paragraph-4"
-                          href={this.defaults.social.github}
-                          target="_blank"
-                          rel="noopener"
-                        >
+                        <a class="ui-paragraph-4" href={this.defaults.social.github} target="_blank" rel="noopener">
                           GitHub
                         </a>
                       </li>
                       <li>
-                        <a
-                          class="ui-paragraph-4"
-                          href={this.defaults.social.gitlab}
-                          target="_blank"
-                          rel="noopener"
-                        >
+                        <a class="ui-paragraph-4" href={this.defaults.social.gitlab} target="_blank" rel="noopener">
                           GitLab
                         </a>
                       </li>
                       <li>
-                        <a
-                          class="ui-paragraph-4"
-                          href={this.defaults.social.facebook}
-                          target="_blank"
-                          rel="noopener"
-                        >
+                        <a class="ui-paragraph-4" href={this.defaults.social.facebook} target="_blank" rel="noopener">
                           Facebook
                         </a>
                       </li>
                       <li>
-                        <a
-                          class="ui-paragraph-4"
-                          href={this.defaults.social.twitter}
-                          target="_blank"
-                          rel="noopener"
-                        >
+                        <a class="ui-paragraph-4" href={this.defaults.social.twitter} target="_blank" rel="noopener">
                           Twitter
                         </a>
                       </li>
@@ -306,6 +274,6 @@ export class CapacitorSiteFooter {
           </ResponsiveContainer>
         </footer>
       </Host>
-    )
+    );
   }
 }

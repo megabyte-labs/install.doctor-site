@@ -1,5 +1,6 @@
 {
   "frontMatter.framework.id": "docusaurus",
   "frontMatter.content.publicFolder": "static",
-  "frontMatter.preview.host": "http://localhost:3000"
+  "frontMatter.preview.host": "http://localhost:3000",
+  "editor.acceptSuggestionOnEnter": "off"
 }

@@ -2,11 +2,7 @@
   "hosting": {
     "public": "www",
     "trailingSlash": false,
-    "ignore": [
-      "firebase.json",
-      "**/.*",
-      "**/node_modules/**"
-    ],
+    "ignore": ["firebase.json", "**/.*", "**/node_modules/**"],
     "headers": [
       {
         "source": "**/*",
@@ -81,22 +77,22 @@
     "redirects": [
       {
         "source": "/start",
-        "destination": "https://gitlab.com/megabyte-labs/install.doctor/-/raw/master/local/provision.sh",
+        "destination": "https://raw.githubusercontent.com/megabyte-labs/install.doctor/master/local/provision.sh",
         "type": 301
       },
       {
         "source": "/windows",
-        "destination": "https://gitlab.com/megabyte-labs/install.doctor/-/raw/master/local/provision.ps1",
+        "destination": "https://raw.githubusercontent.com/megabyte-labs/install.doctor/master/scripts/provision.sh",
         "type": 301
       },
       {
         "source": "/vagrant",
-        "destination": "https://gitlab.com/megabyte-labs/install.doctor/-/raw/master/local/vagrant.sh",
+        "destination": "https://raw.githubusercontent.com/megabyte-labs/install.doctor/master/scripts/provision.sh",
         "type": 301
       },
       {
         "source": "/vagrant-windows",
-        "destination": "https://gitlab.com/megabyte-labs/install.doctor/-/raw/master/local/vagrant.ps1",
+        "destination": "https://raw.githubusercontent.com/megabyte-labs/install.doctor/master/scripts/provision.sh",
         "type": 301
       },
       {

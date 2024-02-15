@@ -22,7 +22,7 @@ export class EnterprisePage {
     const {
       Top,
       Native,
-      Ebook,
+      // Ebook,
       MicroFrontends,
       Plugins,
       Security,
@@ -44,7 +44,7 @@ export class EnterprisePage {
         <enterprise-subnav />
         <Top />
         <Native />
-        <Ebook />
+        {/* <Ebook /> */}
         {/* <Approach /> */}
         <MicroFrontends />
         <Plugins />

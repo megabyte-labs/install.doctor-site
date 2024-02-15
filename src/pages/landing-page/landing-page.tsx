@@ -28,7 +28,7 @@ export class LandingPage {
     const {
       Top,
       Started,
-      Ebook,
+      // Ebook,
       Native,
       Features,
       Framework,
@@ -46,11 +46,11 @@ export class LandingPage {
         <Top />
         {/* <top-parallax defaults={this.defaults} /> */}
         <Started />
-        <Ebook />
+        {/* <Ebook /> */}
         <Native />
         <Features />
         <Framework />
-        <Tweets />
+        {/* <Tweets /> */}
         <Cta />
         <pre-footer defaults={this.data.defaults} />
         <capacitor-site-footer defaults={this.data.defaults} />

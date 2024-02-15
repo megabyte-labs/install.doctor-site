@@ -52,6 +52,7 @@ code-snippet {
   }
   button.active {
     color: #fff;
+    z-index: 1;
 
     &:hover {
       opacity: 1;
@@ -60,7 +61,7 @@ code-snippet {
 
   &::after {
     content: '';
-    z-index: -1;
+    //z-index: -1;
     background: var(--c-capacitor-blue);
     position: absolute;
     left: var(--tab-left);

@@ -15,6 +15,8 @@ import { defaults } from '../../store'
 import { headerLogo, headerActionButtonIcon } from '../../icons'
 //import { Translation } from '../../icons';
 
+declare let window: any;
+
 @Component({
   tag: 'site-header',
   styleUrl: 'capacitor-site-header.scss',
@@ -41,6 +43,9 @@ export class SiteHeader implements ComponentInterface {
   componentWillLoad() {
     this.createHeaderObserver()
     this.createRouteListener()
+    setInterval(() => {
+      this.handleActive(window.location)
+    }, 50)
   }
 
   createHeaderObserver() {

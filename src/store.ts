@@ -1558,7 +1558,7 @@ export const CommunityPageData = {
         {
           type: 'paragraph',
           spans: [],
-          text: 'Join the community on Reddit with discussions around Install Doctor.',
+          text: 'Join the community on Reddit start discussing how you are using Install Doctor.',
         },
       ],
       link: [

@@ -27,7 +27,7 @@
     width: 100%;
     background-color: #f7f9fc;
     margin-top: -2px;
-    border-top: 2px solid var(--c-indigo-20)
+    border-top: 1px solid var(--c-indigo-20)
   }
 
   .blog-footer-social {
@@ -102,6 +102,9 @@
   }
 
   .post {
+    margin-block-start: var(--space-5);
+    margin-top: var(--space-9);
+    padding-bottom: var(--space-9);
     h1 {
       font-weight: bold !important;
     }
@@ -158,6 +161,7 @@
         width: 100%;
         max-height: 440px;
         object-fit: cover;
+        padding: 0 !important;
 
         transition: transform 0.2s cubic-bezier(0.32, 0.72, 0, 1);
       }
@@ -272,7 +276,7 @@
   }
 
   .post-content {
-    border-bottom: 2px solid var(--c-indigo-20);
+    border-bottom: 1px solid var(--c-indigo-20);
     padding-block-end: 69px;
   }
 
@@ -331,7 +335,7 @@
 
 .sc-blog-post.preview {
   .post {
-    border-bottom: 2px solid var(--c-indigo-20);
+    border-bottom: 1px solid var(--c-indigo-20);
 
     .post-content {
       &>* {
@@ -375,4 +379,13 @@
 
 blog-post.sc-blog-post.detail .post {
   padding-bottom: 0;
+}
+
+.post {
+  margin-top: var(--space-5) !important;
+  padding-bottom: var(--space-9) !important;
+}
+
+.tag-pills {
+  margin-bottom: var(--space-6);
 }

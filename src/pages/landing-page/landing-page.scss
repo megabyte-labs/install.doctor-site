@@ -90,6 +90,10 @@ h6 {
   max-width: 500px;
 }
 
+#features .link {
+  margin-block-start: var(--space-6) !important;
+}
+
 #native .heading-group {
   max-width: 500px;
 }
@@ -145,7 +149,7 @@ h6 {
     background: #f6f9fc;
     transform: rotate(29deg) skewX(-30deg);
 
-    z-index: -1;
+    //z-index: -1;
   }
 
   .heading-group {
@@ -348,7 +352,7 @@ h6 {
 }
 
 #started {
-  margin-block-end: 223px;
+  margin-block-end: 90px;
 
   .heading-group {
     margin-block-end: 90px;
@@ -595,7 +599,7 @@ h6 {
   margin-block-end: $section-space;
 
   .heading-group {
-    max-width: 480px;
+    max-width: 540px;
     margin-block-end: var(--space-11);
   }
 
@@ -621,7 +625,8 @@ h6 {
   background: #f7f9fc;
   position: relative;
   z-index: 0;
-
+  border-top: 1px solid var(--c-indigo-20);
+  border-bottom: 1px solid var(--c-indigo-20);
   .heading-group {
     display: flex;
     flex-wrap: wrap;
@@ -638,7 +643,7 @@ h6 {
     }
 
     .ui-heading {
-      max-width: 448px;
+      max-width: 520px;
       margin-block-end: 0px;
     }
   }
@@ -717,6 +722,8 @@ h6 {
   padding-block-end: $section-space;
 
   background: var(--c-indigo-10);
+  border-top: 1px solid var(--c-indigo-20);
+  border-bottom: 1px solid var(--c-indigo-20);
   article {
     width: 269px;
   }

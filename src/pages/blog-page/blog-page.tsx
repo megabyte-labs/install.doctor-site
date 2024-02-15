@@ -48,7 +48,8 @@ export class BlogPage {
           </div>
         </ResponsiveContainer>
         <ResponsiveContainer class="blog-info-wrapper">
-          <div class="blog-info">
+          <div class="blog-info what-is">
+            <ion-icon class="what-is-info-icon" name="information-circle-outline"></ion-icon>
             <h4>About the {this.defaults.brandName} Blog</h4>
             <p>Our articles are written by the {this.defaults.brandName} team and community. If you would like to post on our blog, you can do so by opening up a pull request against <a href={this.defaults.social.github + '-site/tree/master/pages/blog'} target="_blank" rel="noopener">our website's repository</a> on GitHub. There, you can also browse through our site's source code which is a modified version of the <a href="https://github.com/ionic-team/capacitor-site" target="_blank" rel="noopener">Capacitor's open-source website</a> project. If you would like to base your next website off of this modified version of the Capacitor website that removes the Prismic dependency (among a few other features), then please <a {...href('/community')}>join our community</a> and ask for help.</p>
           </div>

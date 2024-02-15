@@ -326,7 +326,7 @@ ul {
   &::before {
     content: '';
     position: absolute;
-    z-index: -1;
+    //z-index: -1;
     background: linear-gradient(
       180deg,
       #f6f8fc 0%,
@@ -350,6 +350,10 @@ ul {
     .ui-heading-6 {
       margin-block-end: 1.5rem;
     }
+  }
+
+  webp-image.sc-enterprise-page img {
+    min-height: 64px;
   }
 
   .split {

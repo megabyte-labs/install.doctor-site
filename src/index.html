@@ -75,9 +75,11 @@
         }
       });
     </script>
+    <script src="/assets/js/jquery.js"></script>
     <script type="module" src="/build/site.esm.js"></script>
     <script nomodule src="/build/site.js"></script>
 
+    <link href="https://fonts.googleapis.com/css?family=Roboto:400%7CRoboto+Mono:700%7CInter:500%2C700&display=swap" rel="stylesheet" property="stylesheet" media="all" type="text/css">
     <link rel="preload" href="/assets/fonts/inter-v12-latin-regular.woff2" as="font" type="font/woff2"
       crossOrigin="anonymous" />
     <link rel="preload" href="/assets/fonts/inter-v12-latin-500.woff2" as="font" type="font/woff2"
@@ -166,6 +168,26 @@
        url('/assets/fonts/roboto-mono-v22-latin-700.woff') format('woff'), /* Modern Browsers */
        url('/assets/fonts/roboto-mono-v22-latin-700.ttf') format('truetype'), /* Safari, Android, iOS */
        url('/assets/fonts/roboto-mono-v22-latin-700.svg#RobotoMono') format('svg'); /* Legacy iOS */
+}
+
+@font-face {
+	font-family: 'Pe-icon-7-stroke';
+	src:url('/assets/fonts/Pe-icon-7-stroke.eot');
+	src:url('/assets/fonts/Pe-icon-7-stroke.eot?#iefix') format('embedded-opentype'),
+		url('/assets/fonts/Pe-icon-7-stroke.woff') format('woff'),
+		url('/assets/fonts/Pe-icon-7-stroke.ttf') format('truetype'),
+		url('/assets/fonts/Pe-icon-7-stroke.svg#Pe-icon-7-stroke') format('svg');
+	font-weight: normal;
+	font-style: normal;
+}
+
+@font-face {
+    font-family: revicons;
+    src: url('/assets/fonts/revicons.eot');
+    src: url('/assets/fonts/revicons.eot?#iefix') format('embedded-opentype'), url('/assets/fonts/revicons.woff') format('woff'), url('/assets/fonts/revicons.ttf') format('truetype'), url('/assets/fonts/revicons.svg#revicons') format('svg');
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap
 }
     </style>
     <link rel="stylesheet" href="/build/site.css" />
@@ -405,6 +427,65 @@
         }
       ]
     </script>
+    <script>
+			window.RS_MODULES = window.RS_MODULES || {};
+			window.RS_MODULES.modules = window.RS_MODULES.modules || {};
+			window.RS_MODULES.waiting = window.RS_MODULES.waiting || [];
+			window.RS_MODULES.defered = true;
+
+			window.RS_MODULES.waiting = window.RS_MODULES.waiting.concat([ "thecluster","threejs"]);
+			window.RS_MODULES.moduleWaiting = window.RS_MODULES.moduleWaiting || {};
+			window.RS_MODULES.type = 'compiled';
+		</script>
+    <script>function setREVStartSize(e){
+			//window.requestAnimationFrame(function() {
+				window.RSIW = window.RSIW===undefined ? window.innerWidth : window.RSIW;
+				window.RSIH = window.RSIH===undefined ? window.innerHeight : window.RSIH;
+				try {
+					var pw = document.getElementById(e.c).parentNode.offsetWidth,
+						newh;
+					pw = pw===0 || isNaN(pw) || (e.l=="fullwidth" || e.layout=="fullwidth") ? window.RSIW : pw;
+					e.tabw = e.tabw===undefined ? 0 : parseInt(e.tabw);
+					e.thumbw = e.thumbw===undefined ? 0 : parseInt(e.thumbw);
+					e.tabh = e.tabh===undefined ? 0 : parseInt(e.tabh);
+					e.thumbh = e.thumbh===undefined ? 0 : parseInt(e.thumbh);
+					e.tabhide = e.tabhide===undefined ? 0 : parseInt(e.tabhide);
+					e.thumbhide = e.thumbhide===undefined ? 0 : parseInt(e.thumbhide);
+					e.mh = e.mh===undefined || e.mh=="" || e.mh==="auto" ? 0 : parseInt(e.mh,0);
+					if(e.layout==="fullscreen" || e.l==="fullscreen")
+						newh = Math.max(e.mh,window.RSIH);
+					else{
+						e.gw = Array.isArray(e.gw) ? e.gw : [e.gw];
+						for (var i in e.rl) if (e.gw[i]===undefined || e.gw[i]===0) e.gw[i] = e.gw[i-1];
+						e.gh = e.el===undefined || e.el==="" || (Array.isArray(e.el) && e.el.length==0)? e.gh : e.el;
+						e.gh = Array.isArray(e.gh) ? e.gh : [e.gh];
+						for (var i in e.rl) if (e.gh[i]===undefined || e.gh[i]===0) e.gh[i] = e.gh[i-1];
+
+						var nl = new Array(e.rl.length),
+							ix = 0,
+							sl;
+						e.tabw = e.tabhide>=pw ? 0 : e.tabw;
+						e.thumbw = e.thumbhide>=pw ? 0 : e.thumbw;
+						e.tabh = e.tabhide>=pw ? 0 : e.tabh;
+						e.thumbh = e.thumbhide>=pw ? 0 : e.thumbh;
+						for (var i in e.rl) nl[i] = e.rl[i]<window.RSIW ? 0 : e.rl[i];
+						sl = nl[0];
+						for (var i in nl) if (sl>nl[i] && nl[i]>0) { sl = nl[i]; ix=i;}
+						var m = pw>(e.gw[ix]+e.tabw+e.thumbw) ? 1 : (pw-(e.tabw+e.thumbw)) / (e.gw[ix]);
+						newh =  (e.gh[ix] * m) + (e.tabh + e.thumbh);
+					}
+					var el = document.getElementById(e.c);
+					if (el!==null && el) el.style.height = newh+"px";
+					el = document.getElementById(e.c+"_wrapper");
+					if (el!==null && el) {
+						el.style.height = newh+"px";
+						el.style.display = "block";
+					}
+				} catch(e){
+					console.log("Failure at Presize of Slider:" + e)
+				}
+			//});
+		  };</script>
   </head>
 
   <body>

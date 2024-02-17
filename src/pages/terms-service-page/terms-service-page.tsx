@@ -37,13 +37,13 @@ export class TermsServicePage {
   CompanyLink = (linkText?: string) => {
     if (this.defaults.homepage === this.defaults.companyUrl) {
       return (
-        <a {...href('/')} target="_blank" rel="noopener">
+        <a {...href('/')} class="underline-hover link" target="_blank" rel="noopener">
           {linkText ? linkText : this.defaults.companyLegalName}
         </a>
       );
     } else {
       return (
-        <a href={this.defaults.companyUrl} target="_blank" rel="noopener">
+        <a href={this.defaults.companyUrl} class="underline-hover link" target="_blank" rel="noopener">
           {linkText ? linkText : this.defaults.companyLegalName}
         </a>
       );
@@ -51,60 +51,60 @@ export class TermsServicePage {
   };
 
   TermsService = () => (
-    <ResponsiveContainer id="terms-service" as="section">
-      <Heading level={1}>Terms of Service</Heading>
-      <Paragraph>
+    <ResponsiveContainer id="terms-service" class="legal-page" as="section">
+      <Heading level={1} class="legal-heading">Terms of Service</Heading>
+      <Paragraph level={4}>
         This website is owned and operated by {this.CompanyLink()} (also referred to as {this.defaults.companyAlias}).
         By visiting our website and accessing the information, resources, services, products, and tools we provide, you
         understand and agree to accept and adhere to the following terms and conditions as stated in this policy
         (hereafter referred to as 'User Agreement'), along with the terms and conditions as stated in our Privacy Policy
         (please refer to the Privacy Policy section below for more information).
       </Paragraph>
-      <Paragraph>
+      <Paragraph level={4}>
         We reserve the right to change this User Agreement from time to time without notice. You acknowledge and agree
         that it is your responsibility to review this User Agreement periodically to familiarize yourself with any
         modifications. Your continued use of this site after such modifications will constitute acknowledgment and
         agreement of the modified terms and conditions.
       </Paragraph>
       <Heading level={3}>Responsible Use and Conduct</Heading>
-      <Paragraph>
+      <Paragraph level={4}>
         By visiting our website and accessing the information, resources, services, products, and tools we provide for
         you, either directly or indirectly (hereafter referred to as 'Resources'), you agree to use these Resources only
         for the purposes intended as permitted by (a) the terms of this User Agreement, and (b) applicable laws,
         regulations and generally accepted online practices or guidelines.
       </Paragraph>
-      <Paragraph>Wherein, you understand that:</Paragraph>
+      <Paragraph level={4}>Wherein, you understand that:</Paragraph>
       <ul>
         <li>
-          a. In order to access our Resources, you may be required to provide certain information about yourself (such
+          In order to access our Resources, you may be required to provide certain information about yourself (such
           as identification, contact details, etc.) as part of the registration process, or as part of your ability to
           use the Resources. You agree that any information you provide will always be accurate, correct, and up to
           date.
         </li>
         <li>
-          b. You are responsible for maintaining the confidentiality of any login information associated with any
+          You are responsible for maintaining the confidentiality of any login information associated with any
           account you use to access our Resources. Accordingly, you are responsible for all activities that occur under
           your account(s).
         </li>
         <li>
-          c. Accessing (or attempting to access) any of our Resources by any means other than through the means we
+          Accessing (or attempting to access) any of our Resources by any means other than through the means we
           provide, is strictly prohibited. You specifically agree not to access (or attempt to access) any of our
           Resources through any automated, unethical or unconventional means.
         </li>
         <li>
-          d. Engaging in any activity that disrupts or interferes with our Resources, including the servers and/or
+          Engaging in any activity that disrupts or interferes with our Resources, including the servers and/or
           networks to which our Resources are located or connected, is strictly prohibited.
         </li>
         <li>
-          e. Attempting to copy, duplicate, reproduce, sell, trade, or resell our Resources is strictly prohibited.
+          Attempting to copy, duplicate, reproduce, sell, trade, or resell our Resources is strictly prohibited.
         </li>
         <li>
-          f. You are solely responsible any consequences, losses, or damages that we may directly or indirectly incur or
+          You are solely responsible any consequences, losses, or damages that we may directly or indirectly incur or
           suffer due to any unauthorized activities conducted by you, as explained above, and may incur criminal or
           civil liability.
         </li>
         <li>
-          g. We may provide various open communication tools on our website, such as blog comments, blog posts, public
+          We may provide various open communication tools on our website, such as blog comments, blog posts, public
           chat, forums, message boards, newsgroups, product ratings and reviews, various social media services, etc. You
           understand that generally we do not pre-screen or monitor the content posted by users of these various
           communication tools, which means that if you choose to use these tools to submit any type of content to our
@@ -113,20 +113,20 @@ export class TermsServicePage {
           upload, post, share, or otherwise distribute any content that:
           <ul>
             <li>
-              i. Is illegal, threatening, defamatory, abusive, harassing, degrading, intimidating, fraudulent,
+              Is illegal, threatening, defamatory, abusive, harassing, degrading, intimidating, fraudulent,
               deceptive, invasive, racist, or contains any type of suggestive, inappropriate, or explicit language;
             </li>
             <li>
-              ii. Infringes on any trademark, patent, trade secret, copyright, or other proprietary right of any party;
+              Infringes on any trademark, patent, trade secret, copyright, or other proprietary right of any party;
             </li>
-            <li>iii. Contains any type of unauthorized or unsolicited advertising;</li>
+            <li>Contains any type of unauthorized or unsolicited advertising;</li>
             <li>
-              iiii. Impersonates any person or entity, including any {this.CompanyLink()} employees or representatives.
+              Impersonates any person or entity, including any {this.CompanyLink()} employees or representatives.
             </li>
           </ul>
         </li>
       </ul>
-      <Paragraph>
+      <Paragraph level={4}>
         We have the right at our sole discretion to remove any content that, we feel in our judgment does not comply
         with this User Agreement, along with any content that we feel is otherwise offensive, harmful, objectionable,
         inaccurate, or violates any 3rd party copyrights or trademarks. We are not responsible for any delay or failure
@@ -135,7 +135,7 @@ export class TermsServicePage {
       </Paragraph>
       <ul>
         <li>
-          h. We do not assume any liability for any content posted by you or any other 3rd party users of our website.
+          We do not assume any liability for any content posted by you or any other 3rd party users of our website.
           However, any content posted by you using any open communication tools on our website, provided that it doesn't
           violate or infringe on any 3rd party copyrights or trademarks, becomes the property of{' '}
           {this.defaults.companyLegalName}, and as such, gives us a perpetual, irrevocable, worldwide, royalty-free,
@@ -145,11 +145,10 @@ export class TermsServicePage {
           Resources. All information provided as part of our registration process is covered by our{' '}
           <a class="underline-hover" {...href('/privacy')}>
             privacy policy
-          </a>
-          .
+          </a>.
         </li>
         <li>
-          i. You agree to indemnify and hold harmless {this.defaults.companyLegalName} and its parent company and
+          You agree to indemnify and hold harmless {this.defaults.companyLegalName} and its parent company and
           affiliates, and their directors, officers, managers, employees, donors, agents, and licensors, from and
           against all losses, expenses, damages and costs, including reasonable attorneys' fees, resulting from any
           violation of this User Agreement or the failure to fulfill any obligations relating to your account incurred
@@ -159,61 +158,59 @@ export class TermsServicePage {
         </li>
       </ul>
       <Heading level={3}>Privacy</Heading>
-      <Paragraph>
+      <Paragraph level={4}>
         Your privacy is very important to us, which is why we've created a separate Privacy Policy in order to explain
         in detail how we collect, manage, process, secure, and store your private information. Our privacy policy is
         included under the scope of this User Agreement. To read our privacy policy in its entirety,{' '}
-        <a class="underline-hover" {...href('/privacy')}>
+        <span><a class="underline-hover" {...href('/privacy')}>
           click here
-        </a>
-        .
+        </a>.</span>
       </Paragraph>
       <Heading level={3}>Limitation of Warranties</Heading>
-      <Paragraph>
+      <Paragraph level={4}>
         By using our website, you understand and agree that all Resources we provide are "as is" and "as available".
         This means that we do not represent or warrant to you that:
       </Paragraph>
       <ul>
-        <li>i. the use of our Resources will meet your needs or requirements.</li>
-        <li>ii. the use of our Resources will be uninterrupted, timely, secure or free from errors.</li>
-        <li>iii. the information obtained by using our Resources will be accurate or reliable, and</li>
+        <li>The use of our Resources will meet your needs or requirements.</li>
+        <li>The use of our Resources will be uninterrupted, timely, secure or free from errors.</li>
+        <li>The information obtained by using our Resources will be accurate or reliable, and</li>
         <li>
-          iv. any defects in the operation or functionality of any Resources we provide will be repaired or corrected.
+          Any defects in the operation or functionality of any Resources we provide will be repaired or corrected.
         </li>
       </ul>
-      <Paragraph>Furthermore, you understand and agree that:</Paragraph>
+      <Paragraph level={4}>Furthermore, you understand and agree that:</Paragraph>
       <ul>
         <li>
-          v. any content downloaded or otherwise obtained through the use of our Resources is done at your own
+          Any content downloaded or otherwise obtained through the use of our Resources is done at your own
           discretion and risk, and that you are solely responsible for any damage to your computer or other devices for
           any loss of data that may result from the download of such content.
         </li>
         <li>
-          vi. no information or advice, whether expressed, implied, oral or written, obtained by you from{' '}
+          No information or advice, whether expressed, implied, oral or written, obtained by you from{' '}
           {this.defaults.companyLegalName}
           or through any Resources we provide shall create any warranty, guarantee, or conditions of any kind, except
           for those expressly outlined in this User Agreement.
         </li>
       </ul>
       <Heading level={3}>Limitation of Liability</Heading>
-      <Paragraph>
+      <Paragraph level={4}>
         In conjunction with the Limitation of Warranties as explained above, you expressly understand and agree that any
         claim against us shall be limited to the amount you paid, if any, for use of products and/or services.{' '}
-        {this.defaults.companyLegalName}
-        will not be liable for any direct, indirect, incidental, consequential or exemplary loss or damages which may be
+        {this.defaults.companyLegalName} will not be liable for any direct, indirect, incidental, consequential or exemplary loss or damages which may be
         incurred by you as a result of using our Resources, or as a result of any changes, data loss or corruption,
         cancellation, loss of access, or downtime to the full extent that applicable limitation of liability laws apply.
       </Paragraph>
       <Heading level={3}>Copyrights/Trademarks</Heading>
-      <Paragraph>
-        All content and materials available on <a {...href('/')}>{this.defaults.homepage}</a>, including but not limited
+      <Paragraph level={4}>
+        All content and materials available on <span><a {...href('/')} class="underline-hover">{this.defaults.homepage}</a>,</span> including but not limited
         to text, graphics, website name, code, images and logos are the intellectual property of{' '}
         {this.defaults.companyLegalName}, and are protected by applicable copyright and trademark law. Any inappropriate
         use, including but not limited to the reproduction, distribution, display or transmission of any content on this
         site is strictly prohibited, unless specifically authorized by {this.defaults.companyLegalName}.
       </Paragraph>
       <Heading level={3}>Termination of Use</Heading>
-      <Paragraph>
+      <Paragraph level={4}>
         You agree that we may, at our sole discretion, suspend or terminate your access to all or part of our website
         and Resources with or without notice and for any reason, including, without limitation, breach of this User
         Agreement. Any suspected illegal, fraudulent or abusive activity may be grounds for terminating your
@@ -222,7 +219,7 @@ export class TermsServicePage {
         any information that you may have on file with us, including any account or login information.
       </Paragraph>
       <Heading level={3}>Governing Law</Heading>
-      <Paragraph>
+      <Paragraph level={4}>
         This website is controlled by {this.defaults.companyLegalName} from our offices located in the state of New
         Jersey, USA. It can be accessed by most countries around the world. As each country has laws that may differ
         from those of New Jersey, by accessing our website, you agree that the statutes and laws of New Jersey, without
@@ -230,19 +227,19 @@ export class TermsServicePage {
         to all matters relating to the use of this website and the purchase of any products or services through this
         site.
       </Paragraph>
-      <Paragraph>
+      <Paragraph level={4}>
         Furthermore, any action to enforce this User Agreement shall be brought in the federal or state courts located
         in USA, New Jersey You hereby agree to personal jurisdiction by such courts, and waive any jurisdictional,
         venue, or inconvenient forum objections to such courts.
       </Paragraph>
       <Heading level={3}>Guarantee</Heading>
-      <Paragraph>
+      <Paragraph level={4}>
         UNLESS OTHERWISE EXPRESSED, {this.defaults.companyLegalName.toUpperCase()} EXPRESSLY DISCLAIMS ALL WARRANTIES
         AND CONDITIONS OF ANY KIND, WHETHER EXPRESS OR IMPLIED, INCLUDING, BUT NOT LIMITED TO THE IMPLIED WARRANTIES AND
         CONDITIONS OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NON-INFRINGEMENT.
       </Paragraph>
       <Heading level={3}>Contact Information</Heading>
-      <Paragraph>
+      <Paragraph level={4}>
         If you have any questions or comments about these our Terms of Service as outlined above, you can contact us at:
       </Paragraph>
       <div class="contact-info">
@@ -257,11 +254,11 @@ export class TermsServicePage {
             <ion-icon name="mail"></ion-icon>
           </div>
           <div class="contact-text">
-            <a href={'mailto:' + this.defaults.companyEmail}>{this.defaults.companyEmail}</a>
+            <a href={'mailto:' + this.defaults.companyEmail} class="underline-hover link">{this.defaults.companyEmail}</a>
           </div>
         </div>
         <div class="contact-detail">
-          <div class="contact-icon">
+          <div class="contact-icon contact-navigate">
             <ion-icon name="navigate"></ion-icon>
           </div>
           <div class="contact-text">

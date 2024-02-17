@@ -38,7 +38,7 @@ export class NotFoundPage {
       </Heading>
       <Paragraph class="top-text">
         Houston, we have a problem! This URL does not link to an existing page. You might want to start with the{' '}
-        <a {...href('/')}>home page</a> or go to the <a href="/docs">documentation portal</a> welcome page.
+        <a class="underline-hover link" {...href('/')}>home page</a> or go to the <a class="underline-hover link" href="/docs">documentation portal</a> welcome page.
       </Paragraph>
       <webp-image alt="404 not found graphic" src="/assets/img/404.png" loading="eager"></webp-image>
     </ResponsiveContainer>

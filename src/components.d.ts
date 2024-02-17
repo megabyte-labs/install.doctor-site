@@ -40,10 +40,7 @@ export namespace Components {
         "socialActions": boolean;
     }
     interface CapacitorHubspotForm {
-        "ajax": boolean;
         "defaults": typeof defaults;
-        "formId"?: string;
-        "goToWebinarKey"?: string;
     }
     interface CapacitorSite {
     }
@@ -132,6 +129,7 @@ export namespace Components {
     }
     interface TopParallax {
         "defaults": typeof defaults;
+        "scriptsLoaded": number;
     }
     interface WebpImage {
         "alt": string;
@@ -146,10 +144,6 @@ export namespace Components {
 export interface AppMenuToggleCustomEvent<T> extends CustomEvent<T> {
     detail: T;
     target: HTMLAppMenuToggleElement;
-}
-export interface CapacitorHubspotFormCustomEvent<T> extends CustomEvent<T> {
-    detail: T;
-    target: HTMLCapacitorHubspotFormElement;
 }
 declare global {
     interface HTMLAppMenuToggleElement extends Components.AppMenuToggle, HTMLStencilElement {
@@ -388,11 +382,7 @@ declare namespace LocalJSX {
         "socialActions"?: boolean;
     }
     interface CapacitorHubspotForm {
-        "ajax"?: boolean;
         "defaults"?: typeof defaults;
-        "formId"?: string;
-        "goToWebinarKey"?: string;
-        "onFormSubmitted"?: (event: CapacitorHubspotFormCustomEvent<any>) => void;
     }
     interface CapacitorSite {
     }
@@ -481,6 +471,7 @@ declare namespace LocalJSX {
     }
     interface TopParallax {
         "defaults"?: typeof defaults;
+        "scriptsLoaded"?: number;
     }
     interface WebpImage {
         "alt"?: string;

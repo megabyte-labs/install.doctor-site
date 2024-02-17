@@ -32,7 +32,7 @@ export class LandingPage {
       Native,
       Features,
       Framework,
-      Tweets,
+      // Tweets,
       Cta
     } = this
     return (
@@ -43,8 +43,10 @@ export class LandingPage {
           description={this.data.defaults.landingPage.meta.description}
         />
         <site-header defaults={this.data.defaults} class="heading-container" sticky={true} />
+        <section id="slider">
+          <top-parallax defaults={this.data.defaults} />
+        </section>
         <Top />
-        {/* <top-parallax defaults={this.defaults} /> */}
         <Started />
         {/* <Ebook /> */}
         <Native />
@@ -62,9 +64,9 @@ export class LandingPage {
             {this.data.defaults.eBookSiteModal.title}
           </Heading>
           <Paragraph>
-            Fill out and submit the form below to get your free copy of <strong>{this.data.defaults.eBookSiteModal}</strong> sent to your e-mail.
+            Fill out and submit the form below to get your free copy of <b>{this.data.defaults.eBookSiteModal}</b> sent to your e-mail.
           </Paragraph>
-          <capacitor-hubspot-form defaults={this.data.defaults} formId={this.data.defaults.hubspot.eBookForm.formId} />
+          <capacitor-hubspot-form defaults={this.data.defaults} />
         </site-modal>
       </Host>
     )
@@ -100,7 +102,7 @@ export class LandingPage {
                 {secondary}
               </Button>
             </div>
-            <a class="link | ui-paragraph-4" href={this.data.defaults.landingPage.topSection.smallTextHref}>
+            <a class="link ui-paragraph-4" href={this.data.defaults.landingPage.topSection.smallTextHref}>
               {top__link}
               <span class="arrow"> -&gt;</span>
             </a>
@@ -386,7 +388,7 @@ firefoxAddOns:
         <ResponsiveContainer>
           <div class="heading-group">
             <PrismicRichText richText={features} />
-            <a href={this.data.defaults.landingPage.featureGridTopLinkHref} class="link | ui-heading-4">
+            <a href={this.data.defaults.landingPage.featureGridTopLinkHref} class="link ui-heading-4">
               {features__link}
               <span class="arrow">-&gt;</span>
             </a>

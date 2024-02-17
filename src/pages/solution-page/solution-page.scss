@@ -136,6 +136,12 @@
 
 #continue {
   margin-block-start: 96px;
+  border-top: 1px solid var(--c-indigo-20);
+  border-bottom: 1px solid var(--c-indigo-20);
+}
+
+#what-is {
+  border-bottom: 1px solid var(--c-indigo-20);
 }
 
 #newsletter {

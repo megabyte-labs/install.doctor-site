@@ -38,40 +38,44 @@ export class CapacitorSiteFooter {
     xhr.open('POST', url);
     xhr.setRequestHeader('Content-Type', 'application/json;charset=UTF-8');
     xhr.onreadystatechange = () => {
+      console.log(xhr)
+      if (xhr.readyState === 4) {
+        this.isLoading = false
+      }
       if (xhr.readyState === 4 && xhr.status === 200) {
-        const json = JSON.parse(xhr.responseText);
-        this.inlineMessage = json.inlineMessage;
-        this.isLoading = false;
+        this.inlineMessage = 'Successfully added ' + this.email;
         this.hasSubmitted = true;
         this.isValid = true;
-      } else if (xhr.readyState == 4 && xhr.status == 400) {
-        this.inlineMessage = 'Please enter a valid e-mail address.';
-        this.isLoading = false;
+      } else if (xhr.readyState == 4 && xhr.status === 400) {
+        console.error(`Failed to add ${this.email}`, xhr)
+        const json = JSON.parse(xhr.responseText)
+        this.inlineMessage = json.error;
         this.isValid = false;
+        this.hasSubmitted = false;
+      } else if (xhr.readyState == 4) {
+        const json = JSON.parse(xhr.responseText);
+        this.inlineMessage = json.error;
+        this.isValid = false;
+        this.hasSubmitted = false;
       }
     };
-
-    const hutkMatch = document.cookie.match && document.cookie.match(/hubspotutk=(.*?);/);
-    const hutk = hutkMatch ? hutkMatch[1] : undefined;
-
+    const customFields: any = {}
+    let slug = url => new URL(url).pathname.match(/[^\/]+/g)
+    const slugs = slug(window.location.href)
+    customFields.join_href = window.location.href;
+    if (slugs) {
+      customFields.join_slug = slugs.pop()
+    }
+    customFields.join_type = 'footer'
     xhr.send(
       JSON.stringify({
-        submittedAt: new Date().getTime(),
-        fields: [
+        list_ids: [this.defaults.sendGridListId],
+        contacts: [
           {
-            name: 'email',
-            value: this.email,
-          },
-          {
-            name: 'first_campaign_conversion',
-            value: this.defaults.brandName + ' Newsletter Sign-Up Footer',
-          },
-        ],
-        context: {
-          hutk,
-          pageUri: window.location.href,
-          pageName: document.title,
-        },
+            email: this.email,
+            custom_fields: customFields
+          }
+        ]
       })
     );
   }
@@ -81,16 +85,11 @@ export class CapacitorSiteFooter {
     this.isValid = true;
   }
 
-  handleInlineMessage(returnMessage: string) {
-    const messageMatch = returnMessage.match && returnMessage.match(/<p>(.*?)<\/p>/);
-    return messageMatch ? messageMatch[1] : undefined;
-  }
-
   companyLink() {
     if (this.defaults.companyUrl !== this.defaults.homepage) {
       return (
         <Fragment>
-          <a href={this.defaults.companyUrl} target="_blank" rel="noopener">
+          <a class="underline-hover link" href={this.defaults.companyUrl} target="_blank" rel="noopener">
             {this.defaults.companyFooterBrandName}
           </a>{' '}
           | Released under <span id="mit">{this.defaults.license} License</span>
@@ -99,7 +98,7 @@ export class CapacitorSiteFooter {
     } else {
       return (
         <Fragment>
-          <a {...href('/')}>{this.defaults.companyFooterBrandName}</a> | Released under{' '}
+          <a class="underline-hover link" {...href('/')}>{this.defaults.companyFooterBrandName}</a> | Released under{' '}
           <span id="mit">{this.defaults.license} License</span>
         </Fragment>
       );
@@ -114,15 +113,15 @@ export class CapacitorSiteFooter {
             <div class="newsletter">
               <div>
                 <Heading level={4}>Join our Newsletter</Heading>
-                <Paragraph level={4}>
-                  Keep up to date with all the latest {this.defaults.brandName} news and updates
+                <Paragraph level={4} class="join-our-newsletter">
+                  Keep up to date with all the latest {this.defaults.brandName} news and updates. Be the first to know about popular, trending open-source productivity tools that we integrate into our stack.
                 </Paragraph>
               </div>
               <div class="form-group">
                 {this.hasSubmitted ? (
                   <div class="form-message">
-                    <ion-icon name="checkmark-circle"></ion-icon>
-                    <Paragraph>{this.handleInlineMessage(this.inlineMessage)}</Paragraph>
+                    <ion-icon name="checkmark-circle" class="success-color"></ion-icon>
+                    <Paragraph>{this.inlineMessage}</Paragraph>
                   </div>
                 ) : (
                   <form class="hs-form" onSubmit={(e) => this.handleNewsletterSubmit(e)}>
@@ -196,7 +195,7 @@ export class CapacitorSiteFooter {
                 </p>
                 <p>{this.companyLink()}</p>
                 <p>
-                  <a {...href('/privacy')}>Privacy Policy</a> | <a {...href('/terms')}>Terms of Service</a>
+                  <a class="underline-hover link" {...href('/privacy')}>Privacy Policy</a> | <a class="underline-hover link" {...href('/terms')}>Terms of Service</a>
                 </p>
               </Col>
               <Col md={6} sm={8} xs={12} cols={12}>
@@ -206,7 +205,7 @@ export class CapacitorSiteFooter {
                     <ul class="routes">
                       {this.defaults.documentationFooterLinks.map(({ title, href }) => (
                         <li>
-                          <a class="ui-paragraph-4" href={href}>
+                          <a class="ui-paragraph-4 underline-hover link" href={href}>
                             {title}
                           </a>
                         </li>
@@ -217,18 +216,18 @@ export class CapacitorSiteFooter {
                     <Heading level={5}>Resources</Heading>
                     <ul class="routes">
                       <li>
-                        <a class="ui-paragraph-4" href="/blog">
+                        <a class="ui-paragraph-4 underline-hover link" href="/blog">
                           Blog
                         </a>
                       </li>
                       <li>
-                        <a class="ui-paragraph-4" {...href('/community')}>
+                        <a class="ui-paragraph-4 underline-hover link" {...href('/community')}>
                           Community
                         </a>
                       </li>
                       <li>
                         <a
-                          class="ui-paragraph-4"
+                          class="ui-paragraph-4 underline-hover link"
                           href={this.defaults.social.githubDiscussions}
                           target="_blank"
                           rel="noopener"
@@ -237,7 +236,7 @@ export class CapacitorSiteFooter {
                         </a>
                       </li>
                       <li>
-                        <a class="ui-paragraph-4" {...href('/enterprise')}>
+                        <a class="ui-paragraph-4 underline-hover link" {...href('/enterprise')}>
                           Enterprise
                         </a>
                       </li>
@@ -247,22 +246,22 @@ export class CapacitorSiteFooter {
                     <Heading level={5}>Connect</Heading>
                     <ul class="routes">
                       <li>
-                        <a class="ui-paragraph-4" href={this.defaults.social.github} target="_blank" rel="noopener">
+                        <a class="ui-paragraph-4 underline-hover link" href={this.defaults.social.github} target="_blank" rel="noopener">
                           GitHub
                         </a>
                       </li>
                       <li>
-                        <a class="ui-paragraph-4" href={this.defaults.social.gitlab} target="_blank" rel="noopener">
+                        <a class="ui-paragraph-4 underline-hover link" href={this.defaults.social.gitlab} target="_blank" rel="noopener">
                           GitLab
                         </a>
                       </li>
                       <li>
-                        <a class="ui-paragraph-4" href={this.defaults.social.facebook} target="_blank" rel="noopener">
+                        <a class="ui-paragraph-4 underline-hover link" href={this.defaults.social.facebook} target="_blank" rel="noopener">
                           Facebook
                         </a>
                       </li>
                       <li>
-                        <a class="ui-paragraph-4" href={this.defaults.social.twitter} target="_blank" rel="noopener">
+                        <a class="ui-paragraph-4 underline-hover link" href={this.defaults.social.twitter} target="_blank" rel="noopener">
                           Twitter
                         </a>
                       </li>

@@ -210,6 +210,8 @@ export const defaults = {
   companyUrl: 'https://megabyte.space',
   homepage: 'https://install.doctor',
   companyFooterBrandName: 'Megabyte Labs Open Source',
+  sendGridListId: '94a28ff4-6712-4f62-8d9b-5036de3c5ea9',
+  sendGridEnterpriseListId: '7bd2df72-96e9-417c-adb9-f91501affebb',
   license: 'MIT',
   companyEmail: 'help@megabyte.space',
   companyAddress: {
@@ -701,7 +703,7 @@ export const LandingPageData = {
           type: 'hyperlink',
           data: {
             link_type: 'Web',
-            url: 'https://install.doctor/solution/fedora',
+            url: 'https://install.doctor/solution/fedora'
           },
         },
         {

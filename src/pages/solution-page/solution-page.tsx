@@ -68,7 +68,7 @@ export class SolutionPage implements ComponentInterface {
             <Paragraph>{this.defaults.solutionPage.enterpriseSupport.paragraph2}</Paragraph>
             <Paragraph><b class="noshow-noscript">Use the form below to send us a message or ask questions about how {this.defaults.brandName} can help you with your specific needs.</b><noscript><b>Send an e-mail to <a href={'mailto:' + this.defaults.brandEmail}>{this.defaults.brandEmail}</a> with details on how we can help and we will respond to you in a timely fashion.</b></noscript></Paragraph>
           </div>
-          <capacitor-hubspot-form defaults={this.defaults} formId={this.defaults.hubspot.enterpriseContactForm.formId} />
+          <capacitor-hubspot-form defaults={this.defaults} />
         </ResponsiveContainer>
       </section>
     )
@@ -118,11 +118,11 @@ export class SolutionPage implements ComponentInterface {
             <Heading level={3}>Continue your {this.defaults.brandName} journey.</Heading>
             <Paragraph>
               This is only the beginning. Browse through the {this.defaults.brandName}{' '}
-              <a href={this.defaults.social.github} target="_blank" rel="noopener">
+              <a class="underline-hover link" href={this.defaults.social.github} target="_blank" rel="noopener">
                 GitHub repository
               </a>{' '}
               or dive deeper by going through the{' '}
-              <a href="/docs">
+              <a class="underline-hover link" href="/docs">
                 documentation
               </a>{' '}
               .

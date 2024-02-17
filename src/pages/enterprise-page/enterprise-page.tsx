@@ -64,9 +64,9 @@ export class EnterprisePage {
             {this.data.defaults.eBookSiteModal.title}
           </Heading>
           <Paragraph>
-            Fill out and submit the form below to get your free copy of <strong>{this.data.defaults.eBookSiteModal.eBookTitle}</strong> sent to your e-mail.
+            Fill out and submit the form below to get your free copy of <b>{this.data.defaults.eBookSiteModal.eBookTitle}</b> sent to your e-mail.
           </Paragraph>
-          <capacitor-hubspot-form defaults={this.data.defaults} formId={this.data.defaults.hubspot.eBookForm.formId} />
+          <capacitor-hubspot-form defaults={this.data.defaults} />
         </site-modal>
       </Host>
     )
@@ -441,7 +441,7 @@ export class EnterprisePage {
               </noscript>
             </Paragraph>
           </div>
-          <capacitor-hubspot-form defaults={this.data.defaults} formId={this.data.defaults.hubspot.enterpriseContactForm.formId} />
+          <capacitor-hubspot-form defaults={this.data.defaults} />
         </ResponsiveContainer>
       </section>
     )

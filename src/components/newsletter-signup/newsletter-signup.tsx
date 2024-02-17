@@ -36,12 +36,25 @@ export class NewsletterSignup {
         this.inlineMessage = 'Please enter a valid e-mail address.';
         this.isLoading = false;
         this.isValid = false;
+      } else if (xhr.readyState == 4) {
+        this.inlineMessage = 'Unknown error occurred';
+        this.isLoading = false;
+        this.isValid = false;
+      } else {
+        this.inlineMessage = 'Adding your e-mail..'
+        this.isLoading = true;
+        this.isValid = true;
       }
     };
 
     xhr.send(
       JSON.stringify({
-        email: this.email,
+        list_ids: this.defaults.sendGridListId,
+        contacts: [
+          {
+            email: this.email,
+          }
+        ]
       })
     );
   }

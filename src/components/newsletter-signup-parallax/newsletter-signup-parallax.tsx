@@ -17,33 +17,57 @@ export class NewsletterSignupParallax {
   componentWillLoad() {}
 
   handleNewsletterSubmit(e: Event) {
-    e.preventDefault();
+    e.preventDefault()
 
-    this.isLoading = true;
+    this.isLoading = true
 
-    const xhr = new XMLHttpRequest();
-    const url = this.defaults.emailForm.url;
-    xhr.open('POST', url);
-    xhr.setRequestHeader('Content-Type', 'application/json;charset=UTF-8');
+    const xhr = new XMLHttpRequest()
+    const url = this.defaults.emailForm.url
+
+    xhr.open('POST', url)
+    xhr.setRequestHeader('Content-Type', 'application/json;charset=UTF-8')
     xhr.onreadystatechange = () => {
+      console.log(xhr)
+      if (xhr.readyState === 4) {
+        this.isLoading = false
+      }
       if (xhr.readyState === 4 && xhr.status === 200) {
-        const json = JSON.parse(xhr.responseText);
-        this.inlineMessage = json.inlineMessage;
-        this.isLoading = false;
+        this.inlineMessage = 'Successfully added ' + this.email;
         this.hasSubmitted = true;
         this.isValid = true;
-      } else if (xhr.readyState == 4 && xhr.status == 400) {
-        this.inlineMessage = 'Please enter a valid e-mail address.';
-        this.isLoading = false;
+      } else if (xhr.readyState == 4 && xhr.status === 400) {
+        console.error(`Failed to add ${this.email}`, xhr)
+        const json = JSON.parse(xhr.responseText)
+        this.inlineMessage = json.error;
         this.isValid = false;
+        this.hasSubmitted = false;
+      } else if (xhr.readyState == 4) {
+        const json = JSON.parse(xhr.responseText);
+        this.inlineMessage = json.error;
+        this.isValid = false;
+        this.hasSubmitted = false;
       }
     };
-
+    // Custom fields are optional
+    const customFields: any = {}
+    let slug = url => new URL(url).pathname.match(/[^\/]+/g)
+    const slugs = slug(window.location.href)
+    customFields.join_href = window.location.href;
+    if (slugs) {
+      customFields.join_slug = slugs.pop()
+    }
+    customFields.join_type = 'parallax'
     xhr.send(
       JSON.stringify({
-        email: this.email,
+        list_ids: [this.defaults.sendGridListId],
+        contacts: [
+          {
+            email: this.email,
+            custom_fields: customFields
+          }
+        ]
       })
-    );
+    )
   }
 
   handleEmailChange(ev: any) {

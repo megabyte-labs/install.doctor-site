@@ -198,6 +198,8 @@ export class SiteHeader implements ComponentInterface {
               target="_blank"
               title={this.defaults.brandName + "'s repository on GitHub"}
               rel="noopener"
+              class="hint--bottom hint--rounded"
+              aria-label="GitHub"
             >
               <svg
                 class="social"
@@ -217,6 +219,8 @@ export class SiteHeader implements ComponentInterface {
               target="_blank"
               rel="noopener"
               title="Discord link"
+              class="hint--bottom hint--rounded"
+              aria-label="Discord"
             >
               <svg
                 class="social"
@@ -236,6 +240,8 @@ export class SiteHeader implements ComponentInterface {
               target="_blank"
               title="Twitter link"
               rel="noopener"
+              class="hint--bottom hint--rounded"
+              aria-label="Twitter"
             >
               <svg
                 class="social"
@@ -250,8 +256,9 @@ export class SiteHeader implements ComponentInterface {
                 />
               </svg>
             </a>
+            <div class="fork-container hint--bottom hint--rounded" aria-label="Fork on GitHub">
             <Button
-              class="primary | ui-paragraph-4"
+              class="primary ui-paragraph-4"
               anchor
               href={this.defaults.header.actionButton.href}
               target='_blank'
@@ -262,6 +269,7 @@ export class SiteHeader implements ComponentInterface {
               {headerActionButtonIcon()}
               {this.defaults.header.actionButton.title}
             </Button>
+            </div>
           </div>
         </header>
       </Host>

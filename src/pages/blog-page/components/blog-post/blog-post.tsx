@@ -327,19 +327,19 @@ export class BlogPost {
       <ResponsiveContainer id="footer-social-container">
         <div class="blog-footer-social">
           <h4><span>{this.getShareKeyword()}</span> & Share:</h4>
-          <a class="footer-social facebook" href={this.facebookUrl.join('')} onClick={(e) => this.shareFacebook(e)} target="_blank" rel="noopener">
+          <a class="footer-social facebook hint--top hint--rounded" href={this.facebookUrl.join('')} onClick={(e) => this.shareFacebook(e)} target="_blank" rel="noopener" aria-label="Facebook">
             {facebookRoundedLogo(
               { main: '#3b5998' },
               { width: 24, height: 24, class: 'facebook' },
             )}
           </a>
-          <a class="footer-social twitter" href={this.twitterUrl.join('')} onClick={(e) => this.shareTwitter(e)} target="_blank" rel="noopener">
+          <a class="footer-social twitter hint--top hint--rounded" href={this.twitterUrl.join('')} onClick={(e) => this.shareTwitter(e)} target="_blank" rel="noopener" aria-label="Twitter (X)">
             {twitterLogo(
               { main: '#00acee' },
               { width: 24, height: 24, class: 'twitter' },
             )}
           </a>
-          <a class="footer-social linkedin" href={this.linkedInUrl.join('')} onClick={(e) => this.shareLinkedIn(e)} target="_blank" rel="noopener">
+          <a class="footer-social linkedin hint--top hint--rounded" href={this.linkedInUrl.join('')} onClick={(e) => this.shareLinkedIn(e)} target="_blank" rel="noopener" aria-label="LinkedIn">
             {linkedInLogo(
               { main: '#0072b1' },
               { width: 24, height: 24, class: 'linkedin' },
@@ -371,7 +371,7 @@ export class BlogPost {
         <div class="post-content" innerHTML={this.data!.html} />
 
         <a
-          class="continue-reading ui-paragraph-2"
+          class="underline-hover continue-reading ui-paragraph-2"
           href={`/blog/${this.data.slug}`}
         >
           <span onClick={() => window.scrollTo(0, 0)}>
@@ -428,7 +428,7 @@ export class BlogPost {
         <Paragraph class="publish-date">
           By{' '}
           {authorUrl ? (
-            <a href={authorUrl} target="_blank" rel="noopener">
+            <a href={authorUrl} class="underline-hover" target="_blank" rel="noopener">
               {authorName}
             </a>
           ) : (

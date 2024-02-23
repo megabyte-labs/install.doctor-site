@@ -122,6 +122,7 @@ export class EnterprisePage {
           {native__list.map(({ title, text }, i) => (
             <li key={icons[i][0]}>
               <webp-image
+                class="icon-height-fix"
                 width={icons[i][1].split('x')[0]}
                 height={icons[i][1].split('x')[1]}
                 src={`/assets/img/enterprise/enterprise-overview-${i}.png`}

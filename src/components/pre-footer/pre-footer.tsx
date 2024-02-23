@@ -18,7 +18,7 @@ export class PreFooter {
       <Host>
         <div class="squares"></div>
         <ResponsiveContainer>
-          <a href={this.defaults.prefooter.left.href}>
+          <a href={this.defaults.prefooter.left.href} class="underline-heading">
             <svg
               width="56"
               height="50"
@@ -33,14 +33,16 @@ export class PreFooter {
                 stroke-linejoin="round"
               />
             </svg>
+            <div class="heading-wrap">
             <Heading level={4}>
               {this.defaults.prefooter.left.title} <span class="arrow">-&gt;</span>
             </Heading>
+            </div>
             <Paragraph>
               {this.defaults.prefooter.left.text}
             </Paragraph>
           </a>
-          <a href={this.defaults.prefooter.right.href}>
+          <a href={this.defaults.prefooter.right.href} class="underline-heading">
             <svg
               width="48"
               height="50"
@@ -62,9 +64,11 @@ export class PreFooter {
                 stroke-linejoin="round"
               />
             </svg>
+            <div class="heading-wrap">
             <Heading level={4}>
               {this.defaults.prefooter.right.title} <span class="arrow">-&gt;</span>
             </Heading>
+            </div>
             <Paragraph>
               {this.defaults.prefooter.right.text}
             </Paragraph>

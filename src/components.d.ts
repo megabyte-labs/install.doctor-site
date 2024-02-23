@@ -43,6 +43,7 @@ export namespace Components {
         "defaults": typeof defaults;
     }
     interface CapacitorSite {
+        "scriptsLoaded": number;
     }
     interface CapacitorSiteFooter {
         "defaults": typeof defaults;
@@ -126,10 +127,6 @@ export namespace Components {
     }
     interface TermsServicePage {
         "defaults": typeof defaults;
-    }
-    interface TopParallax {
-        "defaults": typeof defaults;
-        "scriptsLoaded": number;
     }
     interface WebpImage {
         "alt": string;
@@ -308,12 +305,6 @@ declare global {
         prototype: HTMLTermsServicePageElement;
         new (): HTMLTermsServicePageElement;
     };
-    interface HTMLTopParallaxElement extends Components.TopParallax, HTMLStencilElement {
-    }
-    var HTMLTopParallaxElement: {
-        prototype: HTMLTopParallaxElement;
-        new (): HTMLTopParallaxElement;
-    };
     interface HTMLWebpImageElement extends Components.WebpImage, HTMLStencilElement {
     }
     var HTMLWebpImageElement: {
@@ -348,7 +339,6 @@ declare global {
         "site-header": HTMLSiteHeaderElement;
         "solution-page": HTMLSolutionPageElement;
         "terms-service-page": HTMLTermsServicePageElement;
-        "top-parallax": HTMLTopParallaxElement;
         "webp-image": HTMLWebpImageElement;
     }
 }
@@ -385,6 +375,7 @@ declare namespace LocalJSX {
         "defaults"?: typeof defaults;
     }
     interface CapacitorSite {
+        "scriptsLoaded"?: number;
     }
     interface CapacitorSiteFooter {
         "defaults"?: typeof defaults;
@@ -469,10 +460,6 @@ declare namespace LocalJSX {
     interface TermsServicePage {
         "defaults"?: typeof defaults;
     }
-    interface TopParallax {
-        "defaults"?: typeof defaults;
-        "scriptsLoaded"?: number;
-    }
     interface WebpImage {
         "alt"?: string;
         "class"?: string;
@@ -510,7 +497,6 @@ declare namespace LocalJSX {
         "site-header": SiteHeader;
         "solution-page": SolutionPage;
         "terms-service-page": TermsServicePage;
-        "top-parallax": TopParallax;
         "webp-image": WebpImage;
     }
 }
@@ -545,7 +531,6 @@ declare module "@stencil/core" {
             "site-header": LocalJSX.SiteHeader & JSXBase.HTMLAttributes<HTMLSiteHeaderElement>;
             "solution-page": LocalJSX.SolutionPage & JSXBase.HTMLAttributes<HTMLSolutionPageElement>;
             "terms-service-page": LocalJSX.TermsServicePage & JSXBase.HTMLAttributes<HTMLTermsServicePageElement>;
-            "top-parallax": LocalJSX.TopParallax & JSXBase.HTMLAttributes<HTMLTopParallaxElement>;
             "webp-image": LocalJSX.WebpImage & JSXBase.HTMLAttributes<HTMLWebpImageElement>;
         }
     }

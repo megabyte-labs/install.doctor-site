@@ -669,6 +669,7 @@ ul {
   padding-block-start: $section-space;
   padding-block-end: $section-space;
   background: #011830;
+  border-bottom: 1px solid #011830;
 
   .wrapper {
     @media (max-width: $screen-xs-max) {
@@ -864,5 +865,9 @@ ul {
   hubspot-form {
     max-width: 41rem;
   }
+}
+
+.icon-height-fix {
+  min-height: 64px;
 }
 //#endregion ------------------------------------------------------------------------------

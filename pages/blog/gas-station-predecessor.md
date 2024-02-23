@@ -1,41 +1,41 @@
 ---
-title: Gas Station, the Predecessor of Install Doctor
+title: Gas Station, the Ansible-Based Predecessor of Install Doctor
 slug: gas-station-predecessor
 date: 2023-02-16 14:00:00
-modifiedDate: 2023-03-16 14:00:00
+modifiedDate: 2024-02-23 14:00:00
 author: Brian Zalewski <brian@megabyte.space>
 authorUrl: https://twitter.com/HillBillyHack3r
 authorName: Brian Zalewski
 authorImageName: brian-zalewski.png
-authorDescription: Hey, my name is Brian. My friends call me BZ. I am the main driving force behind Megabyte Labs and its various offerings. Apart from optimizing my developer tool stack, my hobbies include going to the gym, partying with friends, and playing volleyball / kickball. I never turn down a conversation about AI, God, time travelers, or Jesus. I frequently think about how I can make the world a better place by inspiring others.
+authorDescription: Call me BZ, the tech maestro of Megabyte Labs by day, gym enthusiast, party animal, and ball game champion by night. Always up for a quirky chat about AI, deities, or time-hopping. Plotting world betterment one inspiration at a time.
 description: A little bit about the transition of our provisioning system from Ansible to Chezmoi
-featuredImage: /gas-station-predecessor.png
+featuredImage: /gas-station-transition.png
 featuredImageAlt: Transition from Gas Station to Install Doctor
-tags: Ansible,Open-Source,Deprecated
+tags: Ansible,Open-Source,Deprecated,Installx,Software.yml,Gas-Station,Chezmoi
 ---
 
-When we began on our quest for our code-defined set of instructions to headlessly provision full workstations without having to micro-optimize settings after deployment, Ansible seemed to fit. However, we came up with a better solution.
+Embarking on a journey to create a code-driven solution for seamlessly provisioning complete workstations without the need for post-deployment tweaks, we initially turned to Ansible. However, our journey led us to a superior alternative.
 
-## Beginning with Ansible
+### Our Journey Begins with Ansible
 
-[Ansible](https://www.ansible.com/) is the de-facto standard for achieving what we were trying to do. This fit with our philosophy of, "choose the best software but heavily lean towards widely-accepted derivatives." It did not hurt that it had advanced features like the ability to determine the idempotence of scripts. It also has a great testing framework called [Molecule](https://github.com/ansible-community/molecule) that we did quite a bit of work adding support for testing Archlinux, CentOS, Debian, Fedora, macOS, Ubuntu, and Windows all at the same time ([example code here](https://github.com/megabyte-labs/ansible-androidstudio/tree/master/molecule)). We used Ansible for years while we slowly added more and more software to our unique stack.
+[Ansible](https://www.ansible.com/), a widely recognized standard for automation tasks similar to ours, initially seemed like the perfect fit. Our approach of choosing the best software, with a preference for popular options, aligned well with choosing Ansible. Its sophisticated features, such as script idempotence checking and a robust testing framework named [Molecule](https://github.com/ansible-community/molecule) (which we enhanced to support a variety of operating systems including Archlinux, CentOS, Debian, Fedora, macOS, Ubuntu, and Windows, as seen in [this example](https://github.com/megabyte-labs/ansible-androidstudio/tree/master/molecule)), made it our tool of choice for an extended period. Over time, our unique software stack expanded significantly within the Ansible ecosystem.
 
-## Ansible Shortcomings
+### Encountering Ansible's Limitations
 
-However, after using Ansible for awhile, Ansible's shortcomings became apparent. For starters, you can achieve a lot more with less code using regular shell scripts. It makes things a lot more manageable when there is less code. Our original project called [Gas Station](https://github.com/megabyte-labs/gas-station) included hundreds of roles and hundreds of variables used for customization. The codebase was huge!
+Despite its strengths, we eventually encountered limitations with Ansible. The most significant was the realization that simpler shell scripts could accomplish our goals more efficiently, reducing the complexity and size of our codebase. Our original endeavor, dubbed [Gas Station](https://github.com/megabyte-labs/gas-station), grew unwieldy with its numerous roles and variables for customization, highlighting the need for a more streamlined approach.
 
-## Replacing Ansible with Chezmoi
+### Transitioning to Chezmoi
 
-We ended up introducing the use of [Chezmoi](https://www.chezmoi.io/) to manage dotfiles. It includes must-have features like built-in encryption methods, templating features, and diffs for when files change. We liked it so much that we transitioned the entire project to Chezmoi by incorporating a special [`install-program`](https://github.com/megabyte-labs/install.doctor/blob/master/home/dot_local/bin/executable_install-program) script that makes cross-OS installtions easier. It makes the installations easier because you can define installation instructions in such a way that the user can run the command `install-program android-studio` on any operating system. It works by relying a [`software.yml`](https://github.com/megabyte-labs/install.doctor/blob/master/software.yml) software definition file and then selecting the preferred installation method based on the operating system. This made it possible to replace Ansible roles with dozens of files with single lines of code. It also made it ridiculously easy to add new pieces of software to our stack.
+Our search for a better solution led us to [Chezmoi](https://www.chezmoi.io/), a tool adept at managing dotfiles with essential features like encryption, templating, and file change detection. The transition to Chezmoi was facilitated by an innovative [`installx`](https://github.com/megabyte-labs/install.doctor/blob/master/home/dot_local/bin/executable_installx) script, simplifying cross-OS software installations. This approach, supported by a [`software.yml`](https://github.com/megabyte-labs/install.doctor/blob/master/software.yml) file, allowed for concise, effective management of software installations, significantly reducing the complexity of adding new software to our stack.
 
-## Chezmoi is Easier
+### The Ease of Chezmoi
 
-In my opinion, Chezmoi is a lot easier to grasp. It took a few days to get the hang of, rather than weeks, even months for understanding Ansible. It, like Ansible, is wildly popular on GitHub. Another one of our philosophy's is, "choose software with a lot of GitHub stars," so Chezmoi seemed to fit. It is also hands-down probably the best way to manage dotfiles. Our dotfiles are a core part of our project which includes outstanding examples of feature-packed settings for Bash and ZSH sessions.
+In comparison to Ansible, Chezmoi was not only easier to adopt but also enjoyed popularity on GitHub, aligning with our philosophy of choosing highly-regarded software. Its capability to efficiently manage dotfiles—crucial to our project—stood out as particularly valuable, offering a rich array of features for Bash and ZSH configurations.
 
-## Chezmoi Encourages Bash / PowerShell Scripting
+### Embracing Scripting with Chezmoi
 
-Chezmoi also allowed us to transition to the use of Bash scripts (as well as some PowerShell scripts, in the case of Windows). We still leverage Ansible in some cases though. Although, we are trying to transition away from it completely, our custom installer (`install-program`) supports Ansible roles as a package manager source. Ansible is a powerful framework and it is certainly important for deploying software over SSH. It might be ideal for deploying software on a group of a 100+ VPS. However, when provisioning a single device (or even a small group of them), you might want to just give `bash <(curl -sSL https://install.doctor/start)>` a try instead of investing the additional overhead that Ansible requires.
+Chezmoi's flexibility further enabled us to incorporate Bash and PowerShell scripts into our workflow, enhancing our ability to manage installations across different operating systems. While we haven't completely phased out Ansible—still finding it useful for certain applications, particularly in SSH deployments for larger server clusters—we've recognized the benefits of simplifying our approach for single devices or smaller groups, often opting for a straightforward Bash script execution method.
 
-## Ansible Roles Still Available
+### Future Plans with Ansible
 
-We plan on releasing all of our tested Ansible roles to Ansible Galaxy for public consumption but for now, if you are interested, you can check out the `roles/` folder in the [Gas Station](https://github.com/megabyte-labs/Gas-Station/tree/master/roles) project.
+Although we're moving towards Chezmoi for most of our needs, we value the contributions we've made using Ansible and plan to share our roles on Ansible Galaxy. For those interested in exploring our Ansible-based solutions, they remain accessible in the `roles/` directory of the [Gas Station](https://github.com/megabyte-labs/Gas-Station/tree/master/roles) project.

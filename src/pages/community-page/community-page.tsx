@@ -1,5 +1,5 @@
 import { Component, Host, h, Prop } from '@stencil/core';
-import { ResponsiveContainer, PrismicRichText, Paragraph, Heading, Grid, Col } from 'ionic-ds-no-fonts';
+import { ResponsiveContainer, PrismicRichText, Paragraph, Heading } from 'ionic-ds-no-fonts';
 
 @Component({
   tag: 'community-page',
@@ -10,7 +10,7 @@ export class CommunityPage {
   @Prop() data: any;
 
   render() {
-    const { Top, Websites, WhyJoin } = this;
+    const { Top, WhyJoin } = this;
 
     return (
       <Host>
@@ -21,7 +21,6 @@ export class CommunityPage {
         />
         <site-header defaults={this.data.defaults} class="heading-container" sticky={true} />
         <Top />
-        <Websites />
         <WhyJoin />
         <pre-footer defaults={this.data.defaults} />
         <capacitor-site-footer defaults={this.data.defaults} />
@@ -30,7 +29,7 @@ export class CommunityPage {
   }
 
   Top = () => {
-    const { top, top__list } = this.data;
+    const { top, community_list_1, community_list_2, community_list_3 } = this.data;
 
     return (
       <ResponsiveContainer id="top" as="section">
@@ -38,8 +37,8 @@ export class CommunityPage {
           <PrismicRichText richText={top} paragraphLevel={2} />
         </div>
         <div class="cards">
-          {top__list.map(({ image, text, link: { target, url } }) => (
-            <a target={target} href={url} class="card">
+          {community_list_1.map(({ image, text, link: { target, url } }) => (
+            <a target={target} href={url} class="underline-heading card">
               <div class="image-wrapper">
                 <prismic-image defaults={this.data.defaults} image={image} loading="eager" />
               </div>
@@ -47,31 +46,26 @@ export class CommunityPage {
             </a>
           ))}
         </div>
-      </ResponsiveContainer>
-    );
-  };
-
-  Websites = () => {
-    const { websites__list } = this.data;
-
-    const dimensions = ['48x48', '48x48', '48x48', '48x48'];
-
-    return (
-      <ResponsiveContainer id="websites" as="section">
-        <Grid>
-          {websites__list.map(({ icon, text, link }, i) => {
-            const [width, height] = dimensions[i].split('x');
-            return (
-              <Col cols={12} xs={6} md={3}>
-                <div class="image-wrapper">
-                  <prismic-image defaults={this.data.defaults} width={width} height={height} image={icon} />
-                </div>
-                <PrismicRichText richText={text} />
-                <PrismicRichText class="link" richText={link} />
-              </Col>
-            );
-          })}
-        </Grid>
+        <div class="cards">
+          {community_list_2.map(({ image, text, link: { target, url } }) => (
+            <a target={target} href={url} class="underline-heading card">
+              <div class="image-wrapper">
+                <prismic-image defaults={this.data.defaults} image={image} loading="eager" />
+              </div>
+              <PrismicRichText richText={text} />
+            </a>
+          ))}
+        </div>
+        <div class="cards">
+          {community_list_3.map(({ image, text, link: { target, url } }) => (
+            <a target={target} href={url} class="underline-heading card">
+              <div class="image-wrapper">
+                <prismic-image defaults={this.data.defaults} image={image} loading="eager" />
+              </div>
+              <PrismicRichText richText={text} />
+            </a>
+          ))}
+        </div>
       </ResponsiveContainer>
     );
   };

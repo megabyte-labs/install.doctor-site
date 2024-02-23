@@ -8,6 +8,8 @@ import {
 import { getBlogData, getAllBlogData } from './data.server/blog'
 import { CommunityPageData, defaults, EnterprisePageData, LandingPageData } from './store'
 
+declare let window: any
+
 export const Router = createRouter()
 
 export default Router
@@ -120,6 +122,20 @@ export const Routes = () => (
 )
 
 Router.on('change', (newUrl, oldUrl) => {
+  if (window.revapi4) {
+    window.revapi4.revkill()
+  }
+  if (newUrl.pathname === '/') {
+    document.body.classList.add('home')
+    if (window.revapi2) {
+      window.revapi2.revredraw()
+    }
+  } else {
+    document.body.classList.remove('home')
+    if (window.revapi2) {
+      window.revapi2.revpause()
+    }
+  }
   requestAnimationFrame(() => window.scrollTo(0, 0))
   if (newUrl.hash) {
     const id = newUrl.hash.slice(1)

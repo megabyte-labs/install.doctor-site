@@ -7,18 +7,33 @@
         {
             "src": "/android-chrome-192x192.png",
             "sizes": "192x192",
-            "type": "image/png"
+            "type": "image/png",
+            "purpose": "any"
+        },
+        {
+            "src": "/assets/img/manifest-icon-192.maskable.png",
+            "sizes": "192x192",
+            "type": "image/png",
+            "purpose": "maskable"
         },
         {
             "src": "/android-chrome-512x512.png",
             "sizes": "512x512",
-            "type": "image/png"
+            "type": "image/png",
+            "purpose": "any"
+        },
+        {
+            "src": "/assets/img/manifest-icon-512.maskable.png",
+            "sizes": "512x512",
+            "type": "image/png",
+            "purpose": "maskable"
         }
     ],
     "categories": [
         "business",
         "personalization",
         "productivity",
+        "security",
         "utilities"
     ],
     "theme_color": "#000000",
@@ -29,30 +44,38 @@
         {
             "src": "/assets/img/screenshot-home.png",
             "sizes": "1920x1080",
-            "platform": "wide",
+            "form_factor": "wide",
             "type": "image/png",
-            "label": "The homepage of Install Doctor"
+            "label": "Homepage of Install Doctor"
         },
         {
             "src": "/assets/img/screenshot-docs-mobile.png",
             "sizes": "1080x1920",
-            "platform": "narrow",
+            "form_factor": "narrow",
             "type": "image/png",
-            "label": "The homepage of Install Doctor (on mobile devices)"
+            "label": "Homepage of Install Doctor"
         },
         {
             "src": "/assets/img/screenshot-docs.png",
             "sizes": "1920x1080",
-            "platform": "wide",
+            "form_factor": "wide",
             "type": "image/png",
-            "label": "Home of the documentation for Install Doctor"
+            "label": "Documentation for Install Doctor"
         },
         {
             "src": "/assets/img/screenshot-docs-mobile.png",
             "sizes": "1080x1920",
-            "platform": "narrow",
+            "form_factor": "narrow",
             "type": "image/png",
-            "label": "Home of the documentation for Install Doctor (on mobile devices)"
+            "label": "Documentation for Install Doctor"
+        },
+        {
+            "src": "/assets/img/og.png",
+            "sizes": "1200x630",
+            "form_factor": "wide",
+            "platform": "macos",
+            "type": "image/png",
+            "label": "Install Doctor, multi-OS provisioning done right"
         }
     ],
     "shortcuts": [
@@ -62,19 +85,37 @@
             "description": "Homepage of Install Doctor"
         },
         {
-            "name": "Blog",
-            "url": "https://install.doctor/blog",
-            "description": "The Install Doctor blog"
+            "name": "Documentation",
+            "url": "https://install.doctor/docs",
+            "description": "The official documentation for Install Doctor"
+        },
+        {
+            "name": "Enterprise Support",
+            "url": "https://install.doctor/enterprise",
+            "description": "Request Enterprise support for your business"
         },
         {
             "name": "Community",
             "url": "https://install.doctor/community",
-            "description": "Community Hub page with links to various social media groups related to Install Doctor"
+            "description": "Join our vibrant community"
         },
         {
-            "name": "Documentation",
-            "url": "https://install.doctor/docs",
-            "description": "The official documentation for Install Doctor"
+            "name": "Blog",
+            "url": "https://install.doctor/blog",
+            "description": "Read our blog"
         }
-    ]
+    ],
+    "id": "/?pwa=1",
+    "dir": "ltr",
+    "scope": "https://install.doctor",
+    "orientation": "any",
+    "display_override": [
+        "window-controls-overlay",
+        "standalone",
+        "browser"
+    ],
+    "prefer_related_applications": false,
+    "edge_side_panel": {
+        "preferred_width": 480
+    }
 }

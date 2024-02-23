@@ -124,19 +124,19 @@ export class BlogSocialActions {
         'loaded': this.loaded,
       }}
     >
-      <a href={this.facebookUrl.join('')} onClick={(e) => this.shareFacebook(e)} target="_blank" rel="noopener">
+      <a href={this.facebookUrl.join('')} onClick={(e) => this.shareFacebook(e)} target="_blank" rel="noopener" class="hint--right hint--rounded" aria-label="Facebook">
         {facebookRoundedLogo(
           { main: '#CED6E0' },
           { width: 20, height: 20, class: 'facebook' },
         )}
       </a>
-      <a href={this.twitterUrl.join('')} onClick={(e) => this.shareTwitter(e)} target="_blank" rel="noopener">
+      <a href={this.twitterUrl.join('')} onClick={(e) => this.shareTwitter(e)} target="_blank" rel="noopener" class="hint--right hint--rounded" aria-label="Twitter (X)">
         {twitterLogo(
           { main: '#CED6E0' },
           { width: 20, height: 16, class: 'twitter' },
         )}
       </a>
-      <a href={this.linkedInUrl.join('')} onClick={(e) => this.shareLinkedIn(e)} target="_blank" rel="noopener">
+      <a href={this.linkedInUrl.join('')} onClick={(e) => this.shareLinkedIn(e)} target="_blank" rel="noopener" class="hint--right hint--rounded" aria-label="LinkedIn">
         {linkedInLogo(
           { main: '#CED6E0' },
           { width: 20, height: 20, class: 'linked-in' },

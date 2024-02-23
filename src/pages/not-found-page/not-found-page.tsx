@@ -1,7 +1,13 @@
-import { Component, Host, h, Prop } from '@stencil/core';
-import { ResponsiveContainer, Heading, Paragraph } from 'ionic-ds-no-fonts';
-import { href } from '@stencil/router';
-import { defaults } from 'src/store';
+import { Component, Host, h, Prop } from '@stencil/core'
+import { ResponsiveContainer, Heading, Paragraph } from 'ionic-ds-no-fonts'
+import { href } from '@stencil/router'
+import { defaults } from 'src/store'
+
+declare let RS_MODULES: any
+declare let window: any
+declare let revapi4: any
+declare let jQuery: any
+declare let revslider_showDoubleJqueryError: any
 
 @Component({
   tag: 'not-found-page',
@@ -9,10 +15,10 @@ import { defaults } from 'src/store';
   scoped: true,
 })
 export class NotFoundPage {
-  @Prop() defaults: typeof defaults;
+  @Prop() defaults: typeof defaults
 
   render() {
-    const { NotFound } = this;
+    const { NotFoundSimple } = this
 
     return (
       <Host>
@@ -24,14 +30,20 @@ export class NotFoundPage {
           }
         />
         <site-header defaults={this.defaults} class="heading-container" sticky={true} />
-        <NotFound />
+        <NotFoundSimple />
         <pre-footer defaults={this.defaults} />
         <capacitor-site-footer defaults={this.defaults} />
       </Host>
-    );
+    )
   }
 
-  NotFound = () => (
+  NotFoundAnimated = () => (
+    <ResponsiveContainer id="not-found" as="section">
+      <iframe></iframe>
+    </ResponsiveContainer>
+  )
+
+  NotFoundSimple = () => (
     <ResponsiveContainer id="not-found" as="section">
       <Heading class="top-text" level={1}>
         404: Not Found

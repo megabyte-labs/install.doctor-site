@@ -165,29 +165,35 @@ export class CapacitorSiteFooter {
                   loading="lazy"
                 />
                 <div class="footer-social-wrapper">
-                  <a class="footer-social github" href={this.defaults.social.github} target="_blank" rel="noopener">
+                  <a class="footer-social github hint--top hint--rounded" href={this.defaults.social.github} target="_blank" rel="noopener" aria-label="GitHub">
                     <ion-icon name="logo-github"></ion-icon>
                   </a>
-                  <a class="footer-social gitlab" href={this.defaults.social.gitlab} target="_blank" rel="noopener">
+                  <a class="footer-social gitlab hint--top hint--rounded" href={this.defaults.social.gitlab} target="_blank" rel="noopener" aria-label="GitLab">
                     <ion-icon name="logo-gitlab"></ion-icon>
                   </a>
-                  <a class="footer-social slack" href={this.defaults.social.slack} target="_blank" rel="noopener">
+                  <a class="footer-social slack hint--top hint--rounded" href={this.defaults.social.slack} target="_blank" rel="noopener" aria-label="Slack">
                     <ion-icon name="logo-slack"></ion-icon>
                   </a>
-                  <a class="footer-social discord" href={this.defaults.social.discord} target="_blank" rel="noopener">
+                  <a class="footer-social discord hint--top hint--rounded" href={this.defaults.social.discord} target="_blank" rel="noopener" aria-label="Discord">
                     <ion-icon name="logo-discord"></ion-icon>
                   </a>
-                  <a class="footer-social facebook" href={this.defaults.social.facebook} target="_blank" rel="noopener">
+                  <a class="footer-social facebook hint--top hint--rounded" href={this.defaults.social.facebook} target="_blank" rel="noopener" aria-label="Facebook">
                     <ion-icon name="logo-facebook"></ion-icon>
                   </a>
-                  <a class="footer-social twitter" href={this.defaults.social.twitter} target="_blank" rel="noopener">
+                  <a class="footer-social twitter hint--top hint--rounded" href={this.defaults.social.twitter} target="_blank" rel="noopener" aria-label="Twitter (X)">
                     <ion-icon name="logo-twitter"></ion-icon>
                   </a>
-                  <a class="footer-social linkedin" href={this.defaults.social.linkedin} target="_blank" rel="noopener">
+                  <a class="footer-social linkedin hint--top hint--rounded" href={this.defaults.social.linkedin} target="_blank" rel="noopener" aria-label="LinkedIn">
                     <ion-icon name="logo-linkedin"></ion-icon>
                   </a>
-                  <a class="footer-social youtube" href={this.defaults.social.youtube} target="_blank" rel="noopener">
+                  <a class="footer-social youtube hint--top hint--rounded" href={this.defaults.social.youtube} target="_blank" rel="noopener" aria-label="YouTube">
                     <ion-icon name="logo-youtube"></ion-icon>
+                  </a>
+                  <a class="footer-social telegram hint--top hint--rounded" href={this.defaults.social.telegram} target="_blank" rel="noopener" aria-label="Telegram">
+                    <ion-icon name="send"></ion-icon>
+                  </a>
+                  <a class="footer-social matrix hint--top hint--rounded" href={this.defaults.social.matrix} target="_blank" rel="noopener" aria-label="Element Matrix chat">
+                    <ion-icon name="chatbubbles-sharp"></ion-icon>
                   </a>
                 </div>
                 <p>

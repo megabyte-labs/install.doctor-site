@@ -98,9 +98,6 @@ export class HubspotForm {
       customFields.join_slug = slugs.pop()
     }
     customFields.join_type = 'enterprise'
-    if (this.message) {
-      customFields.last_message = this.message
-    }
     const listIds = [this.defaults.sendGridEnterpriseListId]
     if (this.newsletterCheckbox) {
       listIds.push(this.defaults.sendGridListId)
@@ -108,6 +105,8 @@ export class HubspotForm {
     xhr.send(
       JSON.stringify({
         list_ids: listIds,
+        site: 'install.doctor',
+        message: this.message,
         contacts: [
           {
             email: this.email,

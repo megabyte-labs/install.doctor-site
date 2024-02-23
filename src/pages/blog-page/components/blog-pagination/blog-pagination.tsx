@@ -14,7 +14,7 @@ export class BlogPagination {
 
   render = () => (
     <Host>
-      <a class="rss-link" href={this.defaults.homepage + '/blog/rss.xml'} target="_blank" rel="noopener">
+      <a class="rss-link hint--top hint--rounded" href={this.defaults.homepage + '/blog/rss.xml'} target="_blank" rel="noopener" aria-label="RSS Feed">
         {this.rssIcon ? rssIcon({}, { height: 32, width: 32 }) : ''}
       </a>
     </Host>

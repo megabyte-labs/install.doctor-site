@@ -46,7 +46,7 @@ h6 {
 }
 
 #top .heading-group img {
-  width: 214px;
+  width: 145px;
 }
 
 #top > .ui-container > .heading-group > .link {
@@ -709,7 +709,7 @@ h6 {
     }
 
     img {
-      transition: transform 0.2s cubic-bezier(0.32, 0.72, 0, 1);
+      transition: transform 0.81s cubic-bezier(0.32, 0.72, 0, 1);
       width: 100%;
     }
   }
@@ -1071,4 +1071,12 @@ h6 {
   #features .ui-paragraph {
     margin-right: 14px;
   }
+}
+
+#slider {
+  height: calc(100vh - 64px);
+}
+
+#top {
+  border-top: 1px solid var(--c-indigo-20);
 }

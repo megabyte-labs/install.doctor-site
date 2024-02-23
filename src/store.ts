@@ -122,7 +122,7 @@ export const defaults = {
         'Read about all things related to Install Doctor. Find information about Kubernetes, Docker, virtualization, CLIs, and other tools included in the Install Doctor stack.',
     },
     title: 'Install Doctor Blog',
-    subheader: 'Articles by the Install Doctor team and community',
+    subheader: 'Explore engaging articles from the Install Doctor dream team and thriving community!',
   },
   solutionPage: {
     meta: {
@@ -280,6 +280,8 @@ export const defaults = {
     slack: 'https://app.slack.com/client/T01ABCG4NK1/C04TDHV564E',
     twitter: 'https://twitter.com/InstallDoc',
     youtube: 'https://www.youtube.com/@InstallDoctor',
+    telegram: 'https://t.me/InstallDoctor',
+    matrix: 'https://app.element.io/#/room/#install.doctor:matrix.org'
   },
 };
 
@@ -294,7 +296,7 @@ export const LandingPageData = {
     {
       type: 'paragraph',
       spans: [],
-      text: 'Install Doctor is a free provisioning tool compatible with most operating systems that lets you define the state of your operating system. With it, you can re-format often and provision your devices rapidly. Without any customization, it provisions an expertly configured eco-system of popular, free, open-source GitHub projects. It also provides a framework for defining your ideal configurations with as little work as possible.',
+      text: 'Experience Install Doctor, the free, versatile provisioning tool that simplifies your system setup across multiple operating systems. Instantly provision devices with top open-source projects from GitHub, no customization needed. With its customizable framework, tailor your system effortlessly to fit your exact needs. Elevate your setup with Install Doctor—where efficiency meets simplicity.',
     },
   ],
   top__ctas: [
@@ -315,7 +317,7 @@ export const LandingPageData = {
     dimensions: {},
     alt: 'Archlinux, CentOS, Debian, Fedora, macOS, Qubes, Ubuntu, and Windows icons',
     copyright: null,
-    url: 'https://install.doctor/assets/img/landing/supported-os-icon.png',
+    url: 'https://install.doctor/assets/img/landing/megabyte-labs-heart.png',
     '2x': {},
   },
   announcement: {
@@ -344,32 +346,32 @@ export const LandingPageData = {
     {
       number: '01',
       title: 'Get started with a one-liner and guided prompts.',
-      text: 'It is incredibly easy to get started with Install Doctor. Run the one-liner and you will be guided through interactive prompts where you can input any missing information.',
+      text: `Getting started with Install Doctor is a breeze. Just launch the one-liner, and you'll be seamlessly guided through interactive prompts to easily input any additional details needed. Dive right in and experience the simplicity of setting up your system with Install Doctor.`,
     },
     {
       number: '02',
       title: 'Customize the script with your own fork.',
-      text: 'Fork the Install Doctor project on GitHub and use the same convienient script to provision your devices by defining an environment variable with your username/project-name.',
+      text: `Take control of your setup by forking the Install Doctor project on GitHub. Then, effortlessly provision your devices with the same convenient script, simply by setting an environment variable to include your username/project-name. It's your gateway to a customized, efficient provisioning process. Join the Install Doctor community and start shaping your ideal setup today!`,
     },
     {
       number: '03',
       title: 'Test it out in a VM with Vagrant.',
-      text: 'Test out Install Doctor before provisioning your main workstations with a one-liner. The script will install Vagrant, ensure a suitable virtualization platform is installed, and then provision a VM.',
+      text: 'Dip your toes into the Install Doctor experience without any commitment! With just a one-liner, you can give Install Doctor a whirl before bringing it to your main workstations. This handy script effortlessly sets up Vagrant, checks for a compatible virtualization platform, and then smoothly provisions a virtual machine (VM) for you. It’s the perfect way to see Install Doctor in action, ensuring it meets your needs with zero hassle.',
     },
     {
       number: '04',
       title: 'Automate everything.',
-      text: 'Pass in your sensitive data as environment variables or include them as encrypted secrets stored in your fork for a completely automated one-line installation.',
+      text: 'Elevate your security with Install Doctor by safeguarding your sensitive data. Opt to seamlessly integrate your confidential information through environment variables or embed them as encrypted secrets within your fork, ensuring a secure, automated one-line installation. This approach guarantees your setup is not just efficient, but also fortified against vulnerabilities, providing peace of mind in every deployment.',
     },
     {
       number: '05',
       title: 'Manage software across operating systems.',
-      text: 'Leverage our custom installer and define package requirements in a cross-OS way by defining the OS-specific package names software a YAML file.',
+      text: `Simplify your setup with our custom installer, effortlessly defining package requirements across different operating systems. All you need to do is specify the OS-specific package names within a straightforward YAML file. It's the hassle-free way to ensure your software runs smoothly, regardless of the operating system. Easy, efficient, and effective—just how it should be.`,
     },
     {
       number: '06',
       title: 'Pin all your plugins, packages, and extensions.',
-      text: 'Configure Install Doctor to install your favorite packages while provisioning your device by defining them in YAML.',
+      text: `Streamline your future setups with Install Doctor by pre-configuring it to automatically install your favorite packages. Simply define your preferences in a YAML file, and let Install Doctor take care of the provisioning for you. This one-time setup promises to save you countless hours down the line, making every device setup as efficient as the first. It's smart, simple, and designed to give you back your valuable time.`,
     },
   ],
   ebook: [
@@ -509,7 +511,7 @@ export const LandingPageData = {
         {
           type: 'paragraph',
           spans: [],
-          text: 'Both KDE and GNOME Linux systems are configured to use our stunning Sweet-based theme and boot screens are sleek, without useless log messages.',
+          text: `Our custom theme brings a stunning visual experience to both KDE and GNOME Linux systems, ensuring a sleek interface. Additionally, the boot screens are streamlined, displaying only what's necessary, free from unnecessary log messages for a cleaner startup.`,
         },
       ],
     },
@@ -529,7 +531,7 @@ export const LandingPageData = {
         {
           type: 'paragraph',
           spans: [],
-          text: 'Read-only network file sharing folder, back-ups to S3 buckets, and integrations with OS-specific technologies like BTRFS.',
+          text: 'Enjoy a secure, read-only network file sharing folder, effortless backups to S3 buckets, and seamless integration with operating system-specific technologies like BTRFS for enhanced performance and reliability.',
         },
       ],
     },
@@ -549,7 +551,7 @@ export const LandingPageData = {
         {
           type: 'paragraph',
           spans: [],
-          text: 'Our system allows you to pin everything into your configuration. Keep track of your favorite addons / tools / extensions by pinning software packages, Chrome extensions, VSCode extensions, and more.',
+          text: 'Our platform empowers you to customize your configuration to your exact preferences. Easily manage and maintain your favorite addons, tools, and extensions by pinning software packages, Chrome extensions, VSCode extensions, and more, ensuring everything you need is always at your fingertips.',
         },
       ],
     },
@@ -569,7 +571,7 @@ export const LandingPageData = {
         {
           type: 'paragraph',
           spans: [],
-          text: 'The default configuration is designed to accomodate the needs of developers by including development software and power-user tools like fully-enhanced terminal settings.',
+          text: 'The default setup is expertly crafted to meet the demands of developers, incorporating essential development software and advanced tools, including fully-enhanced terminal settings, to empower power users with everything they need for efficient workflow.',
         },
       ],
     },
@@ -589,7 +591,7 @@ export const LandingPageData = {
         {
           type: 'paragraph',
           spans: [],
-          text: 'Monitor your devices via a personal web dashboard and receive notifications when something goes awry.',
+          text: 'Keep an eye on your devices with a personal web dashboard and stay informed with notifications the moment anything goes off track.',
         },
       ],
     },
@@ -609,7 +611,7 @@ export const LandingPageData = {
         {
           type: 'paragraph',
           spans: [],
-          text: 'Connect to your devices / services anywhere with a VPN-based LAN and SSO-protected web services.',
+          text: 'Access your devices and services from anywhere through a VPN-based LAN and secure your web services with Single Sign-On (SSO) protection.',
         },
       ],
     },
@@ -629,7 +631,7 @@ export const LandingPageData = {
         {
           type: 'paragraph',
           spans: [],
-          text: 'Utilize multiple layers of pre-configured security features like app-specific firewalls, sandboxing, and honeypots.',
+          text: 'Enhance your security with multiple pre-configured layers, including app-specific firewalls, sandboxing, and honeypots, designed to protect your system comprehensively.',
         },
       ],
     },
@@ -649,7 +651,7 @@ export const LandingPageData = {
         {
           type: 'paragraph',
           spans: [],
-          text: 'Easily customize your own version of Install Doctor and host it, optionally bundled with your encrypted secrets, on GitHub.',
+          text: 'Effortlessly create and host your personalized version of Install Doctor on GitHub, with the option to include your encrypted secrets for added security.',
         },
       ],
     },
@@ -671,8 +673,8 @@ export const LandingPageData = {
       type: 'paragraph',
       spans: [
         {
-          start: 126,
-          end: 136,
+          start: 194,
+          end: 203,
           type: 'hyperlink',
           data: {
             link_type: 'Web',
@@ -680,8 +682,8 @@ export const LandingPageData = {
           },
         },
         {
-          start: 137,
-          end: 144,
+          start: 205,
+          end: 211,
           type: 'hyperlink',
           data: {
             link_type: 'Web',
@@ -689,8 +691,8 @@ export const LandingPageData = {
           },
         },
         {
-          start: 145,
-          end: 152,
+          start: 213,
+          end: 219,
           type: 'hyperlink',
           data: {
             link_type: 'Web',
@@ -698,8 +700,8 @@ export const LandingPageData = {
           },
         },
         {
-          start: 153,
-          end: 160,
+          start: 221,
+          end: 227,
           type: 'hyperlink',
           data: {
             link_type: 'Web',
@@ -707,8 +709,8 @@ export const LandingPageData = {
           },
         },
         {
-          start: 161,
-          end: 167,
+          start: 229,
+          end: 234,
           type: 'hyperlink',
           data: {
             link_type: 'Web',
@@ -716,8 +718,8 @@ export const LandingPageData = {
           },
         },
         {
-          start: 168,
-          end: 174,
+          start: 236,
+          end: 241,
           type: 'hyperlink',
           data: {
             link_type: 'Web',
@@ -725,8 +727,8 @@ export const LandingPageData = {
           },
         },
         {
-          start: 175,
-          end: 182,
+          start: 243,
+          end: 249,
           type: 'hyperlink',
           data: {
             link_type: 'Web',
@@ -734,8 +736,8 @@ export const LandingPageData = {
           },
         },
         {
-          start: 187,
-          end: 194,
+          start: 255,
+          end: 262,
           type: 'hyperlink',
           data: {
             link_type: 'Web',
@@ -743,7 +745,7 @@ export const LandingPageData = {
           },
         },
       ],
-      text: 'Use Install Doctor to provision a wide range of operating systems and virtualization platforms. The latest x86-64 releases of Archlinux, CentOS, Debian, Fedora, macOS, Qubes, Ubuntu, and Windows are officially supported. Support for other operating systems is also possible.',
+      text: 'Leverage the power of Install Doctor to provision an impressive array of operating systems and virtualization platforms. Officially supporting the latest x86-64 releases from major players like Archlinux, CentOS, Debian, Fedora, macOS, Qubes, Ubuntu, and Windows, Install Doctor stands out in its versatility. Additionally, its capability extends to supporting other operating systems, showcasing its adaptability and wide-reaching applicability.',
     },
   ],
   framework__list: [
@@ -968,7 +970,7 @@ export const LandingPageData = {
               type: 'em',
             },
           ],
-          text: 'Ready for enterprise. With Install Doctor Enterprise, access advanced security features, integrate SSO, and utilize a proprietary hardware-based, read-only file system.',
+          text: 'Ready for enterprise. Choose Install Doctor Enterprise for top-notch security, easy SSO, and exclusive read-only file system access. A smart investment in superior infrastructure protection.',
         },
       ],
       cta1: 'Learn more',
@@ -993,7 +995,7 @@ export const EnterprisePageData = {
   top: [
     {
       title: 'Secure, reliable multi-OS provisioning for enterprise teams',
-      text: "Increase your team's capacity by provisioning their devices with Install Doctor on any OS or virtualization platform.",
+      text: "Elevate your team's efficiency and expand their capabilities by seamlessly integrating Install Doctor across all operating systems and virtualization platforms. Empower them with the tools they need to excel, no matter the environment.",
       cta_1: 'Talk to sales',
       background: {
         dimensions: {},
@@ -1021,21 +1023,21 @@ export const EnterprisePageData = {
         },
       ],
       subtext:
-        'Improve the efficiency of your team by providing them with the right enterprise-grade tools and services.',
+        `Boost your team's performance and streamline their workflow by equipping them with top-tier, enterprise-grade tools and services. Elevate their productivity and ensure success with the right resources at their fingertips.`,
     },
   ],
   native__list: [
     {
       title: 'Build with confidence',
-      text: 'Enjoy peace of mind knowing your team has all the best open-source productivity tools available, pre-installed, pre-configured, and backed by mission-critical support.',
+      text: 'Secure a competitive edge for your business with the assurance that your team is equipped with the finest open-source productivity tools. Each tool is meticulously pre-installed, pre-configured, and supported by essential, mission-critical assistance, ensuring your operations run smoothly and efficiently.',
     },
     {
       title: 'Protect your users & data',
-      text: "Ensure all security features are pre-configured on your team's devices. Everything sandboxed, everything firewalled.",
+      text: "It's imperative for your business's integrity and safety to have all security measures meticulously pre-configured on your team's devices. With comprehensive sandboxing and robust firewall protection, safeguard your operations against vulnerabilities and threats, ensuring a secure and resilient working environment.",
     },
     {
       title: 'Accelerate your projects',
-      text: 'Get to market faster by providing tools and services that will improve the efficiency and capabilities of your team.',
+      text: 'Accelerate your path to market and gain valuable time by equipping your team with tools and services designed to enhance their efficiency and capabilities. Streamline processes and unlock greater potential, propelling your business forward at an unprecedented pace.',
     },
   ],
   ebook: [
@@ -1089,8 +1091,8 @@ export const EnterprisePageData = {
       subtext: [
         {
           type: 'paragraph',
-          spans: [
-            {
+          spans: [],
+          /*  {
               start: 215,
               end: 235,
               type: 'hyperlink',
@@ -1100,8 +1102,8 @@ export const EnterprisePageData = {
                 url: 'https://install.doctor/blog/self-service-portal',
               },
             },
-          ],
-          text: 'To give your developers access to the best set of tools, full device access is not necessarily required. With our Enterprise subscription, your developers can request pre-built, pre-configured, temporary VMs from a self-service portal. This model improves their time-to-code, saves on software licensing costs, and allows you to control the development machines from a single source.',
+          ],*/
+          text: 'Unlock unparalleled efficiency and innovation for your developers without compromising on device security. Our Enterprise subscription offers a game-changing solution: access to a self-service portal where developers can effortlessly request temporary, pre-configured VMs tailored to their needs. This approach not only accelerates their coding process but also significantly reduces software licensing expenses. Plus, it centralizes control over development environments, ensuring seamless management and oversight. Empower your team with the tools they need to excel, all while maintaining stringent security and cost-effectiveness.',
         },
       ],
       image: {
@@ -1129,7 +1131,7 @@ export const EnterprisePageData = {
         },
       ],
       subtext:
-        'Different operating systems are sometimes required for different jobs. But, your team should feel comfortable on any platform. That is why Install Doctor gives you the freedom to apply your system configuration on any operating system or virtualization platform from a single configuration.',
+        'Embrace unparalleled flexibility in your business operations with Install Doctor. Recognizing that diverse tasks demand diverse operating systems, we provide a solution that ensures your team can seamlessly transition between platforms with ease and confidence. With the ability to apply a single system configuration across any operating system or virtualization platform, Install Doctor empowers your business with the adaptability to meet any challenge head-on, ensuring productivity and efficiency regardless of the technological landscape.',
       image: {
         dimensions: {},
         alt: 'Wheel of operating system icons around Install Doctor icon',
@@ -1158,8 +1160,8 @@ export const EnterprisePageData = {
       subtext: [
         {
           type: 'paragraph',
-          spans: [
-            {
+          spans: [],
+          /*  {
               start: 118,
               end: 139,
               type: 'hyperlink',
@@ -1168,8 +1170,8 @@ export const EnterprisePageData = {
                 url: 'https://install.doctor/blog/single-sign-on',
               },
             },
-          ],
-          text: 'Utilize the best possible security practices by protecting all your web services with our Zero-Trust, hardware-backed authentication system. Authorize everything and require Multi-Factor Authentication (MFA) with support for hardware-based methods such as FIDO2.',
+          ],*/
+          text: 'Gain a formidable competitive edge with our state-of-the-art Zero-Trust, hardware-backed authentication system, setting a new standard in cybersecurity for your web services. By mandating Multi-Factor Authentication (MFA) and supporting advanced hardware-based methods like FIDO2, we ensure that every access point is fortified. This rigorous security protocol not only elevates your defenses but also positions your business as a trusted leader in protecting data and user privacy, giving you an unparalleled advantage in today’s digital landscape.',
         },
       ],
       image: {
@@ -1200,8 +1202,8 @@ export const EnterprisePageData = {
       subtext: [
         {
           type: 'paragraph',
-          spans: [
-            {
+          spans: [],
+          /*  {
               start: 148,
               end: 170,
               type: 'hyperlink',
@@ -1211,8 +1213,8 @@ export const EnterprisePageData = {
                 url: 'https://install.doctor/blog/immutable-golden-image',
               },
             },
-          ],
-          text: "Most of the files on your system never change but, with traditional systems, those files still remain part of attack surface. With Install Doctor's Immutable Golden Image (IGI) feature, you can leverage a USB-C hard-drive with special firmware to store the majority of your system immutably while still leveraging traditional disks via a union file system. This gives you the capability of rebooting to clear ransomware while retaining stateful data on hard-disks, S3 buckets, and the like.",
+          ],*/
+          text: "Elevate your cybersecurity strategy with Install Doctor's cutting-edge Immutable Golden Image (IGI) feature, a testament to our commitment to bleeding-edge technology. By utilizing a USB-C hard drive equipped with specialized firmware, your system's core files become immutable, drastically reducing the attack surface that traditional systems cannot protect against. This innovative approach, combined with the flexibility of traditional disks through a union file system, offers a unique solution: the ability to reboot and eliminate ransomware threats while preserving essential stateful data on hard disks, S3 buckets, and similar storage solutions. Embrace the future of secure system management and resilience with Install Doctor, where advanced technology meets unparalleled security.",
         },
       ],
       image: {
@@ -1234,7 +1236,7 @@ export const EnterprisePageData = {
         '2x': {},
       },
       title: 'Mission-Critical Support',
-      text: 'Guaranteed response SLAs throughout the provisioning process. Our professional support team is on-hand to help you troubleshoot and address issues.',
+      text: 'Rest assured with our commitment to reliable service and support. We offer guaranteed response times under our Service Level Agreements (SLAs) throughout the provisioning process. Our expert support team stands ready to assist you with any troubleshooting or issues, ensuring a seamless and trustworthy experience.',
     },
     {
       image: {
@@ -1245,7 +1247,7 @@ export const EnterprisePageData = {
         '2x': {},
       },
       title: 'Expert Guidance',
-      text: 'Our team of experienced provisioning experts will work with your teams to provide architecture recommendations and a strategy that fits your unique goals and challenges. We are here to help ensure your success.',
+      text: 'Unlock tailored solutions and strategic guidance with our seasoned team of provisioning experts. Collaborating closely with your teams, we offer personalized architecture recommendations and strategies aligned with your distinct objectives and challenges. Our commitment is to partner with you every step of the way, ensuring your success is not just a goal but a guarantee.',
     },
   ],
   features: [
@@ -1268,12 +1270,12 @@ export const EnterprisePageData = {
         {
           type: 'paragraph',
           spans: [],
-          text: "Install Doctor bundles free, open-source, power-user tools and services that can improve your team's efficiency. There are so many open-source projects integrated into Install Doctor's stack. It might be confusing to determine where to start.",
+          text: "Elevate your team's performance with Install Doctor, your gateway to an extensive suite of free, open-source tools and services designed for power users seeking efficiency enhancements. Navigating the wealth of open-source projects integrated into Install Doctor's ecosystem has never been easier.",
         },
         {
           type: 'paragraph',
-          spans: [
-            {
+          spans: [],
+          /*  {
               start: 204,
               end: 230,
               type: 'hyperlink',
@@ -1303,8 +1305,8 @@ export const EnterprisePageData = {
                 url: 'https://install.doctor/blog/immutable-golden-image',
               },
             },
-          ],
-          text: 'With an Enterprise agreement, you connect directly with a subject matter expert (SME) who works with you to satisfy your needs using free, open-source projects. Exclusive Enterprise-only features include single sign-on integration, a self-service portal, and a hardware-backed, write-protected file-system implementation.',
+          ],*/
+          text: 'By opting for an Enterprise agreement, you gain direct access to a dedicated subject matter expert (SME) poised to tailor solutions that cater precisely to your needs, utilizing the best of free, open-source projects. Enjoy exclusive Enterprise benefits such as seamless single sign-on integration, a convenient self-service portal, and a cutting-edge, hardware-backed, write-protected file system, all designed to optimize your operations and safeguard your data. Transform your workflow with Install Doctor, where innovation meets practicality.',
         },
       ],
     },
@@ -1319,7 +1321,7 @@ export const EnterprisePageData = {
         '2x': {},
       },
       title: 'Enterprise + Open-Source Features',
-      text: 'With the addition to Enterprise-exclusive features, Install Doctor is a unique, robust offering. It is 1 OAK - 1 Of A Kind.',
+      text: `Elevate your enterprise experience with Install Doctor's unparalleled suite of exclusive features, marking it as a standout, robust solution in the tech landscape. It's truly 1 OAK - One Of A Kind, offering unmatched innovation and performance that set your operations apart.`,
     },
     {
       icon: {
@@ -1330,7 +1332,7 @@ export const EnterprisePageData = {
         '2x': {},
       },
       title: 'Guaranteed SLA',
-      text: 'Timely support and troubleshooting when you need it most. Get expert help directly from the Install Doctor team with guaranteed response times.',
+      text: 'Experience unwavering reliability with our prompt support and troubleshooting services, available precisely when you need them. Benefit from direct access to the expert Install Doctor team, complete with guaranteed response times, ensuring you receive professional assistance swiftly and efficiently.',
     },
     {
       icon: {
@@ -1341,7 +1343,7 @@ export const EnterprisePageData = {
         '2x': {},
       },
       title: 'Regular Release Cycles',
-      text: 'A release timeline you can count on, as opposed to a community maintainers schedule. Think days instead of months or years.',
+      text: `Depend on a release timeline that delivers with precision and speed, moving at the pace of your business needs rather than the unpredictable schedules of community maintainers. With us, it's about days, not months or years, ensuring you stay ahead and reliable in every step of your journey.`,
     },
     {
       icon: {
@@ -1352,7 +1354,7 @@ export const EnterprisePageData = {
         '2x': {},
       },
       title: 'Critical Security Updates & Fixes',
-      text: 'Keep your users protected with ongoing security notifications and fixes that keep pace with OS releases, patches, and known vulnerabilities.',
+      text: 'Safeguard your users with proactive security notifications and updates that align seamlessly with OS releases, patches, and emerging vulnerabilities. Our vigilant approach ensures your environment remains secure, keeping you one step ahead in protection.',
     },
     {
       icon: {
@@ -1363,7 +1365,7 @@ export const EnterprisePageData = {
         '2x': {},
       },
       title: 'Guidance & Expertise',
-      text: 'Our team is here to ensure you are using the best, open-source tools and provisioning practices, helping you to meet your deadlines while avoiding costly tech debt.',
+      text: `Our dedicated team is at your service to guarantee that you're leveraging the finest open-source tools and provisioning practices available. We're here to help you meet your project deadlines efficiently, steering clear of expensive technical debt and setting the stage for your success.`,
     },
   ],
   editions: [
@@ -1386,14 +1388,14 @@ export const EnterprisePageData = {
         {
           type: 'paragraph',
           spans: [],
-          text: 'Many challenges can be solved via low-code or even no-code open-source based solutions.',
+          text: 'Discover the transformative potential of low-code and no-code solutions based on open-source software with Install Doctor.',
         },
       ],
       paragraph_2: [
         {
           type: 'paragraph',
           spans: [],
-          text: 'See how Install Doctor is using the power of freely available, open-source software to slash requirements and deliver secure, enterprise-grade solutions in less time.',
+          text: 'We invite you to explore how our use of freely accessible, open-source tools can dramatically reduce your requirements while providing secure, enterprise-grade solutions more swiftly. Engage with our sales team to see the real-world impact and efficiency gains Install Doctor can bring to your organization.',
         },
       ],
       cta_1: 'Talk to sales',
@@ -1425,10 +1427,10 @@ export const CommunityPageData = {
     {
       type: 'paragraph',
       spans: [],
-      text: 'Install Doctor is a large and growing project with a passionate community. Engage with the Install Doctor team and other helpful community members through Discord, GitHub Discussions, Twitter, and more.',
+      text: 'Discover the thriving ecosystem of Install Doctor—an expansive and dynamic project fueled by a passionate community. Dive into lively discussions, collaborate with the Install Doctor team, and connect with other supportive members across various platforms including Discord, GitHub Discussions, Twitter, and beyond. Join us on this exciting journey of innovation and collaboration!',
     },
   ],
-  top__list: [
+  community_list_1: [
     {
       image: {
         dimensions: {},
@@ -1446,7 +1448,7 @@ export const CommunityPageData = {
         {
           type: 'paragraph',
           spans: [],
-          text: 'Join the community in Discord for discussing new features, asking questions, and helping others get started.',
+          text: 'Join our lively Discord community to discuss new features, ask questions, and help others get started!',
         },
       ],
       link: {
@@ -1471,7 +1473,7 @@ export const CommunityPageData = {
         {
           type: 'paragraph',
           spans: [],
-          text: "Peruse through our official GitHub Discussions forum to find announcements, ideas, polls, questions, answers, and examples of other user's implementation of Install Doctor.",
+          text: "Dive into our GitHub Discussions for updates, ideas, polls, Q&A, and user examples of Install Doctor implementations. Join the conversation and get inspired!",
         },
       ],
       link: {
@@ -1482,7 +1484,7 @@ export const CommunityPageData = {
     {
       image: {
         dimensions: {},
-        alt: 'Message icons with world map behind',
+        alt: 'Message icons with world map behind representing the Matrix chat',
         copyright: null,
         url: 'https://install.doctor/assets/img/community/community-graphic.png',
         '2x': {},
@@ -1491,172 +1493,172 @@ export const CommunityPageData = {
         {
           type: 'heading4',
           spans: [],
-          text: 'Install Doctor Matrix',
+          text: 'Matrix Chat',
         },
         {
           type: 'paragraph',
           spans: [],
-          text: 'Join the Install Doctor matrix chat room (i.e. gitter.im). Ask questions to the community or help other users with their questions.',
+          text: 'Join our Install Doctor matrix chat room on Matrix. Whether you have questions or want to help others, we\'re here for you!',
         },
       ],
       link: {
         target: '_blank',
-        url: 'https://app.gitter.im/#/room/#install.doctor:gitter.im',
+        url: 'https://app.element.io/#/room/#install.doctor:matrix.org',
       },
     },
   ],
-  websites__list: [
+  community_list_2: [
     {
-      icon: {
+      image: {
         dimensions: {},
-        alt: 'Twitter icon',
+        alt: 'Card with Twitter graphic',
         copyright: null,
-        url: 'https://install.doctor/assets/img/community/twitter-icon-1x.png',
+        url: 'https://install.doctor/assets/img/community/twitter-graphic.png',
+        '2x': {},
       },
       text: [
         {
           type: 'heading4',
           spans: [],
-          text: '@InstallDoc',
+          text: 'Stay Connected on Twitter',
         },
         {
           type: 'paragraph',
           spans: [],
-          text: 'Follow Install Doctor on Twitter for the latest releases, features, and events.',
+          text: `Stay connected and engaged—follow us on Twitter! Get the latest updates, discover trending topics, and dive into engaging discussions. Don't miss out, join the conversation today!`,
         },
       ],
-      link: [
-        {
-          type: 'paragraph',
-          spans: [
-            {
-              start: 0,
-              end: 10,
-              type: 'hyperlink',
-              data: {
-                target: '_blank',
-                link_type: 'Web',
-                url: 'https://twitter.com/InstallDoc',
-              },
-            },
-          ],
-          text: 'Tweet',
-        },
-      ],
+      link: {
+        target: '_blank',
+        url: 'https://twitter.com/InstallDoc',
+      },
     },
     {
-      icon: {
+      image: {
         dimensions: {},
-        alt: 'Reddit icon',
+        alt: 'Card with Slack graphic',
         copyright: null,
-        url: 'https://install.doctor/assets/img/community/reddit-icon-1x.png',
+        url: 'https://install.doctor/assets/img/community/slack-graphic.png',
+        '2x': {},
       },
       text: [
         {
           type: 'heading4',
           spans: [],
-          text: 'r/InstallDoctor',
+          text: 'Slack Discussions',
         },
         {
           type: 'paragraph',
           spans: [],
-          text: 'Join the community on Reddit start discussing how you are using Install Doctor.',
+          text: "Connect with us on Slack for real-time chats and collaboration. Join our workspace to engage with our team, ask questions, and stay updated on the latest news and announcements. Let's chat!",
         },
       ],
-      link: [
-        {
-          type: 'paragraph',
-          spans: [
-            {
-              start: 0,
-              end: 10,
-              type: 'hyperlink',
-              data: {
-                target: '_blank',
-                link_type: 'Web',
-                url: 'https://www.reddit.com/r/InstallDoctor/',
-              },
-            },
-          ],
-          text: 'Post',
-        },
-      ],
+      link: {
+        target: '_blank',
+        url: 'https://github.com/megabyte-labs/install.doctor/discussions',
+      },
     },
     {
-      icon: {
+      image: {
         dimensions: {},
-        alt: 'Slack icon',
+        alt: 'Card with Facebook graphic',
         copyright: null,
-        url: 'https://install.doctor/assets/img/community/slack-icon-1x.png',
+        url: 'https://install.doctor/assets/img/community/facebook-graphic.png',
+        '2x': {},
       },
       text: [
         {
           type: 'heading4',
           spans: [],
-          text: 'Slack',
+          text: 'Follow on Facebook',
         },
         {
           type: 'paragraph',
           spans: [],
-          text: 'Connect with us on Slack to join the discussion, get help, or just hang out.',
+          text: `Follow us on Facebook to stay connected! Get exclusive updates, content, and join lively discussions. Don't miss the latest news and behind-the-scenes access. Join our community today!`,
         },
       ],
-      link: [
+      link: {
+        target: '_blank',
+        url: 'https://www.facebook.com/InstallDoctor/',
+      },
+    },
+  ],
+  community_list_3: [
+    {
+      image: {
+        dimensions: {},
+        alt: 'Card with LinkedIn graphic',
+        copyright: null,
+        url: 'https://install.doctor/assets/img/community/linkedin-graphic.png',
+        '2x': {},
+      },
+      text: [
+        {
+          type: 'heading4',
+          spans: [],
+          text: 'Link up on LinkedIn',
+        },
         {
           type: 'paragraph',
-          spans: [
-            {
-              start: 0,
-              end: 10,
-              type: 'hyperlink',
-              data: {
-                target: '_blank',
-                link_type: 'Web',
-                url: 'https://app.slack.com/client/T01ABCG4NK1/C04TDHV564E',
-              },
-            },
-          ],
-          text: 'Chat',
+          spans: [],
+          text: `Join our professional network and unlock a world of opportunities and connections! Don't miss the chance to elevate your career—connect with us today!`,
         },
       ],
+      link: {
+        target: '_blank',
+        url: 'https://linkedin.com/company/megabyte-labs',
+      },
     },
     {
-      icon: {
+      image: {
         dimensions: {},
-        alt: 'GitHub icon',
+        alt: 'Card with YouTube graphic',
         copyright: null,
-        url: 'https://install.doctor/assets/img/community/github-icon-1x.png',
+        url: 'https://install.doctor/assets/img/community/youtube-graphic.png',
+        '2x': {},
       },
       text: [
         {
           type: 'heading4',
           spans: [],
-          text: 'GitHub',
+          text: 'YouTube Channel',
         },
         {
           type: 'paragraph',
           spans: [],
-          text: 'Find a potential bug? Let us know on GitHub and consider opening a pull request.',
+          text: "Join our YouTube channel to dive into a world of engaging content tailored just for you, where every video promises to enlighten, entertain, and inspire. Don't miss out on the journey to discover, learn, and grow together with our vibrant community!",
         },
       ],
-      link: [
+      link: {
+        target: '_blank',
+        url: 'https://www.youtube.com/@InstallDoctor',
+      },
+    },
+    {
+      image: {
+        dimensions: {},
+        alt: 'Card with GitLab graphic',
+        copyright: null,
+        url: 'https://install.doctor/assets/img/community/gitlab-graphic.png',
+        '2x': {},
+      },
+      text: [
+        {
+          type: 'heading4',
+          spans: [],
+          text: 'Connect on GitLab',
+        },
         {
           type: 'paragraph',
-          spans: [
-            {
-              start: 0,
-              end: 10,
-              type: 'hyperlink',
-              data: {
-                target: '_blank',
-                link_type: 'Web',
-                url: 'https://github.com/megabyte-labs/install.doctor',
-              },
-            },
-          ],
-          text: 'Fork',
+          spans: [],
+          text: `We deeply value our GitLab family, but we've made the exciting move to GitHub to broaden our reach and enhance community engagement. However, our commitment to our GitLab supporters remains strong, and we'd be thrilled to have you join us there too!`,
         },
       ],
+      link: {
+        target: '_blank',
+        url: 'https://gitlab.com/megabyte-labs/install.doctor',
+      },
     },
   ],
 };

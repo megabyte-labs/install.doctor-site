@@ -18,8 +18,8 @@ import { LandingPageData } from 'src/store'
   scoped: true,
 })
 export class LandingPage {
-  @Prop() data: typeof LandingPageData;
-  @Prop() template;
+  @Prop() data: typeof LandingPageData
+  @Prop() template
 
   @State() selectedCodeTab: string = 'notifications';
   @State() ebookModalOpen = false;
@@ -43,9 +43,6 @@ export class LandingPage {
           description={this.data.defaults.landingPage.meta.description}
         />
         <site-header defaults={this.data.defaults} class="heading-container" sticky={true} />
-        <section id="slider">
-          <top-parallax defaults={this.data.defaults} />
-        </section>
         <Top />
         <Started />
         {/* <Ebook /> */}
@@ -102,17 +99,20 @@ export class LandingPage {
                 {secondary}
               </Button>
             </div>
-            <a class="link ui-paragraph-4" href={this.data.defaults.landingPage.topSection.smallTextHref}>
+            <a class="link ui-paragraph-4 underline-hover customize-link" href={this.data.defaults.landingPage.topSection.smallTextHref}>
               {top__link}
               <span class="arrow"> -&gt;</span>
             </a>
-            <prismic-image
-              loading="eager"
-              image={top__icons}
-              width="91"
-              height="16"
-              defaults={this.data.defaults}
-            />
+            <p class="passion-project">Install Doctor is a passion-project maintained by <a href="https://megabyte.space" target="_blank" rel="noopener" class="underline-hover link">Megabyte Labs</a> that aims to allow users to reformat daily without losing their desired state.</p>
+            <a href="https://megabyte.space" class="heart-megabyte" target="_blank" rel="noopener">
+              <prismic-image
+                loading="eager"
+                image={top__icons}
+                width="91"
+                height="16"
+                defaults={this.data.defaults}
+              />
+            </a>
           </div>
           <div class="image-wrapper">
             <prismic-image defaults={this.data.defaults} loading="eager" image={top__hero} />
@@ -350,7 +350,7 @@ firefoxAddOns:
 
     return (
       <ResponsiveContainer id="native" as="section">
-        <div class="heading-group">
+        <div class="heading-group underline-hover">
           <PrismicRichText richText={native} />
         </div>
         <Grid>
@@ -386,7 +386,7 @@ firefoxAddOns:
     return (
       <section id="features">
         <ResponsiveContainer>
-          <div class="heading-group">
+          <div class="heading-group underline-heading">
             <PrismicRichText richText={features} />
             <a href={this.data.defaults.landingPage.featureGridTopLinkHref} class="link ui-heading-4">
               {features__link}
@@ -420,8 +420,8 @@ firefoxAddOns:
 
     return (
       <ResponsiveContainer id="framework" as="section">
-        <div class="heading-group">
-          <PrismicRichText richText={framework} paragraphLevel={2} />
+        <div id="framework-text" class="heading-group">
+          <PrismicRichText richText={framework} paragraphLevel={3} />
         </div>
         <Grid>
           {framework__list.map(({ logo, link }) => (

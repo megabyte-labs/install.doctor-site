@@ -130,6 +130,18 @@ export class BlogPost {
     )
   }
 
+  // TODO: Add this at compile time instead of after DOM is loaded in browser
+  componentDidLoad() {
+    setTimeout(() => {
+    for (var links = document.links, i = 0, a; a = links[i]; i++) {
+      if (a.host !== location.host) {
+        a.target = '_blank'
+        a.rel = "noopener"
+      }
+    }
+  }, 100);
+  }
+
   calculatePopupSize() {
     if (window.screen.width > 630) {
       this.popupHeight = 500
@@ -321,7 +333,7 @@ export class BlogPost {
           <div class="post-content" innerHTML={data!.html} />
           <PostAuthorLarge post={data!} />
           <MoreResources />
-          <disqus-comments url={`${window.location.origin}/blog/${data.slug}`} siteId={this.defaults.disqusSiteId}/>
+          <disqus-comments url={`${window.location.origin}/blog/${data.slug}`} siteId={this.defaults.disqusSiteId} />
         </article>
       </ResponsiveContainer>,
       <ResponsiveContainer id="footer-social-container">

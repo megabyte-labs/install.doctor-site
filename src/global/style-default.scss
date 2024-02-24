@@ -723,14 +723,30 @@ landing-page {
 #framework-text a,
 .underline-hover,
 .post-content p a,
+.post-content h2 > a,
+.post-content h3 > a,
+.post-content h4 > a,
 .underline-hover a {
   position: relative;
   line-height: 1.4;
+}
+.post-content h2 > a,
+.post-content h3 > a,
+.post-content h4 > a {
+color: var(--c-capacitor-blue);
+    transition: opacity 0.2s ease-out;
+    display: inline-block;
+    code {
+    font-size: 100% !important;
+    }
 }
 
 #framework-text a::after,
 .underline-hover::after,
 .post-content p a::after,
+.post-content h2 > a::after,
+.post-content h3 > a::after,
+.post-content h4 > a::after,
 .underline-heading a::after,
 .underline-heading h4::after {
   content: "";
@@ -752,6 +768,9 @@ landing-page {
 #framework-text a:hover::after,
 .underline-hover:hover::after,
 .post-content p a:hover::after,
+.post-content h2 > a:hover::after,
+.post-content h3 > a:hover::after,
+.post-content h4 > a:hover::after,
 .underline-heading a:hover::after,
 .underline-heading:hover h4::after {
   left: 0;
@@ -759,11 +778,17 @@ landing-page {
 }
 
 .underline-heading h4::after,
+.post-content h2 > a::after,
+.post-content h3 > a::after,
+.post-content h4 > a::after,
 .underline-heading a.ui-heading-4::after {
   height: 3px;
   bottom: -5px;
 }
 
+.post-content h2 > a:active,
+.post-content h3 > a:active,
+.post-content h4 > a:active,
 a.underline-hover:active {
   opacity: 0.5;
 }
@@ -1056,7 +1081,7 @@ rs-slide > rs-group-wrap {
   }
 
   #slider-2-slide-6-layer-17, #slider-2-slide-4-layer-25 {
-    transition: opacity 0.333s ease-in-out;
+    transition: all 0.333s ease-in-out;
     font-size: 21px !important;
     line-height: 26px !important;
     padding: 19px !important;
@@ -1085,9 +1110,17 @@ rs-slide > rs-group-wrap {
   opacity: 0.69 !important;
 }
 
+#framework a {
+  transition: all 0.333s ease-in-out;
+}
+
+#framework a:focus {
+  box-shadow: 0px 0px 0px 3px #c2d8ff !important;
+}
+
 .ui-button:focus {
   outline: 1px solid rgba(0, 0, 0, 0);
-    box-shadow: 0px 0px 0px 3px #c2d8ff;
+    box-shadow: 0px 0px 0px 3px #c2d8ff !important;
 }
 
 .algolia-docsearch-suggestion--wrapper {

@@ -45,7 +45,7 @@ export class SiteHeader implements ComponentInterface {
     this.createRouteListener()
     setInterval(() => {
       this.handleActive(window.location)
-    }, 50)
+    }, 5)
   }
 
   createHeaderObserver() {

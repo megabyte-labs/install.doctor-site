@@ -167,6 +167,7 @@ export const hookUpDesignSystem = (frag: DocumentFragment) => {
   const paragraphs = frag.querySelectorAll(
     'p:not([class*="ui-paragraph"]):not([class*="ui-heading"])',
   );
+  const links = frag.querySelectorAll('a')
   const listsItems = frag.querySelectorAll('ul li, ol li');
 
   headings.forEach(heading => {
@@ -189,6 +190,11 @@ export const hookUpDesignSystem = (frag: DocumentFragment) => {
     paragraph.classList.add(`ui-paragraph-3`);
   });
 
+  links.forEach(link => {
+    link.rel = 'noopener'
+    link.target = '_blank'
+  })
+
   return frag;
 };
 
@@ -197,5 +203,6 @@ export const interpolatePostLink = (frag: DocumentFragment, slug: string) => {
 
   links.forEach(link => {
     link.href = link.href.replace('$POST', `/blog/${slug}`);
+    link.target = '_blank'
   });
 };

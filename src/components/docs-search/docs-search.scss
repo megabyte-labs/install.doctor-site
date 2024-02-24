@@ -99,7 +99,7 @@ docs-search {
     font-size: 17px;
 
     color: #b2becd;
-    background: #fff;
+    background: white;
 
     z-index: 1;
     cursor: pointer;
@@ -115,7 +115,7 @@ docs-search {
     -webkit-appearance: textfield;
 
     padding: 0;
-    padding-inline-start: clamp(20px, 7vw, 40px);
+    padding-inline-start: clamp(30px, 7vw, 40px);
     padding-inline-end: clamp(2px, 1vw, 16px);
 
     font-family: 'Inter';
@@ -395,4 +395,8 @@ docs-search {
       }
     }
   }
+}
+
+ion-icon.close {
+  cursor: pointer;
 }

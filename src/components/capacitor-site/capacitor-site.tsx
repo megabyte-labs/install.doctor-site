@@ -42,7 +42,7 @@ export class App {
                   visibilityLevels: "1240,1024,778,480",
                   gridwidth: "1240,1024,778,480",
                   gridheight: "900,768,960,720",
-                  minHeight: "400px",
+                  minHeight: "300px",
                   perspective: 600,
                   perspectiveType: "isometric",
                   keepBPHeight: true,

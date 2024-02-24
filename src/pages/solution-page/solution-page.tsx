@@ -81,6 +81,7 @@ export class SolutionPage implements ComponentInterface {
           defaults={this.defaults}
           pageTitle={this.defaults.solutionPage.meta.pageTitle(this.framework.name)}
           description={this.defaults.solutionPage.meta.pageTitle(this.framework.name)}
+          image={this.defaults.homepage + '/assets/img/og/' + this.framework.name + '.png'}
         />
         <site-header defaults={this.defaults} class="heading-container" sticky={true} />
         <ResponsiveContainer id="top" as="section">

@@ -18,6 +18,7 @@ export class CommunityPage {
           defaults={this.data.defaults}
           pageTitle={this.data.defaults.communityPage.meta.pageTitle}
           description={this.data.defaults.communityPage.meta.description}
+          image={this.data.defaults.homepage + '/assets/img/og/community.png'}
         />
         <site-header defaults={this.data.defaults} class="heading-container" sticky={true} />
         <Top />

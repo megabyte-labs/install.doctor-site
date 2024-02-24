@@ -27,6 +27,7 @@ export class BlogPage {
           pageTitle={this.defaults.blogPage.meta.pageTitle}
           description={this.defaults.blogPage.meta.description}
           rssTitle={this.defaults.blogRssTitle}
+          image={this.defaults.homepage + '/assets/img/og/blog.png'}
         />
         <site-header defaults={this.defaults} class="heading-container" sticky={true} />
         <ResponsiveContainer>

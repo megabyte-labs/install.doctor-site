@@ -28,6 +28,7 @@ export class NotFoundPage {
           description={
             'This is a link to a page that does not exist. You should still visit this page to see how awesome our 404 page is though.'
           }
+          image={this.defaults.homepage + '/assets/img/og/404.png'}
         />
         <site-header defaults={this.defaults} class="heading-container" sticky={true} />
         <NotFoundSimple />

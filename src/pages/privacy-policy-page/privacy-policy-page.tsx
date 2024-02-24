@@ -24,6 +24,7 @@ export class PrivacyPolicyPage {
           defaults={this.defaults}
           pageTitle="Privacy Policy"
           description={'Learn about what we do to protect our users privacy. Our privacy policy can answer your privacy-related issues.'}
+          image={this.defaults.homepage + '/assets/img/og/privacy.png'}
         />
         <site-header defaults={this.defaults} class="heading-container" sticky={true} />
         <PrivacyPolicy />

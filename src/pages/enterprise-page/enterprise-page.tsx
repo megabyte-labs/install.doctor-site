@@ -39,6 +39,7 @@ export class EnterprisePage {
           defaults={this.data.defaults}
           pageTitle={this.data.defaults.enterprisePage.meta.pageTitle}
           description={this.data.defaults.enterprisePage.meta.description}
+          image={this.data.defaults.homepage + '/assets/img/og/enterprise.png'}
         />
         <site-header defaults={this.data.defaults} class="heading-container" sticky={true} />
         <enterprise-subnav />

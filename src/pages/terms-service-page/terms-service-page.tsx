@@ -19,6 +19,7 @@ export class TermsServicePage {
         <meta-tags
           defaults={this.defaults}
           pageTitle="Terms of Service"
+          image={this.defaults.homepage + '/assets/img/og/terms.png'}
           description={
             this.defaults.brandName +
             ' is owned by ' +

@@ -79,7 +79,7 @@ export class SolutionPage implements ComponentInterface {
       <Host>
         <meta-tags
           defaults={this.defaults}
-          page-title={this.defaults.solutionPage.meta.pageTitle(this.framework.name)}
+          pageTitle={this.defaults.solutionPage.meta.pageTitle(this.framework.name)}
           description={this.defaults.solutionPage.meta.pageTitle(this.framework.name)}
         />
         <site-header defaults={this.defaults} class="heading-container" sticky={true} />

@@ -278,7 +278,7 @@ export class BlogPost {
     return (
       <meta-tags
         defaults={this.defaults}
-        page-title={this.data.title}
+        pageTitle={this.data.title}
         description={this.data.description}
         image={path}
       />

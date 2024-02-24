@@ -98,7 +98,7 @@ export class BlogSocialActions {
       encodeURIComponent(this.scrubUrl(`${window.location.origin}${window.location.pathname}`)) +
       "&text=" +
       encodeURIComponent(this.defaults.share.twitter.defaultTweet) +
-      "&via=" + this.defaults.share.twitter.username + "&hashtags=" + this.defaults.share.twitter.hashtags + (this.post.tags.length ? ',' + this.post.tags : '')
+      "&via=" + this.defaults.share.twitter.username + "&hashtags=" + this.defaults.share.twitter.hashtags + (this.post.tags.length ? ',' + (this.post.tags as any).map(x => x.replace(/ /g, '_').replace(/\./g, '_').replace(/-/g, '_')) : '')
     )
   }
 

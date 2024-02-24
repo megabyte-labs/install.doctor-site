@@ -68,10 +68,6 @@ enterprise-page {
 
 landing-page {
   @import '../pages/landing-page/landing-page';
-
-  top-parallax {
-    @import '../pages/landing-page/components/top-parallax';
-  }
 }
 
 not-found-page {

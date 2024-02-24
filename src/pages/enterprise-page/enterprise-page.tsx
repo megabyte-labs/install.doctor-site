@@ -422,20 +422,20 @@ export class EnterprisePage {
     const { supertext, title } = demo[0]
 
     return (
-      <section id="demo">
+      <section id="inquiry">
         <ResponsiveContainer>
-          <div class="heading-group" id="inquiry">
+          <div class="heading-group">
             <p class="ui-heading-6">
               <sup>{supertext}</sup>
             </p>
-            <Heading level={2}>{title}</Heading>
+            <Heading level={2} id="support" name="support">{title}</Heading>
             <Paragraph>
               {this.data.defaults.enterprisePage.inquiryParagraph1}
             </Paragraph>
             <Paragraph>
               {this.data.defaults.enterprisePage.inquiryParagraph2}
             </Paragraph>
-            <Paragraph>
+            <Paragraph class="bold-instructions">
               <b class="noshow-noscript">Submit your inquiry below and we will respond to you in a timely fashion.</b>
               <noscript>
                 <b>Send an e-mail to <a href={'mailto:' + this.data.defaults.brandEmail}>{this.data.defaults.brandEmail}</a> and we will respond to you in a timely fashion.</b>

@@ -11,7 +11,14 @@ authorDescription: Call me BZ, the tech maestro of Megabyte Labs by day, gym ent
 description: A little bit about the transition of our provisioning system from Ansible to Chezmoi
 featuredImage: /gas-station-transition.png
 featuredImageAlt: Transition from Gas Station to Install Doctor
-tags: Ansible,Open-Source,Deprecated,Installx,Software.yml,Gas-Station,Chezmoi
+tags:
+    - ansible
+    - open source
+    - deprecated
+    - installx
+    - software.yml
+    - gas station
+    - chezmoi
 ---
 
 Embarking on a journey to create a code-driven solution for seamlessly provisioning complete workstations without the need for post-deployment tweaks, we initially turned to Ansible. However, our journey led us to a superior alternative.

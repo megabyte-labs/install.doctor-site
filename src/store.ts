@@ -122,7 +122,7 @@ export const defaults = {
         'Read about all things related to Install Doctor. Find information about Kubernetes, Docker, virtualization, CLIs, and other tools included in the Install Doctor stack.',
     },
     title: 'Install Doctor Blog',
-    subheader: 'Explore engaging articles from the Install Doctor dream team and thriving community!',
+    subheader: 'Explore engaging articles from the Install Doctor dream team and thriving community! Learn about amazing free open-source software and how to integrate your workflow with the cloud.',
   },
   solutionPage: {
     meta: {

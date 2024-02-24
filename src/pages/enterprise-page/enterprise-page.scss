@@ -670,6 +670,7 @@ ul {
   padding-block-end: $section-space;
   background: #011830;
   border-bottom: 1px solid #011830;
+  position: relative;
 
   .wrapper {
     @media (max-width: $screen-xs-max) {
@@ -777,6 +778,9 @@ ul {
 
   background: #000c19;
 
+  position: relative;
+  top: -2px;
+
   .wrapper {
     display: flex;
     justify-content: space-between;
@@ -848,22 +852,38 @@ ul {
   }
 }
 
-#demo {
+#inquiry {
   --h2-color: var(--c-carbon-100);
 
   padding-block-start: $section-space;
   padding-block-end: $section-space;
 
   .heading-group {
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 720px;
     .ui-heading-6 {
       margin-block-end: 1.5rem;
       text-align: center;
     }
     text-align: center;
+    p {
+      padding-left: 5px;
+      padding-right: 5px;
+    }
   }
 
   hubspot-form {
     max-width: 41rem;
+  }
+
+  p {
+    text-align: left;
+  }
+
+  p.bold-instructions {
+    text-align: center;
+    margin: 0 0 1.6em 0;
   }
 }
 

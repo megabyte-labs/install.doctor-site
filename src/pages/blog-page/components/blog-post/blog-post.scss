@@ -113,6 +113,18 @@
       max-width: 100%;
       margin: auto;
       padding: 32px;
+      padding-left: 0;
+      padding-right: 0;
+      padding-top: 0;
+    }
+
+    figure {
+      margin: 0;
+      padding-bottom: 32px;
+
+      img {
+        padding-bottom: 1rem;
+      }
     }
 
     position: relative;
@@ -313,6 +325,7 @@
     margin-block-start: 0 !important;
     margin-block-end: 0 !important;
     border-bottom: 1px solid var(--c-indigo-20);
+    transition: all 0.333s ease-in-out;
 
     img {
       width: 128px;
@@ -343,6 +356,10 @@
 
 .author-info:hover {
   background-color: var(--c-indigo-10);
+}
+
+.author-info:active {
+  background-color: var(--c-indigo-20);
 }
 
 .sc-blog-post.preview {

@@ -385,7 +385,7 @@ export class BlogPost {
   PostTags = () => {
     const { tags } = this.data!
     if (!tags.length) return
-    const tagArray = tags.split(',')
+    const tagArray = (tags as any)
     return (
       <div class="tag-pills" data-tags={tags}>
         {tagArray.map(tag =>

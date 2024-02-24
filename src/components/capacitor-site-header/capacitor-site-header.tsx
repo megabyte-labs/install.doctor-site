@@ -124,6 +124,7 @@ export class SiteHeader implements ComponentInterface {
               href={href}
               class={{
                 'ui-paragraph-4': true,
+                'first-links': true,
                 'active': template === templateId,
               }}
             >

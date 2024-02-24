@@ -27,80 +27,80 @@ export class App {
           clearInterval(interv)
           document.body.classList.add('home')
           setTimeout(() => {
-          if (window.RS_MODULES === undefined) window.RS_MODULES = {}
-          if (RS_MODULES.modules === undefined) RS_MODULES.modules = {}
-          RS_MODULES.modules["aiidslider"] = {
-            once: RS_MODULES.modules["aiidslider"] !== undefined ? RS_MODULES.modules["aiidslider"].once : undefined, init: function () {
-              window.revapi2 = window.revapi2 === undefined || window.revapi2 === null || window.revapi2.length === 0 ? document.getElementById("ai-id-slider") : window.revapi2
-              if (window.revapi2 === null || window.revapi2 === undefined || window.revapi2.length == 0) { window.revapi2initTry = window.revapi2initTry === undefined ? 0 : window.revapi2initTry + 1; if (window.revapi2initTry < 20) requestAnimationFrame(function () { RS_MODULES.modules["aiidslider"].init() }); return }
-              window.revapi2 = jQuery(window.revapi2)
-              if (window.revapi2.revolution == undefined) { revslider_showDoubleJqueryError("ai-id-slider"); return }
-              revapi2.revolutionInit({
-                revapi: "revapi2",
-                DPR: "ax4",
-                sliderLayout: "fullscreen",
-                visibilityLevels: "1240,1024,778,480",
-                gridwidth: "1240,1024,778,480",
-                gridheight: "900,768,960,720",
-                minHeight: "400px",
-                perspective: 600,
-                perspectiveType: "isometric",
-                keepBPHeight: true,
-                observeWrap: false,
-                editorheight: "900,768,960,720",
-                responsiveLevels: "1240,1024,778,480",
-                ignoreHeightChange: false,
-                fullScreenOffset: "64px",
-                stopAtSlide:1,
-								stopAfterLoops:0,
-								stopLoop:true,
-								progressBar:{disableProgressBar:true},
-								navigation: {
-									keyboardNavigation:true,
-									wheelCallDelay:1000,
-									onHoverStop:false,
-									touch: {
-										touchenabled:true,
-										touchOnDesktop:true
-									},
-									arrows: {
-										enable:true,
-										style:"clean_arrows",
-										left: {
-											h_offset:0
-										},
-										right: {
-											h_offset:10
-										}
-									}
-								},
-              scrolleffect: {
-                  set: true,
-                  fade: true,
-                  blur: true,
-                  maxblur: 14,
-                  multiplicator: 1.81,
-                  multiplicator_layers: 1.81,
-                  tilt: "40%"
-              },
-              sbtimeline: {
-                  set: false
-              },
-                viewPort: {
-                  global: false,
-                  enable: false
-                },
-                fallbacks: {
-                  allowHTML5AutoPlayOnAndroid: true
-                },
-              })
+            if (window.RS_MODULES === undefined) window.RS_MODULES = {}
+            if (RS_MODULES.modules === undefined) RS_MODULES.modules = {}
+            RS_MODULES.modules["aiidslider"] = {
+              once: RS_MODULES.modules["aiidslider"] !== undefined ? RS_MODULES.modules["aiidslider"].once : undefined, init: function () {
+                window.revapi2 = window.revapi2 === undefined || window.revapi2 === null || window.revapi2.length === 0 ? document.getElementById("ai-id-slider") : window.revapi2
+                if (window.revapi2 === null || window.revapi2 === undefined || window.revapi2.length == 0) { window.revapi2initTry = window.revapi2initTry === undefined ? 0 : window.revapi2initTry + 1; if (window.revapi2initTry < 20) requestAnimationFrame(function () { RS_MODULES.modules["aiidslider"].init() }); return }
+                window.revapi2 = jQuery(window.revapi2)
+                if (window.revapi2.revolution == undefined) { revslider_showDoubleJqueryError("ai-id-slider"); return }
+                revapi2.revolutionInit({
+                  revapi: "revapi2",
+                  DPR: "ax4",
+                  sliderLayout: "fullscreen",
+                  visibilityLevels: "1240,1024,778,480",
+                  gridwidth: "1240,1024,778,480",
+                  gridheight: "900,768,960,720",
+                  minHeight: "400px",
+                  perspective: 600,
+                  perspectiveType: "isometric",
+                  keepBPHeight: true,
+                  observeWrap: false,
+                  editorheight: "900,768,960,720",
+                  responsiveLevels: "1240,1024,778,480",
+                  ignoreHeightChange: false,
+                  fullScreenOffset: "64px",
+                  stopAtSlide: 1,
+                  stopAfterLoops: 0,
+                  stopLoop: true,
+                  progressBar: { disableProgressBar: true },
+                  navigation: {
+                    keyboardNavigation: true,
+                    wheelCallDelay: 1000,
+                    onHoverStop: false,
+                    touch: {
+                      touchenabled: true,
+                      touchOnDesktop: true
+                    },
+                    arrows: {
+                      enable: true,
+                      style: "clean_arrows",
+                      left: {
+                        h_offset: 0
+                      },
+                      right: {
+                        h_offset: 10
+                      }
+                    }
+                  },
+                  scrolleffect: {
+                    set: true,
+                    fade: true,
+                    blur: true,
+                    maxblur: 14,
+                    multiplicator: 1.81,
+                    multiplicator_layers: 1.81,
+                    tilt: "40%"
+                  },
+                  sbtimeline: {
+                    set: false
+                  },
+                  viewPort: {
+                    global: false,
+                    enable: false
+                  },
+                  fallbacks: {
+                    allowHTML5AutoPlayOnAndroid: true
+                  },
+                })
 
-              if (revapi2 !== undefined) jQuery.fn.revolution.theClusterInit(revapi2[0].id, { url: "https://wordpress.megabyte.space/wp-content/plugins/revslider-thecluster-addon/" })
+                if (revapi2 !== undefined) jQuery.fn.revolution.theClusterInit(revapi2[0].id, { url: "https://wordpress.megabyte.space/wp-content/plugins/revslider-thecluster-addon/" })
 
-            }
-          } // End of RevInitScript
-          if (window.RS_MODULES.checkMinimal !== undefined) { window.RS_MODULES.checkMinimal() };
-        }, 0)
+              }
+            } // End of RevInitScript
+            if (window.RS_MODULES.checkMinimal !== undefined) { window.RS_MODULES.checkMinimal() };
+          }, 0)
         }
       }, 50)
     }
@@ -118,6 +118,20 @@ export class App {
   }
   componentDidLoad() {
     this.importResources()
+    if (document.location.hash) {
+      const hashId = document.location.hash.substring(1)
+      setTimeout(() => {
+        const element = document.getElementById(hashId)
+        if (element) {
+          setTimeout(() => {
+            element.scrollIntoView({ behavior: 'smooth' })
+            setTimeout(() => {
+              element.scrollIntoView({ behavior: 'smooth' })
+            }, 667)
+          }, 667)
+        }
+      }, 333)
+    }
   }
   render() {
     return (

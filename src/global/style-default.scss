@@ -568,11 +568,16 @@ solution-page {
 
 #demo {
   .heading-group {
-    max-width: 724px;
+    max-width: 720px;
     text-align: left;
     padding-top: 69px;
     margin: 0 auto;
     padding-bottom: 32px;
+
+    p {
+      padding-left: 5px;
+      padding-right: 5px;
+    }
   }
 
   h2 {
@@ -757,6 +762,10 @@ landing-page {
 .underline-heading a.ui-heading-4::after {
   height: 3px;
   bottom: -5px;
+}
+
+a.underline-hover:active {
+  opacity: 0.5;
 }
 
 .underline-heading h4,
@@ -974,6 +983,15 @@ body.home #slider {
 
 .heart-megabyte {
   margin-left: 5px;
+  transition: all 0.333s ease-in-out;
+}
+
+.heart-megabyte:hover {
+  opacity: 0.7;
+}
+
+.heart-megabyte:active {
+  opacity: 0.5;
 }
 
 .customize-link {
@@ -993,4 +1011,29 @@ html.hydrated header a {
 
 .underline-hover-p {
   line-height: 1.4;
+}
+
+sup {
+  padding-left: 3px;
+}
+
+p {
+  max-width: calc(100vw - 40px);
+}
+
+@media (max-width: 400px) {
+  .copyright {
+    padding-top: 69px !important;
+  }
+}
+
+@media (max-width: 370px) {
+  header > a:nth-child(3) {
+    display: none !important;
+  }
+
+  more-button {
+    position: absolute;
+    right: 0;
+  }
 }

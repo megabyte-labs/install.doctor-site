@@ -853,7 +853,7 @@ form.hs-form {
 
       padding: 15px 18px 16px 18px;
       transition: box-shadow 0.2s ease-out, background-color 0.2s ease-out;
-      box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12);
+      box-shadow: 0 1px 3px rgba(0, 0, 0, 0.43);
 
       &:hover {
         background: #24a7ff;
@@ -903,7 +903,7 @@ fieldset .field:last-child {
 }
 
 .ui-button-cyan {
-  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12);
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.43);
 }
 
 .success-color {
@@ -1047,11 +1047,20 @@ rs-slide > rs-group-wrap {
     line-height: 26px !important;
   }
 
+  #slider-2-slide-4-layer-25 {
+    color: var(--c-indigo-100) !important;
+  }
+
+  #slider-2-slide-4-layer-25:hover {
+    color: var(--c-indigo-0) !important;
+  }
+
   #slider-2-slide-6-layer-17, #slider-2-slide-4-layer-25 {
     transition: opacity 0.333s ease-in-out;
     font-size: 21px !important;
     line-height: 26px !important;
     padding: 19px !important;
+    transform: translate3d(0, 0, 0) !important;
   }
 }
 
@@ -1068,7 +1077,46 @@ rs-slide > rs-group-wrap {
   }
 }
 }
+#slider-2-slide-5-layer-17 {
+  transition: opacity 0.333s ease-in-out;
+}
 
-#slider-2-slide-6-layer-17:active, #slider-2-slide-4-layer-25:active {
+#slider-2-slide-6-layer-17:active, #slider-2-slide-4-layer-25:active, #slider-2-slide-5-layer-17:active {
   opacity: 0.69 !important;
+}
+
+.ui-button:focus {
+  outline: 1px solid rgba(0, 0, 0, 0);
+    box-shadow: 0px 0px 0px 3px #c2d8ff;
+}
+
+.algolia-docsearch-suggestion--wrapper {
+  padding-top: 0 !important;
+}
+
+.algolia-docsearch-suggestion--content {
+  min-height: 45px;
+}
+
+.algolia-docsearch-suggestion--text {
+  margin-top: 0 !important;
+}
+.algolia-docsearch-footer {
+  bottom: 22px !important;
+}
+
+.algolia-docsearch-suggestion--no-results .algolia-docsearch-suggestion--text {
+  line-height: 44px !important;
+}
+
+@media screen and (max-width: 768px) {
+  .algolia-docsearch-footer {
+    bottom: 12px !important;
+  }
+docs-search .algolia-autocomplete[class^=algolia-autocomplete] .ds-dropdown-menu .algolia-docsearch-suggestion--title {
+    line-height: 149% !important;
+}
+.algolia-docsearch-suggestion--no-results .algolia-docsearch-suggestion--text {
+  line-height: 44px !important;
+}
 }

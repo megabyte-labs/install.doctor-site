@@ -73,6 +73,15 @@ export class EnterprisePage {
     )
   }
 
+  talkToSales() {
+      setTimeout(() => {
+        document.getElementById("support").scrollIntoView({ behavior: 'smooth' })
+        setTimeout(() => {
+          document.getElementById("support").scrollIntoView({ behavior: 'smooth' })
+        }, 667)
+      }, 667)
+  }
+
   Top = () => {
     const { top } = this.data
     const { title, text, cta_1, background } = top[0]
@@ -85,7 +94,7 @@ export class EnterprisePage {
             <Heading level={1}>{title}</Heading>
             <Paragraph level={2}>{text}</Paragraph>
             <div class="cta-row">
-              <Button anchor href="#inquiry" kind="round">
+              <Button anchor href="#support" kind="round" onClick={() => this.talkToSales()}>
                 {cta_1}
                 <span class="arrow"> -&gt;</span>
               </Button>
@@ -399,7 +408,7 @@ export class EnterprisePage {
               <PrismicRichText richText={paragraph_1} paragraphLevel={2} />
               <PrismicRichText richText={paragraph_2} paragraphLevel={2} />
               <div class="cta-row">
-                <Button href="#inquiry" anchor kind="round">
+                <Button href="#support" anchor kind="round" onClick={() => this.talkToSales()}>
                   {cta_1}
                   <span class="arrow"> -&gt;</span>
                 </Button>

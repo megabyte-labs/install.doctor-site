@@ -939,6 +939,7 @@ fieldset .field:last-child {
   width: 100%;
   position: absolute;
   top: 64px;
+  z-index: 1;
 }
 
 .tp-thecluster svg a,

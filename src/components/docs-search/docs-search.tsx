@@ -79,6 +79,7 @@ export class DocsSearch implements ComponentInterface {
       appId: this.defaults.algolia.appId,
       apiKey: this.defaults.algolia.apiKey,
       indexName: this.defaults.algolia.indexName,
+      contextualSearch: true,
       inputSelector: `#input-${this.uniqueId}`,
       debug: false, // Set debug to true if you want to inspect the dropdown
       queryHook: (e, t) => {

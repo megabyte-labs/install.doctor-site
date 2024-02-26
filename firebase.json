@@ -100,6 +100,12 @@
         "destination": "/docs/opensearch.xml",
         "type": 301
       }
+    ],
+    "rewrites": [
+      {
+        "source": "/blog/rss.xml",
+        "destination": "https://rss.manhattan.workers.dev"
+      }
     ]
   }
 }

@@ -30,14 +30,14 @@
     <meta name="format-detection" content="telephone=no">
     <meta name="HandheldFriendly" content="True">
     <meta name="keywords"
-      content="open source opensource github gitlab installdoctor jumpusb kubernetes docker ubuntu fedora qubes archlinux debian windows macos provisioning deployment ansible bash scripting terminal settings">
+      content="open-source, opensource, github, gitlab, installdoctor, jumpusb, kubernetes, docker, ubuntu, fedora, qubes, archlinux, debian, windows, macos, provisioning, deployment, ansible, bash, scripting, terminal, settings">
     <meta name="MobileOptimized" content="400">
     <meta name="twitter:creator" content="@InstallDoctor" />
     <meta name="viewport" content="width=device-width, minimum-scale=1, initial-scale=1, user-scalable=yes" />
     <meta property="fb:app_id" content="669135071652897">
     <meta property="og:type" content="website" />
-    <link type="text/plain" rel="author" href="http://install.doctor/humans.txt" />
-    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link type="text/plain" rel="author" href="/humans.txt" />
+    <link rel="apple-touch-icon" type="image/png" sizes="180x180" href="/apple-touch-icon.png">
     <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
     <link rel="manifest" href="/manifest.json">
@@ -63,10 +63,7 @@
     <meta name="robots" content="index, follow">
     <meta name="theme-color" content="#FFFFFF">
     <link rel="dns-prefetch" href="https://www.googletagmanager.com">
-    <link rel="search" type="application/opensearchdescription+xml" href="/docs/opensearch.xml" title="Install Doctor">
-
-    <meta name="format-detection" content="telephone=no" />
-    <meta name="msapplication-tap-highlight" content="no" />
+    <link rel="search" type="application/opensearchdescription+xml" href="/docs/opensearch.xml" title="Install Doctor Documentation">
 
     <script>
       navigator.serviceWorker.getRegistrations().then(function (registrations) {
@@ -153,7 +150,7 @@
       crossOrigin="anonymous" />
     <link rel="preload" href="/assets/fonts/fontawesome-webfont.woff2" as="font" type="font/woff2"
       crossOrigin="anonymous" />
-    <link rel="preconnect" href="https://TODO-dsn.algolia.net" crossorigin />
+    <!--<link rel="preconnect" href="https://TODO-dsn.algolia.net" crossorigin />-->
 
     <style>
       @font-face {
@@ -302,29 +299,37 @@
         "featureList": [
           "Open-source software",
           "Documentation",
-          "Advanced search",
           "Provisioning system",
           "Enterprise-support details",
-          "Ansible roles",
           "Software installer",
           "Optimized dotfiles",
-          "Improved system settings"
+          "Improved system settings",
+          "Supports Archlinux (experimental)",
+          "Supports CentOS",
+          "Supports Debian",
+          "Supports Fedora",
+          "Supports macOS",
+          "Supports Qubes (experimental)",
+          "Supports Ubuntu",
+          "Supports Windows (experimental)"
         ],
         "fileSize": "5MB",
         "memoryRequirements": "200MB",
-        "permissions": ["Notifications (optional)", "WiFi, 4G, or direct connection (recommended)",
+        "permissions": [
+          "Notifications (optional)",
+          "WiFi, 4G, or direct connection (recommended)",
           "E-mail address (for logged-in users)"
         ],
         "softwareVersion": "0.69",
         "screenshot": [{
           "@context": "http://schema.org",
           "@type": "ImageObject",
-          "contentUrl": "https://install.doctor/assets/img/screenshot-home.png",
-          "name": "Landing page of Install Doctor",
-          "uploadDate": "2023-02-27",
-          "caption": "Home of Install Doctor, an enterprise-grade, open-source provisioning system",
-          "height": 1080,
-          "width": 1920,
+          "contentUrl": "https://install.doctor/assets/img/screenshots/home-1536x2048.png",
+          "name": "Install Doctor: Multi-OS provisioning system",
+          "uploadDate": "2024-02-26",
+          "caption": "Meet Install Doctor: The free open-source, multi-OS provisioning system. Batteries-included, AI-included.",
+          "height": 2048,
+          "width": 1536,
           "encodingFormat": "image/png",
           "productionCompany": {
             "@type": "Organization",
@@ -334,35 +339,16 @@
               "url": "https://install.doctor/apple-touch-icon.png"
             }
           },
-          "representativeOfPage": true,
-          "thumbnail": {
-            "@type": "ImageObject",
-            "contentUrl": "https://install.doctor/assets/img/screenshot-home-thumb.png",
-            "name": "Landing page of Install Doctor (thumbnail)",
-            "uploadDate": "2023-02-27",
-            "caption": "Home of Install Doctor, an enterprise-grade open-source provisioning system",
-            "height": 225,
-            "width": 400,
-            "encodingFormat": "image/png",
-            "productionCompany": {
-              "@type": "Organization",
-              "name": "Install Doctor",
-              "logo": {
-                "@type": "ImageObject",
-                "url": "https://install.doctor/apple-touch-icon.png"
-              }
-            },
-            "representativeOfPage": true
-          }
+          "representativeOfPage": true
         }, {
           "@context": "http://schema.org",
           "@type": "ImageObject",
-          "contentUrl": "https://install.doctor/assets/img/screenshot-docs.png",
-          "name": "Home Page",
-          "uploadDate": "2023-02-27",
-          "caption": "Browse through the Install Doctor documentation site",
-          "height": 1080,
-          "width": 1920,
+          "contentUrl": "https://install.doctor/assets/img/screenshots/documentation-1536x2048.png",
+          "name": "Install Doctor Documentation Portal",
+          "uploadDate": "2024-02-26",
+          "caption": "Easy, full documentation portal makes using Install Doctor a breeze.",
+          "height": 2048,
+          "width": 1536,
           "encodingFormat": "image/png",
           "productionCompany": {
             "@type": "Organization",
@@ -372,37 +358,56 @@
               "url": "https://install.doctor/apple-touch-icon.png"
             }
           },
-          "representativeOfPage": true,
-          "thumbnail": {
-            "@type": "ImageObject",
-            "contentUrl": "https://install.doctor/assets/img/screenshot-docs-thumb.png",
-            "name": "Documentation site thumbnail",
-            "uploadDate": "2023-02-27",
-            "caption": "Browse through the Install Doctor documentation site",
-            "height": 225,
-            "width": 400,
-            "encodingFormat": "image/png",
-            "productionCompany": {
-              "@type": "Organization",
-              "name": "Install Doctor",
-              "logo": {
-                "@type": "ImageObject",
-                "url": "https://install.doctor/apple-touch-icon.png"
-              }
-            },
-            "representativeOfPage": true
-          }
+          "representativeOfPage": true
+        }, {
+          "@context": "http://schema.org",
+          "@type": "ImageObject",
+          "contentUrl": "https://install.doctor/assets/img/screenshots/community-1536x2048.png",
+          "name": "Install Doctor Community Hub",
+          "uploadDate": "2024-02-26",
+          "caption": "Vibrant community, multiple platforms. Find us on GitHub, Slack, Twitter, Facebook, Matrix, GitLab, Discord, and more!",
+          "height": 2048,
+          "width": 1536,
+          "encodingFormat": "image/png",
+          "productionCompany": {
+            "@type": "Organization",
+            "name": "Install Doctor",
+            "logo": {
+              "@type": "ImageObject",
+              "url": "https://install.doctor/apple-touch-icon.png"
+            }
+          },
+          "representativeOfPage": true
+        }, {
+          "@context": "http://schema.org",
+          "@type": "ImageObject",
+          "contentUrl": "https://install.doctor/assets/img/screenshots/enterprise-1536x2048.png",
+          "name": "Install Doctor Enterprise Support",
+          "uploadDate": "2024-02-26",
+          "caption": "Enterprise-level business support options available.",
+          "height": 2048,
+          "width": 1536,
+          "encodingFormat": "image/png",
+          "productionCompany": {
+            "@type": "Organization",
+            "name": "Install Doctor",
+            "logo": {
+              "@type": "ImageObject",
+              "url": "https://install.doctor/apple-touch-icon.png"
+            }
+          },
+          "representativeOfPage": true
         }],
-        "releaseNotes": "This release includes an graphical overview of Install Doctor, a documentation site, and a convienient search feature.",
+        "releaseNotes": "Install Doctor has spent years in the making and is now ready for use! Start using Install Doctor today!",
         "thumbnailUrl": "https://install.doctor/apple-touch-icon.png",
-        "copyrightYear": 2023,
+        "copyrightYear": 2024,
         "copyrightHolder": "Megabyte LLC",
         "creator": "Brian Zalewski",
         "accessibilityControl": ["fullMouseControl", "fullTouchControl"],
         "accessibilityHazard": [],
         "accessMode": ["textual", "visual"],
         "accessModeSufficient": ["textual", "visual"],
-        "accessibilitySummary": "Currently we do not support screen readers or languages other than English - these features are on the road map so check back frequently."
+        "accessibilitySummary": "Currently we do not actively support screen readers or languages other than English - these features are on the road map so check back frequently."
       }
 
     </script>
@@ -425,8 +430,7 @@
         "address": {
           "@type": "PostalAddress",
           "addressLocality": "Morristown",
-          "postalCode": "07960",
-          "streetAddress": "63 James Street"
+          "postalCode": "07960"
         },
         "alternateName": [
           "InstallDoc",
@@ -439,7 +443,7 @@
           "Megabyte Labs Open Source",
           "Install Doctor"
         ],
-        "award": "Workstation Provisioning System of the Year",
+        "award": "Workstation Provisioning System of the Year 2024 (Self-Given Award)",
         "sameAs": [
           "https://www.facebook.com/InstallDoctor",
           "https://twitter.com/InstallDoc",
@@ -447,7 +451,12 @@
           "https://www.instagram.com/megabytelabs/",
           "https://gitlab.com/megabyte-labs/install.doctor",
           "https://github.com/megabyte-labs/install.doctor",
-          "https://linkedin.com/company/megabyte-labs"
+          "https://linkedin.com/company/megabyte-labs",
+          "https://app.slack.com/client/T01ABCG4NK1/C04TDHV564E",
+          "https://discord.com/channels/1077138419953713222/1077138479928049734",
+          "https://www.youtube.com/@InstallDoctor",
+          "https://t.me/InstallDoctor",
+          "https://app.element.io/#/room/#install.doctor:matrix.org"
         ],
         "contactPoint": [{
             "@type": "ContactPoint",
@@ -477,7 +486,7 @@
           "image": {
             "@list": [{
               "@type": "ImageObject",
-              "url": "https://install.doctor/assets/img/og.png"
+              "url": "https://install.doctor/assets/img/og/privacy.png"
             }]
           },
           "author": "Brian Zalewski",
@@ -499,7 +508,7 @@
           "image": {
             "@list": [{
               "@type": "ImageObject",
-              "url": "https://install.doctor/assets/img/og.png"
+              "url": "https://install.doctor/assets/img/og/terms.png"
             }]
           },
           "author": "Brian Zalewski",

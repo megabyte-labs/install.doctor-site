@@ -42,32 +42,74 @@
     "display": "standalone",
     "screenshots": [
         {
-            "src": "/assets/img/screenshot-home.png",
-            "sizes": "1920x1080",
-            "form_factor": "wide",
-            "type": "image/png",
-            "label": "Homepage of Install Doctor"
-        },
-        {
-            "src": "/assets/img/screenshot-docs-mobile.png",
+            "src": "/assets/img/screenshots/og-1080x1920.png",
             "sizes": "1080x1920",
             "form_factor": "narrow",
             "type": "image/png",
-            "label": "Homepage of Install Doctor"
+            "label": "Meet Install Doctor: The free open-source, multi-OS provisioning system"
         },
         {
-            "src": "/assets/img/screenshot-docs.png",
-            "sizes": "1920x1080",
-            "form_factor": "wide",
-            "type": "image/png",
-            "label": "Documentation for Install Doctor"
-        },
-        {
-            "src": "/assets/img/screenshot-docs-mobile.png",
-            "sizes": "1080x1920",
+            "src": "/assets/img/screenshots/home-1520x3040.png",
+            "sizes": "1520x3040",
             "form_factor": "narrow",
             "type": "image/png",
-            "label": "Documentation for Install Doctor"
+            "label": "Batteries-included, AI-included. Start using Install Doctor today!"
+        },
+        {
+            "src": "/assets/img/screenshots/documentation-1520x3040.png",
+            "sizes": "1520x3040",
+            "form_factor": "narrow",
+            "type": "image/png",
+            "label": "Easy, full documentation portal"
+        },
+        {
+            "src": "/assets/img/screenshots/community-1520x3040.png",
+            "sizes": "1520x3040",
+            "form_factor": "narrow",
+            "type": "image/png",
+            "label": "Vibrant community, multiple platforms"
+        },
+        {
+            "src": "/assets/img/screenshots/enterprise-1520x3040.png",
+            "sizes": "1520x3040",
+            "form_factor": "narrow",
+            "type": "image/png",
+            "label": "Enterprise-level support options available"
+        },
+        {
+            "src": "/assets/img/screenshots/og-1080x1920.png",
+            "sizes": "1080x1920",
+            "form_factor": "wide",
+            "type": "image/png",
+            "label": "Meet Install Doctor: The free open-source, multi-OS provisioning system"
+        },
+        {
+            "src": "/assets/img/screenshots/home-1536x2048.png",
+            "sizes": "1536x2048",
+            "form_factor": "wide",
+            "type": "image/png",
+            "label": "Batteries-included, AI-included. Start using Install Doctor today!"
+        },
+        {
+            "src": "/assets/img/screenshots/documentation-1536x2048.png",
+            "sizes": "1536x2048",
+            "form_factor": "wide",
+            "type": "image/png",
+            "label": "Easy, full documentation portal"
+        },
+        {
+            "src": "/assets/img/screenshots/community-1536x2048.png",
+            "sizes": "1536x2048",
+            "form_factor": "wide",
+            "type": "image/png",
+            "label": "Vibrant community, multiple platforms"
+        },
+        {
+            "src": "/assets/img/screenshots/enterprise-1536x2048.png",
+            "sizes": "1536x2048",
+            "form_factor": "wide",
+            "type": "image/png",
+            "label": "Enterprise-level support options available"
         },
         {
             "src": "/assets/img/og.png",
@@ -75,7 +117,7 @@
             "form_factor": "wide",
             "platform": "macos",
             "type": "image/png",
-            "label": "Install Doctor, multi-OS provisioning done right"
+            "label": "What are you waiting for? Fork Install Doctor on GitHub!"
         }
     ],
     "shortcuts": [

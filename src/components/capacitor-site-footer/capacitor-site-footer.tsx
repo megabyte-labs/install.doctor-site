@@ -159,7 +159,7 @@ export class CapacitorSiteFooter {
             <Grid>
               <Col md={6} sm={4} xs={12} cols={12} class="copyright">
                 <webp-image
-                  src="/assets/img/logo-white2.png"
+                  src="/assets/img/logo-white.png"
                   alt={this.defaults.brandName + ' logo'}
                   class="logo"
                   loading="lazy"

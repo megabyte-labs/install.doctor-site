@@ -266,9 +266,9 @@ export const defaults = {
     },
   },
   algolia: {
-    appId: 'KFVMJ7I0DW',
-    apiKey: '15f17ad0bf94da92836732a7ceda2ec4',
-    indexName: 'installtor',
+    appId: 'S9NORH1KTE',
+    apiKey: 'bb90797ed78a01a6372203b8a3dea0a3',
+    indexName: 'installdoc',
   },
   social: {
     discord: 'https://discord.com/channels/1077138419953713222/1077138479928049734',

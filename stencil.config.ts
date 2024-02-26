@@ -19,11 +19,12 @@ export const config: Config = {
         swSrc: 'src/sw.js',
         globPatterns: [
           '*.{png,xml,ico,json,svg,html}',
-          'host.config.json',
-          'page.state.json',
-          '*/**/*.json',
-          '*/**/*.{js,css,json,html,webp,woff2}',
-          '**/build/svg/{logo-github,close,logo-gitlab,logo-slack,logo-discord,logo-facebook,logo-twitter,logo-linkedin,information-circle-outline,link,mail,navigate,checkmark-circle}.svg'
+          '*/**/*.{json,js,css,json,html,woff2}',
+          '**/assets/img/*.{png,webp}',
+          '**/assets/img/{blog,community,enterprise,heading,landing,solutions}/**.webp',
+          '**/docs/img/*.{svg,webp}',
+          '**/docs/img/**/*.{svg,webp}',
+          '**/build/svg/{logo-github,close,logo-gitlab,logo-slack,logo-discord,logo-facebook,logo-twitter,logo-linkedin,logo-youtube,send,information-circle-outline,chatbubbles-sharp,link,mail,navigate,checkmark-circle}.svg'
         ]
       },
       copy: [

@@ -296,6 +296,7 @@ module.exports = {
           font-family: 'Pe-icon-7-stroke';
           src: url('/assets/fonts/Pe-icon-7-stroke.eot');
           src: url('/assets/fonts/Pe-icon-7-stroke.eot?#iefix') format('embedded-opentype'),
+          , url('/assets/fonts/Pe-icon-7-stroke.woff2') format('woff2'),
             url('/assets/fonts/Pe-icon-7-stroke.woff') format('woff'),
             url('/assets/fonts/Pe-icon-7-stroke.ttf') format('truetype'),
             url('/assets/fonts/Pe-icon-7-stroke.svg#Pe-icon-7-stroke') format('svg');
@@ -306,7 +307,11 @@ module.exports = {
         @font-face {
           font-family: revicons;
           src: url('/assets/fonts/revicons.eot');
-          src: url('/assets/fonts/revicons.eot?#iefix') format('embedded-opentype'), url('/assets/fonts/revicons.woff') format('woff'), url('/assets/fonts/revicons.ttf') format('truetype'), url('/assets/fonts/revicons.svg#revicons') format('svg');
+          src: url('/assets/fonts/revicons.eot?#iefix') format('embedded-opentype'),
+            url('/assets/fonts/revicons.woff2') format('woff2'),
+            url('/assets/fonts/revicons.woff') format('woff'),
+            url('/assets/fonts/revicons.ttf') format('truetype'),
+            url('/assets/fonts/revicons.svg#revicons') format('svg');
           font-weight: 400;
           font-style: normal;
           font-display: swap

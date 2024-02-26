@@ -168,4 +168,4 @@ export class DocsSearch implements ComponentInterface {
   }
 }
 
-const algolia = `https://cdn.jsdelivr.net/npm/docsearch.js@2/dist/cdn/docsearch.min.js`;
+const algolia = `/assets/js/docsearch.min.js`;

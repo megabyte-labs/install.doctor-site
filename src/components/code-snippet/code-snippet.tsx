@@ -12,7 +12,7 @@ export class CodeSnippet {
   @Prop() code!: string;
 
   // use an exact version so the cdn response is heavily cached
-  private static prismCdn = `https://cdn.jsdelivr.net/npm/prismjs@1.21.0`;
+  private static prismCdn = `/assets/js`;
   private codeEl: HTMLElement;
 
   componentWillLoad() {

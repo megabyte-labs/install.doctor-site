@@ -74,7 +74,7 @@ export const defaults = {
   },
   brandEmail: 'help@install.doctor',
   emailForm: {
-    url: 'https://email.manhattan.workers.dev',
+    url: 'https://install.doctor/api/email',
   },
   enterprisePage: {
     meta: {

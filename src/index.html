@@ -293,34 +293,38 @@
     <script type="application/ld+json">
       {
         "@context": "http://schema.org",
-        "@type": "WebApplication",
+        "@type": ["SoftwareApplication", "WebApplication"],
         "browserRequirements": ["HTML5", "CSS3", "JavaScript", "Modern Browser"],
+        "name": "Install Doctor",
         "applicationSuite": "Install Doctor",
+        "applicationCategory": "DesktopEnhancementApplication",
+        "operatingSystem": "Archlinux, CentOS 9+, Debian 11+, Fedora 39+, macOS 12+, Qubes 3.2+, Ubuntu 22.04+, Windows 11+",
+        "offers": {
+          "@type": "Offer",
+          "price": "0",
+          "priceCurrency": "USD"
+        },
+        "aggregateRating": {
+          "@type": "AggregateRating",
+          "ratingValue": "5.0",
+          "ratingCount": "58",
+          "ratingExplanation": "Calculated from the number of GitHub stars"
+        },
         "featureList": [
-          "Open-source software",
-          "Documentation",
-          "Provisioning system",
-          "Enterprise-support details",
-          "Software installer",
-          "Optimized dotfiles",
-          "Improved system settings",
-          "Supports Archlinux (experimental)",
-          "Supports CentOS",
-          "Supports Debian",
-          "Supports Fedora",
-          "Supports macOS",
-          "Supports Qubes (experimental)",
-          "Supports Ubuntu",
-          "Supports Windows (experimental)"
+          "Free, open-source, multi-OS desktop provisioning system that lets you store your Desktop-as-Code in a GitHub repository",
+          "Pin your applications, extensions, plugins, and configurations to a GitHub repository and Install Doctor handles the rest",
+          "Store encrypted secrets in your GitHub fork of Install Doctor and the system will integrate a growing list of API keys into your favorite tools",
+          "Backup application settings for future installations to an S3 or Google Drive",
+          "Expertly-tuned initial configurations for hundreds of power-user tools",
+          "Gorgeous, amazing, and incredibly useful terminal theme and experience that incorporates hundreds of tools and auto-completions",
+          "Easy-to-read, full documentation portal",
+          "Utilizes system package manager whenever possible when installing your pinned applications",
+          "Hundreds of system tweaks for optimized security and performance",
+          "Supports CentOS, Debian, Fedora, macOS, and Ubuntu",
+          "Experimental Archlinux, Qubes, and Windows support",
+          "Allows you to reformat often and headlessly re-provision your desktop with minimal effort"
         ],
-        "fileSize": "5MB",
-        "memoryRequirements": "200MB",
-        "permissions": [
-          "Notifications (optional)",
-          "WiFi, 4G, or direct connection (recommended)",
-          "E-mail address (for logged-in users)"
-        ],
-        "softwareVersion": "0.69",
+        "softwareVersion": "1.0.2",
         "screenshot": [{
           "@context": "http://schema.org",
           "@type": "ImageObject",
@@ -398,7 +402,7 @@
           },
           "representativeOfPage": true
         }],
-        "releaseNotes": "Install Doctor has spent years in the making and is now ready for use! Start using Install Doctor today!",
+        "releaseNotes": "Install Doctor has spent years in the making and is now ready for use! Start using Install Doctor today! Provision a wide variety of operating systems by forking Install Doctor, customizing it to your liking, and provisioning with a quick one-liner.",
         "thumbnailUrl": "https://install.doctor/apple-touch-icon.png",
         "copyrightYear": 2024,
         "copyrightHolder": "Megabyte LLC",
@@ -407,7 +411,7 @@
         "accessibilityHazard": [],
         "accessMode": ["textual", "visual"],
         "accessModeSufficient": ["textual", "visual"],
-        "accessibilitySummary": "Currently we do not actively support screen readers or languages other than English - these features are on the road map so check back frequently."
+        "accessibilitySummary": "Currently, we do not incorporate any testing for screen readers and other related accessibility software. That said, it is still entirely possible that Install Doctor could still be used for the visually impaired."
       }
 
     </script>
@@ -423,14 +427,19 @@
           "@type": "ImageObject",
           "url": "https://install.doctor/apple-touch-icon.png"
         },
+        "image": "https://install.doctor/assets/img/og.png",
         "founder": "Brian Zalewski",
         "foundingDate": "2022-10-29",
         "numberOfEmployees": "2",
         "seeks": "Open-source collaborations",
+        "telephone": "+1-424-373-7371",
         "address": {
           "@type": "PostalAddress",
+          "addressCountry": "US",
           "addressLocality": "Morristown",
-          "postalCode": "07960"
+          "addressRegion": "New Jersey",
+          "postalCode": "07960",
+          "streetAddress": "63 James Street"
         },
         "alternateName": [
           "InstallDoc",
@@ -443,7 +452,7 @@
           "Megabyte Labs Open Source",
           "Install Doctor"
         ],
-        "award": "Workstation Provisioning System of the Year 2024 (Self-Given Award)",
+        "award": "2024 Workstation Provisioning System of the Year",
         "sameAs": [
           "https://www.facebook.com/InstallDoctor",
           "https://twitter.com/InstallDoc",
@@ -462,7 +471,8 @@
             "@type": "ContactPoint",
             "email": "help@install.doctor",
             "url": "https://install.doctor",
-            "contactType": "Customer Service",
+            "telephone": "+1-424-373-7371",
+            "contactType": "Customer Support",
             "availableLanguage": ["English"]
           }
         ]
@@ -489,7 +499,6 @@
               "url": "https://install.doctor/assets/img/og/privacy.png"
             }]
           },
-          "author": "Brian Zalewski",
           "mainEntityOfPage": "https://install.doctor/privacy"
         },
         {
@@ -511,7 +520,6 @@
               "url": "https://install.doctor/assets/img/og/terms.png"
             }]
           },
-          "author": "Brian Zalewski",
           "mainEntityOfPage": "https://install.doctor/terms"
         }
       ]

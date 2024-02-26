@@ -18,8 +18,9 @@ npm run start
 ```
 
 The site will launch in development mode.
-
-
+https://developers.google.com/search/docs/appearance/structured-data/sitelinks-searchbox
+https://developers.google.com/search/docs/appearance/structured-data/profile-page
+https://developers.google.com/search/docs/appearance/structured-data/breadcrumb
 ## Contributing
 
 Thanks for your interest in contributing! Read up on our guidelines for

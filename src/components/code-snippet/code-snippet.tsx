@@ -26,7 +26,7 @@ export class CodeSnippet {
     importResource(
       {
         propertyName: `Prism.languages.${this.language}`,
-        link: `${CodeSnippet.prismCdn}/components/prism-${this.language}.min.js`,
+        link: `${CodeSnippet.prismCdn}/prism-${this.language}.min.js`,
       },
       this.highlightCode,
     );

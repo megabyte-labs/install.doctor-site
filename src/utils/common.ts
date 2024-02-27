@@ -44,7 +44,9 @@ const hasGlobalProperty = (property: string) => {
   if (property && property.includes('.')) {
     const propertyList = property.split('.');
     return !!propertyList.reduce((prev, cur) => {
-      return prev.hasOwnProperty(cur) ? prev[cur] : null;
+      if (prev) {
+        return prev.hasOwnProperty(cur) ? prev[cur] : null;
+      }
     }, window);
   }
 

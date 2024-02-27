@@ -119,9 +119,15 @@ landing-page {
     display: flex;
   }
 
-  #top {
+  #start {
     margin-top: calc(100vh - 64px);
     padding-top: 64px;
+  }
+
+  #start.touchscreen-start {
+    margin-top: 0;
+    padding-top: 0;
+    top: 0;
   }
 }
 
@@ -254,7 +260,7 @@ h2.ui-heading.ui-heading-2.ui-theme--editorial>a {
   color: var(--h2-color);
 }
 
-top-parallax #top {
+top-parallax #start {
   padding-top: 11.44vh;
 }
 
@@ -803,7 +809,7 @@ a.underline-hover:active {
   bottom: -5px !important;
 }
 
-form.hs-form {
+form.hs-form:not(.parallax-form) {
   display: flex;
   flex-wrap: wrap;
   position: relative;
@@ -941,6 +947,8 @@ fieldset .field:last-child {
   top: 64px;
   z-index: 1;
   background-color: rgb(246, 249, 252);
+  animation: fadeIn 0.14s ease-in-out forwards !important;
+    opacity: 0;
 }
 
 .tp-thecluster svg a,
@@ -1075,7 +1083,7 @@ rs-slide > rs-group-wrap {
   }
 
   #slider-2-slide-4-layer-25 {
-    color: var(--c-indigo-100) !important;
+    color: #006BCC !important;
   }
 
   #slider-2-slide-4-layer-25:hover {
@@ -1083,7 +1091,7 @@ rs-slide > rs-group-wrap {
   }
 
   #slider-2-slide-6-layer-17, #slider-2-slide-4-layer-25 {
-    transition: all 0.333s ease-in-out;
+    //transition: all 0.333s ease-in-out;
     font-size: 21px !important;
     line-height: 26px !important;
     padding: 19px !important;
@@ -1153,5 +1161,13 @@ docs-search .algolia-autocomplete[class^=algolia-autocomplete] .ds-dropdown-menu
 }
 .algolia-docsearch-suggestion--no-results .algolia-docsearch-suggestion--text {
   line-height: 44px !important;
+}
+}
+
+@media (max-width: 640px) {
+landing-page {
+  #start {
+    padding-top: 75px !important;
+  }
 }
 }

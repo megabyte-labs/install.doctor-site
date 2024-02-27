@@ -23,6 +23,7 @@ export class LandingPage {
 
   @State() selectedCodeTab: string = 'notifications';
   @State() ebookModalOpen = false;
+  isTouchscreen = ('ontouchstart' in window) || (navigator.maxTouchPoints > 0) || ((navigator as any).msMaxTouchPoints > 0) || window.innerWidth < 1024;
 
   render() {
     const {
@@ -43,6 +44,7 @@ export class LandingPage {
           description={this.data.defaults.landingPage.meta.description}
         />
         <site-header defaults={this.data.defaults} class="heading-container" sticky={true} />
+        {this.isTouchscreen && (<top-parallax data={this.data} />)}
         <Top />
         <Started />
         {/* <Ebook /> */}
@@ -74,9 +76,9 @@ export class LandingPage {
     const { top, top__ctas, top__link, top__hero, top__icons } = this.data
     const { primary, secondary } = top__ctas[0]
     return (
-      <section id="top">
+      <section id="start" class={{ "touchscreen-start": this.isTouchscreen }}>
         <div class="background"></div>
-        <ResponsiveContainer>
+        <ResponsiveContainer id="welcome">
           <div class="heading-group">
             <Announcement />
             <PrismicRichText richText={top} paragraphLevel={2} />

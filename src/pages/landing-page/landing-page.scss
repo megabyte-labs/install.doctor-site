@@ -45,11 +45,11 @@ h6 {
   display: block;
 }
 
-#top .heading-group img {
+#start .heading-group img {
   width: 145px;
 }
 
-#top > .ui-container > .heading-group > .link {
+#start > .ui-container > .heading-group > .link {
   margin-left: 5px;
   margin-bottom: 14px;
 }
@@ -118,10 +118,10 @@ h6 {
   background: #cccccc
 }
 
-#top {
+#start {
   overflow: hidden;
   position: relative;
-  margin-bottom: 178px;
+  margin-bottom: 100px;
   position: relative;
   top: -100px;
   padding-top: 150px;
@@ -1078,4 +1078,9 @@ h6 {
 
 #slider {
   height: calc(100vh - 64px);
+}
+
+#start > .ui-container {
+  margin-top: 50px;
+    padding-top: 100px;
 }

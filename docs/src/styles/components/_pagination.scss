@@ -23,6 +23,7 @@
 
       .pagination-nav__label {
         padding-inline-start: var(--icon-padding);
+        text-wrap: nowrap;
 
         &::before {
           padding-inline-end: var(--icon-padding);

@@ -105,6 +105,10 @@
       {
         "source": "/blog/rss.xml",
         "destination": "https://rss.manhattan.workers.dev"
+      },
+      {
+        "source": "/api/email",
+        "destination": "https://email.manhattan.workers.dev"
       }
     ]
   }

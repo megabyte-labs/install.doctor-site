@@ -43,6 +43,8 @@ export namespace Components {
         "defaults": typeof defaults;
     }
     interface CapacitorSite {
+        "fullScreenSliderHTML": string;
+        "isTouchscreen": boolean;
         "scriptsLoaded": number;
     }
     interface CapacitorSiteFooter {
@@ -128,6 +130,9 @@ export namespace Components {
     interface TermsServicePage {
         "defaults": typeof defaults;
     }
+    interface TopParallax {
+        "data": typeof LandingPageData;
+    }
     interface WebpImage {
         "alt": string;
         "class": string;
@@ -141,6 +146,10 @@ export namespace Components {
 export interface AppMenuToggleCustomEvent<T> extends CustomEvent<T> {
     detail: T;
     target: HTMLAppMenuToggleElement;
+}
+export interface NewsletterSignupParallaxCustomEvent<T> extends CustomEvent<T> {
+    detail: T;
+    target: HTMLNewsletterSignupParallaxElement;
 }
 declare global {
     interface HTMLAppMenuToggleElement extends Components.AppMenuToggle, HTMLStencilElement {
@@ -305,6 +314,12 @@ declare global {
         prototype: HTMLTermsServicePageElement;
         new (): HTMLTermsServicePageElement;
     };
+    interface HTMLTopParallaxElement extends Components.TopParallax, HTMLStencilElement {
+    }
+    var HTMLTopParallaxElement: {
+        prototype: HTMLTopParallaxElement;
+        new (): HTMLTopParallaxElement;
+    };
     interface HTMLWebpImageElement extends Components.WebpImage, HTMLStencilElement {
     }
     var HTMLWebpImageElement: {
@@ -339,6 +354,7 @@ declare global {
         "site-header": HTMLSiteHeaderElement;
         "solution-page": HTMLSolutionPageElement;
         "terms-service-page": HTMLTermsServicePageElement;
+        "top-parallax": HTMLTopParallaxElement;
         "webp-image": HTMLWebpImageElement;
     }
 }
@@ -375,6 +391,8 @@ declare namespace LocalJSX {
         "defaults"?: typeof defaults;
     }
     interface CapacitorSite {
+        "fullScreenSliderHTML"?: string;
+        "isTouchscreen"?: boolean;
         "scriptsLoaded"?: number;
     }
     interface CapacitorSiteFooter {
@@ -425,6 +443,8 @@ declare namespace LocalJSX {
     }
     interface NewsletterSignupParallax {
         "defaults"?: typeof defaults;
+        "onOnInputBlur"?: (event: NewsletterSignupParallaxCustomEvent<any>) => void;
+        "onSubmissionSuccess"?: (event: NewsletterSignupParallaxCustomEvent<any>) => void;
     }
     interface NotFoundPage {
         "defaults"?: typeof defaults;
@@ -459,6 +479,9 @@ declare namespace LocalJSX {
     }
     interface TermsServicePage {
         "defaults"?: typeof defaults;
+    }
+    interface TopParallax {
+        "data"?: typeof LandingPageData;
     }
     interface WebpImage {
         "alt"?: string;
@@ -497,6 +520,7 @@ declare namespace LocalJSX {
         "site-header": SiteHeader;
         "solution-page": SolutionPage;
         "terms-service-page": TermsServicePage;
+        "top-parallax": TopParallax;
         "webp-image": WebpImage;
     }
 }
@@ -531,6 +555,7 @@ declare module "@stencil/core" {
             "site-header": LocalJSX.SiteHeader & JSXBase.HTMLAttributes<HTMLSiteHeaderElement>;
             "solution-page": LocalJSX.SolutionPage & JSXBase.HTMLAttributes<HTMLSolutionPageElement>;
             "terms-service-page": LocalJSX.TermsServicePage & JSXBase.HTMLAttributes<HTMLTermsServicePageElement>;
+            "top-parallax": LocalJSX.TopParallax & JSXBase.HTMLAttributes<HTMLTopParallaxElement>;
             "webp-image": LocalJSX.WebpImage & JSXBase.HTMLAttributes<HTMLWebpImageElement>;
         }
     }

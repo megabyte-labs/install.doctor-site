@@ -7,7 +7,11 @@ newsletter-signup-parallax {
   transition: all 1s ease-in-out;
   opacity: 0;
   pointer-events: none;
-  //z-index: -1;
+  z-index: -1;
+
+  .error-message {
+    color: var(--c-indigo-0);
+  }
 
   .hs-submit {
     position: absolute;
@@ -20,6 +24,7 @@ newsletter-signup-parallax {
     font-weight: bold;
     margin-inline-start: 0.5em;
     height: 50px;
+    width: 50px;
     border-radius: 50px;
   }
 
@@ -32,15 +37,21 @@ newsletter-signup-parallax {
     transition: border 0.2s ease-out, box-shadow 0.2s ease-out;
   }
 
-  .form-message > p {
+  .form-message>p {
     position: relative;
     top: 60px;
     color: white;
   }
+
+  input.hs-button.large.primary.ui-button {
+    margin-right: 0 !important;
+  }
+
+  #parallax-input {
+    background-color: white;
+  }
 }
-newsletter-signup-parallax.loading {
-  display: none;
-}
+
 newsletter-signup-parallax.open {
   width: 374px;
   opacity: 1;

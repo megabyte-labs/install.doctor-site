@@ -44,7 +44,7 @@ export namespace Components {
     }
     interface CapacitorSite {
         "fullScreenSliderHTML": string;
-        "isTouchscreen": boolean;
+        "isTouchscreen": any;
         "scriptsLoaded": number;
     }
     interface CapacitorSiteFooter {
@@ -392,7 +392,7 @@ declare namespace LocalJSX {
     }
     interface CapacitorSite {
         "fullScreenSliderHTML"?: string;
-        "isTouchscreen"?: boolean;
+        "isTouchscreen"?: any;
         "scriptsLoaded"?: number;
     }
     interface CapacitorSiteFooter {
@@ -443,7 +443,7 @@ declare namespace LocalJSX {
     }
     interface NewsletterSignupParallax {
         "defaults"?: typeof defaults;
-        "onOnInputBlur"?: (event: NewsletterSignupParallaxCustomEvent<any>) => void;
+        "onEmailInputBlur"?: (event: NewsletterSignupParallaxCustomEvent<any>) => void;
         "onSubmissionSuccess"?: (event: NewsletterSignupParallaxCustomEvent<any>) => void;
     }
     interface NotFoundPage {

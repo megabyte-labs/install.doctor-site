@@ -14,7 +14,7 @@ declare let revslider_showDoubleJqueryError: any
 })
 export class App {
   @Prop() scriptsLoaded: number = 0;
-  @Prop() isTouchscreen = ('ontouchstart' in window) || (navigator.maxTouchPoints > 0) || ((navigator as any).msMaxTouchPoints > 0) || window.innerWidth < 1024
+  @Prop() isTouchscreen = (window as any).mobileSliderHero
   @Prop() fullScreenSliderHTML = `
   <rs-module-wrap id="ai-id-slider_wrapper" data-alias="ai-particles-id" data-source="gallery"
   style="visibility:hidden;background:transparent;padding:0;">
@@ -337,16 +337,16 @@ export class App {
       window.RS_MODULES.waiting = window.RS_MODULES.waiting.concat(["thecluster", "threejs"])
       window.RS_MODULES.moduleWaiting = window.RS_MODULES.moduleWaiting || {}
       window.RS_MODULES.type = 'compiled'
-      if (!(window as any).revSliderjQueryLoaded) {
-        (window as any).revSliderjQueryLoaded = true
-        importResource({ propertyName: 'jquery', link: '/assets/js/jquery-slider.min.js' }, () => {
-          importResource({ propertyName: 'three', link: '/assets/js/three.min.js' }, () => {
+      if (!(window as any).jQueryLoaded) {
+        (window as any).jQueryLoaded = true
+        importResource({ propertyName: 'jquery', link: '/assets/js/jquery-slider.min.js', async: true }, () => {
+          importResource({ propertyName: 'three', link: '/assets/js/three.min.js', defer: true }, () => {
             this.onScriptLoaded()
           })
-          importResource({ propertyName: 'rs6', link: '/assets/js/rs6.min.js' }, () => {
+          importResource({ propertyName: 'rs6', link: '/assets/js/rs6.min.js', defer: true }, () => {
             this.onScriptLoaded()
           })
-          importResource({ propertyName: 'rbtools', link: '/assets/js/rbtools.min.js' }, () => {
+          importResource({ propertyName: 'rbtools', link: '/assets/js/rbtools.min.js', defer: true }, () => {
             this.onScriptLoaded()
           })
         })

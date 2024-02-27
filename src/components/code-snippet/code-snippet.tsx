@@ -21,7 +21,7 @@ export class CodeSnippet {
     if (!window.prismLoaded) {
       window.prismLoaded = true
       importResource(
-        { propertyName: 'Prism', link: `${CodeSnippet.prismCdn}/prism.min.js` },
+        { propertyName: 'Prism', link: `${CodeSnippet.prismCdn}/prism.min.js`, async: true },
         () => {
           this.loadInPrismLanguage()
         },
@@ -41,6 +41,7 @@ export class CodeSnippet {
         {
           propertyName: `Prism.languages.${this.language}`,
           link: `${CodeSnippet.prismCdn}/prism-${this.language}.min.js`,
+          defer: true
         },
         this.highlightCode,
       )

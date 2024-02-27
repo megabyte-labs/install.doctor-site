@@ -40,7 +40,7 @@ export class DocsSearch implements ComponentInterface {
   componentDidLoad() {
     if (!(window as any).algoliaLoaded) {
       (window as any).algoliaLoaded = true;
-      importResource({ propertyName: 'docsearch', link: algolia }, () => this.setupSearch());
+      importResource({ propertyName: 'docsearch', link: algolia, async: true }, () => this.setupSearch());
     }
 
     this.el.addEventListener(

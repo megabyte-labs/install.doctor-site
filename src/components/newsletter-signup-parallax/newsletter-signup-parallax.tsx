@@ -13,7 +13,7 @@ export class NewsletterSignupParallax {
   @State() hasSubmitted: boolean = false;
   @State() isValid: boolean = true;
   @State() inlineMessage: string = '';
-  @Event() onInputBlur: EventEmitter<any>;
+  @Event() emailInputBlur: EventEmitter<any>;
   @Event() submissionSuccess: EventEmitter<any>;
   blurTimeout: any;
 
@@ -82,7 +82,7 @@ export class NewsletterSignupParallax {
   inputBlur(ev) {
     this.blurTimeout = setTimeout(() => {
       if (!this.email) {
-        this.onInputBlur.emit(ev);
+        this.emailInputBlur.emit(ev);
       }
     }, 50);
   }

@@ -9,7 +9,7 @@ import { getBlogData, getAllBlogData } from './data.server/blog'
 import { CommunityPageData, defaults, EnterprisePageData, LandingPageData } from './store'
 
 declare let window: any
-
+window.mobileSliderHero = ('ontouchstart' in window) || (navigator.maxTouchPoints > 0) || ((navigator as any).msMaxTouchPoints > 0) || window.innerWidth < 1024
 export const Router = createRouter()
 
 export default Router

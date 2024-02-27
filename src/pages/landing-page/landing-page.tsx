@@ -23,7 +23,7 @@ export class LandingPage {
 
   @State() selectedCodeTab: string = 'notifications';
   @State() ebookModalOpen = false;
-  isTouchscreen = ('ontouchstart' in window) || (navigator.maxTouchPoints > 0) || ((navigator as any).msMaxTouchPoints > 0) || window.innerWidth < 1024;
+  isTouchscreen = (window as any).mobileSliderHero
 
   render() {
     const {

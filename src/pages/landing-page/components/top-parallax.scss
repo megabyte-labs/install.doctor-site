@@ -1,6 +1,8 @@
 @use '../../../global/vars' as *;
 
-top-parallax {
+:host {
+    z-index: 1;
+    position: relative;
     min-height: calc(100vh - 64px);
     display: block;
 }
@@ -22,7 +24,9 @@ top-parallax {
     margin-top: 140px;
     margin-bottom: 140px;
   }
-
+  p.parallax-header {
+    font-weight: 400;
+  }
   @media screen and (max-width: $screen-xs-max) {
     padding-block-start: 72px;
     padding-block-end: 98px;
@@ -71,7 +75,7 @@ top-parallax {
         zoom: 0.6;
     }
 
-    h2.parallax-header {
+    p.parallax-header {
         zoom: 0.8
     }
   }
@@ -81,11 +85,11 @@ top-parallax {
         zoom: 0.5;
     }
 
-    h2.parallax-header {
+    p.parallax-header {
         zoom: 0.7;
     }
 
-    h4.parallax-header {
+    p.step-4.parallax-header {
         display: none;
     }
   }
@@ -101,7 +105,7 @@ top-parallax {
         zoom: 0.35;
     }
 
-    h2.parallax-header {
+    p.parallax-header {
         zoom: 0.69;
     }
   }

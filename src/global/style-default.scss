@@ -1171,3 +1171,20 @@ landing-page {
   }
 }
 }
+
+#announcement.feature__register {
+  transition: background 0.333s ease-in-out;
+}
+
+#announcement.feature__register:hover {
+  background-color: var(--c-indigo-10);
+}
+
+#announcement.feature__register:active {
+  background-color: var(--c-indigo-20);
+}
+
+#announcement.feature__register:focus {
+  outline: 1px solid rgba(0, 0, 0, 0);
+  box-shadow: 0px 0px 0px 3px #c2d8ff !important;
+}

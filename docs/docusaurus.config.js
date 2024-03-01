@@ -593,7 +593,7 @@ module.exports = {
       { name: 'msapplication-TileColor', content: '#FFFFFF' },
       { name: 'msapplication-task', content: 'name=Documentation;action-uri=https://install.doctor/docs;icon-uri=https://megabyte.spacce/assets/img/microsoft/search.ico' },
       { name: 'msapplication-task', content: 'name=Home;action-uri=https://install.doctor;icon-uri=https://install.doctor/assets/img/microsoft/home.ico' },
-      { name: 'msapplication-task', content: 'name=GitHub;action-uri=https://github.com/megabyte-lab/install.doctors;icon-uri=https://install.doctor/assets/img/microsoft/github.ico' },
+      { name: 'msapplication-task', content: 'name=GitHub;action-uri=https://github.com/megabyte-lab/install.doctor;icon-uri=https://install.doctor/assets/img/microsoft/github.ico' },
       { name: 'msapplication-task', content: 'name=GitLab;action-uri=https://gitlab.com/megabyte-labs/install.doctor;icon-uri=https://install.doctor/assets/img/microsoft/gitlab.ico' },
       { name: 'msapplication-tap-highlight', content: 'no' },
       { name: 'msapplication-starturl', content: 'https://install.doctor' },
@@ -715,7 +715,7 @@ module.exports = {
     },
     algolia: {
       appId: 'KFVMJ7I0DW',
-      apiKey: '15f17ad0bf94da92836732a7ceda2ec4',
+      apiKey: '25aa5bf8d990c53c40c7571859290207',
       indexName: 'installtor',
       contextualSearch: true
     },

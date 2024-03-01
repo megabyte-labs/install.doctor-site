@@ -60,6 +60,25 @@ capacitor-site-footer {
     color: #129a78;
   }
 
+  .footer-social.pinterest:hover {
+    color: #E60023;
+  }
+
+  .footer-social.threads {
+    width: 21px !important;
+    height: 21px !important;
+    svg {
+      fill: var(--c-indigo-70);
+      transition: all 0.2s ease-in-out;
+    }
+  }
+
+  .footer-social.threads:hover {
+    svg {
+      fill: black;
+    }
+  }
+
   .footer-social:active {
     opacity: 0.7;
   }

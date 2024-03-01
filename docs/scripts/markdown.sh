@@ -41,7 +41,8 @@ populateHomeScripts() {
   find "./install.doctor/home" -type f -name "*.sh.tmpl" | while read SCRIPT; do
     logg info "Creating documentation for $SCRIPT"
     TMP="$(mktemp)"
-    shdoc < "$SCRIPT" >> "$TMP"
+    shdoc < "$SCRIPT" | sed '/###/,$d' | sed 's/\* \[\(.*\)\]/* [`\1`]/' | sed 's/## Index/## Script Functions/' >> "$TMP"
+    shdoc < "$SCRIPT" | sed '/### /,$!d' | sed 's/^### \(.*\)$/### `\1`/' >> "$TMP"
     if echo "$SCRIPT" | grep 'after_' > /dev/null; then
         MD_FILE="docs/scripts/after/$(basename "$SCRIPT").md"
         TAG=after
@@ -79,7 +80,8 @@ populateDanglingScripts() {
   find "./install.doctor/scripts" -mindepth 1 -maxdepth 1 -type f -name "*.sh" | while read SCRIPT; do
     logg info "Creating documentation for $SCRIPT"
     TMP="$(mktemp)"
-    shdoc < "$SCRIPT" >> "$TMP"
+    shdoc < "$SCRIPT" | sed '/###/,$d' | sed 's/\* \[\(.*\)\]/* [`\1`]/' | sed 's/## Index/## Script Functions/' >> "$TMP"
+    shdoc < "$SCRIPT" | sed '/### /,$!d' | sed 's/^### \(.*\)$/### `\1`/' >> "$TMP"
     MD_FILE="docs/scripts/utility/$(basename "$SCRIPT").md"
     TAG=utility
     echo "---" > "$MD_FILE"

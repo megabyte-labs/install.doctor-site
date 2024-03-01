@@ -266,9 +266,9 @@ export const defaults = {
     },
   },
   algolia: {
-    appId: 'S9NORH1KTE',
-    apiKey: 'bb90797ed78a01a6372203b8a3dea0a3',
-    indexName: 'installdoc',
+    appId: 'KFVMJ7I0DW',
+    apiKey: '25aa5bf8d990c53c40c7571859290207',
+    indexName: 'installtor',
   },
   social: {
     discord: 'https://discord.com/channels/1077138419953713222/1077138479928049734',
@@ -281,7 +281,9 @@ export const defaults = {
     twitter: 'https://twitter.com/InstallDoc',
     youtube: 'https://www.youtube.com/@InstallDoctor',
     telegram: 'https://t.me/InstallDoctor',
-    matrix: 'https://app.element.io/#/room/#install.doctor:matrix.org'
+    matrix: 'https://app.element.io/#/room/#install.doctor:matrix.org',
+    pinterest: 'https://www.pinterest.com/InstallDoc/',
+    threads: 'https://www.threads.net/@installdoctor'
   },
 };
 

@@ -295,7 +295,7 @@ html[data-theme='light'] {
   --token-primary-bg-c: #fff;
   --token-secondary-bg-c: #fff;
 
-  --ifm-link-color: var(--c-blue-90);
+  --ifm-link-color: #119eff;
   //rgb value is c-blue-90
   --ifm-link-hover-color: rgba(27, 109, 255, 0.8);
 
@@ -313,7 +313,7 @@ html[data-theme='dark'] {
   --token-primary-bg-c: #03060b;
   --token-secondary-bg-c: #13171c;
 
-  --ifm-link-color: var(--c-blue-70);
+  --ifm-link-color: #119eff;
   //rgb value is c-blue-70
   --ifm-link-hover-color: rgba(77, 141, 255, 0.8);
 
@@ -484,3 +484,106 @@ main article {
     left: 0;
   }
 }
+
+.internal-ad {
+  transition: all 0.333s ease-in-out;
+}
+
+.internal-ad:hover {
+  opacity: 0.81;
+}
+
+.internal-ad:active {
+  opacity: 0.69;
+}
+
+.markdown h2 > a,
+.markdown h3 > a,
+.markdown h4 > a,
+.theme-doc-footer a,
+.markdown p a,
+.markdown li a,
+.markdown table a,
+.toc-wrapper .table-of-contents a {
+  position: relative;
+  // line-height: 1.4;
+  transition: opacity 0.2s ease-out;
+}
+
+.markdown h2 > a::after,
+.markdown h3 > a::after,
+.markdown h4 > a::after,
+.theme-doc-footer a::after,
+.markdown li a::after,
+.markdown table a::after,
+.markdown p a::after,
+.toc-wrapper .table-of-contents a::after {
+  content: "";
+  position: absolute;
+  display: inline-block;
+  z-index: 1;
+  left: 51%;
+  right: 51%;
+  bottom: 0;
+  background: #119eff !important;
+  height: 1px;
+  transition-property: left,right;
+  transition-duration: .3s;
+  transition-timing-function: ease-out;
+}
+
+.markdown h2 > a:hover,
+.markdown h3 > a:hover,
+.markdown h4 > a:hover,
+.markdown li a:hover,
+.markdown p a:hover,
+.markdown table a:hover,
+.theme-doc-footer a:hover,
+.toc-wrapper .table-of-contents a:hover {
+  opacity: 0.7;
+}
+
+.markdown h2 > a:active,
+.markdown h3 > a:active,
+.markdown h4 > a:active,
+.markdown p a:active,
+.markdown li a:active,
+.markdown table a:active,
+.theme-doc-footer a:active,
+.toc-wrapper .table-of-contents a:active {
+  opacity: 0.5;
+}
+
+.markdown h2 > a:hover::after,
+.markdown h3 > a:hover::after,
+.markdown h4 > a:hover::after,
+.markdown p a:hover::after,
+.markdown li a:hover::after,
+.markdown table a:hover::after,
+.theme-doc-footer a:hover::after,
+.toc-wrapper .table-of-contents a:hover::after {
+  left: 0;
+  right: 0;
+}
+
+.markdown h2 > a::after,
+.markdown h3 > a::after,
+.markdown h4 > a::after {
+  height: 3px;
+  bottom: -5px;
+  position: relative;
+  display: inline-block;
+}
+
+.theme-edit-this-page {
+  display: inline-block;
+
+  svg {
+    margin-right: 8px;
+  }
+}
+
+.pagination-nav__label {
+  display: inline-block;
+}
+

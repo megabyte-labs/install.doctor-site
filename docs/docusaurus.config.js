@@ -1,6 +1,6 @@
 const path = require('path');
-const prismic = require('@prismicio/client');
-const fetch = require('node-fetch');
+// const prismic = require('@prismicio/client');
+// const fetch = require('node-fetch');
 const fs = require('fs')
 
 const BASE_URL = '/docs';

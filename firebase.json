@@ -72,6 +72,15 @@
             "value": "max-age=0, must-revalidate"
           }
         ]
+      },
+      {
+        "source": "/docs/opensearch.xml",
+        "headers": [
+          {
+            "key": "Content-Type",
+            "value": "application/opensearchdescription+xml"
+          }
+        ]
       }
     ],
     "redirects": [

@@ -6,7 +6,7 @@ const fs = require('fs')
 const BASE_URL = '/docs';
 
 module.exports = {
-  title: 'Install Doctor Documentation',
+  title: 'Install Doctor',
   tagline:
     'Documentation portal for Install Doctor, a multi-OS provisioning system designed to setup workstations and servers',
   url: 'https://install.doctor',

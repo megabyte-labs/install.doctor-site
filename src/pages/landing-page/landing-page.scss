@@ -124,7 +124,6 @@ h6 {
   margin-bottom: 100px;
   position: relative;
   top: -100px;
-  padding-top: 150px;
 
   .ui-container {
     display: flex;
@@ -187,6 +186,12 @@ h6 {
         --c-text: var(--c-capacitor-blue);
         --c-focus: #80caff;
       }
+    }
+  }
+
+  @media (max-width: 640px) {
+    #start {
+      padding-top: 150px;
     }
   }
 

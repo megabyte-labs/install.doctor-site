@@ -126,7 +126,6 @@ landing-page {
 
   #start.touchscreen-start {
     margin-top: 0;
-    padding-top: 0;
     top: 0;
   }
 }
@@ -633,43 +632,54 @@ enterprise-page {
   }
 
   #onesignal-slidedown-allow-button {
-    font-weight: 600 !important;
-    text-transform: capitalize !important;
-    font-family: var(--f-family-text) !important;
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizelegibility;
+    scroll-behavior: smooth;
+    box-sizing: border-box;
+    text-decoration: none;
     --c-text: #fff;
     --elevation: 0px 0px 0px 0px rgba(0, 0, 0, 0);
-    --f-size: 14px;
     --f-family: var(--f-family-text);
-    display: inline-flex !important;
+    display: inline-flex;
     align-items: center;
     justify-content: center;
-    cursor: pointer !important;
-    border: none !important;
-    line-height: 100% !important;
+    cursor: pointer;
+    border: none;
+    color: var(--c-text);
+    line-height: 100%;
     outline: rgba(0, 0, 0, 0) solid 1px;
-    box-shadow: var(--elevation) !important;
-    white-space: nowrap !important;
-    padding: var(--padding) !important;
-    letter-spacing: 0.08em !important;
-    font-size: var(--f-size) !important;
+    box-shadow: var(--elevation);
+    white-space: nowrap;
+    padding: var(--padding);
+    background: var(--c-background);
+    font-size: var(--f-size);
     height: var(--height);
-    transition: box-shadow 0.2s ease-out 0s, background-color 0.2s ease-out 0s, -webkit-box-shadow 0.2s ease-out 0s !important;
-    --padding: 16px 28px;
-    --height: 51px;
-    border-radius: var(--radius-4) !important;
-    --c-background: var(--c-cyan-90);
-    --c-focus: #D3ECFF;
-    --c-background--hover: var(--c-cyan-80);
-    --c-background--active: var(--c-cyan-100);
-    background: var(--c-background) !important;
+    font-family: var(--f-family);
+    transition: box-shadow 0.2s ease-out 0s, background-color 0.2s ease-out 0s, -webkit-box-shadow 0.2s ease-out 0s;
+    --f-size: 14px;
+    --height: 48px;
+    font-weight: 600;
+    border-radius: var(--radius-4);
+    text-transform: none;
+    opacity: 0;
+    animation: fadeInUp .8s ease-out forwards;
+    animation-delay: 1s;
+    --padding: 16px 20px;
+    letter-spacing: -0.02em;
+    margin-inline-start: 15px;
+    margin-block-start: 16px;
+    --c-background: var(--c-capacitor-blue);
+    --c-background--hover: #24a7ff;
+    --c-background--active: #0090f0;
+    --c-focus: #bde4ff;
   }
 
   #onesignal-slidedown-allow-button:hover {
-    background: #5cbeff !important;
+    background: var(--c-background-hover) !important;
   }
 
   #onesignal-slidedown-allow-button:active {
-    background: #33adff !important;
+    background: var(--c-background-hover) !important;
   }
 }
 
@@ -1187,4 +1197,53 @@ landing-page {
 #announcement.feature__register:focus {
   outline: 1px solid rgba(0, 0, 0, 0);
   box-shadow: 0px 0px 0px 3px #c2d8ff !important;
+}
+
+#onesignal-slidedown-cancel-button,
+#onesignal-slidedown-allow-button {
+  scroll-behavior: smooth;
+  box-sizing: border-box;
+  text-decoration: none;
+  --c-text: #fff;
+  --elevation: 0px 0px 0px 0px rgba(0, 0, 0, 0);
+  --f-family: var(--f-family-text);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  border: none;
+  color: var(--c-text);
+  line-height: 100%;
+  outline: rgba(0, 0, 0, 0) solid 1px;
+  box-shadow: var(--elevation);
+  white-space: nowrap;
+  padding: var(--padding);
+  background: var(--c-background);
+  font-size: var(--f-size);
+  height: var(--height);
+  font-family: var(--f-family);
+  transition: box-shadow 0.2s ease-out 0s, background-color 0.2s ease-out 0s, -webkit-box-shadow 0.2s ease-out 0s;
+  --f-size: 14px;
+  --height: 48px;
+  font-weight: 600;
+  border-radius: var(--radius-4);
+  text-transform: none;
+  opacity: 0;
+  animation: fadeInUp 0.8s ease-out forwards;
+  animation-delay: 1s;
+  --padding: 16px 20px;
+  letter-spacing: -0.02em;
+  margin-inline-start: 15px;
+  margin-block-start: 16px;
+  --c-background: var(--c-capacitor-blue);
+  --c-background--hover: #24a7ff;
+  --c-background--active: #0090f0;
+  --c-focus: #bde4ff;
+  margin-top: 0;
+}
+
+#onesignal-slidedown-cancel-button:focus,
+#onesignal-slidedown-allow-button:focus {
+  outline: 1px solid transparent;
+  box-shadow: 0 0 0 3px #c2d8ff!important;
 }

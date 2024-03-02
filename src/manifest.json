@@ -11,8 +11,8 @@
             "purpose": "any"
         },
         {
-            "src": "/assets/img/manifest-icon-192.maskable.png",
-            "sizes": "192x192",
+            "src": "/assets/img/manifest/manifest-icon-192.maskable.png",
+            "sizes": "177x196",
             "type": "image/png",
             "purpose": "maskable"
         },
@@ -23,8 +23,8 @@
             "purpose": "any"
         },
         {
-            "src": "/assets/img/manifest-icon-512.maskable.png",
-            "sizes": "512x512",
+            "src": "/assets/img/manifest/manifest-icon-512.maskable.png",
+            "sizes": "497x516",
             "type": "image/png",
             "purpose": "maskable"
         }
@@ -42,8 +42,8 @@
     "display": "standalone",
     "screenshots": [
         {
-            "src": "/assets/img/screenshots/og-1080x1920.png",
-            "sizes": "1080x1920",
+            "src": "/assets/img/screenshots/og-1520x3040.png",
+            "sizes": "1520x3040",
             "form_factor": "narrow",
             "type": "image/png",
             "label": "Meet Install Doctor: The free open-source, multi-OS provisioning system"
@@ -77,8 +77,8 @@
             "label": "Enterprise-level support options available"
         },
         {
-            "src": "/assets/img/screenshots/og-1080x1920.png",
-            "sizes": "1080x1920",
+            "src": "/assets/img/screenshots/og-1536x2048.png",
+            "sizes": "1536x2048",
             "form_factor": "wide",
             "type": "image/png",
             "label": "Meet Install Doctor: The free open-source, multi-OS provisioning system"
@@ -110,41 +110,43 @@
             "form_factor": "wide",
             "type": "image/png",
             "label": "Enterprise-level support options available"
-        },
-        {
-            "src": "/assets/img/og.png",
-            "sizes": "1200x630",
-            "form_factor": "wide",
-            "platform": "macos",
-            "type": "image/png",
-            "label": "What are you waiting for? Fork Install Doctor on GitHub!"
         }
     ],
     "shortcuts": [
         {
-            "name": "Home",
+            "name": "Go To Homepage",
+            "short_name": "Home",
             "url": "https://install.doctor/",
-            "description": "Homepage of Install Doctor"
+            "description": "Homepage of Install Doctor, the best free, open-source, multi-OS desktop provisioning system",
+            "icons": [{ "src": "/assets/img/manifest/home.png", "sizes": "192x192" }]
         },
         {
-            "name": "Documentation",
+            "name": "Read Documentation",
+            "short_name": "Documentation",
             "url": "https://install.doctor/docs",
-            "description": "The official documentation for Install Doctor"
+            "description": "The official documentation portal for Install Doctor",
+            "icons": [{ "src": "/assets/img/manifest/documentation.png", "sizes": "192x192" }]
         },
         {
-            "name": "Enterprise Support",
+            "name": "Learn About Enterprise Support",
+            "short_name": "Enterprise Support",
             "url": "https://install.doctor/enterprise",
-            "description": "Request Enterprise support for your business"
+            "description": "Request enterprise support for your business",
+            "icons": [{ "src": "/assets/img/manifest/enterprise.png", "sizes": "192x192" }]
         },
         {
-            "name": "Community",
+            "name": "Join Community",
+            "short_name": "Community",
             "url": "https://install.doctor/community",
-            "description": "Join our vibrant community"
+            "description": "Join our vibrant community",
+            "icons": [{ "src": "/assets/img/manifest/community.png", "sizes": "192x192" }]
         },
         {
-            "name": "Blog",
+            "name": "Read Blog",
+            "short_name": "Blog",
             "url": "https://install.doctor/blog",
-            "description": "Read our blog"
+            "description": "Read our blog and discover tips & tricks",
+            "icons": [{ "src": "/assets/img/manifest/blog.png", "sizes": "192x192" }]
         }
     ],
     "id": "/?pwa=1",

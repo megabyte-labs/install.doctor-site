@@ -1,9 +1,9 @@
-const path = require('path');
+const path = require('path')
 // const prismic = require('@prismicio/client');
 // const fetch = require('node-fetch');
 const fs = require('fs')
 
-const BASE_URL = '/docs';
+const BASE_URL = '/docs'
 
 module.exports = {
   title: 'Install Doctor',
@@ -348,6 +348,23 @@ module.exports = {
       {
         tagName: 'script',
         attributes: {
+          type: 'speculationrules',
+        },
+        innerHTML: JSON.stringify({
+          "prerender": [{
+            "where": {
+              "and": [
+                { "href_matches": "/*" },
+                { "not": { "selector_matches": ".do-not-prerender" } }
+              ]
+            },
+            "eagerness": "immediate"
+          }]
+        })
+      },
+      {
+        tagName: 'script',
+        attributes: {
           type: 'application/ld+json',
         },
         innerHTML: JSON.stringify({
@@ -530,13 +547,13 @@ module.exports = {
             "https://app.element.io/#/room/#install.doctor:matrix.org"
           ],
           "contactPoint": [{
-              "@type": "ContactPoint",
-              "email": "help@install.doctor",
-              "url": "https://install.doctor",
-              "telephone": "+1-424-373-7371",
-              "contactType": "Customer Support",
-              "availableLanguage": ["English"]
-            }
+            "@type": "ContactPoint",
+            "email": "help@install.doctor",
+            "url": "https://install.doctor",
+            "telephone": "+1-424-373-7371",
+            "contactType": "Customer Support",
+            "availableLanguage": ["English"]
+          }
           ]
         }),
       },
@@ -587,7 +604,7 @@ module.exports = {
           },
           "mainEntityOfPage": "https://install.doctor/terms"
         }
-      ]),
+        ]),
       },
     ],
     metadata: [
@@ -616,7 +633,7 @@ module.exports = {
       { name: 'MobileOptimized', content: '400' },
       { name: 'twitter:creator', content: '@InstallDoctor' },
       { name: 'viewport', content: 'width=device-width, minimum-scale=1, initial-scale=1, user-scalable=yes' },
-      {name: 'keywords', content: 'open-source, opensource, github, gitlab, installdoctor, jumpusb, kubernetes, docker, ubuntu, fedora, qubes, archlinux, debian, windows, macos, provisioning, deployment, ansible, bash, scripting, terminal, settings'}
+      { name: 'keywords', content: 'open-source, opensource, github, gitlab, installdoctor, jumpusb, kubernetes, docker, ubuntu, fedora, qubes, archlinux, debian, windows, macos, provisioning, deployment, ansible, bash, scripting, terminal, settings' }
     ],
     navbar: {
       hideOnScroll: false,
@@ -745,21 +762,21 @@ module.exports = {
         sidebarPath: require.resolve('./sidebars.js'),
         editUrl: ({ versionDocsDirPath, docPath, locale }) => {
           if (locale != 'en') {
-            return 'https://crowdin.com/project/install-doctor-docs';
+            return 'https://crowdin.com/project/install-doctor-docs'
           }
           if ((match = docPath.match(/scripts\/profile\/(.*)\.md/)) != null) {
-            return `https://github.com/megabyte-labs/install.doctor/edit/master/home/dot_config/shell/${match[1]}`;
+            return `https://github.com/megabyte-labs/install.doctor/edit/master/home/dot_config/shell/${match[1]}`
           }
           if ((match = docPath.match(/scripts\/utility\/(.*)\.md/)) != null) {
-            return `https://github.com/megabyte-labs/install.doctor/edit/master/scripts/${match[1]}`;
+            return `https://github.com/megabyte-labs/install.doctor/edit/master/scripts/${match[1]}`
           }
           if ((match = docPath.match(/scripts\/.*\/(.*)\.md/)) != null) {
-            return `https://github.com/megabyte-labs/install.doctor/edit/master/home/.chezmoiscripts/universal/${match[1]}`;
+            return `https://github.com/megabyte-labs/install.doctor/edit/master/home/.chezmoiscripts/universal/${match[1]}`
           }
           if ((match = docPath.match(/cli\/commands\/(.*)\.md/)) != null) {
-            return `https://github.com/megabyte-labs/install.doctor/edit/master/home/dot_config/task/Taskfile.yml`;
+            return `https://github.com/megabyte-labs/install.doctor/edit/master/home/dot_config/task/Taskfile.yml`
           }
-          return `https://github.com/megabyte-labs/install.doctor/edit/master/${versionDocsDirPath}/${docPath}`;
+          return `https://github.com/megabyte-labs/install.doctor/edit/master/${versionDocsDirPath}/${docPath}`
         },
         exclude: ['README.md'],
         lastVersion: 'current',
@@ -798,16 +815,16 @@ module.exports = {
           }
         },
         async contentLoaded({ content, actions: { setGlobalData, addRoute } }) {
-          return setGlobalData({ prismicAds: content.results });
+          return setGlobalData({ prismicAds: content.results })
         },
-      };
+      }
     },
-    function(_, {id, ...options}) {
+    function (_, { id, ...options }) {
       return {
         name: 'docusaurus-plugin-sass-builtin',
         configureWebpack(_, isServer, utils) {
-          const { getStyleLoaders } = utils;
-          const isProd = process.env.NODE_ENV === 'production';
+          const { getStyleLoaders } = utils
+          const isProd = process.env.NODE_ENV === 'production'
           return {
             module: {
               rules: [{
@@ -839,9 +856,9 @@ module.exports = {
                 }]
               }]
             }
-          };
+          }
         }
-      };
+      }
     }
   ].filter(Boolean),
   themes: [
@@ -858,4 +875,4 @@ module.exports = {
     path.resolve(__dirname, './node_modules/@docusaurus/theme-search-algolia'),
   ],
   customFields: {},
-};
+}

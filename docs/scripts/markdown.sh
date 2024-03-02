@@ -8,18 +8,18 @@
 # @description Ensures shdoc is installed via Homebrew
 installShdoc() {
   if ! command -v shdoc > /dev/null; then
-    logg info 'Installing shdoc via Homebrew' && brew install shdoc
+    echo 'Installing shdoc via Homebrew' && brew install shdoc
   fi
 }
 
 # @description Ensures install.doctor repository is cloned and
 cloneInstallDoctor() {
   if [ ! -d "install.doctor/.git" ]; then
-    logg info 'Removing install.doctor artifacts' && rm -rf "install.doctor"
-    logg info 'Cloning install.doctor' && git clone https://github.com/megabyte-labs/install.doctor.git
+    echo 'Removing install.doctor artifacts' && rm -rf "install.doctor"
+    echo 'Cloning install.doctor' && git clone https://github.com/megabyte-labs/install.doctor.git
   else
     cd install.doctor
-    logg info 'Pulling latest changes from install.doctor repository' && git pull origin master
+    echo 'Pulling latest changes from install.doctor repository' && git pull origin master
     cd ..
   fi
 }
@@ -39,7 +39,7 @@ copyMarkdown() {
 # @description Populates the markdown files for scripts in install.doctor/home by using shdoc
 populateHomeScripts() {
   find "./install.doctor/home" -type f -name "*.sh.tmpl" | while read SCRIPT; do
-    logg info "Creating documentation for $SCRIPT"
+    echo "Creating documentation for $SCRIPT"
     TMP="$(mktemp)"
     shdoc < "$SCRIPT" | sed '/###/,$d' | sed 's/\* \[\(.*\)\]/* [`\1`]/' | sed 's/## Index/## Script Functions/' >> "$TMP"
     shdoc < "$SCRIPT" | sed '/### /,$!d' | sed 's/^### \(.*\)$/### `\1`/' >> "$TMP"
@@ -78,7 +78,7 @@ populateHomeScripts() {
 # @description Populates the markdown files for the scripts in install.doctor/scripts using shdoc
 populateDanglingScripts() {
   find "./install.doctor/scripts" -mindepth 1 -maxdepth 1 -type f -name "*.sh" | while read SCRIPT; do
-    logg info "Creating documentation for $SCRIPT"
+    echo "Creating documentation for $SCRIPT"
     TMP="$(mktemp)"
     shdoc < "$SCRIPT" | sed '/###/,$d' | sed 's/\* \[\(.*\)\]/* [`\1`]/' | sed 's/## Index/## Script Functions/' >> "$TMP"
     shdoc < "$SCRIPT" | sed '/### /,$!d' | sed 's/^### \(.*\)$/### `\1`/' >> "$TMP"
@@ -108,7 +108,7 @@ populateTaskfileScripts() {
   TASKS="$(task --list)"
   task --list | while read LINE; do
     TASK="$(echo "$LINE" | sed 's/\* \(.*\):[^ ]*\(.*\)/\1/')"
-    logg info "Processing the $TASK task"
+    echo "Processing the $TASK task"
     TASK_DESC="$(echo "$LINE" | sed 's/\* \(.*\):[^ ]*\(.*\)/\2/')"
     if ! echo "$TASK" | grep 'Available tasks for this project' > /dev/null; then
       FILE="../../../../docs/cli/commands/$(echo "$TASK" | tr ":" -).md"
@@ -135,7 +135,7 @@ populateTaskfileScripts() {
         SED_EXE="$(which gsed)"
       fi
       $SED_EXE '/commands:/Q' < "$TRIMMED_TMP" >> "$FILE"
-      logg info "Processed taskfile-based markdown rendering for $FILE"
+      echo "Processed taskfile-based markdown rendering for $FILE"
     fi
   done
 }
@@ -144,11 +144,11 @@ installShdoc &
 cloneInstallDoctor &
 makeScriptFolders &
 wait
-logg info 'Finished preliminary script documentation extraction tasks'
+echo 'Finished preliminary script documentation extraction tasks'
 copyMarkdown &
 populateHomeScripts &
 populateDanglingScripts &
 populateTaskfileScripts &
 wait
-logg success 'Finished extracting markdown from scripts in install.doctor project'
+echo 'Finished extracting markdown from scripts in install.doctor project'
 

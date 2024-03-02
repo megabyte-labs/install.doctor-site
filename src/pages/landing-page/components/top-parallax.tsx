@@ -245,9 +245,7 @@ export class LandingPage {
     }
 
     inputBlur(ev) {
-        if (this.showCommunity) {
-            this.showEmailInput = false
-        }
+        this.showEmailInput = false
     }
 
     scrollWelcome(ev) {

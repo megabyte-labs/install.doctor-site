@@ -106,7 +106,7 @@ export class NewsletterSignupParallax {
 
           {this.hasSubmitted ? (
             <div class="form-message">
-              <Paragraph>
+              <Paragraph level={5} class="form-message-p">
                 {this.inlineMessage}
               </Paragraph>
             </div>

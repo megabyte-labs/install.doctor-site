@@ -659,3 +659,20 @@ a:focus {
   font-size: small;
 }
 
+.navbar__link,
+.menu__link.menu__link--sublist {
+  cursor: pointer;
+}
+
+.menu__link:hover {
+  background-color: var(--c-indigo-10);
+}
+
+.menu__link:active {
+  opacity: 0.81;
+}
+
+.menu__link--sublist {
+  margin-bottom: 3px;
+}
+

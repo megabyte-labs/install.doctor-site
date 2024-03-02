@@ -20,10 +20,8 @@ module.exports = {
         'features/index',
         'features/integrations',
         'features/cloudflare',
-        'features/kubesphere',
         'features/tailscale',
-        'features/netdata',
-        'features/gitsync'
+        'features/netdata'
       ],
     },
     {
@@ -50,16 +48,6 @@ module.exports = {
         'advanced/virtualization',
         'advanced/qubes'
       ],
-    },
-    {
-      type: 'category',
-      label: 'Enterprise',
-      collapsed: true,
-      items: [
-        'enterprise/index',
-        'enterprise/immutable',
-        'enterprise/portal'
-      ]
     },
     {
       type: 'category',

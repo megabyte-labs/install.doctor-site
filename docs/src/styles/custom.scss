@@ -653,10 +653,19 @@ a:focus {
   border-radius: 3px;
 }
 
+.navbar a:focus, aside a:focus {
+  outline: none;
+  box-shadow: none !important;
+}
+
 .markdown figcaption {
   margin-top: 14px;
   margin-bottom: 14px;
   font-size: small;
+}
+
+.navbar .icon-link {
+  z-index: 1;
 }
 
 .navbar__link,
@@ -674,5 +683,10 @@ a:focus {
 
 .menu__link--sublist {
   margin-bottom: 3px;
+}
+
+aside > a {
+  border-radius: inherit !important;
+    box-shadow: none !important;
 }
 

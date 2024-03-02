@@ -33,8 +33,7 @@ module.exports = {
         'customization/software',
         'customization/scripts',
         'customization/secrets',
-        'customization/web-apps',
-        'customization/sso'
+        'customization/web-apps'
       ],
     },
     {
@@ -59,8 +58,8 @@ module.exports = {
         'contributing/code-quality',
         'contributing/pull-requests',
         'contributing/feature-requests',
-        'contributing/documentation',
-        'contributing/community-guidelines'
+        'contributing/documentation'
+        // 'contributing/community-guidelines'
       ],
     },
   ],

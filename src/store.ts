@@ -283,6 +283,7 @@ export const defaults = {
     telegram: 'https://t.me/InstallDoctor',
     matrix: 'https://app.element.io/#/room/#install.doctor:matrix.org',
     pinterest: 'https://www.pinterest.com/InstallDoc/',
+    instagram: 'https://www.instagram.com/installdoctor/',
     threads: 'https://www.threads.net/@installdoctor'
   },
 };

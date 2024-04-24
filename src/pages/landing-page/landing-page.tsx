@@ -207,7 +207,7 @@ export CLOUDFLARE_API_TOKEN="cf-pat-xXP999kUu888777"
 export TAILSCALE_AUTH_KEY="tailscale-auth-key-xXP999kUu888777"
 export START_REPO="my-gh-user/my-fork-name"
 bash <(curl -sSL "https://install.doctor/start")
-`, `Write-Host "Headlessly provisioning a Windows machine"
+`,`Write-Host "Headlessly provisioning a Windows machine"
 $env:HEADLESS_INSTALL = true
 $env:SOFTWARE_GROUP = 'Standard-Desktop'
 $env:FULL_NAME = 'Joe Shmoe'

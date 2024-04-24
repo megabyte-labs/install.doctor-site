@@ -167,15 +167,9 @@ export class LandingPage {
           tabs: ['Linux/macOS', 'Windows', 'Qubes'],
           languages: ['shell-session'],
           code: [
-            `
-bash <(curl -sSL https://install.doctor/start)
-`, //-----------------------------------
-            `
-iex ((New-Object System.Net.WebClient).DownloadString('https://install.doctor/windows'))
-`, //-----------------------------------
-            `
-qvm-run --pass-io sys-firewall "curl -sSL https://install.doctor/qubes" > ~/setup.sh && bash ~/setup.sh
-`
+            `bash <(curl -sSL https://install.doctor/start)`,
+            `iex ((New-Object System.Net.WebClient).DownloadString('https://install.doctor/windows'))`,
+            `qvm-run --pass-io sys-firewall "curl -sSL https://install.doctor/qubes" > ~/setup.sh && bash ~/setup.sh`
           ],
         }}
       />,
@@ -184,16 +178,13 @@ qvm-run --pass-io sys-firewall "curl -sSL https://install.doctor/qubes" > ~/setu
           tabs: ['Linux/macOS', 'Windows', 'Qubes'],
           languages: ['shell-session'],
           code: [
-            `
-export START_REPO=my-gh-user/my-fork-name
-bash <(curl -sSL https://install.doctor/start)
-`, //-----------------------------------
+            `export START_REPO=my-gh-user/my-fork-name
+bash <(curl -sSL https://install.doctor/start)`,
             `
 $env:START_REPO = 'my-gh-user/my-fork-name'
 iex ((New-Object System.Net.WebClient).DownloadString('https://install.doctor/windows'))
-`, //-----------------------------------
-            `
-export START_REPO=my-gh-user/my-fork-name
+`,
+            `export START_REPO=my-gh-user/my-fork-name
 qvm-run --pass-io sys-firewall "curl -sSL https://install.doctor/qubes" > ~/setup.sh && bash ~/setup.sh
 `
           ],
@@ -206,7 +197,7 @@ qvm-run --pass-io sys-firewall "curl -sSL https://install.doctor/qubes" > ~/setu
           code: [
             `
 bash <(curl -sSL https://install.doctor/vagrant)
-`, //-----------------------------------
+`,
             `
 iex ((New-Object System.Net.WebClient).DownloadString('https://install.doctor/windows-vagrant'))
 `
@@ -218,8 +209,7 @@ iex ((New-Object System.Net.WebClient).DownloadString('https://install.doctor/wi
           tabs: ['Linux/macOS', 'Windows', 'Qubes'],
           languages: ['shell-session'],
           code: [
-            `
-echo "Headlessly provisioning a Linux / macOS / Unix machine"
+            `echo "Headlessly provisioning a Linux / macOS / Unix machine"
 export HEADLESS_INSTALL=true
 export SOFTWARE_GROUP=Standard-Desktop
 export FULL_NAME="Joe Shmoe"
@@ -229,7 +219,7 @@ export CLOUDFLARE_API_TOKEN="cf-pat-xXP999kUu888777"
 export TAILSCALE_AUTH_KEY="tailscale-auth-key-xXP999kUu888777"
 export START_REPO=my-gh-user/my-fork-name
 bash <(curl -sSL https://install.doctor/start)
-`, //-----------------------------------
+`,
             `
 Write-Host "Headlessly provisioning a Windows machine"
 $env:HEADLESS_INSTALL = true
@@ -242,7 +232,7 @@ $env:TAILSCALE_AUTH_KEY = 'tailscale-auth-key-xXP999kUu888777'
 $env:START_REPO = 'my-gh-user/my-fork-name'
 iex ((New-Object System.Net.WebClient).DownloadString('https://install.doctor/windows'))
 
-`, //-----------------------------------
+`,
             `
 echo "Headlessly provisioning Qubes from dom0"
 export HEADLESS_INSTALL=true
@@ -282,7 +272,7 @@ softwarePackages:
 ---
 chromeExtensions:
   - automa/infppggnoaenmfagbfknfkancpbljcca
-  - bitwarden-free-password-m/nngceckbapebfimnlniiiahkandclblb
+  - bitwarden-free-password-m/nngceckbap
 firefoxAddOns:
   - automa
   - bitwarden-password-manager
@@ -290,7 +280,6 @@ firefoxAddOns:
   - firefox-translations
   - floccus
   - ublock-origin
-
 `}
       />,
     ]

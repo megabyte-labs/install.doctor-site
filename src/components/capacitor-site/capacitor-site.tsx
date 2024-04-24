@@ -2,7 +2,8 @@ import { Component, h, Prop } from '@stencil/core'
 import { Routes } from '../../router'
 import state from '../../store'
 import { importResource } from '../../utils/common'
-
+import { Button } from 'ionic-ds-no-fonts'
+import { defaults } from '../../store'
 declare let window: any
 declare let jQuery: any
 declare let RS_MODULES: any
@@ -13,6 +14,8 @@ declare let revslider_showDoubleJqueryError: any
   styleUrl: 'capacitor-site.scss',
 })
 export class App {
+  @Prop() showEmailInput: boolean = false;
+  @Prop() showCommunity: boolean = false;
   @Prop() scriptsLoaded: number = 0;
   @Prop() isTouchscreen = (window as any).mobileSliderHero
   @Prop() fullScreenSliderHTML = `
@@ -45,7 +48,7 @@ export class App {
                       Of<br />
                       Artificial<br />
                       Intelligence
-                  </rs-layer><rs-layer id="slider-2-slide-4-layer-1" data-type="text"
+                  </rs-layer><rs-layer id="slider-2-slide-4-layer-1" class="add-buttons" data-type="text"
                       data-color="rgba(255, 255, 255, 0.81)||rgba(255, 255, 255, 0.81)||rgba(255, 255, 255, 0.81)||rgba(255, 255, 255, 0.69)"
                       data-tsh="c:rgba(255,255,255,0.25);h:1px,0px,0px,0px;v:1px,0px,0px,0px;b:1px,0px,0px,0px;"
                       data-rsp_ch="on" data-xy="y:m;" data-pos="r"
@@ -59,7 +62,7 @@ export class App {
                       innovators. Let's redefine the digital realm with unparalleled efficiency and
                       creativity.<br />
 
-                  </rs-layer><rs-layer id="slider-2-slide-4-layer-25" class="rev-btn" data-type="button"
+                  </rs-layer><!--<rs-layer id="slider-2-slide-4-layer-25" class="rev-btn replace-with-buttons" data-type="button"
                       data-color="rgba(3, 6, 11, 0.81)"
                       data-bsh="c:rgba(255,255,255,0.14);h:1px,0px,0px,0px;v:1px,0px,0px,0px;b:1px,0px,0px,0px;s:1px,0px,0px,0px;"
                       data-rsp_ch="on" data-xy="x:c;y:m;yo:0,0,0,-50px;" data-pos="r"
@@ -72,7 +75,7 @@ export class App {
                       data-frame_hover="c:#03060b;bgc:linear-gradient(90deg, rgba(233,237,243,1) 0%, rgba(17,158,255,1) 100%);bor:50px,50px,50px,50px;e:power1.inOut;"
                       style="z-index:6;background:linear-gradient(90deg, rgba(17,158,255,1) 0%, rgba(233,237,243,1) 100%);font-family:'Inter';text-transform:uppercase;display:inline-block;"><i
                           class="fa-play" style="margin-right: 8px; margin-left: 8px;"></i> Start Now
-                  </rs-layer></rs-group><rs-layer id="slider-2-slide-4-layer-2"
+                  </rs-layer>--></rs-group><rs-layer id="slider-2-slide-4-layer-2"
                   class="tp-shape tp-shapewrapper tp-thecluster" data-type="shape" data-rsp_ch="on"
                   data-xy="x:r,r,r,c;xo:-200px,-165px,-125px,0;y:m;yo:0,0,0,-190px;"
                   data-text="w:normal;s:20,16,12,7;l:0,20,15,9;"
@@ -249,6 +252,17 @@ export class App {
           clearInterval(interv)
           document.body.classList.add('home')
           setTimeout(() => {
+            setInterval(() => {
+              if (document.body.classList.contains('home')) {
+                const btnsContainer: any = document.getElementsByClassName('btns-container')
+                if (btnsContainer.length) {
+                  const addBtnsContainer = document.getElementsByClassName('add-buttons')
+                  if (addBtnsContainer.length) {
+                    btnsContainer[0].style.setProperty('top', addBtnsContainer[0].getBoundingClientRect().top + addBtnsContainer[0].getBoundingClientRect().height - document.body.getBoundingClientRect().y + 30 + 'px')
+                  }
+                }
+              }
+            }, 100)
             if (window.RS_MODULES === undefined) window.RS_MODULES = {}
             if (RS_MODULES.modules === undefined) RS_MODULES.modules = {}
             RS_MODULES.modules["aiidslider"] = {
@@ -316,7 +330,16 @@ export class App {
                     allowHTML5AutoPlayOnAndroid: true
                   },
                 })
-
+                revapi2.bind("revolution.slide.onbeforeswap", function (e, data) {
+                  const btnsContainer: any = document.getElementsByClassName('btns-container')
+                  if (btnsContainer.length) {
+                    if (data.nextSlideIndex === 1) {
+                      btnsContainer[0].classList.remove('hide-buttons')
+                    } else {
+                      btnsContainer[0].classList.add('hide-buttons')
+                    }
+                  }
+                })
                 if (revapi2 !== undefined) jQuery.fn.revolution.theClusterInit(revapi2[0].id, { url: "https://wordpress.megabyte.space/wp-content/plugins/revslider-thecluster-addon/" })
 
               }
@@ -372,10 +395,67 @@ export class App {
       }, 333)
     }
   }
+
+  showEmail(e) {
+    if (!this.showCommunity) {
+      e.preventDefault()
+      this.showEmailInput = true
+      const parallaxInput = document.getElementById('parallax-input')
+      if (parallaxInput) {
+        parallaxInput.focus()
+      }
+    }
+  }
+
+  inputBlur(ev) {
+    this.showEmailInput = false
+  }
+
+  scrollWelcome(ev) {
+    const startEl = document.getElementById("welcome")
+    setTimeout(() => {
+      if (startEl) {
+        startEl.scrollIntoView({ behavior: 'smooth' })
+        setTimeout(() => {
+          startEl.scrollIntoView({ behavior: 'smooth' })
+        }, 667)
+      }
+    }, 667)
+  }
+
   render() {
     return (
       <site-root>
         <div id="slider" innerHTML={(this.isTouchscreen ? '' : this.fullScreenSliderHTML)}></div>
+        <div class="btns-container alt-btns">
+          <div class="btns">
+            <Button
+              class="reveal step-5"
+              kind="round"
+              color="indigo"
+              variation="light"
+              href={this.showCommunity ? '/community' : ''}
+              onClick={(e) => this.showEmail(e)}
+              anchor={true}
+            >
+              {this.showCommunity ? 'Join Community' : 'Get Beta Access'}  <span>{'->'}</span>
+            </Button>
+            <Button
+              class="reveal step-6"
+              kind="round"
+              color="indigo"
+              href="#welcome"
+              onClick={(ev) => { this.scrollWelcome(ev) }}
+              rel="noopener"
+              anchor={true}
+            >
+              Learn More <span>{'->'}</span>
+            </Button>
+            {!this.isTouchscreen && (<newsletter-signup-parallax defaults={defaults} onSubmissionSuccess={() => { this.showCommunity = true }} onEmailInputBlur={(ev) => { this.inputBlur(ev) }} class={{
+              open: this.showEmailInput
+            }} />)}
+          </div>
+        </div>
         <div class={`page-theme--${state.pageTheme}`}>
           <Routes />
         </div>

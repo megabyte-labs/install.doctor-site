@@ -266,7 +266,7 @@ export class LandingPage {
                 <div id="homing-particles" class="section-overlay"></div>
                 <ResponsiveContainer>
                     <h1 class="parallax-header">
-                        <div class="reveal step-1">Desktop-<div class="underlined-header">as-Code</div></div>
+                        <div class="reveal step-1">Desktop-<div class="underlined-header">as-Code</div>,</div>
                         <div class="reveal step-2">Batteries Included</div>
                     </h1>
                     <p class="parallax-header reveal step-3">Say goodbye to wasted time post-reformatting with Install Doctor! Our revolutionary multi-OS desktop provisioning system allows you to securely store your configurations in a git repository. With just a simple one-liner, effortlessly restore your desktop to its former state after a reformat, saving you valuable time and hassle. Unlock the full potential of Install Doctor with our exceptional preset featuring a vast array of top-rated utilities and plugins, including cutting-edge AI-driven tools. Customize and make them your own for an unparalleled experience.</p>

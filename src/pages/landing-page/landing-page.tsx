@@ -165,76 +165,58 @@ export class LandingPage {
       <code-tabs
         data={{
           tabs: ['Linux/macOS', 'Windows', 'Qubes'],
-          languages: ['shell-session'],
+          languages: ['bash', 'powershell', 'bash'],
           code: [
-            `bash <(curl -sSL https://install.doctor/start)`,
-            `iex ((New-Object System.Net.WebClient).DownloadString('https://install.doctor/windows'))`,
-            `qvm-run --pass-io sys-firewall "curl -sSL https://install.doctor/qubes" > ~/setup.sh && bash ~/setup.sh`
-          ],
+            `bash <(curl -sSL "https://install.doctor/start")`, `iex ((New-Object System.Net.WebClient).DownloadString('https://install.doctor/windows'))`, `qvm-run --pass-io sys-firewall "curl -sSL 'https://install.doctor/qubes'" > ~/setup.sh && bash ~/setup.sh`],
         }}
       />,
       <code-tabs
         data={{
           tabs: ['Linux/macOS', 'Windows', 'Qubes'],
-          languages: ['shell-session'],
-          code: [
-            `export START_REPO=my-gh-user/my-fork-name
-bash <(curl -sSL https://install.doctor/start)`,
-            `
+          languages: ['bash', 'powershell', 'bash'],
+          code: [`export START_REPO="my-gh-user/my-fork-name"
+bash <(curl -sSL "https://install.doctor/start")
+`, `
 $env:START_REPO = 'my-gh-user/my-fork-name'
 iex ((New-Object System.Net.WebClient).DownloadString('https://install.doctor/windows'))
-`,
-            `export START_REPO=my-gh-user/my-fork-name
-qvm-run --pass-io sys-firewall "curl -sSL https://install.doctor/qubes" > ~/setup.sh && bash ~/setup.sh
-`
-          ],
+`, `export START_REPO="my-gh-user/my-fork-name"
+qvm-run --pass-io sys-firewall "curl -sSL 'https://install.doctor/qubes'" > ~/setup.sh && bash ~/setup.sh`],
         }}
       />,
       <code-tabs
         data={{
           tabs: ['Linux/macOS', 'Windows'],
-          languages: ['shell-session'],
+          languages: ['bash', 'powershell'],
           code: [
-            `
-bash <(curl -sSL https://install.doctor/vagrant)
-`,
-            `
-iex ((New-Object System.Net.WebClient).DownloadString('https://install.doctor/windows-vagrant'))
-`
+            `bash <(curl -sSL "https://install.doctor/vagrant")
+`, `iex ((New-Object System.Net.WebClient).DownloadString('https://install.doctor/windows-vagrant'))`
           ],
         }}
       />,
       <code-tabs
         data={{
           tabs: ['Linux/macOS', 'Windows', 'Qubes'],
-          languages: ['shell-session'],
-          code: [
-            `echo "Headlessly provisioning a Linux / macOS / Unix machine"
+          languages: ['bash', 'powershell', 'bash'],
+          code: [`echo "Headlessly provisioning a Linux / macOS / Unix machine"
 export HEADLESS_INSTALL=true
-export SOFTWARE_GROUP=Standard-Desktop
+export SOFTWARE_GROUP="Standard-Desktop"
 export FULL_NAME="Joe Shmoe"
 export PRIMARY_EMAIL="help@megabyte.space"
 export PUBLIC_SERVICES_DOMAIN="megabyte.space"
 export CLOUDFLARE_API_TOKEN="cf-pat-xXP999kUu888777"
 export TAILSCALE_AUTH_KEY="tailscale-auth-key-xXP999kUu888777"
-export START_REPO=my-gh-user/my-fork-name
-bash <(curl -sSL https://install.doctor/start)
-`,
-            `
-Write-Host "Headlessly provisioning a Windows machine"
+export START_REPO="my-gh-user/my-fork-name"
+bash <(curl -sSL "https://install.doctor/start")
+`, `Write-Host "Headlessly provisioning a Windows machine"
 $env:HEADLESS_INSTALL = true
-$env:SOFTWARE_GROUP = Standard-Desktop
+$env:SOFTWARE_GROUP = 'Standard-Desktop'
 $env:FULL_NAME = 'Joe Shmoe'
 $env:PRIMARY_EMAIL = 'help@megabyte.space'
 $env:PUBLIC_SERVICES_DOMAIN = 'megabyte.space'
 $env:CLOUDFLARE_API_TOKEN = 'cf-pat-xXP999kUu888777'
 $env:TAILSCALE_AUTH_KEY = 'tailscale-auth-key-xXP999kUu888777'
 $env:START_REPO = 'my-gh-user/my-fork-name'
-iex ((New-Object System.Net.WebClient).DownloadString('https://install.doctor/windows'))
-
-`,
-            `
-echo "Headlessly provisioning Qubes from dom0"
+iex ((New-Object System.Net.WebClient).DownloadString('https://install.doctor/windows'))`, `echo "Headlessly provisioning Qubes from dom0"
 export HEADLESS_INSTALL=true
 export SOFTWARE_GROUP=Standard-Desktop
 export FULL_NAME="Joe Shmoe"
@@ -242,17 +224,14 @@ export PRIMARY_EMAIL="help@megabyte.space"
 export PUBLIC_SERVICES_DOMAIN="megabyte.space"
 export CLOUDFLARE_API_TOKEN="cf-pat-xXP999kUu888777"
 export TAILSCALE_AUTH_KEY="tailscale-auth-key-xXP999kUu888777"
-export START_REPO=my-gh-user/my-fork-name
-qvm-run --pass-io sys-firewall "curl -sSL https://install.doctor/qubes" > ~/setup.sh
-bash ~/setup.sh
-`
-          ],
+export START_REPO="my-gh-user/my-fork-name"
+qvm-run --pass-io sys-firewall "curl -sSL 'https://install.doctor/qubes'" > ~/setup.sh
+bash ~/setup.sh`],
         }}
       />,
       <code-snippet
         language="yaml"
-        code={`
----
+        code={`---
 softwarePackages:
   imagemagick:
     _bin: convert
@@ -263,25 +242,32 @@ softwarePackages:
     brew: imagemagick
     choco: imagemagick
     dnf:fedora: imagemagick
-    scoop: imagemagick
-`}
+    scoop: imagemagick`}
       />,
       <code-snippet
         language="yaml"
-        code={`
----
+        code={`---
 chromeExtensions:
   - automa/infppggnoaenmfagbfknfkancpbljcca
-  - bitwarden-free-password-m/nngceckbap
+  - buffer/noojglkidnpfjbincgijbaiedldjfbhh
+  - falcon/mmifbbohghecjloeklpbinkjpbplfalb
 firefoxAddOns:
   - automa
-  - bitwarden-password-manager
+  - buffer-for-firefox
   - chatgpt-for-google
   - firefox-translations
   - floccus
-  - ublock-origin
-`}
+  - ublock-origin`}
       />,
+      <code-snippet
+        language="bash"
+        code={`
+# The following command will create backups of
+# compatible application settings and store them
+# in encrypted form in either S3 or the git fork.
+run snapshot
+        `}
+        />
     ]
 
     return (

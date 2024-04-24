@@ -376,6 +376,11 @@ export const LandingPageData = {
       title: 'Pin all your plugins, packages, and extensions.',
       text: `Streamline your future setups with Install Doctor by pre-configuring it to automatically install your favorite packages. Simply define your preferences in a YAML file, and let Install Doctor take care of the provisioning for you. This one-time setup promises to save you countless hours down the line, making every device setup as efficient as the first. It's smart, simple, and designed to give you back your valuable time.`,
     },
+    {
+      number: '07',
+      title: 'Configure once, deploy headlessly in the future.',
+      text: 'Some settings are not easily stored in code, like Google Chrome extension settings. Other settings are sensitive and should be encrypted (like API keys). Install Doctor allows you to store these settings in a secure, encrypted files that can be decrypted during the provisioning process. This way, you can keep your settings secure and your provisioning process automated after you are satisfied with your application settings.',
+    }
   ],
   ebook: [
     {

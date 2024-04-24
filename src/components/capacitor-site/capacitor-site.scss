@@ -161,3 +161,25 @@ site-header.scrolled {
 .hljs-link {
   text-decoration: underline;
 }
+
+.alt-btns {
+  display: none;
+
+  .form-message {
+    max-width: 100%;
+    min-width: auto;
+  }
+
+  p {
+    font-size: 14px !important;
+    margin-top: 10px;
+  }
+}
+
+body.home .alt-btns {
+  display: block;
+}
+
+.hide-buttons {
+  display: none !important;
+}

@@ -46,6 +46,8 @@ export namespace Components {
         "fullScreenSliderHTML": string;
         "isTouchscreen": any;
         "scriptsLoaded": number;
+        "showCommunity": boolean;
+        "showEmailInput": boolean;
     }
     interface CapacitorSiteFooter {
         "defaults": typeof defaults;
@@ -394,6 +396,8 @@ declare namespace LocalJSX {
         "fullScreenSliderHTML"?: string;
         "isTouchscreen"?: any;
         "scriptsLoaded"?: number;
+        "showCommunity"?: boolean;
+        "showEmailInput"?: boolean;
     }
     interface CapacitorSiteFooter {
         "defaults"?: typeof defaults;

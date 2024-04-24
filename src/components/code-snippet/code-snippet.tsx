@@ -45,6 +45,8 @@ export class CodeSnippet {
         },
         this.highlightCode,
       )
+    } else {
+      this.highlightCode()
     }
   };
 

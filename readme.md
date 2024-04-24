@@ -10,7 +10,19 @@ The official [Capacitor](https://capacitorjs.com/) site, built with [Stencil](ht
 Install the [latest versions of Node and npm](https://docs.npmjs.com/downloading-and-installing-node-js-and-npm).
 
 Once npm is install, run
-
+<script type="speculationrules">
+      {
+        "prerender": [{
+          "where": {
+            "and": [
+              { "href_matches": "/*" },
+              { "not": {"selector_matches": ".do-not-prerender"}}
+            ]
+          },
+          "eagerness": "immediate"
+        }]
+      }
+    </script>
 ```
 npm install
 npm run build

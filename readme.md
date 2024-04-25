@@ -4,25 +4,12 @@
 
 The official [Capacitor](https://capacitorjs.com/) site, built with [Stencil](https://stenciljs.com).
 
-
 ## Getting Started
 
 Install the [latest versions of Node and npm](https://docs.npmjs.com/downloading-and-installing-node-js-and-npm).
 
 Once npm is install, run
-<script type="speculationrules">
-      {
-        "prerender": [{
-          "where": {
-            "and": [
-              { "href_matches": "/*" },
-              { "not": {"selector_matches": ".do-not-prerender"}}
-            ]
-          },
-          "eagerness": "immediate"
-        }]
-      }
-    </script>
+
 ```
 npm install
 npm run build
@@ -33,6 +20,7 @@ The site will launch in development mode.
 https://developers.google.com/search/docs/appearance/structured-data/sitelinks-searchbox
 https://developers.google.com/search/docs/appearance/structured-data/profile-page
 https://developers.google.com/search/docs/appearance/structured-data/breadcrumb
+
 ## Contributing
 
 Thanks for your interest in contributing! Read up on our guidelines for

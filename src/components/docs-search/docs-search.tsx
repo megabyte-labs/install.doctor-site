@@ -17,7 +17,7 @@ declare global {
 export class DocsSearch implements ComponentInterface {
   private siteContent: HTMLElement;
   private contentWidth = 736;
-  private uniqueId = Math.random().toString().replace('.', '');
+  @Prop() uniqueId = Math.random().toString().replace('.', '');
 
   @Prop() theme: SiteHeader['theme'] = 'light';
   @Prop() placeholder = 'Search';
@@ -38,6 +38,8 @@ export class DocsSearch implements ComponentInterface {
   } = {};
 
   componentDidLoad() {
+    console.log('Algolia loaded');
+    console.log((window as any).algoliaLoaded);
     if (!(window as any).algoliaLoaded) {
       (window as any).algoliaLoaded = true;
       importResource({ propertyName: 'docsearch', link: algolia, async: true }, () => this.setupSearch());
@@ -46,6 +48,7 @@ export class DocsSearch implements ComponentInterface {
     this.el.addEventListener(
       'focus',
       () => {
+        console.log(`Focus: ${this.el}`);
         this.siteContent = document.querySelector('section.ui-container') || document.querySelector('div.ui-container');
         this.getContentStats();
       },
@@ -78,35 +81,43 @@ export class DocsSearch implements ComponentInterface {
   }
 
   setupSearch() {
-    window.docsearch({
-      appId: this.defaults.algolia.appId,
-      apiKey: this.defaults.algolia.apiKey,
-      indexName: this.defaults.algolia.indexName,
-      contextualSearch: true,
-      inputSelector: `#input-${this.uniqueId}`,
-      debug: false, // Set debug to true if you want to inspect the dropdown
-      queryHook: (e, t) => {
-        if (this.input.isPristine) {
-          this.input.isPristine = false;
+    console.log('setting up search');
+    setTimeout(() => {
+      window.docsearch({
+        appId: this.defaults.algolia.appId,
+        apiKey: this.defaults.algolia.apiKey,
+        indexName: this.defaults.algolia.indexName,
+        contextualSearch: true,
+        inputSelector: `#input-${this.uniqueId}`,
+        debug: false, // Set debug to true if you want to inspect the dropdown
+        queryHook: (e, t) => {
+          console.log(`Query: ${t}`);
+          console.log(`Event: ${e}`);
+          if (this.input.isPristine) {
+            this.input.isPristine = false;
 
-          this.input.el = this.el.querySelector(`#id-${this.uniqueId} input[name="search"]`) as HTMLInputElement;
+            this.input.el = this.el.querySelector(`#id-${this.uniqueId} input[name="search"]`) as HTMLInputElement;
 
-          this.input.el.oninput = () => this.handleInput();
+            this.input.el.oninput = () => this.handleInput();
 
-          this.handleInput();
-          this.getContentStats();
-        }
-      },
-      handleSelected: (_, __, suggestion) => {
-        const url = suggestion.url.replace(defaults.homepage, '');
-        this.clearSearch();
-        if (url.substring(0, 5) === '/docs' || url.substring(0, 5) === '/auth' || url.substring(0, 5) === '/app/') {
-          window.location.pathname = url;
-        } else {
-          Router.push(url);
-        }
-      },
-    });
+            this.handleInput();
+            this.getContentStats();
+          }
+        },
+        handleSelected: (_, __, suggestion) => {
+          console.log(`Selected: ${suggestion}`);
+          console.log(_);
+          console.log(__);
+          const url = suggestion.url.replace(defaults.homepage, '');
+          this.clearSearch();
+          if (url.substring(0, 5) === '/docs' || url.substring(0, 5) === '/auth' || url.substring(0, 5) === '/app/') {
+            window.location.pathname = url;
+          } else {
+            Router.push(url);
+          }
+        },
+      });
+    }, 1000);
   }
 
   clearSearch = () => {

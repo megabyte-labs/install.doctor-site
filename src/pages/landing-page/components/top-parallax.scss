@@ -1,13 +1,14 @@
 @use '../../../global/vars' as *;
 
 :host {
-    z-index: 1;
-    position: relative;
-    min-height: calc(100vh - 64px);
-    display: block;
+  z-index: 1;
+  position: relative;
+  min-height: calc(100vh - 64px);
+  display: block;
 }
 
-#hightop, #slider-container {
+#hightop,
+#slider-container {
   background: transparent;
   background-size: cover, 100%;
   background-position: 50% 50%;
@@ -42,8 +43,8 @@
     margin: 0 auto;
     margin-bottom: 30px;
     max-width: 800px;
-    text-shadow: 1px 1px rgba(255,255,255,0.32);
-    color: var(--c-indigo-20)
+    text-shadow: 1px 1px rgba(255, 255, 255, 0.32);
+    color: var(--c-indigo-20);
   }
 
   h1.parallax-header {
@@ -53,65 +54,65 @@
 
   @media (max-width: 1060px) {
     h1.parallax-header {
-        zoom: 0.9;
+      zoom: 0.9;
     }
   }
 
   @media (max-width: 900px) {
     h1.parallax-header {
-        zoom: 0.8;
+      zoom: 0.8;
     }
   }
 
   @media (max-width: 800px) {
     h1.parallax-header {
-        zoom: 0.7;
+      zoom: 0.7;
     }
   }
 
   @media (max-width: 700px) {
     h1.parallax-header {
-        zoom: 0.6;
+      zoom: 0.6;
     }
 
     p.parallax-header {
-        zoom: 0.8
+      zoom: 0.8;
     }
   }
 
   @media (max-width: 600px) {
     h1.parallax-header {
-        zoom: 0.5;
+      zoom: 0.5;
     }
 
     p.parallax-header {
-        zoom: 0.7;
+      zoom: 0.7;
     }
 
     p.step-4.parallax-header {
-        display: none;
+      display: none;
     }
   }
 
   @media (max-width: 500px) {
     h1.parallax-header {
-        zoom: 0.4;
+      zoom: 0.4;
     }
   }
 
   @media (max-width: 400px) {
     h1.parallax-header {
-        zoom: 0.35;
+      zoom: 0.35;
     }
 
     p.parallax-header {
-        zoom: 0.69;
+      zoom: 0.69;
     }
   }
 
   @media (max-width: 300px) {
     h1.parallax-header {
-        zoom: 0.3;
+      zoom: 0.3;
     }
   }
 
@@ -125,8 +126,8 @@
       opacity: 0;
     }
     60% {
-        width: 0;
-        opacity: 0;
+      width: 0;
+      opacity: 0;
     }
     100% {
       width: 100%;
@@ -179,7 +180,6 @@
     animation-delay: 3.3s;
   }
 
-
   .underlined-header::after {
     background: linear-gradient(90deg, rgb(252, 65, 162) 0%, rgb(28, 144, 216) 100%);
     touch-action: manipulation;
@@ -190,7 +190,6 @@
     content: '';
     opacity: 1;
     visibility: visible;
-    display: inline-block;
     position: absolute;
     bottom: 0;
     right: 0px !important;
@@ -228,13 +227,11 @@
     animation: fadeIn 2s ease-in 2s forwards;
 
     @media screen and (max-width: $screen-xs-max) {
-      background: radial-gradient(128.98% 148.15% at 50% 50%,
-          rgba(#10183f, 0.5) 11.21%,
-          rgba(#004489, 0.5) 100%);
+      background: radial-gradient(128.98% 148.15% at 50% 50%, rgba(#10183f, 0.5) 11.21%, rgba(#004489, 0.5) 100%);
     }
   }
 
-  .ui-container>* {
+  .ui-container > * {
     position: relative;
   }
 
@@ -352,8 +349,9 @@
   min-width: 100%;
 }
 
-h2.parallax-header, h4.parallax-header {
-    background-color: rgba(4,4,4,0.69);
-    padding: 14px;
-    border-radius: 14px;
+h2.parallax-header,
+h4.parallax-header {
+  background-color: rgba(4, 4, 4, 0.69);
+  padding: 14px;
+  border-radius: 14px;
 }

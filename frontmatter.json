@@ -51,10 +51,6 @@
   "frontMatter.preview.host": "http://localhost:3000",
   "frontMatter.content.pageFolders": [
     {
-      "title": "Documentation",
-      "path": "[[workspace]]/docs/docs"
-    },
-    {
       "title": "Blog",
       "path": "[[workspace]]/pages/blog"
     }

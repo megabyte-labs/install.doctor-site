@@ -7,6 +7,7 @@
     <meta http-equiv="x-rim-auto-match" content="none" />
     <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests" />
     <title>Install Doctor: Provision fully-configured desktops automatically</title>
+    <script src="https://js.sentry-cdn.com/bf75b717b97ad8ab631d99cefe1cb5dd.min.js" crossorigin="anonymous"></script>
     <script>
       (function (w, d, s, l, i) {
         w[l] = w[l] || [];
@@ -237,7 +238,7 @@
       @font-face {
         font-family: 'Pe-icon-7-stroke';
         src: url('/assets/fonts/Pe-icon-7-stroke.eot');
-        src: url('/assets/fonts/Pe-icon-7-stroke.eot?#iefix') format('embedded-opentype'), ,
+        src: url('/assets/fonts/Pe-icon-7-stroke.eot?#iefix') format('embedded-opentype'),
           url('/assets/fonts/Pe-icon-7-stroke.woff2') format('woff2'),
           url('/assets/fonts/Pe-icon-7-stroke.woff') format('woff'),
           url('/assets/fonts/Pe-icon-7-stroke.ttf') format('truetype'),
@@ -292,10 +293,24 @@
     <script type="application/ld+json">
       {
         "@context": "http://schema.org",
+        "@id": "https://install.doctor/#schema-website",
         "@type": "WebSite",
-        "publisher": "Install Doctor",
-        "url": "http://install.doctor",
-        "potentialAction": []
+        "encoding": "UTF-8",
+        "image": {
+          "@type": "ImageObject",
+          "@id": "https://install.doctor/#schema-site-logo",
+          "url": "https://install.doctor/android-chrome-512x512.png",
+          "height": 512,
+          "width": 512
+        },
+        "name": "Install Doctor",
+        "publisher": "Megabyte Labs",
+        "url": "https://install.doctor",
+        "potentialActions": {
+          "@type": "SearchAction",
+          "target": "https://install.doctor/docs/search?q={search_term_string}",
+          "query-input": "required name=search_term_string"
+        }
       }
     </script>
     <script type="application/ld+json">

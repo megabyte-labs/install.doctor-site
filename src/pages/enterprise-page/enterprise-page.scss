@@ -327,11 +327,7 @@ ul {
     content: '';
     position: absolute;
     //z-index: -1;
-    background: linear-gradient(
-      180deg,
-      #f6f8fc 0%,
-      rgba(246, 248, 252, 0) 100%
-    );
+    background: linear-gradient(180deg, #f6f8fc 0%, rgba(246, 248, 252, 0) 100%);
     height: 75%;
     width: 100%;
     top: -9.25rem;

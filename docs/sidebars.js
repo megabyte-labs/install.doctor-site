@@ -9,7 +9,7 @@ module.exports = {
         'getting-started/getting-started',
         'getting-started/requirements',
         'getting-started/choosing-os',
-        'getting-started/faqs'
+        'getting-started/faqs',
       ],
     },
     {
@@ -21,7 +21,7 @@ module.exports = {
         'features/integrations',
         'features/cloudflare',
         'features/tailscale',
-        'features/netdata'
+        'features/netdata',
       ],
     },
     {
@@ -33,7 +33,7 @@ module.exports = {
         'customization/software',
         'customization/scripts',
         'customization/secrets',
-        'customization/web-apps'
+        'customization/web-apps',
       ],
     },
     {
@@ -45,7 +45,7 @@ module.exports = {
         'advanced/security',
         'advanced/network',
         'advanced/virtualization',
-        'advanced/qubes'
+        'advanced/qubes',
       ],
     },
     {
@@ -58,7 +58,7 @@ module.exports = {
         'contributing/code-quality',
         'contributing/pull-requests',
         'contributing/feature-requests',
-        'contributing/documentation'
+        'contributing/documentation',
         // 'contributing/community-guidelines'
       ],
     },
@@ -74,7 +74,7 @@ module.exports = {
         'scripts/overview/utility',
         'scripts/overview/profile',
         'scripts/overview/before',
-        'scripts/overview/after'
+        'scripts/overview/after',
       ],
     },
     {
@@ -120,18 +120,14 @@ module.exports = {
           dirName: 'scripts/after',
         },
       ],
-    }
+    },
   ],
   cli: [
     {
       type: 'category',
       label: 'CLI Documentation',
       collapsed: false,
-      items: [
-        'cli/index',
-        'cli/taskfiles',
-        'cli/variables'
-      ],
+      items: ['cli/index', 'cli/taskfiles', 'cli/variables'],
     },
     {
       type: 'category',
@@ -143,6 +139,6 @@ module.exports = {
           dirName: 'cli/commands',
         },
       ],
-    }
+    },
   ],
-}
+};

@@ -41,7 +41,7 @@ export class NewsletterSignup {
         this.isLoading = false;
         this.isValid = false;
       } else {
-        this.inlineMessage = 'Adding your e-mail..'
+        this.inlineMessage = 'Adding your e-mail..';
         this.isLoading = true;
         this.isValid = true;
       }
@@ -53,8 +53,8 @@ export class NewsletterSignup {
         contacts: [
           {
             email: this.email,
-          }
-        ]
+          },
+        ],
       })
     );
   }

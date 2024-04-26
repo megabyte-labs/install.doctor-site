@@ -1,26 +1,26 @@
-import React from 'react'
-import clsx from 'clsx'
-import Link from '@docusaurus/Link'
-import useBaseUrl from '@docusaurus/useBaseUrl'
+import React from 'react';
+import clsx from 'clsx';
+import Link from '@docusaurus/Link';
+import useBaseUrl from '@docusaurus/useBaseUrl';
 
-import styles from './styles.module.scss'
+import styles from './styles.module.scss';
 
 interface Props extends React.HTMLAttributes<HTMLDivElement> {
-  href?: string
-  header?: string
-  icon?: string
-  hoverIcon?: string
-  iconset?: string
-  ionicon?: string
-  img?: string
-  size?: 'md' | 'lg'
+  href?: string;
+  header?: string;
+  icon?: string;
+  hoverIcon?: string;
+  iconset?: string;
+  ionicon?: string;
+  img?: string;
+  size?: 'md' | 'lg';
 }
 
 function DocsCard(props: Props): JSX.Element {
-  const isStatic = typeof props.href === 'undefined'
-  const isOutbound = typeof props.href !== 'undefined' ? /^http/.test(props.href) : false
-  const header = props.header === 'undefined' ? null : <header className="Card-header">{props.header}</header>
-  const hoverIcon = props.hoverIcon || props.icon
+  const isStatic = typeof props.href === 'undefined';
+  const isOutbound = typeof props.href !== 'undefined' ? /^http/.test(props.href) : false;
+  const header = props.header === 'undefined' ? null : <header className="Card-header">{props.header}</header>;
+  const hoverIcon = props.hoverIcon || props.icon;
 
   const content = (
     <>
@@ -49,21 +49,21 @@ function DocsCard(props: Props): JSX.Element {
         <div className="Card-content">{props.children}</div>
       </div>
     </>
-  )
+  );
 
   const className = clsx({
     'Card-with-image': typeof props.img !== 'undefined',
     'Card-without-image': typeof props.img === 'undefined',
     'Card-size-lg': props.size === 'lg',
     [props.className]: props.className,
-  })
+  });
 
   if (isStatic) {
     return (
       <docs-card class={className}>
         <div className={clsx(styles.card, 'docs-card')}>{content}</div>
       </docs-card>
-    )
+    );
   }
 
   if (isOutbound) {
@@ -73,7 +73,7 @@ function DocsCard(props: Props): JSX.Element {
           {content}
         </a>
       </docs-card>
-    )
+    );
   }
 
   return (
@@ -82,7 +82,7 @@ function DocsCard(props: Props): JSX.Element {
         {content}
       </Link>
     </docs-card>
-  )
+  );
 }
 
-export default DocsCard
+export default DocsCard;

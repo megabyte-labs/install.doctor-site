@@ -1,18 +1,17 @@
-import { Fragment, h } from '@stencil/core'
-import {
-  Route,
-  createRouter,
-  staticState,
-  match
-} from '@stencil/router'
-import { getBlogData, getAllBlogData } from './data.server/blog'
-import { CommunityPageData, defaults, EnterprisePageData, LandingPageData } from './store'
+import { Fragment, h } from '@stencil/core';
+import { Route, createRouter, staticState, match } from '@stencil/router';
+import { getBlogData, getAllBlogData } from './data.server/blog';
+import { CommunityPageData, defaults, EnterprisePageData, LandingPageData } from './store';
 
-declare let window: any
-window.mobileSliderHero = ('ontouchstart' in window) || (navigator.maxTouchPoints > 0) || ((navigator as any).msMaxTouchPoints > 0) || window.innerWidth < 1024
-export const Router = createRouter()
+declare let window: any;
+window.mobileSliderHero =
+  'ontouchstart' in window ||
+  navigator.maxTouchPoints > 0 ||
+  (navigator as any).msMaxTouchPoints > 0 ||
+  window.innerWidth < 1024;
+export const Router = createRouter();
 
-export default Router
+export default Router;
 
 export const Routes = () => (
   <Router.Switch>
@@ -30,7 +29,10 @@ export const Routes = () => (
       mapParams={staticState(getAllBlogData)}
       render={(_, data) => (
         <Fragment>
-          <blog-page defaults={defaults} data={data instanceof Map ? Object.values(Object.fromEntries(data))[0] : data} />
+          <blog-page
+            defaults={defaults}
+            data={data instanceof Map ? Object.values(Object.fromEntries(data))[0] : data}
+          />
         </Fragment>
       )}
     />
@@ -40,7 +42,10 @@ export const Routes = () => (
       mapParams={staticState(getBlogData)}
       render={(_, data) => (
         <Fragment>
-          <blog-post defaults={defaults} data={data instanceof Map ? Object.values(Object.fromEntries(data))[0] : data} />
+          <blog-post
+            defaults={defaults}
+            data={data instanceof Map ? Object.values(Object.fromEntries(data))[0] : data}
+          />
         </Fragment>
       )}
     />
@@ -52,7 +57,7 @@ export const Routes = () => (
           <Fragment>
             <community-page data={CommunityPageData} />
           </Fragment>
-        )
+        );
       }}
     />
 
@@ -119,31 +124,31 @@ export const Routes = () => (
       )}
     />
   </Router.Switch>
-)
+);
 
 Router.on('change', (newUrl, oldUrl) => {
   if (window.revapi4) {
-    window.revapi4.revkill()
+    window.revapi4.revkill();
   }
   if (newUrl.pathname === '/') {
-    document.body.classList.add('home')
+    document.body.classList.add('home');
     if (window.revapi2) {
-      window.revapi2.revredraw()
+      window.revapi2.revredraw();
     }
   } else {
-    document.body.classList.remove('home')
+    document.body.classList.remove('home');
     if (window.revapi2) {
-      window.revapi2.revpause()
+      window.revapi2.revpause();
     }
   }
-  requestAnimationFrame(() => window.scrollTo(0, 0))
+  requestAnimationFrame(() => window.scrollTo(0, 0));
   if (newUrl.hash) {
-    const id = newUrl.hash.slice(1)
+    const id = newUrl.hash.slice(1);
     setTimeout(() => {
-      const el = document.getElementById(id)
+      const el = document.getElementById(id);
       if (el) {
-        el.scrollIntoView && el.scrollIntoView()
+        el.scrollIntoView && el.scrollIntoView();
       }
-    }, 50)
+    }, 50);
   }
-})
+});

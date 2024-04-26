@@ -1,21 +1,15 @@
-import { Component, h, Host, Prop } from '@stencil/core'
-import {
-  ResponsiveContainer,
-  Heading,
-  Button,
-  PrismicRichText,
-  Paragraph,
-} from 'ionic-ds-no-fonts'
-import { State } from '@stencil/core/internal'
-import { EnterprisePageData } from 'src/store'
+import { Component, h, Host, Prop } from '@stencil/core';
+import { ResponsiveContainer, Heading, Button, PrismicRichText, Paragraph } from 'ionic-ds-no-fonts';
+import { State } from '@stencil/core/internal';
+import { EnterprisePageData } from 'src/store';
 
 @Component({
   tag: 'enterprise-page',
   styleUrl: 'enterprise-page.scss',
-  scoped: true
+  scoped: true,
 })
 export class EnterprisePage {
-  @Prop() data: typeof EnterprisePageData
+  @Prop() data: typeof EnterprisePageData;
   @State() ebookModalOpen = false;
 
   render() {
@@ -31,7 +25,7 @@ export class EnterprisePage {
       Features,
       Demo,
       Editions,
-    } = this
+    } = this;
 
     return (
       <Host>
@@ -57,34 +51,30 @@ export class EnterprisePage {
         <Demo />
         <pre-footer defaults={this.data.defaults} />
         <capacitor-site-footer defaults={this.data.defaults} />
-        <site-modal
-          open={this.ebookModalOpen}
-          onModalClose={() => (this.ebookModalOpen = false)}
-        >
-          <Heading level={2}>
-            {this.data.defaults.eBookSiteModal.title}
-          </Heading>
+        <site-modal open={this.ebookModalOpen} onModalClose={() => (this.ebookModalOpen = false)}>
+          <Heading level={2}>{this.data.defaults.eBookSiteModal.title}</Heading>
           <Paragraph>
-            Fill out and submit the form below to get your free copy of <b>{this.data.defaults.eBookSiteModal.eBookTitle}</b> sent to your e-mail.
+            Fill out and submit the form below to get your free copy of{' '}
+            <b>{this.data.defaults.eBookSiteModal.eBookTitle}</b> sent to your e-mail.
           </Paragraph>
           <capacitor-hubspot-form defaults={this.data.defaults} />
         </site-modal>
       </Host>
-    )
+    );
   }
 
   talkToSales() {
+    setTimeout(() => {
+      document.getElementById('support').scrollIntoView({ behavior: 'smooth' });
       setTimeout(() => {
-        document.getElementById("support").scrollIntoView({ behavior: 'smooth' })
-        setTimeout(() => {
-          document.getElementById("support").scrollIntoView({ behavior: 'smooth' })
-        }, 667)
-      }, 667)
+        document.getElementById('support').scrollIntoView({ behavior: 'smooth' });
+      }, 667);
+    }, 667);
   }
 
   Top = () => {
-    const { top } = this.data
-    const { title, text, cta_1, background } = top[0]
+    const { top } = this.data;
+    const { title, text, cta_1, background } = top[0];
 
     return (
       <section id="top">
@@ -106,18 +96,18 @@ export class EnterprisePage {
           </div>
         </ResponsiveContainer>
       </section>
-    )
+    );
   };
 
   Native = () => {
-    const { native, native__list } = this.data
-    const { supertext, title, subtext } = native[0]
+    const { native, native__list } = this.data;
+    const { supertext, title, subtext } = native[0];
 
     const icons = [
       ['Three blocks with up arrow', '64x64'],
       ['Clock icon with up arrow', '64x64'],
       ['Fingerprint icon with lock symbol', '64x64'],
-    ]
+    ];
 
     return (
       <ResponsiveContainer id="native" as="section">
@@ -146,12 +136,12 @@ export class EnterprisePage {
           ))}
         </ul>
       </ResponsiveContainer>
-    )
+    );
   };
 
   Ebook = () => {
-    const { ebook } = this.data
-    const { text, cta, background, book } = ebook[0]
+    const { ebook } = this.data;
+    const { text, cta, background, book } = ebook[0];
     return (
       <section id="ebook">
         <ResponsiveContainer>
@@ -163,11 +153,7 @@ export class EnterprisePage {
               </div>
               <div class="heading-group">
                 <PrismicRichText paragraphLevel={1} richText={text} />
-                <Button
-                  kind="round"
-                  size="md"
-                  onClick={() => (this.ebookModalOpen = true)}
-                >
+                <Button kind="round" size="md" onClick={() => (this.ebookModalOpen = true)}>
                   {cta} <span class="arrow"> -&gt;</span>
                 </Button>
               </div>
@@ -175,7 +161,7 @@ export class EnterprisePage {
           </div>
         </ResponsiveContainer>
       </section>
-    )
+    );
   };
 
   // Approach = () => {
@@ -241,8 +227,8 @@ export class EnterprisePage {
   // };
 
   MicroFrontends = () => {
-    const { micro_frontends } = this.data
-    const { supertext, title, subtext, image } = micro_frontends[0]
+    const { micro_frontends } = this.data;
+    const { supertext, title, subtext, image } = micro_frontends[0];
 
     return (
       <section id="micro-frontends">
@@ -261,12 +247,12 @@ export class EnterprisePage {
           </div>
         </ResponsiveContainer>
       </section>
-    )
+    );
   };
 
   Plugins = () => {
-    const { plugins } = this.data
-    const { supertext, title, subtext, image } = plugins[0]
+    const { plugins } = this.data;
+    const { supertext, title, subtext, image } = plugins[0];
 
     return (
       <section id="plugins">
@@ -285,12 +271,12 @@ export class EnterprisePage {
           </div>
         </ResponsiveContainer>
       </section>
-    )
+    );
   };
 
   Security = () => {
-    const { security } = this.data
-    const { supertext, title, subtext, image } = security[0]
+    const { security } = this.data;
+    const { supertext, title, subtext, image } = security[0];
 
     return (
       <section id="security">
@@ -309,12 +295,12 @@ export class EnterprisePage {
           </div>
         </ResponsiveContainer>
       </section>
-    )
+    );
   };
 
   Delivery = () => {
-    const { delivery } = this.data
-    const { supertext, title, subtext, image } = delivery[0]
+    const { delivery } = this.data;
+    const { supertext, title, subtext, image } = delivery[0];
 
     return (
       <section id="delivery">
@@ -333,11 +319,11 @@ export class EnterprisePage {
           </div>
         </ResponsiveContainer>
       </section>
-    )
+    );
   };
 
   SupportGuidance = () => {
-    const { support_guidance } = this.data
+    const { support_guidance } = this.data;
 
     return (
       <section id="support-guidance">
@@ -353,12 +339,12 @@ export class EnterprisePage {
           </div>
         </ResponsiveContainer>
       </section>
-    )
+    );
   };
 
   Features = () => {
-    const { features, features__list } = this.data
-    const { supertext, title, subtext } = features[0]
+    const { features, features__list } = this.data;
+    const { supertext, title, subtext } = features[0];
 
     return (
       <section id="features">
@@ -389,12 +375,12 @@ export class EnterprisePage {
           </div>
         </ResponsiveContainer>
       </section>
-    )
+    );
   };
 
   Editions = () => {
-    const { editions } = this.data
-    const { supertext, title, paragraph_1, paragraph_2, cta_1, image } = editions[0]
+    const { editions } = this.data;
+    const { supertext, title, paragraph_1, paragraph_2, cta_1, image } = editions[0];
 
     return (
       <section id="editions">
@@ -424,12 +410,12 @@ export class EnterprisePage {
           </div>
         </ResponsiveContainer>
       </section>
-    )
+    );
   };
 
   Demo = () => {
-    const { demo } = this.data
-    const { supertext, title } = demo[0]
+    const { demo } = this.data;
+    const { supertext, title } = demo[0];
 
     return (
       <section id="inquiry">
@@ -438,23 +424,25 @@ export class EnterprisePage {
             <p class="ui-heading-6">
               <sup>{supertext}</sup>
             </p>
-            <Heading level={2} id="support" name="support">{title}</Heading>
-            <Paragraph>
-              {this.data.defaults.enterprisePage.inquiryParagraph1}
-            </Paragraph>
-            <Paragraph>
-              {this.data.defaults.enterprisePage.inquiryParagraph2}
-            </Paragraph>
+            <Heading level={2} id="support" name="support">
+              {title}
+            </Heading>
+            <Paragraph>{this.data.defaults.enterprisePage.inquiryParagraph1}</Paragraph>
+            <Paragraph>{this.data.defaults.enterprisePage.inquiryParagraph2}</Paragraph>
             <Paragraph class="bold-instructions">
               <b class="noshow-noscript">Submit your inquiry below and we will respond to you in a timely fashion.</b>
               <noscript>
-                <b>Send an e-mail to <a href={'mailto:' + this.data.defaults.brandEmail}>{this.data.defaults.brandEmail}</a> and we will respond to you in a timely fashion.</b>
+                <b>
+                  Send an e-mail to{' '}
+                  <a href={'mailto:' + this.data.defaults.brandEmail}>{this.data.defaults.brandEmail}</a> and we will
+                  respond to you in a timely fashion.
+                </b>
               </noscript>
             </Paragraph>
           </div>
           <capacitor-hubspot-form defaults={this.data.defaults} />
         </ResponsiveContainer>
       </section>
-    )
+    );
   };
 }

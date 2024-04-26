@@ -67,7 +67,7 @@ h6 {
 }
 
 .ui-col.ui-col-6.ui-col-sm-3:nth-child(4) {
-  background: #b7d2fa
+  background: #b7d2fa;
 }
 
 .ui-col.ui-col-6.ui-col-sm-3:nth-child(5) {
@@ -115,7 +115,7 @@ h6 {
 }
 
 #products .ui-col.ui-col-6.ui-col-sm-3:nth-child(4) {
-  background: #cccccc
+  background: #cccccc;
 }
 
 #start {
@@ -669,7 +669,8 @@ h6 {
   }
 }
 
-#framework, #products {
+#framework,
+#products {
   margin-block-start: $section-space;
   margin-block-end: $section-space;
 
@@ -1087,7 +1088,7 @@ h6 {
 
 #start > .ui-container {
   margin-top: 50px;
-    padding-top: 100px;
+  padding-top: 100px;
 }
 
 @media (max-width: 640px) {

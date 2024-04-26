@@ -17,7 +17,7 @@ capacitor-site-footer {
     margin-left: 4px;
     margin-right: 4px;
     transition: all 0.2s ease-in-out;
-    color: var(--c-indigo-70)
+    color: var(--c-indigo-70);
   }
 
   .footer-social.github:hover {
@@ -29,7 +29,7 @@ capacitor-site-footer {
   }
 
   .footer-social.slack:hover {
-    color: #E01E5A;
+    color: #e01e5a;
   }
 
   .footer-social.discord:hover {
@@ -37,7 +37,7 @@ capacitor-site-footer {
   }
 
   .footer-social.facebook:hover {
-    color: #3b5998
+    color: #3b5998;
   }
 
   .footer-social.twitter:hover {
@@ -61,7 +61,7 @@ capacitor-site-footer {
   }
 
   .footer-social.pinterest:hover {
-    color: #E60023;
+    color: #e60023;
   }
 
   .footer-social.instagram:hover {
@@ -88,7 +88,7 @@ capacitor-site-footer {
   }
 
   .footer-social:nth-child(1) {
-    margin-left: 0
+    margin-left: 0;
   }
 
   .footer-social:last-child {
@@ -124,7 +124,7 @@ capacitor-site-footer {
     --h4-color: var(--c-carbon-100);
     --p4-color: var(--c-indigo-70);
 
-    >* {
+    > * {
       margin-block-start: 16px;
     }
   }
@@ -204,7 +204,7 @@ capacitor-site-footer {
     }
   }
 
-  p>ion-icon {
+  p > ion-icon {
     font-size: 24px;
     margin-right: 8px;
   }

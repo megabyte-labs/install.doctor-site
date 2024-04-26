@@ -1,10 +1,6 @@
 import { Document as PrismicDocument } from 'prismic-javascript/d.ts/documents';
 import ApiSearchResponse from 'prismic-javascript/d.ts/ApiSearchResponse';
-import {
-  PageNavigation,
-  MarkdownResults,
-  TableOfContents,
-} from '@stencil/ssg/parse';
+import { PageNavigation, MarkdownResults, TableOfContents } from '@stencil/ssg/parse';
 
 export interface PrismicDocsResponse {
   docs: PrismicDocument[];

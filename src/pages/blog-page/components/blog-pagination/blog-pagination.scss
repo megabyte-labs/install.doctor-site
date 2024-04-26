@@ -9,7 +9,8 @@
     margin-bottom: 14px;
   }
 
-  .rss-link, .rss-link * {
+  .rss-link,
+  .rss-link * {
     transition: all 0.333s ease-in-out;
   }
 
@@ -18,7 +19,7 @@
   }
 
   .rss-link:hover circle {
-    fill: var(--c-capacitor-blue)
+    fill: var(--c-capacitor-blue);
   }
 
   .rss-link:hover path {

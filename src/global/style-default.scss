@@ -958,6 +958,7 @@ top-parallax {
   display: block;
   width: 100%;
   background-color: black;
+  height: fit-content !important;
 }
 #slider {
   height: calc(100vh - 64px) !important;
@@ -1191,6 +1192,9 @@ rs-slide > rs-group-wrap {
   .algolia-docsearch-suggestion--no-results .algolia-docsearch-suggestion--text {
     line-height: 44px !important;
   }
+}
+landing-page #start {
+  width: 100%;
 }
 
 @media (max-width: 640px) {

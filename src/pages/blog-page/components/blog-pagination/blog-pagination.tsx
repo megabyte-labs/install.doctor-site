@@ -1,6 +1,6 @@
-import { Component, h, Host, Prop } from '@stencil/core'
-import { JSXBase } from '@stencil/core/internal'
-import { defaults } from 'src/store'
+import { Component, h, Host, Prop } from '@stencil/core';
+import { JSXBase } from '@stencil/core/internal';
+import { defaults } from 'src/store';
 
 @Component({
   tag: 'blog-pagination',
@@ -8,23 +8,26 @@ import { defaults } from 'src/store'
   scoped: true,
 })
 export class BlogPagination {
-  @Prop() defaults: typeof defaults
+  @Prop() defaults: typeof defaults;
   @Prop() linkText: [string, string] = ['Older posts', 'Newer posts'];
   @Prop() rssIcon: boolean = false;
 
   render = () => (
     <Host>
-      <a class="rss-link hint--top hint--rounded" href={this.defaults.homepage + '/blog/rss.xml'} target="_blank" rel="noopener" aria-label="RSS Feed">
+      <a
+        class="rss-link hint--top hint--rounded"
+        href={this.defaults.homepage + '/blog/rss.xml'}
+        target="_blank"
+        rel="noopener"
+        aria-label="RSS Feed"
+      >
         {this.rssIcon ? rssIcon({}, { height: 32, width: 32 }) : ''}
       </a>
     </Host>
   );
 }
 
-const rssIcon = (
-  { main = '#E3EDFF', second = '#597EFF' } = {},
-  props?: JSXBase.SVGAttributes,
-) => (
+const rssIcon = ({ main = '#E3EDFF', second = '#597EFF' } = {}, props?: JSXBase.SVGAttributes) => (
   <svg viewBox="0 0 32 32" {...props}>
     <circle fill={main} cx="16" cy="16" r="16" />
     <path
@@ -40,4 +43,4 @@ const rssIcon = (
       d="M9.143 9.143v2.853c6.107 0 10.853 4.75 10.853 10.861h2.86c0-7.56-6.142-13.714-13.713-13.714z"
     />
   </svg>
-)
+);

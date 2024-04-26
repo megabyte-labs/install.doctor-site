@@ -53,7 +53,9 @@ export class TermsServicePage {
 
   TermsService = () => (
     <ResponsiveContainer id="terms-service" class="legal-page" as="section">
-      <Heading level={1} class="legal-heading">Terms of Service</Heading>
+      <Heading level={1} class="legal-heading">
+        Terms of Service
+      </Heading>
       <Paragraph level={4}>
         This website is owned and operated by {this.CompanyLink()} (also referred to as {this.defaults.companyAlias}).
         By visiting our website and accessing the information, resources, services, products, and tools we provide, you
@@ -77,28 +79,25 @@ export class TermsServicePage {
       <Paragraph level={4}>Wherein, you understand that:</Paragraph>
       <ul>
         <li>
-          In order to access our Resources, you may be required to provide certain information about yourself (such
-          as identification, contact details, etc.) as part of the registration process, or as part of your ability to
-          use the Resources. You agree that any information you provide will always be accurate, correct, and up to
-          date.
+          In order to access our Resources, you may be required to provide certain information about yourself (such as
+          identification, contact details, etc.) as part of the registration process, or as part of your ability to use
+          the Resources. You agree that any information you provide will always be accurate, correct, and up to date.
         </li>
         <li>
-          You are responsible for maintaining the confidentiality of any login information associated with any
-          account you use to access our Resources. Accordingly, you are responsible for all activities that occur under
-          your account(s).
+          You are responsible for maintaining the confidentiality of any login information associated with any account
+          you use to access our Resources. Accordingly, you are responsible for all activities that occur under your
+          account(s).
         </li>
         <li>
-          Accessing (or attempting to access) any of our Resources by any means other than through the means we
-          provide, is strictly prohibited. You specifically agree not to access (or attempt to access) any of our
-          Resources through any automated, unethical or unconventional means.
+          Accessing (or attempting to access) any of our Resources by any means other than through the means we provide,
+          is strictly prohibited. You specifically agree not to access (or attempt to access) any of our Resources
+          through any automated, unethical or unconventional means.
         </li>
         <li>
-          Engaging in any activity that disrupts or interferes with our Resources, including the servers and/or
-          networks to which our Resources are located or connected, is strictly prohibited.
+          Engaging in any activity that disrupts or interferes with our Resources, including the servers and/or networks
+          to which our Resources are located or connected, is strictly prohibited.
         </li>
-        <li>
-          Attempting to copy, duplicate, reproduce, sell, trade, or resell our Resources is strictly prohibited.
-        </li>
+        <li>Attempting to copy, duplicate, reproduce, sell, trade, or resell our Resources is strictly prohibited.</li>
         <li>
           You are solely responsible any consequences, losses, or damages that we may directly or indirectly incur or
           suffer due to any unauthorized activities conducted by you, as explained above, and may incur criminal or
@@ -114,16 +113,14 @@ export class TermsServicePage {
           upload, post, share, or otherwise distribute any content that:
           <ul>
             <li>
-              Is illegal, threatening, defamatory, abusive, harassing, degrading, intimidating, fraudulent,
-              deceptive, invasive, racist, or contains any type of suggestive, inappropriate, or explicit language;
+              Is illegal, threatening, defamatory, abusive, harassing, degrading, intimidating, fraudulent, deceptive,
+              invasive, racist, or contains any type of suggestive, inappropriate, or explicit language;
             </li>
             <li>
               Infringes on any trademark, patent, trade secret, copyright, or other proprietary right of any party;
             </li>
             <li>Contains any type of unauthorized or unsolicited advertising;</li>
-            <li>
-              Impersonates any person or entity, including any {this.CompanyLink()} employees or representatives.
-            </li>
+            <li>Impersonates any person or entity, including any {this.CompanyLink()} employees or representatives.</li>
           </ul>
         </li>
       </ul>
@@ -146,7 +143,8 @@ export class TermsServicePage {
           Resources. All information provided as part of our registration process is covered by our{' '}
           <a class="underline-hover" {...href('/privacy')}>
             privacy policy
-          </a>.
+          </a>
+          .
         </li>
         <li>
           You agree to indemnify and hold harmless {this.defaults.companyLegalName} and its parent company and
@@ -163,9 +161,12 @@ export class TermsServicePage {
         Your privacy is very important to us, which is why we've created a separate Privacy Policy in order to explain
         in detail how we collect, manage, process, secure, and store your private information. Our privacy policy is
         included under the scope of this User Agreement. To read our privacy policy in its entirety,{' '}
-        <span><a class="underline-hover" {...href('/privacy')}>
-          click here
-        </a>.</span>
+        <span>
+          <a class="underline-hover" {...href('/privacy')}>
+            click here
+          </a>
+          .
+        </span>
       </Paragraph>
       <Heading level={3}>Limitation of Warranties</Heading>
       <Paragraph level={4}>
@@ -183,9 +184,9 @@ export class TermsServicePage {
       <Paragraph level={4}>Furthermore, you understand and agree that:</Paragraph>
       <ul>
         <li>
-          Any content downloaded or otherwise obtained through the use of our Resources is done at your own
-          discretion and risk, and that you are solely responsible for any damage to your computer or other devices for
-          any loss of data that may result from the download of such content.
+          Any content downloaded or otherwise obtained through the use of our Resources is done at your own discretion
+          and risk, and that you are solely responsible for any damage to your computer or other devices for any loss of
+          data that may result from the download of such content.
         </li>
         <li>
           No information or advice, whether expressed, implied, oral or written, obtained by you from{' '}
@@ -198,17 +199,24 @@ export class TermsServicePage {
       <Paragraph level={4}>
         In conjunction with the Limitation of Warranties as explained above, you expressly understand and agree that any
         claim against us shall be limited to the amount you paid, if any, for use of products and/or services.{' '}
-        {this.defaults.companyLegalName} will not be liable for any direct, indirect, incidental, consequential or exemplary loss or damages which may be
-        incurred by you as a result of using our Resources, or as a result of any changes, data loss or corruption,
-        cancellation, loss of access, or downtime to the full extent that applicable limitation of liability laws apply.
+        {this.defaults.companyLegalName} will not be liable for any direct, indirect, incidental, consequential or
+        exemplary loss or damages which may be incurred by you as a result of using our Resources, or as a result of any
+        changes, data loss or corruption, cancellation, loss of access, or downtime to the full extent that applicable
+        limitation of liability laws apply.
       </Paragraph>
       <Heading level={3}>Copyrights/Trademarks</Heading>
       <Paragraph level={4}>
-        All content and materials available on <span><a {...href('/')} class="underline-hover">{this.defaults.homepage}</a>,</span> including but not limited
-        to text, graphics, website name, code, images and logos are the intellectual property of{' '}
-        {this.defaults.companyLegalName}, and are protected by applicable copyright and trademark law. Any inappropriate
-        use, including but not limited to the reproduction, distribution, display or transmission of any content on this
-        site is strictly prohibited, unless specifically authorized by {this.defaults.companyLegalName}.
+        All content and materials available on{' '}
+        <span>
+          <a {...href('/')} class="underline-hover">
+            {this.defaults.homepage}
+          </a>
+          ,
+        </span>{' '}
+        including but not limited to text, graphics, website name, code, images and logos are the intellectual property
+        of {this.defaults.companyLegalName}, and are protected by applicable copyright and trademark law. Any
+        inappropriate use, including but not limited to the reproduction, distribution, display or transmission of any
+        content on this site is strictly prohibited, unless specifically authorized by {this.defaults.companyLegalName}.
       </Paragraph>
       <Heading level={3}>Termination of Use</Heading>
       <Paragraph level={4}>
@@ -255,7 +263,9 @@ export class TermsServicePage {
             <ion-icon name="mail"></ion-icon>
           </div>
           <div class="contact-text">
-            <a href={'mailto:' + this.defaults.companyEmail} class="underline-hover link">{this.defaults.companyEmail}</a>
+            <a href={'mailto:' + this.defaults.companyEmail} class="underline-hover link">
+              {this.defaults.companyEmail}
+            </a>
           </div>
         </div>
         <div class="contact-detail">

@@ -1,17 +1,16 @@
-import { h } from '@stencil/core'
-import { JSXBase } from '@stencil/core/internal'
+import { h } from '@stencil/core';
+import { JSXBase } from '@stencil/core/internal';
 
-interface ResponsiveImgProps
-  extends JSXBase.ImgHTMLAttributes<HTMLImageElement> {
-  path: string
+interface ResponsiveImgProps extends JSXBase.ImgHTMLAttributes<HTMLImageElement> {
+  path: string;
 
-  name: string
+  name: string;
 
-  type?: string
+  type?: string;
 
-  dimensions: string
+  dimensions: string;
 
-  fallback?: boolean
+  fallback?: boolean;
 }
 
 const ResponsiveImage = ({
@@ -23,7 +22,7 @@ const ResponsiveImage = ({
   fallback = true,
   ...props
 }: ResponsiveImgProps) => {
-  !props.loading ? (props.loading = 'lazy') : ''
+  !props.loading ? (props.loading = 'lazy') : '';
   return (
     <picture>
       <source type="image/webp" src={`${path}${name}@2x.webp 2x`} />
@@ -38,7 +37,7 @@ const ResponsiveImage = ({
         height={dimensions.split('x')[1]}
       />
     </picture>
-  )
-}
+  );
+};
 
-export default ResponsiveImage
+export default ResponsiveImage;

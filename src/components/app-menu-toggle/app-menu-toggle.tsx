@@ -16,10 +16,7 @@ export class AppBurger {
   render() {
     return (
       <Host>
-        <button
-          class="menu-toggle-button"
-          onClick={() => this.handleButtonClick()}
-        >
+        <button class="menu-toggle-button" onClick={() => this.handleButtonClick()}>
           <ion-icon icon={this.icon}></ion-icon>
         </button>
       </Host>

@@ -1,21 +1,16 @@
-import { Component, Host, h, Prop, ComponentInterface } from '@stencil/core'
+import { Component, Host, h, Prop, ComponentInterface } from '@stencil/core';
 
-import {
-  ResponsiveContainer,
-  Heading,
-  Paragraph,
-  Button,
-} from 'ionic-ds-no-fonts'
+import { ResponsiveContainer, Heading, Paragraph, Button } from 'ionic-ds-no-fonts';
 
-import { SolutionUbuntu } from './solution-ubuntu'
-import { SolutionFedora } from './solution-fedora'
-import { SolutionCentOS } from './solution-centos'
-import { SolutionDebian } from './solution-debian'
-import { SolutionMacOS } from './solution-macos'
-import { SolutionArchlinux } from './solution-archlinux'
-import { SolutionQubes } from './solution-qubes'
-import { SolutionWindows } from './solution-windows'
-import { defaults } from 'src/store'
+import { SolutionUbuntu } from './solution-ubuntu';
+import { SolutionFedora } from './solution-fedora';
+import { SolutionCentOS } from './solution-centos';
+import { SolutionDebian } from './solution-debian';
+import { SolutionMacOS } from './solution-macos';
+import { SolutionArchlinux } from './solution-archlinux';
+import { SolutionQubes } from './solution-qubes';
+import { SolutionWindows } from './solution-windows';
+import { defaults } from 'src/store';
 
 @Component({
   tag: 'solution-page',
@@ -23,37 +18,37 @@ import { defaults } from 'src/store'
   scoped: true,
 })
 export class SolutionPage implements ComponentInterface {
-  @Prop() solutionId: string
-  @Prop() defaults: typeof defaults
+  @Prop() solutionId: string;
+  @Prop() defaults: typeof defaults;
 
   framework: {
-    id: string
-    name: string
-    theme: string
-    logo: string
-    dimensions: string
-  }
+    id: string;
+    name: string;
+    theme: string;
+    logo: string;
+    dimensions: string;
+  };
   componentWillLoad() {
-    this.framework = this.defaults.solutionPage.solutions.find(entry => entry.id === this.solutionId)
+    this.framework = this.defaults.solutionPage.solutions.find((entry) => entry.id === this.solutionId);
   }
   getComponent() {
     switch (this.solutionId) {
       case 'archlinux':
-        return <SolutionArchlinux />
+        return <SolutionArchlinux />;
       case 'centos':
-        return <SolutionCentOS />
+        return <SolutionCentOS />;
       case 'debian':
-        return <SolutionDebian />
+        return <SolutionDebian />;
       case 'fedora':
-        return <SolutionFedora />
+        return <SolutionFedora />;
       case 'macos':
-        return <SolutionMacOS />
+        return <SolutionMacOS />;
       case 'qubes':
-        return <SolutionQubes />
+        return <SolutionQubes />;
       case 'ubuntu':
-        return <SolutionUbuntu />
+        return <SolutionUbuntu />;
       case 'windows':
-        return <SolutionWindows />
+        return <SolutionWindows />;
     }
   }
 
@@ -62,16 +57,31 @@ export class SolutionPage implements ComponentInterface {
       <section id="demo">
         <ResponsiveContainer>
           <div class="heading-group">
-            <Heading id="demo-heading" level={2}>{this.defaults.solutionPage.enterpriseSupport.title}</Heading>
-            <Paragraph>Get it done the easy way by leveraging our team of <b>{this.framework.name} experts</b>.</Paragraph>
+            <Heading id="demo-heading" level={2}>
+              {this.defaults.solutionPage.enterpriseSupport.title}
+            </Heading>
+            <Paragraph>
+              Get it done the easy way by leveraging our team of <b>{this.framework.name} experts</b>.
+            </Paragraph>
             <Paragraph>{this.defaults.solutionPage.enterpriseSupport.paragraph1}</Paragraph>
             <Paragraph>{this.defaults.solutionPage.enterpriseSupport.paragraph2}</Paragraph>
-            <Paragraph><b class="noshow-noscript">Use the form below to send us a message or ask questions about how {this.defaults.brandName} can help you with your specific needs.</b><noscript><b>Send an e-mail to <a href={'mailto:' + this.defaults.brandEmail}>{this.defaults.brandEmail}</a> with details on how we can help and we will respond to you in a timely fashion.</b></noscript></Paragraph>
+            <Paragraph>
+              <b class="noshow-noscript">
+                Use the form below to send us a message or ask questions about how {this.defaults.brandName} can help
+                you with your specific needs.
+              </b>
+              <noscript>
+                <b>
+                  Send an e-mail to <a href={'mailto:' + this.defaults.brandEmail}>{this.defaults.brandEmail}</a> with
+                  details on how we can help and we will respond to you in a timely fashion.
+                </b>
+              </noscript>
+            </Paragraph>
           </div>
           <capacitor-hubspot-form defaults={this.defaults} />
         </ResponsiveContainer>
       </section>
-    )
+    );
   };
 
   render() {
@@ -98,17 +108,10 @@ export class SolutionPage implements ComponentInterface {
               {this.framework.name} &amp; {this.defaults.brandName}
             </Heading>
             <Paragraph level={2}>
-              {this.defaults.solutionPage.subHeader.text1}{' '}
-              {this.framework.name}
-              {' '}
+              {this.defaults.solutionPage.subHeader.text1} {this.framework.name}{' '}
               {this.defaults.solutionPage.subHeader.text2}
             </Paragraph>
-            <Button
-              anchor
-              href="#install"
-              id="get-started"
-              style={{ '--button-background': this.framework.theme }}
-            >
+            <Button anchor href="#install" id="get-started" style={{ '--button-background': this.framework.theme }}>
               Get Started
             </Button>
           </div>
@@ -134,6 +137,6 @@ export class SolutionPage implements ComponentInterface {
         <pre-footer defaults={this.defaults} />
         <capacitor-site-footer defaults={this.defaults} />
       </Host>
-    )
+    );
   }
 }

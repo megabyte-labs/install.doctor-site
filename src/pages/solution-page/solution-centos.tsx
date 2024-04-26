@@ -1,9 +1,5 @@
-import { Fragment, h } from '@stencil/core'
-import {
-  ResponsiveContainer,
-  Heading,
-  Paragraph,
-} from 'ionic-ds-no-fonts'
+import { Fragment, h } from '@stencil/core';
+import { ResponsiveContainer, Heading, Paragraph } from 'ionic-ds-no-fonts';
 export const SolutionCentOS = () => {
   return (
     <Fragment>
@@ -14,16 +10,33 @@ export const SolutionCentOS = () => {
             What is CentOS and why should you provision it with Install Doctor?
           </Heading>
           <Paragraph class="quote-summary">
-            CentOS (Community Enterprise Operating System) is a popular Linux distribution that is based on the source code for Red Hat Enterprise Linux (RHEL). It is known for its stability, security, and long-term support, making it a popular choice for servers and other mission-critical applications. CentOS is maintained by the CentOS Project, which is a community-driven effort to develop and maintain the software.
+            CentOS (Community Enterprise Operating System) is a popular Linux distribution that is based on the source
+            code for Red Hat Enterprise Linux (RHEL). It is known for its stability, security, and long-term support,
+            making it a popular choice for servers and other mission-critical applications. CentOS is maintained by the
+            CentOS Project, which is a community-driven effort to develop and maintain the software.
           </Paragraph>
           <Paragraph class="quote-summary">
-            If you are provisioning CentOS, you would want to do it properly with an installation framework like Install Doctor. This is because the installation process for any operating system can be time-consuming and complex, especially if you are provisioning multiple systems. An installation framework like Install Doctor can automate many of the tasks involved in installing and configuring the operating system, making the process faster and more efficient.
+            If you are provisioning CentOS, you would want to do it properly with an installation framework like Install
+            Doctor. This is because the installation process for any operating system can be time-consuming and complex,
+            especially if you are provisioning multiple systems. An installation framework like Install Doctor can
+            automate many of the tasks involved in installing and configuring the operating system, making the process
+            faster and more efficient.
           </Paragraph>
           <Paragraph class="quote-summary">
-            Furthermore, Install Doctor is regularly tested on CentOS, which means that it is designed to work seamlessly with the operating system. It also handles many of the CentOS specific issues that people face while provisioning CentOS, such as package dependencies and kernel modules. This means that you can be confident that the installation process will be smooth and reliable, without any compatibility issues or other problems.
+            Furthermore, Install Doctor is regularly tested on CentOS, which means that it is designed to work
+            seamlessly with the operating system. It also handles many of the CentOS specific issues that people face
+            while provisioning CentOS, such as package dependencies and kernel modules. This means that you can be
+            confident that the installation process will be smooth and reliable, without any compatibility issues or
+            other problems.
           </Paragraph>
           <Paragraph class="quote-summary">
-            In summary, CentOS is a popular Linux distribution that is known for its stability, security, and long-term support. If you are provisioning CentOS, you would want to do it properly with an installation framework like Install Doctor. Install Doctor is regularly tested on CentOS and is designed to work seamlessly with the operating system. It can automate many of the tasks involved in installing and configuring the operating system, making the process faster and more efficient. Additionally, Install Doctor handles many of the CentOS specific issues that people face while provisioning CentOS, which makes it an ideal tool for provisioning CentOS systems.
+            In summary, CentOS is a popular Linux distribution that is known for its stability, security, and long-term
+            support. If you are provisioning CentOS, you would want to do it properly with an installation framework
+            like Install Doctor. Install Doctor is regularly tested on CentOS and is designed to work seamlessly with
+            the operating system. It can automate many of the tasks involved in installing and configuring the operating
+            system, making the process faster and more efficient. Additionally, Install Doctor handles many of the
+            CentOS specific issues that people face while provisioning CentOS, which makes it an ideal tool for
+            provisioning CentOS systems.
           </Paragraph>
         </div>
       </ResponsiveContainer>
@@ -35,7 +48,8 @@ export const SolutionCentOS = () => {
               Provision CentOS.
             </Heading>
             <Paragraph>
-              Interactively provision CentOS with a feature-packed terminal, slick theme, and a configurable list of software.
+              Interactively provision CentOS with a feature-packed terminal, slick theme, and a configurable list of
+              software.
             </Paragraph>
           </div>
           <div class="code-panel">
@@ -87,7 +101,8 @@ bash <(curl -sSL https://install.doctor/start)
               />
             </div>
             <Paragraph>
-              Launch a suite of web services via Docker Swarm and KubeSphere. Access all your machines over a VPN subnet (via Tailscale) and host SSO-protected web apps (via CloudFlare Teams).
+              Launch a suite of web services via Docker Swarm and KubeSphere. Access all your machines over a VPN subnet
+              (via Tailscale) and host SSO-protected web apps (via CloudFlare Teams).
             </Paragraph>
           </div>
           <div class="code-panel">
@@ -103,9 +118,7 @@ run setup:webapps
         <article class="step">
           <sup class="ui-heading-6">03</sup>
           <div class="heading-group">
-            <Heading level={3}>
-              Launch and provision VMs.
-            </Heading>
+            <Heading level={3}>Launch and provision VMs.</Heading>
             <div class="platforms">
               <img
                 loading="lazy"
@@ -149,7 +162,8 @@ run setup:webapps
               />
             </div>
             <Paragraph>
-              Create Archlinux, CentOS, Debian, Fedora, macOS, Ubuntu, and Windows VMs using almost any virtualization platform. Create disposable environments, improve security, and run macOS / Windows.
+              Create Archlinux, CentOS, Debian, Fedora, macOS, Ubuntu, and Windows VMs using almost any virtualization
+              platform. Create disposable environments, improve security, and run macOS / Windows.
             </Paragraph>
           </div>
           <div class="code-panel">
@@ -163,5 +177,5 @@ run setup:vms
         </article>
       </ResponsiveContainer>
     </Fragment>
-  )
-}
+  );
+};

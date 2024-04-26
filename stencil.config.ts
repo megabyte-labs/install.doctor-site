@@ -24,70 +24,70 @@ export const config: Config = {
           '**/assets/img/{blog,community,enterprise,heading,landing,solutions}/**.webp',
           '**/docs/img/*.{svg,webp}',
           '**/docs/img/**/*.{svg,webp}',
-          '**/build/svg/{logo-github,close,logo-gitlab,logo-slack,logo-discord,logo-facebook,logo-twitter,logo-linkedin,logo-youtube,send,information-circle-outline,chatbubbles-sharp,link,mail,navigate,checkmark-circle}.svg'
-        ]
+          '**/build/svg/{logo-github,close,logo-gitlab,logo-slack,logo-discord,logo-facebook,logo-twitter,logo-linkedin,logo-youtube,send,information-circle-outline,chatbubbles-sharp,link,mail,navigate,checkmark-circle}.svg',
+        ],
       },
       copy: [
         {
           src: '../docs/build',
-          dest: 'docs'
+          dest: 'docs',
         },
         {
           src: './android-chrome-192x192.png',
-          dest: 'android-chrome-192x192.png'
+          dest: 'android-chrome-192x192.png',
         },
         {
           src: './android-chrome-512x512.png',
-          dest: 'android-chrome-512x512.png'
+          dest: 'android-chrome-512x512.png',
         },
         {
           src: './apple-touch-icon.png',
-          dest: 'apple-touch-icon.png'
+          dest: 'apple-touch-icon.png',
         },
         {
           src: './browserconfig.xml',
-          dest: 'browserconfig.xml'
+          dest: 'browserconfig.xml',
         },
         {
           src: './favicon-16x16.png',
-          dest: 'favicon-16x16.png'
+          dest: 'favicon-16x16.png',
         },
         {
           src: './favicon-32x32.png',
-          dest: 'favicon-32x32.png'
+          dest: 'favicon-32x32.png',
         },
         {
           src: './favicon.ico',
-          dest: 'favicon.ico'
+          dest: 'favicon.ico',
         },
         {
           src: './mstile-150x150.png',
-          dest: 'mstile-150x150.png'
+          dest: 'mstile-150x150.png',
         },
         {
           src: './safari-pinned-tab.svg',
-          dest: 'safari-pinned-tab.svg'
+          dest: 'safari-pinned-tab.svg',
         },
         {
           src: './sitemap_index.xml',
-          dest: 'sitemap_index.xml'
+          dest: 'sitemap_index.xml',
         },
         {
           src: './robots.txt',
-          dest: 'robots.txt'
+          dest: 'robots.txt',
         },
         {
           src: './ads.txt',
-          dest: 'ads.txt'
+          dest: 'ads.txt',
         },
         {
           src: './humans.txt',
-          dest: 'humans.txt'
+          dest: 'humans.txt',
         },
         {
           src: './site-noscript.css',
-          dest: 'site-noscript.css'
-        }
+          dest: 'site-noscript.css',
+        },
       ],
     },
   ],

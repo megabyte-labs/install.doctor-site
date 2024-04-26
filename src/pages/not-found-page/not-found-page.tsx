@@ -1,13 +1,13 @@
-import { Component, Host, h, Prop } from '@stencil/core'
-import { ResponsiveContainer, Heading, Paragraph } from 'ionic-ds-no-fonts'
-import { href } from '@stencil/router'
-import { defaults } from 'src/store'
+import { Component, Host, h, Prop } from '@stencil/core';
+import { ResponsiveContainer, Heading, Paragraph } from 'ionic-ds-no-fonts';
+import { href } from '@stencil/router';
+import { defaults } from 'src/store';
 
-declare let RS_MODULES: any
-declare let window: any
-declare let revapi4: any
-declare let jQuery: any
-declare let revslider_showDoubleJqueryError: any
+declare let RS_MODULES: any;
+declare let window: any;
+declare let revapi4: any;
+declare let jQuery: any;
+declare let revslider_showDoubleJqueryError: any;
 
 @Component({
   tag: 'not-found-page',
@@ -15,10 +15,10 @@ declare let revslider_showDoubleJqueryError: any
   scoped: true,
 })
 export class NotFoundPage {
-  @Prop() defaults: typeof defaults
+  @Prop() defaults: typeof defaults;
 
   render() {
-    const { NotFoundSimple } = this
+    const { NotFoundSimple } = this;
 
     return (
       <Host>
@@ -35,14 +35,14 @@ export class NotFoundPage {
         <pre-footer defaults={this.defaults} />
         <capacitor-site-footer defaults={this.defaults} />
       </Host>
-    )
+    );
   }
 
   NotFoundAnimated = () => (
     <ResponsiveContainer id="not-found" as="section">
       <iframe></iframe>
     </ResponsiveContainer>
-  )
+  );
 
   NotFoundSimple = () => (
     <ResponsiveContainer id="not-found" as="section">
@@ -51,7 +51,14 @@ export class NotFoundPage {
       </Heading>
       <Paragraph class="top-text">
         Houston, we have a problem! This URL does not link to an existing page. You might want to start with the{' '}
-        <a class="underline-hover link" {...href('/')}>home page</a> or go to the <a class="underline-hover link" href="/docs">documentation portal</a> welcome page.
+        <a class="underline-hover link" {...href('/')}>
+          home page
+        </a>{' '}
+        or go to the{' '}
+        <a class="underline-hover link" href="/docs">
+          documentation portal
+        </a>{' '}
+        welcome page.
       </Paragraph>
       <webp-image alt="404 not found graphic" src="/assets/img/404.png" loading="eager"></webp-image>
     </ResponsiveContainer>

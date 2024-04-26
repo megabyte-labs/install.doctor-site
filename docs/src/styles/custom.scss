@@ -25,13 +25,13 @@
 @use './components/toc';
 
 :root {
-  --f-display: Inter, "Inter UI", Helvetica, Arial, sans-serif;
-  --f-text: Inter, "Inter UI", Helvetica, Arial, sans-serif;
-  --f-system: Inter, "Inter UI", Helvetica, Arial, sans-serif;
-  --f-monospace: "Roboto Mono", Menlo, monospace;
-  --f-serif: Inter, "Inter UI", Helvetica, Arial, sans-serif;
-  --f-pro: Inter, "Inter UI", Helvetica, Arial, sans-serif;
-  --f-pro-mono: "Roboto Mono", "SF Mono", Menlo, monospace;
+  --f-display: Inter, 'Inter UI', Helvetica, Arial, sans-serif;
+  --f-text: Inter, 'Inter UI', Helvetica, Arial, sans-serif;
+  --f-system: Inter, 'Inter UI', Helvetica, Arial, sans-serif;
+  --f-monospace: 'Roboto Mono', Menlo, monospace;
+  --f-serif: Inter, 'Inter UI', Helvetica, Arial, sans-serif;
+  --f-pro: Inter, 'Inter UI', Helvetica, Arial, sans-serif;
+  --f-pro-mono: 'Roboto Mono', 'SF Mono', Menlo, monospace;
   --f-weight-light: 300;
   --f-weight-regular: 400;
   --f-weight-medium: 500;
@@ -42,47 +42,47 @@
   --f-size-12: 0.75rem;
   --f-size-13: 0.8125rem;
   --f-size-14: 0.875rem;
-  --f-size-16: 1.00rem;
+  --f-size-16: 1rem;
   --f-size-20: 1.25rem;
-  --f-size-24: 1.50rem;
+  --f-size-24: 1.5rem;
   --f-size-28: 1.75rem;
-  --f-size-32: 2.00rem;
-  --f-size-40: 2.50rem;
-  --f-size-48: 3.00rem;
-  --f-size-56: 3.50rem;
-  --f-size-64: 4.00rem;
-  --f-size-72: 4.50rem;
-  --f-size-80: 5.00rem;
-  --f-size-88: 5.50rem;
-  --f-size-96: 6.00rem;
+  --f-size-32: 2rem;
+  --f-size-40: 2.5rem;
+  --f-size-48: 3rem;
+  --f-size-56: 3.5rem;
+  --f-size-64: 4rem;
+  --f-size-72: 4.5rem;
+  --f-size-80: 5rem;
+  --f-size-88: 5.5rem;
+  --f-size-96: 6rem;
   --line-height-solid: 1;
   --line-height-title: 1.12;
   --line-height-body: 1.6;
   --line-height-prose: 1.8;
   --letter-spacing-dense: -0.04em;
   --letter-spacing-tight: -0.02em;
-  --letter-spacing-solid: 0.00em;
+  --letter-spacing-solid: 0em;
   --letter-spacing-wide: 0.04em;
   --letter-spacing-super: 0.08em;
   --letter-spacing-extra: 0.16em;
   --space-0: 0rem;
   --space-4: 0.25rem;
-  --space-8: 0.50rem;
+  --space-8: 0.5rem;
   --space-12: 0.75rem;
-  --space-16: 1.00rem;
+  --space-16: 1rem;
   --space-20: 1.25rem;
   --space-24: 1.5rem;
-  --space-32: 2.00rem;
-  --space-40: 2.50rem;
-  --space-48: 3.00rem;
-  --space-64: 4.00rem;
-  --space-80: 5.00rem;
-  --space-96: 6.00rem;
-  --space-128: 8.00rem;
-  --space-160: 10.00rem;
-  --space-192: 12.00rem;
-  --space-224: 14.00rem;
-  --space-256: 16.00rem;
+  --space-32: 2rem;
+  --space-40: 2.5rem;
+  --space-48: 3rem;
+  --space-64: 4rem;
+  --space-80: 5rem;
+  --space-96: 6rem;
+  --space-128: 8rem;
+  --space-160: 10rem;
+  --space-192: 12rem;
+  --space-224: 14rem;
+  --space-256: 16rem;
   --breakpoint-0: 40em;
   --breakpoint-1: 48em;
   --breakpoint-2: 64em;
@@ -280,8 +280,8 @@
   --ifm-navbar-padding-vertical: 0;
   --ifm-navbar-item-padding-vertical: 0;
 
-  --ifm-font-family-base: Inter, "Inter UI", Helvetica, Arial, sans-serif;
-  --ifm-font-family-monospace: Inter, "Inter UI", Helvetica, Arial, sans-serif;
+  --ifm-font-family-base: Inter, 'Inter UI', Helvetica, Arial, sans-serif;
+  --ifm-font-family-monospace: Inter, 'Inter UI', Helvetica, Arial, sans-serif;
 
   --ifm-menu-link-sublist-icon: url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTAiIGhlaWdodD0iNiIgdmlld0JveD0iMCAwIDEwIDYiIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CjxwYXRoIGQ9Ik04Ljk5OTg4IDVMNC45OTk4OCAxTDAuOTk5ODc4IDUiIHN0cm9rZT0iIzAzMDYwQiIgc3Ryb2tlLXdpZHRoPSIxLjUiIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIgc3Ryb2tlLWxpbmVqb2luPSJyb3VuZCIvPgo8L3N2Zz4K');
 
@@ -373,7 +373,7 @@ figure {
   margin: 0;
 }
 
-figure>* {
+figure > * {
   display: block;
   margin: 0 auto;
 }
@@ -435,7 +435,7 @@ iframe {
   }
 }
 
-.main-wrapper>div>aside>a>img {
+.main-wrapper > div > aside > a > img {
   position: relative;
   position: relative;
   top: 2px;
@@ -443,7 +443,7 @@ iframe {
   width: 180px;
 }
 
-.navbar__logo>img {
+.navbar__logo > img {
   position: relative;
   top: 2px;
   left: 4px;
@@ -524,7 +524,7 @@ main article {
 .markdown p a::after,
 .toc-wrapper .table-of-contents a::after,
 .toc-wrapper a.theme-edit-this-page::after {
-  content: "";
+  content: '';
   position: absolute;
   display: inline-block;
   z-index: 1;
@@ -533,8 +533,8 @@ main article {
   bottom: 0;
   background: #119eff !important;
   height: 1px;
-  transition-property: left,right;
-  transition-duration: .3s;
+  transition-property: left, right;
+  transition-duration: 0.3s;
   transition-timing-function: ease-out;
 }
 
@@ -629,7 +629,7 @@ a.pagination-nav__link {
 a.pagination-nav__link:hover {
   background-color: var(--c-indigo-10);
   > .pagination-nav__label::after,
-  > .pagination-nav__label::before, {
+  > .pagination-nav__label::before {
     background-color: var(--c-indigo-10) !important;
   }
 }
@@ -648,12 +648,13 @@ body {
 }
 
 a:focus {
-  outline: -webkit-focus-ring-color auto 1px;;
+  outline: -webkit-focus-ring-color auto 1px;
   box-shadow: 0px 0px 0px 3px #c2d8ff !important;
   border-radius: 3px;
 }
 
-.navbar a:focus, aside a:focus {
+.navbar a:focus,
+aside a:focus {
   outline: none;
   box-shadow: none !important;
 }
@@ -687,6 +688,5 @@ a:focus {
 
 aside > a {
   border-radius: inherit !important;
-    box-shadow: none !important;
+  box-shadow: none !important;
 }
-

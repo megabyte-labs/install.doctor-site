@@ -5,26 +5,26 @@
  * LICENSE file in the root directory of this source tree.
  */
 
-import React from 'react'
-import clsx from 'clsx'
-import useWindowSize from '@theme/hooks/useWindowSize'
-import DocPaginator from '@theme/DocPaginator'
-import DocVersionBanner from '@theme/DocVersionBanner'
-import Seo from '@theme/Seo'
-import type { Props } from '@theme/DocItem'
-import DocItemFooter from '@theme/DocItemFooter'
-import TOC from '@theme/TOC'
-import TOCCollapsible from '@theme/TOCCollapsible'
-import { MainHeading } from '@theme/Heading'
-import styles from './styles.module.css'
-import { ThemeClassNames } from '@docusaurus/theme-common'
+import React from 'react';
+import clsx from 'clsx';
+import useWindowSize from '@theme/hooks/useWindowSize';
+import DocPaginator from '@theme/DocPaginator';
+import DocVersionBanner from '@theme/DocVersionBanner';
+import Seo from '@theme/Seo';
+import type { Props } from '@theme/DocItem';
+import DocItemFooter from '@theme/DocItemFooter';
+import TOC from '@theme/TOC';
+import TOCCollapsible from '@theme/TOCCollapsible';
+import { MainHeading } from '@theme/Heading';
+import styles from './styles.module.css';
+import { ThemeClassNames } from '@docusaurus/theme-common';
 
 // CUSTOM CODE
-import DocDemo from '@components/global/DocDemo'
+import DocDemo from '@components/global/DocDemo';
 
 export default function DocItem(props: Props): JSX.Element {
-  const { content: DocContent, versionMetadata } = props
-  const { metadata, frontMatter } = DocContent
+  const { content: DocContent, versionMetadata } = props;
+  const { metadata, frontMatter } = DocContent;
   const {
     image,
     keywords,
@@ -40,27 +40,26 @@ export default function DocItem(props: Props): JSX.Element {
     demoUrl,
     demoSourceUrl,
     //#endregion
-  } = frontMatter
+  } = frontMatter;
 
   //#region --------- CUSTOM CODE ---------
-  const { metadata: { editUrl } } = DocContent
+  const {
+    metadata: { editUrl },
+  } = DocContent;
   //#endregion
 
-  const { description, title } = metadata
+  const { description, title } = metadata;
 
   // We only add a title if:
   // - user asks to hide it with frontmatter
   // - the markdown content does not already contain a top-level h1 heading
-  const shouldAddTitle =
-    !hideTitle && typeof DocContent.contentTitle === 'undefined'
+  const shouldAddTitle = !hideTitle && typeof DocContent.contentTitle === 'undefined';
 
-  const windowSize = useWindowSize()
+  const windowSize = useWindowSize();
 
-  const canRenderTOC =
-    !hideTableOfContents && DocContent.toc && DocContent.toc.length > 0
+  const canRenderTOC = !hideTableOfContents && DocContent.toc && DocContent.toc.length > 0;
 
-  const renderTocDesktop =
-    canRenderTOC && (windowSize === 'desktop' || windowSize === 'ssr')
+  const renderTocDesktop = canRenderTOC && (windowSize === 'desktop' || windowSize === 'ssr');
 
   return (
     <>
@@ -69,7 +68,8 @@ export default function DocItem(props: Props): JSX.Element {
         <div
           className={clsx('col', {
             [styles.docItemCol]: !hideTableOfContents,
-          })}>
+          })}
+        >
           <DocVersionBanner versionMetadata={versionMetadata} />
           <div className={styles.docItemContainer}>
             <article>
@@ -82,13 +82,10 @@ export default function DocItem(props: Props): JSX.Element {
                       <img src={topBanner} alt={topBannerAlt} />
                     </picture>
                   </div>
-                </div>)}
+                </div>
+              )}
               {versionMetadata.badge && (
-                <span
-                  className={clsx(
-                    ThemeClassNames.docs.docVersionBadge,
-                    'badge badge--secondary',
-                  )}>
+                <span className={clsx(ThemeClassNames.docs.docVersionBadge, 'badge badge--secondary')}>
                   Version: {versionMetadata.label}
                 </span>
               )}
@@ -98,15 +95,11 @@ export default function DocItem(props: Props): JSX.Element {
                   toc={DocContent.toc}
                   minHeadingLevel={tocMinHeadingLevel}
                   maxHeadingLevel={tocMaxHeadingLevel}
-                  className={clsx(
-                    ThemeClassNames.docs.docTocMobile,
-                    styles.tocMobile,
-                  )}
+                  className={clsx(ThemeClassNames.docs.docTocMobile, styles.tocMobile)}
                 />
               )}
 
-              <div
-                className={clsx(ThemeClassNames.docs.docMarkdown, 'markdown')}>
+              <div className={clsx(ThemeClassNames.docs.docMarkdown, 'markdown')}>
                 {/*
                 Title can be declared inside md content or declared through frontmatter and added manually
                 To make both cases consistent, the added title is added under the same div.markdown block
@@ -114,7 +107,12 @@ export default function DocItem(props: Props): JSX.Element {
                 */}
                 {shouldAddTitle && <MainHeading>{title}</MainHeading>}
                 {githubLocation && repoLocation && (
-                  <p><strong>View / Edit on GitHub:</strong> <a href={githubLocation} rel="noopener" target="_blank"><code>{repoLocation}</code></a></p>
+                  <p>
+                    <strong>View / Edit on GitHub:</strong>{' '}
+                    <a href={githubLocation} rel="noopener" target="_blank">
+                      <code>{repoLocation}</code>
+                    </a>
+                  </p>
                 )}
                 <DocContent />
               </div>
@@ -129,14 +127,9 @@ export default function DocItem(props: Props): JSX.Element {
           <div className="spacer"></div>
           {/* ---------------------------- */}
 
-
           {/* ------- CUSTOM CODE -------- */}
           {demoUrl && (
-            <div
-              className={clsx(
-                'doc-demo-wrapper'
-              )}
-            >
+            <div className={clsx('doc-demo-wrapper')}>
               <DocDemo url={demoUrl} source={demoSourceUrl} />
             </div>
           )}
@@ -166,8 +159,7 @@ export default function DocItem(props: Props): JSX.Element {
           )}
         </div>
         {/* -------------- */}
-
       </div>
     </>
-  )
+  );
 }

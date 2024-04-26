@@ -12,11 +12,11 @@ export const importResource = (
     async?: boolean;
     defer?: boolean;
   },
-  callback: () => any,
+  callback: () => any
 ) => {
   if (hasGlobalProperty(propertyName)) return callback();
 
-  const scriptAlreadyLoading = Array.from(document.scripts).some(script => {
+  const scriptAlreadyLoading = Array.from(document.scripts).some((script) => {
     if (script.src === link) {
       script.addEventListener('load', callback);
       return true;

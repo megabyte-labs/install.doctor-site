@@ -1,5 +1,5 @@
-import { Component, h, Element, State, Host, Prop } from '@stencil/core'
-import { IntersectionHelper, Breadcrumbs } from 'ionic-ds-no-fonts'
+import { Component, h, Element, State, Host, Prop } from '@stencil/core';
+import { IntersectionHelper, Breadcrumbs } from 'ionic-ds-no-fonts';
 
 @Component({
   tag: 'blog-subnav',
@@ -7,7 +7,7 @@ import { IntersectionHelper, Breadcrumbs } from 'ionic-ds-no-fonts'
   scoped: true,
 })
 export class BlogSubnav {
-  @Element() el?: HTMLElement
+  @Element() el?: HTMLElement;
   @State() sticky = false;
   @State() open = false;
   @Prop() breadcrumbs: [string, string][] = [];
@@ -16,24 +16,24 @@ export class BlogSubnav {
 
   componentDidLoad() {
     IntersectionHelper.addListener(({ entries }) => {
-      const e = entries.find(e => (e.target as HTMLElement) === this.el)
+      const e = entries.find((e) => (e.target as HTMLElement) === this.el);
       if (!e) {
-        return
+        return;
       }
 
       if (e.intersectionRatio < 1) {
-        this.sticky = true
+        this.sticky = true;
       } else {
-        this.sticky = false
+        this.sticky = false;
       }
-    })
-    IntersectionHelper.observe(this.el!)
+    });
+    IntersectionHelper.observe(this.el!);
   }
 
   render = () => (
     <Host
       class={{
-        'sticky': this.sticky,
+        sticky: this.sticky,
         'ui-container': true,
       }}
     >

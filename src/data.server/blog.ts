@@ -27,12 +27,12 @@ export const getAllBlogData: any = async () => {
   const fileNames = fs.readdirSync(blogDir);
 
   await Promise.all(
-    fileNames.map(async file => {
+    fileNames.map(async (file) => {
       const fileName = file.split('.')[0];
       const page = await getFormattedData(fileName, true);
 
       results.push(page);
-    }),
+    })
   );
 
   results.sort((a: BlogData, b: BlogData) => {
@@ -56,9 +56,7 @@ const getFormattedData = async (slug: string, preview = false) => {
   const authorString = results.attributes.author;
   const emailIndex = authorString.indexOf('<');
   results.authorName = authorString.slice(0, emailIndex).trim();
-  results.authorEmail = authorString
-    .slice(emailIndex + 1, authorString.indexOf('>'))
-    .trim();
+  results.authorEmail = authorString.slice(emailIndex + 1, authorString.indexOf('>')).trim();
   results.authorUrl = results.attributes.authorUrl;
   results.tags = results.attributes.tags;
   results.authorImageName = results.attributes.authorImageName;
@@ -68,7 +66,7 @@ const getFormattedData = async (slug: string, preview = false) => {
   if (results.attributes.modifiedDate) {
     results.modifiedDate = new Date(results.attributes.modifiedDate).toISOString();
   } else {
-    results.modifiedDate = false
+    results.modifiedDate = false;
   }
 
   results.featuredImage = results.attributes.featuredImage;
@@ -80,7 +78,7 @@ const getFormattedData = async (slug: string, preview = false) => {
 
   results = updateAnchors(results, slug);
 
-  results.announcement_bar = null
+  results.announcement_bar = null;
 
   return results;
 };
@@ -122,7 +120,7 @@ const updateAnchorJsx = (node: JsxAstNode, slug: string) => {
 };
 
 const hasPreviewMarker = (ast: JsxAstNode[]) => {
-  const hasPreview = ast.find(item => item[0] === 'preview-end');
+  const hasPreview = ast.find((item) => item[0] === 'preview-end');
 
   return !!hasPreview;
 };
@@ -141,7 +139,7 @@ const getParseOpts = (slug: string, preview: boolean) => {
           //   h1.parentNode.replaceChild(h1, h2);
           // });
 
-          notInPreview.forEach(el => el.remove());
+          notInPreview.forEach((el) => el.remove());
 
           hookUpDesignSystem(frag);
           interpolatePostLink(frag, slug);
@@ -164,13 +162,11 @@ const getParseOpts = (slug: string, preview: boolean) => {
 
 export const hookUpDesignSystem = (frag: DocumentFragment) => {
   const headings = frag.querySelectorAll('h1, h2, h3, h4, h5, h6');
-  const paragraphs = frag.querySelectorAll(
-    'p:not([class*="ui-paragraph"]):not([class*="ui-heading"])',
-  );
-  const links = frag.querySelectorAll('a')
+  const paragraphs = frag.querySelectorAll('p:not([class*="ui-paragraph"]):not([class*="ui-heading"])');
+  const links = frag.querySelectorAll('a');
   const listsItems = frag.querySelectorAll('ul li, ol li');
 
-  headings.forEach(heading => {
+  headings.forEach((heading) => {
     const level = heading.nodeName?.split('')[1];
 
     heading.classList.add(`ui-heading`);
@@ -178,22 +174,22 @@ export const hookUpDesignSystem = (frag: DocumentFragment) => {
     heading.classList.add(`ui-theme--editorial`);
   });
 
-  paragraphs.forEach(paragraph => {
+  paragraphs.forEach((paragraph) => {
     paragraph.classList.add(`ui-paragraph`);
     paragraph.classList.add(`ui-paragraph--prose`);
     paragraph.classList.add(`ui-paragraph-3`);
   });
 
-  listsItems.forEach(paragraph => {
+  listsItems.forEach((paragraph) => {
     paragraph.classList.add(`ui-paragraph`);
     paragraph.classList.add(`ui-paragraph--prose`);
     paragraph.classList.add(`ui-paragraph-3`);
   });
 
-  links.forEach(link => {
-    link.rel = 'noopener'
-    link.target = '_blank'
-  })
+  links.forEach((link) => {
+    link.rel = 'noopener';
+    link.target = '_blank';
+  });
 
   return frag;
 };
@@ -201,8 +197,8 @@ export const hookUpDesignSystem = (frag: DocumentFragment) => {
 export const interpolatePostLink = (frag: DocumentFragment, slug: string) => {
   const links = frag.querySelectorAll('a');
 
-  links.forEach(link => {
+  links.forEach((link) => {
     link.href = link.href.replace('$POST', `/blog/${slug}`);
-    link.target = '_blank'
+    link.target = '_blank';
   });
 };

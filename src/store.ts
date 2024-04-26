@@ -122,7 +122,8 @@ export const defaults = {
         'Read about all things related to Install Doctor. Find information about Kubernetes, Docker, virtualization, CLIs, and other tools included in the Install Doctor stack.',
     },
     title: 'Install Doctor Blog',
-    subheader: 'Explore engaging articles from the Install Doctor dream team and thriving community! Learn about amazing free open-source software and how to integrate your workflow with the cloud.',
+    subheader:
+      'Explore engaging articles from the Install Doctor dream team and thriving community! Learn about amazing free open-source software and how to integrate your workflow with the cloud.',
   },
   solutionPage: {
     meta: {
@@ -284,7 +285,7 @@ export const defaults = {
     matrix: 'https://app.element.io/#/room/#install.doctor:matrix.org',
     pinterest: 'https://www.pinterest.com/InstallDoc/',
     instagram: 'https://www.instagram.com/installdoctor/',
-    threads: 'https://www.threads.net/@installdoctor'
+    threads: 'https://www.threads.net/@installdoctor',
   },
 };
 
@@ -380,7 +381,7 @@ export const LandingPageData = {
       number: '07',
       title: 'Configure once, deploy headlessly in the future.',
       text: 'Some settings are not easily stored in code, like Google Chrome extension settings. Other settings are sensitive and should be encrypted (like API keys). Install Doctor allows you to store these settings in a secure, encrypted files that can be decrypted during the provisioning process. This way, you can keep your settings secure and your provisioning process automated after you are satisfied with your application settings.',
-    }
+    },
   ],
   ebook: [
     {
@@ -713,7 +714,7 @@ export const LandingPageData = {
           type: 'hyperlink',
           data: {
             link_type: 'Web',
-            url: 'https://install.doctor/solution/fedora'
+            url: 'https://install.doctor/solution/fedora',
           },
         },
         {
@@ -1030,8 +1031,7 @@ export const EnterprisePageData = {
           text: 'Unlock enterprise-grade security and support',
         },
       ],
-      subtext:
-        `Boost your team's performance and streamline their workflow by equipping them with top-tier, enterprise-grade tools and services. Elevate their productivity and ensure success with the right resources at their fingertips.`,
+      subtext: `Boost your team's performance and streamline their workflow by equipping them with top-tier, enterprise-grade tools and services. Elevate their productivity and ensure success with the right resources at their fingertips.`,
     },
   ],
   native__list: [
@@ -1481,7 +1481,7 @@ export const CommunityPageData = {
         {
           type: 'paragraph',
           spans: [],
-          text: "Dive into our GitHub Discussions for updates, ideas, polls, Q&A, and user examples of Install Doctor implementations. Join the conversation and get inspired!",
+          text: 'Dive into our GitHub Discussions for updates, ideas, polls, Q&A, and user examples of Install Doctor implementations. Join the conversation and get inspired!',
         },
       ],
       link: {
@@ -1506,7 +1506,7 @@ export const CommunityPageData = {
         {
           type: 'paragraph',
           spans: [],
-          text: 'Join our Install Doctor matrix chat room on Matrix. Whether you have questions or want to help others, we\'re here for you!',
+          text: "Join our Install Doctor matrix chat room on Matrix. Whether you have questions or want to help others, we're here for you!",
         },
       ],
       link: {

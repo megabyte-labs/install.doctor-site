@@ -15,9 +15,7 @@ export class CodeTabs {
   private tabsHandler = {
     set: (obj: tabsProps, prop: string, value: HTMLElement) => {
       if (prop === '0') {
-        value.offsetWidth === 0
-          ? this.setResizeObserver(value)
-          : this.setActive(value);
+        value.offsetWidth === 0 ? this.setResizeObserver(value) : this.setActive(value);
       }
       obj[prop] = value;
       return true;
@@ -39,7 +37,7 @@ export class CodeTabs {
   @State() codeLeft;
 
   setResizeObserver(el: HTMLElement) {
-    const resizeObserver = new ResizeObserver(entries => {
+    const resizeObserver = new ResizeObserver((entries) => {
       for (const entry of entries) {
         if (entry.contentRect.width > 0) {
           this.setActive(el);
@@ -86,8 +84,8 @@ export class CodeTabs {
                 class={{
                   active: this.activeTab.index === i,
                 }}
-                ref={el => !this.tabs.hasOwnProperty(i) && (this.tabs[i] = el)}
-                onClick={ev => {
+                ref={(el) => !this.tabs.hasOwnProperty(i) && (this.tabs[i] = el)}
+                onClick={(ev) => {
                   this.activeTab.index = i;
                   this.handleTabSelect(ev);
                 }}
@@ -102,11 +100,7 @@ export class CodeTabs {
             {this.data.code.map((code, i) => (
               <article>
                 <code-snippet
-                  language={
-                    this.data.languages.length === 1
-                      ? this.data.languages[0]
-                      : this.data.languages[i]
-                  }
+                  language={this.data.languages.length === 1 ? this.data.languages[0] : this.data.languages[i]}
                   code={code}
                 />
               </article>

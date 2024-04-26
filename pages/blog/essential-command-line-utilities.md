@@ -1,5 +1,5 @@
 ---
-title: "Elevating Workflows: 11 Essential Command-Line Utilities"
+title: 'Elevating Workflows: 11 Essential Command-Line Utilities'
 slug: essential-command-line-utilities
 date: 2024-02-24 14:00:00
 author: Brian Zalewski <brian@megabyte.space>
@@ -11,23 +11,23 @@ description: Optimize your open-source GitHub workflow by reading through this r
 featuredImage: /essential-command-line-utilities.png
 featuredImageAlt: Essential Command-Line Utilities featured image
 tags:
-    - aicommits
-    - bat
-    - chezmoi
-    - cloudflared
-    - dockerslim
-    - mise
-    - opencommit
-    - sgpt
-    - volta
-    - wifi-password
-    - zoxide
-    - zx
+  - aicommits
+  - bat
+  - chezmoi
+  - cloudflared
+  - dockerslim
+  - mise
+  - opencommit
+  - sgpt
+  - volta
+  - wifi-password
+  - zoxide
+  - zx
 categories:
-    - CLI
+  - CLI
 draft: false
 keywords:
-    - terminal
+  - terminal
 ---
 
 The command-line interface is a powerhouse for software developers and system administrators, offering tools that streamline operations, boost efficiency, and simplify complex tasks. This guide focuses on a select group of command-line utilities that are indispensable for GitHub power users. This list is all-encompassing by no means but, rather, a list of some of my top picks. Embracing these tools can significantly enhance your operational capabilities and enjoyment in daily tasks.
@@ -62,14 +62,14 @@ The command-line interface is a powerhouse for software developers and system ad
 
 **Quick Folder Access**: `zoxide` revolutionizes directory navigation by enabling quick access to frequently used folders with just parts of their names, drastically reducing the time spent navigating file systems. After including `zoxide` initialization code into your `~/.bashrc` or `~/.zshrc` file, `zoxide` will remember folders you have been to and allow you to `cd` to them by using partial paths / folder names. In other words, `cd ~/.local/share/chezmoi/home/dot_config` becomes `z dot_config`.
 
-There are several other competeting packages like [`autojump`](https://github.com/wting/autojump) but `zoxide` is written in Rust (i.e. it is *fast*) and it is very well-received by the community.
+There are several other competeting packages like [`autojump`](https://github.com/wting/autojump) but `zoxide` is written in Rust (i.e. it is _fast_) and it is very well-received by the community.
 
 ### 6. Scripting Made Easy with [`zx`](https://github.com/google/zx)
 
 **JavaScript Meets Shell Scripting**: ZX, a Google product, enhances shell scripting by allowing the incorporation of JavaScript/TypeScript alongside shell scripting commands, making scripts more readable and maintainable. It combines several useful packages for creating scripts (like NPM-based progress spinners and prompt packages) into an executable that can be invoked by running `zx myscript.js`. It handles all this by allowing you to Promisify shell commands so they look more like this:
 
 ```javascript
-await $`echo "Heyyy yooo"`
+await $`echo "Heyyy yooo"`;
 ```
 
 Install Doctor utilizes ZX to handle the installation of software on multiple different platforms as well as handle the execution of package-dependent post-installation scripts. Check out the [`installx`](https://github.com/megabyte-labs/install.doctor/blob/master/home/dot_local/bin/executable_installx) executable in our GitHub repository to see how we handle installations on so many different operating systems.
@@ -109,7 +109,7 @@ done
 echo "All done!"
 ```
 
-*Note: Just like the ChatGPT auto-commit generators, this package requires you to specify an OpenAI API key as an environment variable.*
+_Note: Just like the ChatGPT auto-commit generators, this package requires you to specify an OpenAI API key as an environment variable._
 
 ### 11. Secure Connections with [`cloudflared`](https://github.com/cloudflare/cloudflared)
 

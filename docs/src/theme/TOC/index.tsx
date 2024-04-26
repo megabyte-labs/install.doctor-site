@@ -1,22 +1,22 @@
-import { useLocation } from '@docusaurus/router'
-import { usePluginData } from '@docusaurus/useGlobalData'
-import OriginalTOC from '@theme-original/TOC'
-import EditThisPage from '@theme/EditThisPage'
-import React, { useEffect, useState } from 'react'
-import { PrismicRichText } from '@prismicio/react'
+import { useLocation } from '@docusaurus/router';
+import { usePluginData } from '@docusaurus/useGlobalData';
+import OriginalTOC from '@theme-original/TOC';
+import EditThisPage from '@theme/EditThisPage';
+import React, { useEffect, useState } from 'react';
+import { PrismicRichText } from '@prismicio/react';
 
 export default function TOC({ toc, editUrl, ...props }) {
-  const { prismicAds } = usePluginData('ionic-docs-ads')
-  const [activeAd, setActiveAd] = useState<typeof prismicAds.data>()
-  const location = useLocation()
+  const { prismicAds } = usePluginData('ionic-docs-ads');
+  const [activeAd, setActiveAd] = useState<typeof prismicAds.data>();
+  const location = useLocation();
 
-  const isEmpty = toc.length <= 0
+  const isEmpty = toc.length <= 0;
 
   useEffect(() => {
-    setActiveAd(prismicAds[Math.floor(Math.random() * prismicAds.length)].data)
-  }, [location])
+    setActiveAd(prismicAds[Math.floor(Math.random() * prismicAds.length)].data);
+  }, [location]);
 
-  if (isEmpty) return null
+  if (isEmpty) return null;
 
   return (
     <div className="toc-wrapper">
@@ -29,11 +29,15 @@ export default function TOC({ toc, editUrl, ...props }) {
           <a
             href={activeAd.ad_url.url}
             target={activeAd.ad_url.target}
-          // onClick={e => trackClick(activeAd.ad_id, e)}
+            // onClick={e => trackClick(activeAd.ad_id, e)}
           >
             {/* Reponsive image since Prismic supports it out of the box */}
             <picture>
-              <source type="image/webp" media="(min-width: 37.5em)" src={activeAd.ad_image.url.replace(/.png/gi, '.webp')} />
+              <source
+                type="image/webp"
+                media="(min-width: 37.5em)"
+                src={activeAd.ad_image.url.replace(/.png/gi, '.webp')}
+              />
               <source type="image/png" media="(min-width: 37.5em)" src={activeAd.ad_image.url} />
               <source type="image/webp" src={activeAd.ad_image['1x'].url.replace(/.png/gi, '.webp')} />
               <source type="image/png" src={activeAd.ad_image['1x'].url} />
@@ -50,5 +54,5 @@ export default function TOC({ toc, editUrl, ...props }) {
         </div>
       )}
     </div>
-  )
+  );
 }

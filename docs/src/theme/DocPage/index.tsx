@@ -5,26 +5,26 @@
  * LICENSE file in the root directory of this source tree.
  */
 
-import React, {ReactNode, useState, useCallback} from 'react';
-import {MDXProvider} from '@mdx-js/react';
+import React, { ReactNode, useState, useCallback } from 'react';
+import { MDXProvider } from '@mdx-js/react';
 
 import renderRoutes from '@docusaurus/renderRoutes';
-import type {PropVersionMetadata} from '@docusaurus/plugin-content-docs-types';
+import type { PropVersionMetadata } from '@docusaurus/plugin-content-docs-types';
 import Layout from '@theme/Layout';
 import DocSidebar from '@theme/DocSidebar';
 import MDXComponents from '@theme/MDXComponents';
 import NotFound from '@theme/NotFound';
-import type {DocumentRoute} from '@theme/DocItem';
-import type {Props} from '@theme/DocPage';
+import type { DocumentRoute } from '@theme/DocItem';
+import type { Props } from '@theme/DocPage';
 import IconArrow from '@theme/IconArrow';
 import BackToTopButton from '@theme/BackToTopButton';
-import {matchPath} from '@docusaurus/router';
-import {translate} from '@docusaurus/Translate';
+import { matchPath } from '@docusaurus/router';
+import { translate } from '@docusaurus/Translate';
 import Navbar from '@theme/Navbar';
 
 import clsx from 'clsx';
 import styles from './styles.module.css';
-import {ThemeClassNames, docVersionSearchTag} from '@docusaurus/theme-common';
+import { ThemeClassNames, docVersionSearchTag } from '@docusaurus/theme-common';
 import Head from '@docusaurus/Head';
 
 type DocPageContentProps = {
@@ -33,17 +33,11 @@ type DocPageContentProps = {
   readonly children: ReactNode;
 };
 
-function DocPageContent({
-  currentDocRoute,
-  versionMetadata,
-  children,
-}: DocPageContentProps): JSX.Element {
-  const {pluginId, version} = versionMetadata;
+function DocPageContent({ currentDocRoute, versionMetadata, children }: DocPageContentProps): JSX.Element {
+  const { pluginId, version } = versionMetadata;
 
   const sidebarName = currentDocRoute.sidebar;
-  const sidebar = sidebarName
-    ? versionMetadata.docsSidebars[sidebarName]
-    : undefined;
+  const sidebar = sidebarName ? versionMetadata.docsSidebars[sidebarName] : undefined;
 
   const [hiddenSidebarContainer, setHiddenSidebarContainer] = useState(false);
   const [hiddenSidebar, setHiddenSidebar] = useState(false);
@@ -62,7 +56,8 @@ function DocPageContent({
       searchMetadata={{
         version,
         tag: docVersionSearchTag(pluginId, version),
-      }}>
+      }}
+    >
       <div className={clsx(styles.docPage)}>
         <BackToTopButton />
 
@@ -72,16 +67,15 @@ function DocPageContent({
               [styles.docSidebarContainerHidden]: hiddenSidebarContainer,
             })}
             onTransitionEnd={(e) => {
-              if (
-                !e.currentTarget.classList.contains(styles.docSidebarContainer)
-              ) {
+              if (!e.currentTarget.classList.contains(styles.docSidebarContainer)) {
                 return;
               }
 
               if (hiddenSidebarContainer) {
                 setHiddenSidebar(true);
               }
-            }}>
+            }}
+          >
             <DocSidebar
               key={
                 // Reset sidebar state on sidebar changes
@@ -100,19 +94,18 @@ function DocPageContent({
                 title={translate({
                   id: 'theme.docs.sidebar.expandButtonTitle',
                   message: 'Expand sidebar',
-                  description:
-                    'The ARIA label and title attribute for expand button of doc sidebar',
+                  description: 'The ARIA label and title attribute for expand button of doc sidebar',
                 })}
                 aria-label={translate({
                   id: 'theme.docs.sidebar.expandButtonAriaLabel',
                   message: 'Expand sidebar',
-                  description:
-                    'The ARIA label and title attribute for expand button of doc sidebar',
+                  description: 'The ARIA label and title attribute for expand button of doc sidebar',
                 })}
                 tabIndex={0}
                 role="button"
                 onKeyDown={toggleSidebar}
-                onClick={toggleSidebar}>
+                onClick={toggleSidebar}
+              >
                 <IconArrow className={styles.expandSidebarButtonIcon} />
               </div>
             )}
@@ -124,17 +117,14 @@ function DocPageContent({
           <Navbar />
           <main
             className={clsx(styles.docMainContainer, {
-              [styles.docMainContainerEnhanced]:
-                hiddenSidebarContainer || !sidebar,
-            })}>
+              [styles.docMainContainerEnhanced]: hiddenSidebarContainer || !sidebar,
+            })}
+          >
             <div
-              className={clsx(
-                'container padding-top--md padding-bottom--lg',
-                styles.docItemWrapper,
-                {
-                  [styles.docItemWrapperEnhanced]: hiddenSidebarContainer,
-                },
-              )}>
+              className={clsx('container padding-top--md padding-bottom--lg', styles.docItemWrapper, {
+                [styles.docItemWrapperEnhanced]: hiddenSidebarContainer,
+              })}
+            >
               <MDXProvider components={MDXComponents}>{children}</MDXProvider>
             </div>
           </main>
@@ -146,13 +136,11 @@ function DocPageContent({
 
 function DocPage(props: Props): JSX.Element {
   const {
-    route: {routes: docRoutes},
+    route: { routes: docRoutes },
     versionMetadata,
     location,
   } = props;
-  const currentDocRoute = docRoutes.find((docRoute) =>
-    matchPath(location.pathname, docRoute),
-  );
+  const currentDocRoute = docRoutes.find((docRoute) => matchPath(location.pathname, docRoute));
   if (!currentDocRoute) {
     return <NotFound />;
   }
@@ -162,10 +150,8 @@ function DocPage(props: Props): JSX.Element {
         {/* TODO we should add a core addRoute({htmlClassName}) generic plugin option */}
         <html className={versionMetadata.className} />
       </Head>
-      <DocPageContent
-        currentDocRoute={currentDocRoute}
-        versionMetadata={versionMetadata}>
-        {renderRoutes(docRoutes, {versionMetadata})}
+      <DocPageContent currentDocRoute={currentDocRoute} versionMetadata={versionMetadata}>
+        {renderRoutes(docRoutes, { versionMetadata })}
       </DocPageContent>
     </>
   );

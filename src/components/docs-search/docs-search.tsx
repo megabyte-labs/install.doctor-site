@@ -38,10 +38,9 @@ export class DocsSearch implements ComponentInterface {
   } = {};
 
   componentDidLoad() {
-    console.log('Algolia loaded');
-    console.log((window as any).algoliaLoaded);
     if (!(window as any).algoliaLoaded) {
       (window as any).algoliaLoaded = true;
+      const algolia = `/assets/js/docsearch.min.js`;
       importResource({ propertyName: 'docsearch', link: algolia, async: true }, () => this.setupSearch());
     }
 
@@ -81,7 +80,6 @@ export class DocsSearch implements ComponentInterface {
   }
 
   setupSearch() {
-    console.log('setting up search');
     setTimeout(() => {
       window.docsearch({
         appId: this.defaults.algolia.appId,
@@ -181,5 +179,3 @@ export class DocsSearch implements ComponentInterface {
     );
   }
 }
-
-const algolia = `/assets/js/docsearch.min.js`;

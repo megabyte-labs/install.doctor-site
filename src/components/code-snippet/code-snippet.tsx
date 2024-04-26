@@ -21,11 +21,16 @@ export class CodeSnippet {
     if (Build.isServer) return;
     if (!window.prismLoaded) {
       window.prismLoaded = true;
-      importResource({ propertyName: 'Prism', link: `${CodeSnippet.prismCdn}/prism.min.js`, async: true }, () => {
+      importResource({ propertyName: 'Prism', link: `${CodeSnippet.prismCdn}/prism.min.js` }, () => {
         this.loadInPrismLanguage();
       });
     } else {
-      this.loadInPrismLanguage();
+      const prismInterval = setInterval(() => {
+        if (window.Prism) {
+          clearInterval(prismInterval);
+          this.loadInPrismLanguage();
+        }
+      }, 50);
     }
   }
 
@@ -39,9 +44,10 @@ export class CodeSnippet {
         {
           propertyName: `Prism.languages.${this.language}`,
           link: `${CodeSnippet.prismCdn}/prism-${this.language}.min.js`,
-          defer: true,
         },
-        this.highlightCode
+        () => {
+          this.highlightCode();
+        }
       );
     } else {
       this.highlightCode();
@@ -49,27 +55,30 @@ export class CodeSnippet {
   };
 
   highlightCode = async () => {
-    if (Build.isServer) return;
+    const prismInterval = setInterval(async () => {
+      if (window.Prism && window.Prism.languages && window.Prism.languages[this.language]) {
+        clearInterval(prismInterval);
+        await customElements.whenDefined('code-snippet');
 
-    await customElements.whenDefined('code-snippet');
+        window.Prism.hooks.add('before-insert', (env) => {
+          switch (env.language) {
+            case 'shell-session':
+              const lines = env.code.split('\n');
 
-    window.Prism.hooks.add('before-insert', (env) => {
-      switch (env.language) {
-        case 'shell-session':
-          const lines = env.code.split('\n');
+              const code = lines.map((line) => {
+                return line.trim() === '' || line.trim()[0] === '#'
+                  ? `<span class="token output">${line}</span>\n`
+                  : `<span class="dollar-sign token output">${line}</span>\n`;
+              });
+              env.highlightedCode = code.join('');
+              break;
+            default:
+          }
+        });
 
-          const code = lines.map((line) => {
-            return line.trim() === '' || line.trim()[0] === '#'
-              ? `<span class="token output">${line}</span>\n`
-              : `<span class="dollar-sign token output">${line}</span>\n`;
-          });
-          env.highlightedCode = code.join('');
-          break;
-        default:
+        window.Prism.highlightElement(this.codeEl, false);
       }
-    });
-
-    window.Prism.highlightElement(this.codeEl, false);
+    }, 50);
   };
 
   render() {

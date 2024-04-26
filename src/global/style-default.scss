@@ -259,7 +259,7 @@ h2.ui-heading.ui-heading-2.ui-theme--editorial > a {
 }
 
 top-parallax #start {
-  padding-top: 11.44vh;
+  padding-top: 8.14vh;
 }
 
 landing-page {
@@ -953,8 +953,14 @@ fieldset .field:last-child {
 .success-color {
   color: var(--c-green-50) !important;
 }
+top-parallax {
+  height: calc(100vh - 64px) !important;
+  display: block;
+  width: 100%;
+  background-color: black;
+}
 #slider {
-  height: calc(100vh - 64px);
+  height: calc(100vh - 64px) !important;
   width: 100%;
   position: absolute;
   top: 64px;

@@ -1298,12 +1298,22 @@ landing-page #start {
   position: relative;
   width: 100%;
 }
-#hightop,
+
+#hightop {
+  display: table;
+
+  > .ui-container {
+    display: table-cell;
+    vertical-align: middle;
+  }
+}
+
+#homing-particles #hightop,
 #slider-container,
 .btns-container {
   > .ui-container {
-    margin-top: 140px;
-    margin-bottom: 140px;
+    margin-top: 90px;
+    margin-bottom: 90px;
   }
   p.parallax-header {
     font-weight: 400;

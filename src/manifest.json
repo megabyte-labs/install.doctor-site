@@ -110,7 +110,7 @@
     {
       "name": "Go To Homepage",
       "short_name": "Home",
-      "url": "https://install.doctor/",
+      "url": "https://install.doctor",
       "description": "Homepage of Install Doctor, the best free, open-source, multi-OS desktop provisioning system",
       "icons": [{ "src": "/assets/img/manifest/home.png", "sizes": "192x192" }]
     },

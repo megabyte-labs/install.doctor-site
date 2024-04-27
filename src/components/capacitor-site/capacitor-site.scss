@@ -183,3 +183,24 @@ body.home .alt-btns {
 .hide-buttons {
   display: none !important;
 }
+@media (max-width: 420px) {
+  .btns {
+    zoom: 0.9;
+  }
+}
+
+@media (max-width: 390px) {
+  .btns {
+    zoom: 0.8;
+  }
+}
+
+@media (max-width: 360px) {
+  .btns {
+    zoom: 0.7;
+  }
+}
+
+.hidesplash {
+  display: none;
+}

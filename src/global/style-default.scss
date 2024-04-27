@@ -1,6 +1,6 @@
 @use 'vars' as *;
 @use 'prism' as *;
-@use 'rs6' as *;
+//@use 'rs6' as *;
 @use 'hint' as *;
 
 span,
@@ -120,7 +120,6 @@ landing-page {
   }
 
   #start {
-    margin-top: 100vh;
     padding-top: 64px;
   }
 
@@ -129,7 +128,14 @@ landing-page {
     top: 0;
   }
 }
+.ascode {
+  margin-left: 0;
+  padding-left: 0;
+}
 
+.inline-flex {
+  display: inline-flex;
+}
 enterprise-page {
   #top img {
     width: 100%;
@@ -1312,8 +1318,9 @@ landing-page #start {
 #slider-container,
 .btns-container {
   > .ui-container {
-    margin-top: 90px;
-    margin-bottom: 90px;
+    padding-top: 90px;
+    padding-bottom: 90px;
+    width: 100%;
   }
   p.parallax-header {
     font-weight: 400;
@@ -1656,4 +1663,8 @@ h4.parallax-header {
     font-size: 14px !important;
     margin-top: 10px;
   }
+}
+
+body {
+  overflow-x: hidden;
 }

@@ -40,17 +40,21 @@ export class CodeSnippet {
     }
     if (!window.prismLanguageLoaded[`Prism.languages.${this.language}`]) {
       window.prismLanguageLoaded[`Prism.languages.${this.language}`] = true;
-      importResource(
-        {
-          propertyName: `Prism.languages.${this.language}`,
-          link: `${CodeSnippet.prismCdn}/prism-${this.language}.min.js`,
-        },
-        () => {
-          this.highlightCode();
-        }
-      );
+      if (this.language) {
+        importResource(
+          {
+            propertyName: `Prism.languages.${this.language}`,
+            link: `${CodeSnippet.prismCdn}/prism-${this.language}.min.js`,
+          },
+          () => {
+            this.highlightCode();
+          }
+        );
+      }
     } else {
-      this.highlightCode();
+      if (this.language) {
+        this.highlightCode();
+      }
     }
   };
 

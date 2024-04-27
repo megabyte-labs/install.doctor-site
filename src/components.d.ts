@@ -42,13 +42,7 @@ export namespace Components {
   interface CapacitorHubspotForm {
     defaults: typeof defaults;
   }
-  interface CapacitorSite {
-    fullScreenSliderHTML: string;
-    isTouchscreen: any;
-    scriptsLoaded: number;
-    showCommunity: boolean;
-    showEmailInput: boolean;
-  }
+  interface CapacitorSite {}
   interface CapacitorSiteFooter {
     defaults: typeof defaults;
   }
@@ -362,13 +356,7 @@ declare namespace LocalJSX {
   interface CapacitorHubspotForm {
     defaults?: typeof defaults;
   }
-  interface CapacitorSite {
-    fullScreenSliderHTML?: string;
-    isTouchscreen?: any;
-    scriptsLoaded?: number;
-    showCommunity?: boolean;
-    showEmailInput?: boolean;
-  }
+  interface CapacitorSite {}
   interface CapacitorSiteFooter {
     defaults?: typeof defaults;
   }

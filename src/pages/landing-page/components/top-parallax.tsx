@@ -20,7 +20,11 @@ export class LandingPage {
   @State() showEmailInput: boolean = false;
   @State() showCommunity: boolean = false;
   @Prop() data: typeof LandingPageData;
-  isTouchscreen = (window as any).mobileSliderHero;
+  isTouchscreen =
+    'ontouchstart' in window ||
+    navigator.maxTouchPoints > 0 ||
+    (navigator as any).msMaxTouchPoints > 0 ||
+    window.innerWidth < 1024;
 
   disconnectedCallback() {
     // this.parallaxInstance.distroy()
@@ -232,16 +236,14 @@ export class LandingPage {
     });
   }
   componentDidLoad() {
-    if (this.isTouchscreen) {
-      if (!(window as any).jQueryLoaded) {
-        if (Build.isServer) return;
-        (window as any).jQueryLoaded = true;
-        importResource({ propertyName: 'jquery', link: '/assets/js/jquery-slider.min.js', async: true }, () => {
-          this.initParticles();
-        });
-      } else {
+    if (!(window as any).jQueryLoaded) {
+      if (Build.isServer) return;
+      (window as any).jQueryLoaded = true;
+      importResource({ propertyName: 'jquery', link: '/assets/js/jquery-slider.min.js', async: true }, () => {
         this.initParticles();
-      }
+      });
+    } else {
+      this.initParticles();
     }
   }
 
@@ -278,8 +280,8 @@ export class LandingPage {
         <div id="homing-particles" class="section-overlay"></div>
         <ResponsiveContainer>
           <h1 class="parallax-header">
-            <div class="reveal step-1">
-              Desktop-<div class="underlined-header">as-Code</div>,
+            <div class="reveal step-1 inline-flex">
+              Desktop-<div class="underlined-header ascode">as-Code</div>,
             </div>
             <div class="reveal step-2">Batteries Included</div>
           </h1>

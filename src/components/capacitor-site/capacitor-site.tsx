@@ -1,23 +1,27 @@
-import { Component, h, Prop, Build } from '@stencil/core';
+//import { Component, h, Prop, Build } from '@stencil/core'
+import { Component, h } from '@stencil/core';
 import { Routes } from '../../router';
 import state from '../../store';
-import { importResource } from '../../utils/common';
-import { Button } from 'ionic-ds-no-fonts';
-import { defaults } from '../../store';
-declare let window: any;
-declare let jQuery: any;
-declare let RS_MODULES: any;
-declare let revapi2: any;
-declare let revslider_showDoubleJqueryError: any;
+//import { importResource } from '../../utils/common'
+//import { Button } from 'ionic-ds-no-fonts'
+//import { defaults } from '../../store'
+//declare let window: any
+//declare let jQuery: any
+//declare let RS_MODULES: any
+//declare let revapi2: any
+//declare let revslider_showDoubleJqueryError: any
 @Component({
   tag: 'capacitor-site',
   styleUrl: 'capacitor-site.scss',
 })
 export class App {
-  @Prop() showEmailInput: boolean = false;
+  /*@Prop() showEmailInput: boolean = false;
   @Prop() showCommunity: boolean = false;
   @Prop() scriptsLoaded: number = 0;
-  @Prop() isTouchscreen = (window as any).mobileSliderHero;
+  isTouchscreen = 'ontouchstart' in window ||
+    navigator.maxTouchPoints > 0 ||
+    (navigator as any).msMaxTouchPoints > 0 ||
+    window.innerWidth < 1024
   @Prop() fullScreenSliderHTML = `
   <rs-module-wrap id="ai-id-slider_wrapper" data-alias="ai-particles-id" data-source="gallery"
   style="visibility:hidden;background:transparent;padding:0;">
@@ -245,52 +249,52 @@ export class App {
 `;
 
   onScriptLoaded() {
-    this.scriptsLoaded++;
+    this.scriptsLoaded++
     if (this.scriptsLoaded === 3) {
       const interv = setInterval(() => {
         if (window.location.pathname === '/') {
-          clearInterval(interv);
-          document.body.classList.add('home');
+          clearInterval(interv)
+          document.body.classList.add('home')
           setTimeout(() => {
             setInterval(() => {
               if (document.body.classList.contains('home')) {
-                const btnsContainer: any = document.getElementsByClassName('btns-container');
+                const btnsContainer: any = document.getElementsByClassName('btns-container')
                 if (btnsContainer.length) {
-                  const addBtnsContainer = document.getElementsByClassName('add-buttons');
+                  const addBtnsContainer = document.getElementsByClassName('add-buttons')
                   if (addBtnsContainer.length) {
                     btnsContainer[0].style.setProperty(
                       'top',
                       addBtnsContainer[0].getBoundingClientRect().top +
-                        addBtnsContainer[0].getBoundingClientRect().height -
-                        document.body.getBoundingClientRect().y +
-                        30 +
-                        'px'
-                    );
+                      addBtnsContainer[0].getBoundingClientRect().height -
+                      document.body.getBoundingClientRect().y +
+                      30 +
+                      'px'
+                    )
                   }
                 }
               }
-            }, 100);
-            if (window.RS_MODULES === undefined) window.RS_MODULES = {};
-            if (RS_MODULES.modules === undefined) RS_MODULES.modules = {};
+            }, 100)
+            if (window.RS_MODULES === undefined) window.RS_MODULES = {}
+            if (RS_MODULES.modules === undefined) RS_MODULES.modules = {}
             RS_MODULES.modules['aiidslider'] = {
               once: RS_MODULES.modules['aiidslider'] !== undefined ? RS_MODULES.modules['aiidslider'].once : undefined,
               init: function () {
                 window.revapi2 =
                   window.revapi2 === undefined || window.revapi2 === null || window.revapi2.length === 0
                     ? document.getElementById('ai-id-slider')
-                    : window.revapi2;
+                    : window.revapi2
                 if (window.revapi2 === null || window.revapi2 === undefined || window.revapi2.length == 0) {
-                  window.revapi2initTry = window.revapi2initTry === undefined ? 0 : window.revapi2initTry + 1;
+                  window.revapi2initTry = window.revapi2initTry === undefined ? 0 : window.revapi2initTry + 1
                   if (window.revapi2initTry < 20)
                     requestAnimationFrame(function () {
-                      RS_MODULES.modules['aiidslider'].init();
-                    });
-                  return;
+                      RS_MODULES.modules['aiidslider'].init()
+                    })
+                  return
                 }
-                window.revapi2 = jQuery(window.revapi2);
+                window.revapi2 = jQuery(window.revapi2)
                 if (window.revapi2.revolution == undefined) {
-                  revslider_showDoubleJqueryError('ai-id-slider');
-                  return;
+                  revslider_showDoubleJqueryError('ai-id-slider')
+                  return
                 }
                 revapi2.revolutionInit({
                   revapi: 'revapi2',
@@ -350,151 +354,160 @@ export class App {
                   fallbacks: {
                     allowHTML5AutoPlayOnAndroid: true,
                   },
-                });
+                })
                 revapi2.bind('revolution.slide.onbeforeswap', function (e, data) {
-                  const btnsContainer: any = document.getElementsByClassName('btns-container');
+                  const btnsContainer: any = document.getElementsByClassName('btns-container')
                   if (btnsContainer.length) {
                     if (data.nextSlideIndex === 1) {
-                      btnsContainer[0].classList.remove('hide-buttons');
+                      btnsContainer[0].classList.remove('hide-buttons')
                     } else {
-                      btnsContainer[0].classList.add('hide-buttons');
+                      btnsContainer[0].classList.add('hide-buttons')
                     }
                   }
-                });
+                })
                 if (revapi2 !== undefined)
                   jQuery.fn.revolution.theClusterInit(revapi2[0].id, {
                     url: 'https://wordpress.megabyte.space/wp-content/plugins/revslider-thecluster-addon/',
-                  });
+                  })
               },
-            }; // End of RevInitScript
+            } // End of RevInitScript
             if (window.RS_MODULES.checkMinimal !== undefined) {
-              window.RS_MODULES.checkMinimal();
+              window.RS_MODULES.checkMinimal()
             }
-          }, 0);
+          }, 0)
         }
-      }, 50);
+      }, 50)
     }
   }
 
   importResources() {
     if (!this.isTouchscreen) {
-      window.RS_MODULES = window.RS_MODULES || {};
-      window.RS_MODULES.modules = window.RS_MODULES.modules || {};
-      window.RS_MODULES.waiting = window.RS_MODULES.waiting || [];
-      window.RS_MODULES.defered = true;
-      window.RS_MODULES.waiting = window.RS_MODULES.waiting.concat(['thecluster', 'threejs']);
-      window.RS_MODULES.moduleWaiting = window.RS_MODULES.moduleWaiting || {};
-      window.RS_MODULES.type = 'compiled';
+      window.RS_MODULES = window.RS_MODULES || {}
+      window.RS_MODULES.modules = window.RS_MODULES.modules || {}
+      window.RS_MODULES.waiting = window.RS_MODULES.waiting || []
+      window.RS_MODULES.defered = true
+      window.RS_MODULES.waiting = window.RS_MODULES.waiting.concat(['thecluster', 'threejs'])
+      window.RS_MODULES.moduleWaiting = window.RS_MODULES.moduleWaiting || {}
+      window.RS_MODULES.type = 'compiled'
       if (!(window as any).jQueryLoaded) {
         if (Build.isServer) return;
-        (window as any).jQueryLoaded = true;
-        importResource({ propertyName: 'jquery', link: '/assets/js/jquery-slider.min.js', async: true }, () => {
-          importResource({ propertyName: 'three', link: '/assets/js/three.min.js', defer: true }, () => {
-            this.onScriptLoaded();
-          });
-          importResource({ propertyName: 'rs6', link: '/assets/js/rs6.min.js', defer: true }, () => {
-            this.onScriptLoaded();
-          });
-          importResource({ propertyName: 'rbtools', link: '/assets/js/rbtools.min.js', defer: true }, () => {
-            this.onScriptLoaded();
-          });
-        });
+        (window as any).jQueryLoaded = true
+        importResource({ propertyName: 'three', link: '/assets/js/three.min.js', defer: true }, () => {
+          this.onScriptLoaded()
+        })
+        importResource({ propertyName: 'rs6', link: '/assets/js/rs6.min.js', defer: true }, () => {
+          this.onScriptLoaded()
+        })
+        importResource({ propertyName: 'rbtools', link: '/assets/js/rbtools.min.js', defer: true }, () => {
+          this.onScriptLoaded()
+        })
       }
     }
   }
   componentDidLoad() {
     if (!this.isTouchscreen) {
-      this.importResources();
+      this.importResources()
     }
     if (document.location.hash) {
-      const hashId = document.location.hash.substring(1);
+      const hashId = document.location.hash.substring(1)
       setTimeout(() => {
-        const element = document.getElementById(hashId);
+        const element = document.getElementById(hashId)
         if (element) {
           setTimeout(() => {
-            element.scrollIntoView({ behavior: 'smooth' });
+            element.scrollIntoView({ behavior: 'smooth' })
             setTimeout(() => {
-              element.scrollIntoView({ behavior: 'smooth' });
-            }, 667);
-          }, 667);
+              element.scrollIntoView({ behavior: 'smooth' })
+            }, 667)
+          }, 667)
         }
-      }, 333);
+      }, 333)
     }
   }
 
   showEmail(e) {
     if (!this.showCommunity) {
-      e.preventDefault();
-      this.showEmailInput = true;
-      const parallaxInput = document.getElementById('parallax-input');
+      e.preventDefault()
+      this.showEmailInput = true
+      const parallaxInput = document.getElementById('parallax-input')
       if (parallaxInput) {
-        parallaxInput.focus();
+        parallaxInput.focus()
       }
     }
   }
 
   inputBlur(ev) {
-    this.showEmailInput = false;
+    this.showEmailInput = false
   }
 
   scrollWelcome(ev) {
-    const startEl = document.getElementById('welcome');
+    const startEl = document.getElementById('welcome')
     setTimeout(() => {
       if (startEl) {
-        startEl.scrollIntoView({ behavior: 'smooth' });
+        startEl.scrollIntoView({ behavior: 'smooth' })
         setTimeout(() => {
-          startEl.scrollIntoView({ behavior: 'smooth' });
-        }, 667);
+          startEl.scrollIntoView({ behavior: 'smooth' })
+        }, 667)
       }
-    }, 667);
+    }, 667)
   }
 
-  render() {
+  /*render() {
     return (
       <site-root>
         <div id="slider" innerHTML={this.isTouchscreen ? '' : this.fullScreenSliderHTML}></div>
-        <div class="btns-container alt-btns">
-          <div class="btns">
-            <Button
-              class="reveal step-5"
-              kind="round"
-              color="indigo"
-              variation="light"
-              href={this.showCommunity ? '/community' : ''}
-              onClick={(e) => this.showEmail(e)}
-              anchor={true}
-            >
-              {this.showCommunity ? 'Join Community' : 'Get Beta Access'} <span>{'->'}</span>
-            </Button>
-            <Button
-              class="reveal step-6"
-              kind="round"
-              color="indigo"
-              href="#welcome"
-              onClick={(ev) => {
-                this.scrollWelcome(ev);
-              }}
-              rel="noopener"
-              anchor={true}
-            >
-              Learn More <span>{'->'}</span>
-            </Button>
-            {!this.isTouchscreen && (
-              <newsletter-signup-parallax
-                defaults={defaults}
-                onSubmissionSuccess={() => {
-                  this.showCommunity = true;
+        <div class={`page-theme--${state.pageTheme}`}>
+          <Routes />
+        </div>
+        <div class={{ hidesplash: this.isTouchscreen }}>
+          <div class="btns-container alt-btns">
+            <div class="btns">
+              <Button
+                class="reveal step-5"
+                kind="round"
+                color="indigo"
+                variation="light"
+                href={this.showCommunity ? '/community' : ''}
+                onClick={(e) => this.showEmail(e)}
+                anchor={true}
+              >
+                {this.showCommunity ? 'Join Community' : 'Get Beta Access'} <span>{'->'}</span>
+              </Button>
+              <Button
+                class="reveal step-6"
+                kind="round"
+                color="indigo"
+                href="#welcome"
+                onClick={(ev) => {
+                  this.scrollWelcome(ev)
                 }}
-                onEmailInputBlur={(ev) => {
-                  this.inputBlur(ev);
-                }}
-                class={{
-                  open: this.showEmailInput,
-                }}
-              />
-            )}
+                rel="noopener"
+                anchor={true}
+              >
+                Learn More <span>{'->'}</span>
+              </Button>
+              {!this.isTouchscreen && (
+                <newsletter-signup-parallax
+                  defaults={defaults}
+                  onSubmissionSuccess={() => {
+                    this.showCommunity = true
+                  }}
+                  onEmailInputBlur={(ev) => {
+                    this.inputBlur(ev)
+                  }}
+                  class={{
+                    open: this.showEmailInput,
+                  }}
+                />
+              )}
+            </div>
           </div>
         </div>
+      </site-root>
+    )
+  }*/
+  render() {
+    return (
+      <site-root>
         <div class={`page-theme--${state.pageTheme}`}>
           <Routes />
         </div>

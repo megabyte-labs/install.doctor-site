@@ -13,6 +13,7 @@ declare global {
   }
 }
 
+
 @Component({
   tag: 'capacitor-site-footer',
   styleUrl: 'capacitor-site-footer.scss',
